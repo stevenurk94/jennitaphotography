@@ -141,6 +141,8 @@ header .nav-section nav ul {
     transform: translate(0, -50%) scale(1.5) rotate(0deg);
     transition: all .75s cubic-bezier(0.87, 0, 0.13, 1);
     opacity: 0;
+    width: 100%;
+    text-align: center;
 }
 
 header .nav-section.open nav ul {
@@ -153,12 +155,10 @@ header .nav-section nav ul li {
     font-weight: 500;
     height: 100%;
     cursor: pointer;
-    display: flex;
-    align-items: center;
     margin: 0 1.25rem;
-    flex-wrap: nowrap;
     line-height: 50px;
-    flex-direction: column;
+    display: inline-block;
+    width: 100%;
 }
 
 
