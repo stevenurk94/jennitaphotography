@@ -49,12 +49,18 @@
     padding: 25px 0;
     cursor: pointer;
     z-index: 10;
-    transition: all .75s cubic-bezier(0.87, 0, 0.13, 1);
-}
-
-header .nav-section.open .nav-logo {
+    transition: all 400ms ease-in-out;
     color: white;
 }
+
+header.scrolled .nav-logo {
+    padding: 15px 0;
+    color: black;
+}
+
+/* header .nav-section.open .nav-logo {
+    color: white;
+} */
 
 /* ############ HEADER ############## */
 
@@ -67,6 +73,12 @@ header {
     position: fixed;
 }
 
+header.scrolled {
+    background: white;
+    box-shadow: 0px 0.125rem 0.25rem 0px rgb(0 0 0/12%);
+}
+
+
 header .nav-section {
     width: 90%;
     display: flex;
@@ -74,10 +86,6 @@ header .nav-section {
     align-items: center;
 }
 
-header.scrolled {
-    background: var(--bg);
-    box-shadow: var(--boxshadow);
-}
 
 
 /* ############ NAV ITEMS ############## */
@@ -201,7 +209,7 @@ header .nav-section label {
 
 header .nav-section label span {
     position: absolute;
-    background-color: black;
+    background-color: white;
     transition: var(--trans);
     height: 3px;
     width: 100%;
@@ -209,8 +217,8 @@ header .nav-section label span {
     transition: all ease-in 250ms;
 }
 
-header .nav-section.open label span {
-    background-color: white;
+header.scrolled .nav-section label span {
+    background-color: black;
 }
 
 header .nav-section label span:not(:nth-child(3)) {
