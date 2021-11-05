@@ -55,7 +55,6 @@
 
 header.scrolled .nav-logo {
     padding: 15px 0;
-    color: black;
 }
 
 /* header .nav-section.open .nav-logo {
@@ -71,12 +70,14 @@ header {
     display: flex;
     justify-content: center;
     position: fixed;
+    z-index: 999;
 }
 
 header.scrolled {
     background: white;
     box-shadow: 0px 0.125rem 0.25rem 0px rgb(0 0 0/12%);
 }
+
 
 
 header .nav-section {
@@ -105,6 +106,7 @@ header .nav-section nav {
   transition: all .75s cubic-bezier(0.87, 0, 0.13, 1);
   opacity: 0;
   visibility: hidden;
+  
 
 }
 
@@ -112,6 +114,8 @@ header .nav-section.open nav {
     visibility: visible;
     opacity: 1;
 }
+
+
 
 header .nav-section .background-image {
     background: url("~/static/img/image00004.jpeg");
@@ -217,9 +221,6 @@ header .nav-section label span {
     transition: all ease-in 250ms;
 }
 
-header.scrolled .nav-section label span {
-    background-color: black;
-}
 
 header .nav-section label span:not(:nth-child(3)) {
     box-shadow: 0px 0.125rem 0.25rem 0px rgb(0 0 0 / 12%);
