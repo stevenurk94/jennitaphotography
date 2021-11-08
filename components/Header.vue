@@ -1,5 +1,4 @@
 <template>
-<header>
     <div class="nav-section">
 
         <div class="nav-logo">JF</div>
@@ -28,15 +27,13 @@
 
     </div>
 
-</header>
-
 </template>
 
 
 
 
 
-<style scoped>
+<style>
 
 
 
@@ -55,6 +52,11 @@
 
 header.scrolled .nav-logo {
     padding: 15px 0;
+    color: black
+}
+
+header.scrolled .nav-section.open .nav-logo {
+    color: white;
 }
 
 /* header .nav-section.open .nav-logo {
@@ -67,6 +69,7 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     top: 0;
+    background: #3A524D;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -221,6 +224,13 @@ header .nav-section label span {
     transition: all ease-in 250ms;
 }
 
+header.scrolled .nav-section label span {
+    background-color: black;
+}
+
+header.scrolled .nav-section.open label span {
+    background-color: white;
+}
 
 header .nav-section label span:not(:nth-child(3)) {
     box-shadow: 0px 0.125rem 0.25rem 0px rgb(0 0 0 / 12%);
@@ -294,6 +304,8 @@ export default {
             }
         }
 
+
+
   
         // NAV-open/close
         const navButton = document.getElementById("toggle");
@@ -314,7 +326,7 @@ export default {
                 navButton.checked = false;
             }
         });
-    
+
     }
 
 
