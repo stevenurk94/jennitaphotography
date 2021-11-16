@@ -6,7 +6,7 @@
       <h1>Steun het goede doel:<br>Kom over en help</h1>
     </div>
     <div>
-      <NuxtLink class="button-1" to="/kaarten">Direct bestellen</NuxtLink>
+      <NuxtLink class="button-1" to="/kaarten/">Direct bestellen</NuxtLink>
     </div>
 
   </section>

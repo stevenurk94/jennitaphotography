@@ -5,8 +5,51 @@
     </header>
     
     <Nuxt />
+
+    <Footer />
   </div>
 </template>
+
+
+
+
+<script>
+
+export default {
+
+  computed: {
+    cartItemCount () {
+      return this.$store.getters.cartItemCount
+    },
+  },
+
+  mounted: function() {
+
+    if (this.cartItemCount < 100 && this.cartItemCount != 0) {
+      document.querySelector(".notification-label").innerHTML = this.cartItemCount;
+      document.querySelector(".notification-label").style.display = "flex";
+    } else if (this.cartItemCount >= 100) {
+      document.querySelector(".notification-label").innerHTML = "99+";
+    } else if (this.cartItemCount == 0) {
+      document.querySelector(".notification-label").style.display = "none";
+    }
+  }
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style>
 
@@ -86,12 +129,12 @@ p {
   padding: 0.5em 1.25em;
   text-align: center;
   white-space: nowrap;
-  color: white;
+  color: #567670;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   border-radius: 4px;
   font-size: 1.5em;
-  border: 1.5px solid white;
+  border: 1.5px solid #567670;
   transition: all 450ms ease-in-out;
   margin: 10px 0;
 }
