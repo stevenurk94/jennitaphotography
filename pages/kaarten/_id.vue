@@ -21,7 +21,6 @@
                     
                 </div>
                 <button class="button-1" v-on:click="addToCart(product)">In winkelwagen</button>
-                <button @click="test123(product)"></button>
                 
             </div>
 

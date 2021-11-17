@@ -21,20 +21,20 @@
     </div>
 
     <div class="img_collection">
-      <img class="img_standing" src="~/static/img/image00001.jpeg" alt="">
-      <img class="img_standing" src="~/static/img/image00002.jpeg" alt="">
-      <img class="img_standing" src="~/static/img/image00003.jpeg" alt="">
-      <img class="img_standing" src="~/static/img/image00004.jpeg" alt="">
-      <img class="img_laying" src="~/static/img/image00013.jpeg" alt="">
-      <img class="img_standing" src="~/static/img/image00005.jpeg" alt="">
-      <img class="img_standing" src="~/static/img/image00006.jpeg" alt="">
-      <img class="img_standing" src="~/static/img/image00007.jpeg" alt="">
-      <img class="img_standing" src="~/static/img/image00008.jpeg" alt="">
-      <img class="img_standing" src="~/static/img/image00009.jpeg" alt="">
-      <img class="img_standing" src="~/static/img/image00010.jpeg" alt="">
-      <img class="img_laying" src="~/static/img/image00011.jpeg" alt="">
-      <img class="img_standing" src="~/static/img/image00012.jpeg" alt="">
-      <img class="img_standing" src="~/static/img/image00014.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00001.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00002.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00003.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00004.jpeg" alt="">
+      <img class="img_laying" src="~/assets/img/image00013.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00005.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00006.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00007.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00008.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00009.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00010.jpeg" alt="">
+      <img class="img_laying" src="~/assets/img/image00011.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00012.jpeg" alt="">
+      <img class="img_standing" src="~/assets/img/image00014.jpeg" alt="">
     </div>
   </section>
     
@@ -54,7 +54,7 @@
 
 
 .home {
-  background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 50%)), url("~/static/img/image00031.jpeg");
+  background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 50%)), url("~/assets/img/image00031.jpeg");
   /* background: linear-gradient(
     to top, black 
     0%, rgba(0, 0, 0, 0.738) 
@@ -69,7 +69,7 @@
     91%, rgba(0, 0, 0, 0.008) 
     95.2%, rgba(0, 0, 0, 0.002) 
     98.2%, transparent 100%), 
-    url("~/static/img/image00013.jpeg"); */
+    url("~/assets/img/image00013.jpeg"); */
 
     /* background: linear-gradient(
     to top, rgb(58, 82, 77, 100%) 
@@ -85,9 +85,9 @@
     91%, rgba(58, 82, 77, 0.008) 
     95.2%, rgba(58, 82, 77, 0.002) 
     98.2%, transparent 100%), 
-    url("~/static/img/image00006.jpeg"); */
+    url("~/assets/img/image00006.jpeg"); */
 
-  /* background: url("~/static/img/image00006.jpeg"); */
+  /* background: url("~/assets/img/image00006.jpeg"); */
   width: 100%;
   height: 100vh;
   background-position: center;

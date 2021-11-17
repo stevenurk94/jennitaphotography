@@ -6,7 +6,7 @@
 
 
     <section class="product_overview">
-        <NuxtLink class="product_cart" :to="PhotoCards.slug" v-for="PhotoCards in PhotoCards" :key="PhotoCards.id">
+        <NuxtLink class="product_cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCards" :key="PhotoCards.id">
             <img :src="PhotoCards.image" alt="">
             <div>
                 <div>

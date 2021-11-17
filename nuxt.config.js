@@ -1,5 +1,8 @@
 export default {
-  target: 'static',
+  // target: 'static',
+  // router: {
+  //   base: '/static-jennitaphotography/'
+  // },
   
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
