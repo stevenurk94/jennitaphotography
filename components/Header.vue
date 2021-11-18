@@ -179,7 +179,7 @@ header .nav-section.open nav {
 
 
 header .nav-section .background-image {
-    background: url("~/assets/img/image00004.jpeg");
+    background: url("~/static/img/image00004.jpeg");
     background-size: cover;
     background-position: center;
     width: 100vw;
