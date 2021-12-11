@@ -179,7 +179,7 @@ header .nav-section.open nav {
 
 
 header .nav-section .background-image {
-    background: url("~/static/img/image00004.jpeg");
+    background: url("~/static/img/kaart0004.jpeg");
     background-size: cover;
     background-position: center;
     width: 100vw;
@@ -386,6 +386,9 @@ export default {
 
         // PULLING PRODUCTS FROM LOCAL-STORAGE
         this.$store.commit("updateCartFromLocalStorage")
+        this.$store.commit("updateBillingDetailsFromLocalStorage")
+        this.$store.commit("updateFormDetailsLocalStorage")
+
 
     }
 

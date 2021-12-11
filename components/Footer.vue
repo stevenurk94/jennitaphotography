@@ -1,7 +1,5 @@
 <template>
-    <main>
-        <section class="footer-section"></section>
-    </main>
+    <section class="footer-section"></section>
 </template>
 
 
