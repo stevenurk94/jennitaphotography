@@ -113,6 +113,10 @@ export default {
         breadcrumbs() {
             return [
                 {
+                    label: "Home",
+                    url: "/"
+                },
+                {
                     label: this.$route.path.slice(1,8).replace(/([k])/g, "K"),
                     url: this.$route.path.slice(0,8),
                 },

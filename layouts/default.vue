@@ -74,33 +74,39 @@ export default {
 
 
 
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-
-
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-  text-transform: uppercase;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 40px;
+  font-weight: 700;
 }
 
 h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 30px;
+  /* font-size: 20px;
   font-weight: 100;
-  line-height: 1.2rem;
+  line-height: 1.2rem; */
+}
+
+h3 {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.2rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
 }
+
+section {
+  width: 95%;
+}
+
+
+
+
 
 .button-1 {
   cursor: pointer;
@@ -120,7 +126,7 @@ p {
   border-radius: 4px;
   transition: all 500ms ease-in-out;
   box-shadow: 1px 1px rgb(0 0 0 / 16%), 0 2px 5px rgb(0 0 0 / 8%);
-  margin: 10px 0;
+  /* margin: 10px 0; */
   
 }
 

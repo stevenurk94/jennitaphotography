@@ -1,28 +1,16 @@
 <template>
 <main>
 
-    
-
-
-
-    <section class="product_overview">
-        <BreadCrumbs :items="breadcrumbs"/>
-        <NuxtLink class="product_cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCards" :key="PhotoCards.id">
-            <img :src="PhotoCards.image" alt="">
+    <BreadCrumbs :items="breadcrumbs"/>
+    <h2>Fotokaarten</h2>
+    <section class="products">
+        <NuxtLink class="products__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCards" :key="PhotoCards.id">
+            <img :src="require(`@/static/img${PhotoCards.image2}`)" alt="">
             <div>
-                <div>
-                    <h2>{{ PhotoCards.subtitle }}</h2>
-                    <h2>{{ PhotoCards.name }}</h2>
-                </div>
-                <div>
-                    <p>€ {{ PhotoCards.price.toFixed(2) }}</p>
-                </div>
+                <h3>{{ PhotoCards.name }}</h3>
+                <p>€ {{ PhotoCards.price.toFixed(2) }}</p>
             </div>
-
         </NuxtLink>
-
-
-
 
     </section>
 </main>
@@ -45,12 +33,16 @@ export default {
         breadcrumbs() {
             return [
                 {
+                    label: "Home",
+                    url: "/"
+                },
+                {
                     label: this.$route.path.slice(1,8).replace(/([k])/g, "K")
                 }
             ]
         }
-    }
-    
+    },
+  
 }
 
 
@@ -63,22 +55,41 @@ export default {
 <style scoped>
 
 body {
-    background: #f0f2f5;
+    /* background: #f0f2f5; */
+    /* background: #f8fbfe; */
+}
+
+main {
+    /* background: #f0f2f5; */
+    background: #f8fbfe;
+}
+
+section {
+    width: 80%;
+}
+
+main {
+    padding: 100px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+    width: 80%;
 }
 
 
-main .product_overview {
-    background: #f8fbfe;
+.products {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 95%;
-    margin-top: 150px;
 }
 
-.product_cart {
-    /* box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 15%); */
-    box-shadow: 0 0 0 1px #dddfe2;
+
+
+.products__cart {
+    box-shadow: 0 0 0 1px #dadce0;
     border-radius: 5px;
     margin: 10px 0;
     overflow: hidden;
@@ -86,48 +97,48 @@ main .product_overview {
     cursor: pointer;
     background: #fff;
     transition: all .2s ease-out;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.product_cart:hover {
-    box-shadow: 0 1px 8px 5px #dddfe2;
-    transform: scale(1.005);
-
+.products__cart:hover {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%);
 }
 
-.product_cart img {
-    width: 100%;
+@media only screen and (min-width: 800px) {
+    .products__cart {
+        width: calc(33% - 5px)
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .products__cart {
+        width: calc(25% - 15px)
+    }
+}
+
+
+.products__cart img {
+    /* width: 100%;
     height: 180px;
     object-fit: cover;
-    object-position: middle;
+    object-position: middle; */
+    object-fit: contain;
+    height: 220px;
+    width: 90%;
+    right: 0;
+    left: 0;
+    margin: 15px 10px;
 }
 
-.product_cart > div {
-    padding: 15px 15px;
+.products__cart div {
     display: flex;
-}
-
-.product_cart div div:first-child {
-    width: 75%;
-
-}
-
-.product_cart div div h2:first-child {
-    font-size: 15px;
-    text-transform: uppercase;
-}
-
-.product_cart div div:nth-child(2) {
-    width: 25%;
-    text-align: end;
-    display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-end;
-    white-space: nowrap;
-
-
+    margin: 10px 10px 15px 10px;
+    width: 85%;
 }
-
 
 
 

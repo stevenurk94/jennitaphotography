@@ -5,7 +5,8 @@
         "image": "/_nuxt/static/img/kaart0001.jpeg",
         "price": 0.90,
         "slug": "1",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0001.jpeg"
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "image": "/_nuxt/static/img/kaart0002.jpeg",
         "price": 0.90,
         "slug": "2",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0002.jpeg"
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "image": "/_nuxt/static/img/kaart0003.jpeg",
         "price": 0.90,
         "slug": "3",
-        "stock": 20
+        "stock": 20,
+        "image2": "/kaart0003.jpeg"
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "image": "/_nuxt/static/img/kaart0004.jpeg",
         "price": 0.90,
         "slug": "4",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0004.jpeg"
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "image": "/_nuxt/static/img/kaart0005.jpeg",
         "price": 0.90,
         "slug": "5",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0005.jpeg"
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "image": "/_nuxt/static/img/kaart0006.jpeg",
         "price": 0.90,
         "slug": "6",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0006.jpeg"
     },
     {
         "id": 7,
@@ -53,7 +59,8 @@
         "image": "/_nuxt/static/img/kaart0007.jpeg",
         "price": 0.90,
         "slug": "7",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0007.jpeg"
     },
     {
         "id": 8,
@@ -61,7 +68,8 @@
         "image": "/_nuxt/static/img/kaart0008.jpeg",
         "price": 0.90,
         "slug": "8",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0008.jpeg"
     },
     {
         "id": 9,
@@ -69,7 +77,8 @@
         "image": "/_nuxt/static/img/kaart0009.jpeg",
         "price": 0.90,
         "slug": "9",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0009.jpeg"
     },
     {
         "id": 10,
@@ -77,7 +86,8 @@
         "image": "/_nuxt/static/img/kaart0010.jpeg",
         "price": 0.90,
         "slug": "10",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0010.jpeg"
     },
     {
         "id": 11,
@@ -85,7 +95,8 @@
         "image": "/_nuxt/static/img/kaart0011.jpeg",
         "price": 0.90,
         "slug": "11",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0011.jpeg"
     },
     {
         "id": 12,
@@ -93,7 +104,8 @@
         "image": "/_nuxt/static/img/kaart0012.jpeg",
         "price": 0.90,
         "slug": "12",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0012.jpeg"
     },
     {
         "id": 13,
@@ -101,7 +113,8 @@
         "image": "/_nuxt/static/img/kaart0013.jpeg",
         "price": 0.90,
         "slug": "13",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0013.jpeg"
     },
     {
         "id": 14,
@@ -109,7 +122,8 @@
         "image": "/_nuxt/static/img/kaart0014.jpeg",
         "price": 0.90,
         "slug": "14",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0014.jpeg"
     },
     {
         "id": 15,
@@ -117,7 +131,8 @@
         "image": "/_nuxt/static/img/kaart0015.jpeg",
         "price": 0.90,
         "slug": "15",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0015.jpeg"
     },
     {
         "id": 16,
@@ -125,7 +140,8 @@
         "image": "/_nuxt/static/img/kaart0016.jpeg",
         "price": 0.90,
         "slug": "16",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0016.jpeg"
     },
     {
         "id": 17,
@@ -133,7 +149,8 @@
         "image": "/_nuxt/static/img/kaart0017.jpeg",
         "price": 0.90,
         "slug": "17",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0017.jpeg"
     },
     {
         "id": 18,
@@ -141,7 +158,8 @@
         "image": "/_nuxt/static/img/kaart0018.jpeg",
         "price": 0.90,
         "slug": "18",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0018.jpeg"
     },
     {
         "id": 19,
@@ -149,7 +167,8 @@
         "image": "/_nuxt/static/img/kaart0019.jpeg",
         "price": 0.90,
         "slug": "19",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0019.jpeg"
     },
     {
         "id": 20,
@@ -157,7 +176,8 @@
         "image": "/_nuxt/static/img/kaart0020.jpeg",
         "price": 0.90,
         "slug": "20",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0020.jpeg"
     },
     {
         "id": 21,
@@ -165,7 +185,8 @@
         "image": "/_nuxt/static/img/kaart0021.jpeg",
         "price": 0.90,
         "slug": "21",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0021.jpeg"
     },
     {
         "id": 22,
@@ -173,7 +194,8 @@
         "image": "/_nuxt/static/img/kaart0022.jpeg",
         "price": 0.90,
         "slug": "22",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0022.jpeg"
     },
     {
         "id": 23,
@@ -181,7 +203,8 @@
         "image": "/_nuxt/static/img/kaart0023.jpeg",
         "price": 0.90,
         "slug": "23",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0023.jpeg"
     },
     {
         "id": 24,
@@ -189,7 +212,8 @@
         "image": "/_nuxt/static/img/kaart0024.jpeg",
         "price": 0.90,
         "slug": "24",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0024.jpeg"
     },
     {
         "id": 25,
@@ -197,7 +221,8 @@
         "image": "/_nuxt/static/img/kaart0025.jpeg",
         "price": 0.90,
         "slug": "25",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0025.jpeg"
     },
     {
         "id": 26,
@@ -205,7 +230,8 @@
         "image": "/_nuxt/static/img/kaart0026.jpeg",
         "price": 0.90,
         "slug": "26",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0026.jpeg"
     },
     {
         "id": 27,
@@ -213,7 +239,8 @@
         "image": "/_nuxt/static/img/kaart0027.jpeg",
         "price": 0.90,
         "slug": "27",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0027.jpeg"
     },
     {
         "id": 28,
@@ -221,7 +248,8 @@
         "image": "/_nuxt/static/img/kaart0028.jpeg",
         "price": 0.90,
         "slug": "28",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0028.jpeg"
     },
     {
         "id": 29,
@@ -229,6 +257,7 @@
         "image": "/_nuxt/static/img/kaart0029.jpeg",
         "price": 0.90,
         "slug": "29",
-        "stock": 10
+        "stock": 10,
+        "image2": "/kaart0029.jpeg"
     }
 ]
