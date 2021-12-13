@@ -3,7 +3,7 @@
         <span v-for="(item, index) in items" :key="index">
             <NuxtLink v-if="item.url" :to="item.url">{{ item.label }}</NuxtLink>
             <span v-else class="inactive">{{ item.label }}</span>
-            <span v-if="index < (items.length - 1)" class="arrow">❯</span>
+            <span v-if="index < (items.length - 1)" class="arrow">&#8250;</span>
         </span>
     </div>
     
@@ -29,8 +29,8 @@ div {
 
 span {
     font-family: 'Work Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 450;
+    font-size: 17px;
+    font-weight: 500;
     color: #3A524D;
     margin-right: 5px;
 }
@@ -44,7 +44,7 @@ span.inactive {
 }
 
 span.arrow {
-    font-size: 15px;
+    font-size: 22px;
     margin-left: 2px;
 }
 
