@@ -54,11 +54,6 @@ export default {
 
 <style scoped>
 
-body {
-    /* background: #f0f2f5; */
-    /* background: #f8fbfe; */
-}
-
 main {
     /* background: #f0f2f5; */
     background: #f8fbfe;
