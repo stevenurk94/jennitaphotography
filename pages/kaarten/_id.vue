@@ -39,13 +39,13 @@
             
     </picture> -->
 
-
+    <BreadCrumbs :items="breadcrumbs"/>
     <section class="product">
-        <BreadCrumbs :items="breadcrumbs"/>
+        
 
         <div v-for="product in PhotoCards" :key="product.id" :product="product">
 
-            <img v-if="product.id == PC" :src="product.image" alt="">
+            <img v-if="product.id == PC" :src="require(`@/static/img${product.image2}`)" alt="">
             <div class="product_text" v-if="product.id == PC">
                 <h1>{{ product.name }}</h1>
                 <p>€ {{ product.price.toFixed(2) }} p/st.</p>
@@ -168,12 +168,14 @@ export default {
 
 <style scoped>
 
+.breadcrumbs, section {
+    width: 80%;
+}
+
 .product {
     display: flex;
     align-items: center;
-    width: 95%;
     flex-direction: column;
-    margin-top: 150px;
 }
 
 .product img {
