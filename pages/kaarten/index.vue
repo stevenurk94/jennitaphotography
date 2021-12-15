@@ -66,16 +66,16 @@ section, h2, .breadcrumbs {
 
 .products {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
 .products__cart {
     box-shadow: 0 0 0 1px #dadce0;
     border-radius: 5px;
-    margin: 15px 10vw;
+    margin: 10px 3%;
     overflow: hidden;
     cursor: pointer;
+    width: calc(50% - 1.5%);
 
     background: #fff;
     transition: all .2s ease-out;
@@ -85,28 +85,14 @@ section, h2, .breadcrumbs {
     color: black;
 }
 
-@media only screen and (min-width: 380px) {
+.products__cart:nth-child(1n + 1) {
+    margin-left: 0px;
+    margin-right: 1.5%;
+}
 
-    .products {
-        justify-content: flex-start;
-    }
-
-    .products__cart {
-        margin: 15px 3%;
-        width: calc(50% - 1.5%);
-        min-width: auto;
-    
-    }
-
-    .products__cart:nth-child(1n + 1) {
-        margin-left: 0px;
-        margin-right: 1.5%;
-    }
-
-    .products__cart:nth-child(2n + 2) {
-        margin-right: 0px;
-        margin-left: 1.5%;
-    }
+.products__cart:nth-child(2n + 2) {
+    margin-right: 0px;
+    margin-left: 1.5%;
 }
 
 
@@ -152,12 +138,12 @@ section, h2, .breadcrumbs {
 @media only screen and (min-width: 750px) {
 
     .products__cart {
-        margin: 15px 8px;
-        width: calc(33% - 9px);
+        margin: 15px 10px;
+        width: calc(33% - 11px);
     }
 
     .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
-        margin: 15px 8px;
+        margin: 15px 10px;
     }
 
     .products__cart:nth-child(3n + 1) {
@@ -169,15 +155,15 @@ section, h2, .breadcrumbs {
     }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 950px) {
 
     .products__cart {
-        margin: 15px 6px;
-        width: calc(25% - 9px);
+        margin: 15px 10px;
+        width: calc(25% - 15px);
     }
 
     .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
-        margin: 15px 6px;
+        margin: 15px 10px;
     }
 
 
@@ -190,15 +176,15 @@ section, h2, .breadcrumbs {
     }
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1200px) {
 
     .products__cart {
-        margin: 15px 6px;
-        width: calc(20% - 10px);
+        margin: 15px 10px;
+        width: calc(20% - 16px);
     }
 
     .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
-        margin: 15px 6px;
+        margin: 15px 10px;
     }
 
 
@@ -215,29 +201,63 @@ section, h2, .breadcrumbs {
     .section, h2, .products, .breadcrumbs {
         width: 90%;
     }
+
+    .products__cart {
+        margin: 15px 10px;
+        width: calc(20% - 16px);
+    }
+
+    .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
+        margin: 15px 10px;
+    }
+
+    .products__cart:nth-child(5n + 1) {
+        margin-left: 0px;
+    }
+
+    .products__cart:nth-child(5n + 5) {
+        margin-right: 0px;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
     .section, h2, .products, .breadcrumbs {
         width: 85%;
     }
+
+    .products__cart {
+        margin: 15px 10px;
+        width: calc(20% - 16px);
+    }
+
+    .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
+        margin: 15px 10px;
+    }
+
+
+    .products__cart:nth-child(5n + 1) {
+        margin-left: 0px;
+    }
+
+    .products__cart:nth-child(5n + 5) {
+        margin-right: 0px;
+    }
 }
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1500px) {
     .section, h2, .products, .breadcrumbs {
         width: 80%;
     }
 
     .products__cart {
-        margin: 15px 1%;
-        width: calc(20% - 3%);
+        margin: 15px 12px;
+        width: calc(20% - 20px);
     }
 
     .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
-        margin: 15px 1%;
+        margin: 15px 12px;
     }
 
-    
     .products__cart:nth-child(5n + 1) {
         margin-left: 0px;
     }
@@ -246,42 +266,6 @@ section, h2, .breadcrumbs {
         margin-right: 0px;
     }
 }
-
-
-
-/* 
-@media only screen and (min-width: 1300px) {
-
-
-
-    
-    .products__cart {
-        margin: 15px 10vw;
-        width: calc(20% - 15px);
-
-        background: #fff;
-        transition: all .2s ease-out;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: black;
-    }
-
-
-    .products__cart:nth-child(5n + 1) {
-        margin-left: 0px;
-    }
-
-    .products__cart:nth-child(5n + 5) {
-        margin-right: 0px;
-    }
-} */
-
-
-
-
-
-
 
 
 .products__cart:hover {
@@ -289,11 +273,11 @@ section, h2, .breadcrumbs {
 }
 
 .products__cart h3 {
-  font-size: 17px;
+    font-size: 17px;
 }
 
 .products__cart p {
-  font-size: 15px;
+    font-size: 15px;
 }
 
 

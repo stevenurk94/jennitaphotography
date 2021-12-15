@@ -40,27 +40,29 @@
     </picture> -->
 
     <BreadCrumbs :items="breadcrumbs"/>
-    <section class="product">
+    <section>
         
 
-        <div v-for="product in PhotoCards" :key="product.id" :product="product">
+        <div v-for="product in PhotoCards" :key="product.id" :product="product"  class="product">
 
             <img v-if="product.id == PC" :src="require(`@/static/img${product.image2}`)" alt="">
-            <div class="product_text" v-if="product.id == PC">
+            <div class="product__info" v-if="product.id == PC">
                 <h1>{{ product.name }}</h1>
                 <p>€ {{ product.price.toFixed(2) }} p/st.</p>
+                <div class="product__info__box" v-if="product.id == PC">
+                    <div>
+                        <input v-if="product.stock !== 0" name="amount" type="text" v-model.number="quantity" @keyup.enter="addToCart(product)">
+                    </div>
+
+                    <button v-if="product.stock !== 0" class="button-1" v-on:click="addToCart(product)">In winkelwagen</button>
+                    <h1 v-if="product.stock === 0">Helaas, deze is uitverkocht!</h1>
+                    
+                </div>
+                <p class="error-1">Voer een geldig getal in</p>
+                <p class="error-2">Helaas, we hebben van {{ product.name }} momenteel {{product.stock }} voorradig</p>
             </div>
 
-            <div class="order_box" v-if="product.id == PC">
-                <div>
-                    <input v-if="product.stock !== 0" name="amount" type="text" v-model.number="quantity" @keyup.enter="addToCart(product)">
-                    <p class="error-1">Voer een geldig getal in</p>
-                    <p class="error-2">Helaas, we hebben van {{ product.name }} momenteel {{product.stock }} voorradig</p>
-                </div>
-                <button v-if="product.stock !== 0" class="button-1" v-on:click="addToCart(product)">In winkelwagen</button>
-                <h1 v-if="product.stock === 0">Helaas, deze is uitverkocht!</h1>
-                
-            </div>
+
 
 
             <div class="modal-overlay" v-show="showModal" @click="showModal = false" v-if="product.id == PC">
@@ -172,43 +174,50 @@ export default {
     width: 80%;
 }
 
+
 .product {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.product img {
-    width: 100%;
-}
-
-.product_text {
-    padding: 25px 0;
-}
-
-.order_box {
-    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.order_box div {
+.product img {
+    width: calc(45% - 10px);
+    margin-right: 15px;
+}
+
+.product__info {
+    min-width: calc(50% - 10px);
+    margin-left: 15px;
+}
+
+.product__info h1 {
+    margin-bottom: 15px;
+}
+
+.product__info__box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0px;
+}
+
+.product__info__box div {
     width: 25%;
 }
 
-.order_box div input {
+.product__info__box div input {
     width: 100%;
     height: 65px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
     border-radius: 4px;
     padding: 0.5em 1em;
-    border: 1px solid black;
+    border: 1px solid rgb(0 0 0 / 25%);
     cursor: text;
     text-align: center;
 }
 
-.order_box div p {
+.product__info__box div p {
     display: none;
 }
 
@@ -225,8 +234,73 @@ input[type=number] {
 }
 
 
-.order_box button {
+.product__info__box button {
     width: 70%;
+}
+
+
+
+
+@media only screen and (max-width: 1300px) {
+    .breadcrumbs, section {
+        width: 85%;
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+    .breadcrumbs, section {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .breadcrumbs, section {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    
+    .breadcrumbs, section {
+        width: 75%;
+    }
+
+    .product {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product img {
+        width: 100%;
+    }
+
+    .product__info {
+        min-width: 100%;
+        width: 100%;
+        margin: 50px 0px 0px 0px;
+    }
+
+    .product__info__box {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .breadcrumbs, section {
+        width: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .breadcrumbs, section {
+        width: 95%;
+    }
+
 }
 
 
@@ -241,21 +315,11 @@ input[type=number] {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.error-1, .error-2 {
+    display: none;
+    color: rgb(156, 6, 6);
+    font-size: 16px;
+}
 
 .modal-overlay {
     position: fixed;
@@ -267,7 +331,7 @@ input[type=number] {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 999;
+    z-index: 999999;
 }
 
 .modal {
