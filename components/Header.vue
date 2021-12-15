@@ -146,6 +146,8 @@ header .nav-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1523px;
+    width: 95%;
 }
 
 

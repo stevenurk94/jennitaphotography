@@ -50,12 +50,12 @@
                 <h1>{{ product.name }}</h1>
                 <p>€ {{ product.price.toFixed(2) }} p/st.</p>
                 <div class="product__info__box" v-if="product.id == PC">
-                    <div>
-                        <input v-if="product.stock !== 0" name="amount" type="text" v-model.number="quantity" @keyup.enter="addToCart(product)">
+                    <div v-if="product.stock !== 0">
+                        <input name="amount" type="text" v-model.number="quantity" @keyup.enter="addToCart(product)">
                     </div>
 
                     <button v-if="product.stock !== 0" class="button-1" v-on:click="addToCart(product)">In winkelwagen</button>
-                    <h1 v-if="product.stock === 0">Helaas, deze is uitverkocht!</h1>
+                    <h1 v-if="product.stock === 0">Helaas, dit artikel is uitverkocht!</h1>
                     
                 </div>
                 <p class="error-1">Voer een geldig getal in</p>
@@ -171,7 +171,8 @@ export default {
 <style scoped>
 
 .breadcrumbs, section {
-    width: 80%;
+    max-width: 1523px;
+    width: 95%;
 }
 
 
@@ -181,13 +182,13 @@ export default {
 }
 
 .product img {
-    width: calc(45% - 10px);
-    margin-right: 15px;
+    width: calc(50% - 0.7%);
+    margin-right: 1%;
 }
 
 .product__info {
-    min-width: calc(50% - 10px);
-    margin-left: 15px;
+    min-width: calc(50% - 1.5%);
+    margin-left: 1%;
 }
 
 .product__info h1 {
@@ -197,13 +198,20 @@ export default {
 .product__info__box {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     margin: 25px 0px;
 }
 
 .product__info__box div {
     width: 25%;
+    margin-right: 15px;
 }
+
+.product__info__box button {
+    width: 70%;
+    max-width: 75%;
+}
+
+
 
 .product__info__box div input {
     width: 100%;
@@ -234,38 +242,10 @@ input[type=number] {
 }
 
 
-.product__info__box button {
-    width: 70%;
-}
 
 
-
-
-@media only screen and (max-width: 1300px) {
-    .breadcrumbs, section {
-        width: 85%;
-    }
-
-}
-
-@media only screen and (max-width: 1100px) {
-    .breadcrumbs, section {
-        width: 90%;
-    }
-}
-
-@media only screen and (max-width: 900px) {
-    .breadcrumbs, section {
-        width: 95%;
-    }
-}
-
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 767px) {
     
-    .breadcrumbs, section {
-        width: 75%;
-    }
-
     .product {
         display: flex;
         flex-direction: column;
@@ -287,22 +267,6 @@ input[type=number] {
         justify-content: space-between;
     }
 }
-
-@media only screen and (max-width: 600px) {
-    .breadcrumbs, section {
-        width: 80%;
-    }
-
-}
-
-@media only screen and (max-width: 500px) {
-
-    .breadcrumbs, section {
-        width: 95%;
-    }
-
-}
-
 
 
 

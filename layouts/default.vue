@@ -108,6 +108,7 @@ p {
 
 section {
   width: 95%;
+  border-top: 1px solid black;
 }
 
 
@@ -121,18 +122,22 @@ section {
   color: white;
   padding: 0.5em 1.25em;
 
+
   /* background: linear-gradient(#567670, #3a524d); */
 
   background-color: #567670;
   background-image: linear-gradient(rgb(0 0 0 / 5%), rgb(0 0 0 / 35%));
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-size: 1.5em;
   text-decoration: none;
   border-radius: 4px;
+  border: none;
   transition: all 500ms ease-in-out;
   box-shadow: 1px 1px rgb(0 0 0 / 16%), 0 2px 5px rgb(0 0 0 / 8%);
   /* margin: 10px 0; */
+  overflow: hidden;
+  font-weight: 500;
   
 }
 
