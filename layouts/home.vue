@@ -9,6 +9,11 @@
 </template>
 
 <style scoped>
+
+main {
+  padding: 0;
+}
+
 header {
   background: transparent;
 }

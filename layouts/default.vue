@@ -71,6 +71,12 @@ export default {
 }
 
 
+main {
+  padding: 100px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 
 

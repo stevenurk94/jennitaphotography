@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="breadcrumbs">
         <span v-for="(item, index) in items" :key="index">
             <NuxtLink v-if="item.url" :to="item.url">{{ item.label }}</NuxtLink>
             <span v-else class="inactive">{{ item.label }}</span>
@@ -23,7 +23,6 @@ export default {
 <style scoped>
 
 div {
-    width: 80%;
     margin: 20px 0px;
 }
 
