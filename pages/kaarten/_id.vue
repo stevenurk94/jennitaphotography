@@ -52,6 +52,7 @@
 
             <div class="product__info" v-if="product.id == PC">
                 <h1>{{ product.name }}</h1>
+                <h3>{{ product.category }}</h3>
                 <p>€ {{ product.price.toFixed(2) }} p/st.</p>
                 <div class="product__info__box" v-if="product.id == PC">
                     <div v-if="product.stock !== 0">
@@ -199,8 +200,12 @@ export default {
     margin-left: 2%;
 }
 
-.product__info h1 {
-    margin-bottom: 15px;
+.product__info h3 {
+    text-transform: uppercase;
+    color: #3A524D;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin: 3px 0px 20px 0px;
 }
 
 .product__info__box {
