@@ -106,12 +106,12 @@ p {
   font-weight: 400;
 }
 
-section {
+
+
+.breadcrumbs, section {
+  max-width: 1523px;
   width: 95%;
-  border-top: 1px solid black;
 }
-
-
 
 
 

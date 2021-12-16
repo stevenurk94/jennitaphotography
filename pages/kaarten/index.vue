@@ -60,9 +60,11 @@ main {
 }
 
 
-section, h2, .breadcrumbs {
+h2 {
+    max-width: 1523px;
     width: 95%;
 }
+
 
 .products {
     display: flex;
@@ -72,10 +74,11 @@ section, h2, .breadcrumbs {
 .products__cart {
     box-shadow: 0 0 0 1px #dadce0;
     border-radius: 5px;
-    margin: 10px 3%;
+    margin: 15px 12.5px; 
     overflow: hidden;
     cursor: pointer;
-    width: calc(50% - 1.5%);
+    width: calc(20% - 20px);
+    min-width: 225px;
 
     background: #fff;
     transition: all .2s ease-out;
@@ -85,87 +88,25 @@ section, h2, .breadcrumbs {
     color: black;
 }
 
-.products__cart:nth-child(1n + 1) {
+.products__cart:nth-child(5n + 1) {
     margin-left: 0px;
-    margin-right: 1.5%;
 }
 
-.products__cart:nth-child(2n + 2) {
+.products__cart:nth-child(5n + 5) {
     margin-right: 0px;
-    margin-left: 1.5%;
 }
 
-
-@media only screen and (min-width: 480px) {
-
-    .products__cart {
-        margin: 15px 5%;
-        width: calc(50% - 2.5%);
-    }
-
-    .products__cart:nth-child(1n + 1) {
-        margin-left: 0px;
-        margin-right: 2.5%;
-    }
-
-    .products__cart:nth-child(2n + 2) {
-        margin-right: 0px;
-        margin-left: 2.5%;
-    }
-
-}
-
-@media only screen and (min-width: 650px) {
+@media only screen and (max-width: 1290px) {
 
     .products__cart {
-        margin: 15px 5px;
-        width: calc(33% - 5px);
+        width: calc(25% - 20px);
+        margin: 15px 1.08%;
     }
 
-    .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
-        margin: 15px 5px;
+    .products__cart:nth-child(5n + 1), .products__cart:nth-child(5n + 5) {
+        margin-left: 1.08%;
+        margin-right: 1.08%;
     }
-
-    .products__cart:nth-child(3n + 1) {
-        margin-left: 0px;
-    }
-
-    .products__cart:nth-child(3n + 3) {
-        margin-right: 0px;
-    }
-}
-
-@media only screen and (min-width: 750px) {
-
-    .products__cart {
-        margin: 15px 10px;
-        width: calc(33% - 11px);
-    }
-
-    .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
-        margin: 15px 10px;
-    }
-
-    .products__cart:nth-child(3n + 1) {
-        margin-left: 0px;
-    }
-
-    .products__cart:nth-child(3n + 3) {
-        margin-right: 0px;
-    }
-}
-
-@media only screen and (min-width: 950px) {
-
-    .products__cart {
-        margin: 15px 10px;
-        width: calc(25% - 15px);
-    }
-
-    .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
-        margin: 15px 10px;
-    }
-
 
     .products__cart:nth-child(4n + 1) {
         margin-left: 0px;
@@ -176,96 +117,92 @@ section, h2, .breadcrumbs {
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 1013px) {
 
     .products__cart {
-        margin: 15px 10px;
-        width: calc(20% - 16px);
+        width: calc(33% - 20px);
+        margin: 15px 1.81%;
     }
 
-    .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
-        margin: 15px 10px;
+    .products__cart:nth-child(5n + 1), .products__cart:nth-child(5n + 5), .products__cart:nth-child(4n + 1), .products__cart:nth-child(4n + 4) {
+        margin-left: 1.81%;
+        margin-right: 1.81%;
     }
 
-
-    .products__cart:nth-child(5n + 1) {
+    .products__cart:nth-child(3n + 1) {
         margin-left: 0px;
     }
 
-    .products__cart:nth-child(5n + 5) {
+    .products__cart:nth-child(3n + 3) {
         margin-right: 0px;
     }
 }
 
-@media only screen and (min-width: 1300px) {
-    .section, h2, .products, .breadcrumbs {
-        width: 90%;
-    }
-
+@media only screen and (max-width: 766px) {
     .products__cart {
-        margin: 15px 10px;
-        width: calc(20% - 16px);
+        width: calc(50% - 20px);
+        margin: 15px 2.7%;
     }
 
-    .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
-        margin: 15px 10px;
+    .products__cart:nth-child(5n + 1), .products__cart:nth-child(5n + 5), .products__cart:nth-child(4n + 1), .products__cart:nth-child(4n + 4), .products__cart:nth-child(3n + 1), .products__cart:nth-child(3n + 3) {
+        margin-left: 2.7%;
+        margin-right: 2.7%;
     }
 
-    .products__cart:nth-child(5n + 1) {
+    .products__cart:nth-child(2n + 1) {
         margin-left: 0px;
     }
 
-    .products__cart:nth-child(5n + 5) {
+    .products__cart:nth-child(2n + 2) {
         margin-right: 0px;
     }
 }
 
-@media only screen and (min-width: 1400px) {
-    .section, h2, .products, .breadcrumbs {
-        width: 85%;
-    }
-
+@media only screen and (max-width: 501px) {
     .products__cart {
-        margin: 15px 10px;
-        width: calc(20% - 16px);
+        width: 47.5%;
+        margin: 15px 2.5%;
+        min-width: auto;
     }
 
-    .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
-        margin: 15px 10px;
+    .products__cart:nth-child(5n + 1), .products__cart:nth-child(5n + 5), .products__cart:nth-child(4n + 1), .products__cart:nth-child(4n + 4), .products__cart:nth-child(3n + 1), .products__cart:nth-child(3n + 3) {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
     }
 
-
-    .products__cart:nth-child(5n + 1) {
+    .products__cart:nth-child(2n + 1) {
         margin-left: 0px;
     }
 
-    .products__cart:nth-child(5n + 5) {
+    .products__cart:nth-child(2n + 2) {
         margin-right: 0px;
     }
 }
 
-@media only screen and (min-width: 1500px) {
-    .section, h2, .products, .breadcrumbs {
-        width: 80%;
-    }
-
+@media only screen and (max-width: 450px) {
     .products__cart {
-        margin: 15px 12px;
-        width: calc(20% - 20px);
+        width: 48.5%;
+        margin: 10px 1.5%;
+        min-width: auto;
     }
 
-    .products__cart:nth-child(1n + 1), .products__cart:nth-child(2n + 2) {
-        margin: 15px 12px;
+    .products__cart:nth-child(5n + 1), .products__cart:nth-child(5n + 5), .products__cart:nth-child(4n + 1), .products__cart:nth-child(4n + 4), .products__cart:nth-child(3n + 1), .products__cart:nth-child(3n + 3) {
+        margin-left: 1.5%;
+        margin-right: 1.5%;
     }
 
-    .products__cart:nth-child(5n + 1) {
+    .products__cart:nth-child(2n + 1) {
         margin-left: 0px;
     }
 
-    .products__cart:nth-child(5n + 5) {
+    .products__cart:nth-child(2n + 2) {
         margin-right: 0px;
     }
 }
+
+
+
+
 
 
 .products__cart:hover {

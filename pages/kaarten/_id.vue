@@ -45,7 +45,11 @@
 
         <div v-for="product in PhotoCards" :key="product.id" :product="product"  class="product">
 
-            <img v-if="product.id == PC" :src="require(`@/static/img${product.image2}`)" alt="">
+            <div class="product__img" v-if="product.id == PC">
+                <img :src="require(`@/static/img${product.image2}`)" alt="">
+
+            </div>
+
             <div class="product__info" v-if="product.id == PC">
                 <h1>{{ product.name }}</h1>
                 <p>€ {{ product.price.toFixed(2) }} p/st.</p>
@@ -170,25 +174,29 @@ export default {
 
 <style scoped>
 
-.breadcrumbs, section {
-    max-width: 1523px;
-    width: 95%;
-}
-
-
 .product {
     display: flex;
     justify-content: space-between;
+
 }
 
-.product img {
+.product__img {
+    display: flex;
+    justify-content: center;
     width: calc(50% - 0.7%);
-    margin-right: 1%;
+    border: 1px solid #3a524db4;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.product__img img {
+    width: 70%;
+    min-width: 300px;
 }
 
 .product__info {
     min-width: calc(50% - 1.5%);
-    margin-left: 1%;
+    margin-left: 2%;
 }
 
 .product__info h1 {
@@ -251,14 +259,15 @@ input[type=number] {
         flex-direction: column;
     }
 
-    .product img {
+    .product__img, .product__img img {
         width: 100%;
     }
 
     .product__info {
         min-width: 100%;
         width: 100%;
-        margin: 50px 0px 0px 0px;
+        margin: 30px 0px 0px 0px;
+        padding: 2px;
     }
 
     .product__info__box {
