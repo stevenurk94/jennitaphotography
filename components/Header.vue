@@ -181,7 +181,7 @@ header .nav-section.open nav {
 
 
 header .nav-section .background-image {
-    background: url("~/static/img/kaart0004.jpeg");
+    background: url("~/assets/img/kaart0004.jpeg");
     background-size: cover;
     background-position: center;
     width: 100vw;

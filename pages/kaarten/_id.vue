@@ -46,7 +46,7 @@
         <div v-for="product in PhotoCards" :key="product.id" :product="product"  class="product">
 
             <div class="product__img" v-if="product.id == PC">
-                <img :src="require(`@/static/img${product.image2}`)" alt="">
+                <img :src="require(`~/assets/img${product.image2}`)" alt="">
 
             </div>
 
@@ -80,7 +80,7 @@
                         <span class="modal__close" @click="showModal = false">&#10060;</span>
                         <div class="modal__product">
                             <div class="modal__product__img">
-                                <img :src="require(`@/static/img${product.image2}`)" alt="">
+                                <img :src="require(`~/assets/img${product.image2}`)" alt="">
                             </div>
                             
                             <div class="modal__product__info">

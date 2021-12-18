@@ -5,11 +5,12 @@
     <h2>Fotokaarten</h2>
     <section class="products">
         <NuxtLink class="products__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCards" :key="PhotoCards.id">
-            <img :src="require(`@/static/img${PhotoCards.image2}`)" alt="">
+            <img :src="require(`~/assets/img${PhotoCards.image2}`)" alt="">
             <div>
                 <h3>{{ PhotoCards.name }}</h3>
                 <p>€ {{ PhotoCards.price.toFixed(2) }}</p>
             </div>
+            <h3 class="products__cart__category">{{ PhotoCards.category }}</h3>
         </NuxtLink>
 
     </section>
@@ -209,7 +210,7 @@ h2 {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%);
 }
 
-.products__cart h3 {
+.products__cart div h3 {
     font-size: 17px;
 }
 
@@ -236,10 +237,21 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 10px 10px 15px 10px;
+    margin: 10px 10px 5px 10px;
     width: 85%;
 }
 
+
+.products__cart__category {
+    text-transform: uppercase;
+    color: #3A524D;
+    margin: 2px 10px 15px 10px;
+    width: 85%;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+}
 
 
 </style>
