@@ -7,7 +7,7 @@
         "slug": "1",
         "stock": 10,
         "image2": "/kaart0001.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@
         "slug": "2",
         "stock": 10,
         "image2": "/kaart0002.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 3,
@@ -27,7 +27,7 @@
         "slug": "3",
         "stock": 20,
         "image2": "/kaart0003.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 4,
@@ -37,7 +37,7 @@
         "slug": "4",
         "stock": 10,
         "image2": "/kaart0004.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 5,
@@ -47,7 +47,7 @@
         "slug": "5",
         "stock": 10,
         "image2": "/kaart0005.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 6,
@@ -57,7 +57,7 @@
         "slug": "6",
         "stock": 10,
         "image2": "/kaart0006.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 7,
@@ -67,7 +67,7 @@
         "slug": "7",
         "stock": 10,
         "image2": "/kaart0007.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 8,
@@ -77,7 +77,7 @@
         "slug": "8",
         "stock": 10,
         "image2": "/kaart0008.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 9,
@@ -87,7 +87,7 @@
         "slug": "9",
         "stock": 10,
         "image2": "/kaart0009.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 10,
@@ -97,7 +97,7 @@
         "slug": "10",
         "stock": 10,
         "image2": "/kaart0010.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 11,
@@ -107,7 +107,7 @@
         "slug": "11",
         "stock": 0,
         "image2": "/kaart0011.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 12,
@@ -117,7 +117,7 @@
         "slug": "12",
         "stock": 10,
         "image2": "/kaart0012.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 13,
@@ -127,7 +127,7 @@
         "slug": "13",
         "stock": 10,
         "image2": "/kaart0013.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 14,
@@ -137,7 +137,7 @@
         "slug": "14",
         "stock": 10,
         "image2": "/kaart0014.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 15,
@@ -147,7 +147,7 @@
         "slug": "15",
         "stock": 10,
         "image2": "/kaart0015.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 16,
@@ -157,7 +157,7 @@
         "slug": "16",
         "stock": 10,
         "image2": "/kaart0016.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 17,
@@ -167,7 +167,7 @@
         "slug": "17",
         "stock": 10,
         "image2": "/kaart0017.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 18,
@@ -177,7 +177,7 @@
         "slug": "18",
         "stock": 10,
         "image2": "/kaart0018.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 19,
@@ -187,7 +187,7 @@
         "slug": "19",
         "stock": 10,
         "image2": "/kaart0019.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 20,
@@ -197,7 +197,7 @@
         "slug": "20",
         "stock": 10,
         "image2": "/kaart0020.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 21,
@@ -207,7 +207,7 @@
         "slug": "21",
         "stock": 10,
         "image2": "/kaart0021.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 22,
@@ -217,7 +217,7 @@
         "slug": "22",
         "stock": 10,
         "image2": "/kaart0022.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 23,
@@ -227,7 +227,7 @@
         "slug": "23",
         "stock": 10,
         "image2": "/kaart0023.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 24,
@@ -237,7 +237,7 @@
         "slug": "24",
         "stock": 10,
         "image2": "/kaart0024.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 25,
@@ -247,7 +247,7 @@
         "slug": "25",
         "stock": 10,
         "image2": "/kaart0025.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 26,
@@ -257,7 +257,7 @@
         "slug": "26",
         "stock": 10,
         "image2": "/kaart0026.jpeg",
-        "category": "categorie"
+        "category": "blanco"
     },
     {
         "id": 27,
@@ -267,7 +267,7 @@
         "slug": "27",
         "stock": 10,
         "image2": "/kaart0027.jpeg",
-        "category": "categorie"
+        "category": "geboorte"
     },
     {
         "id": 28,
@@ -277,7 +277,7 @@
         "slug": "28",
         "stock": 10,
         "image2": "/kaart0028.jpeg",
-        "category": "categorie"
+        "category": "geboorte"
     },
     {
         "id": 29,
@@ -287,6 +287,96 @@
         "slug": "29",
         "stock": 10,
         "image2": "/kaart0029.jpeg",
-        "category": "categorie"
+        "category": "geboorte"
+    },
+    {
+        "id": 30,
+        "name": "Fotokaart 30",
+        "image": "/_nuxt/static/img/kaart0030.jpg",
+        "price": 0.90,
+        "slug": "30",
+        "stock": 10,
+        "image2": "/kaart0030.jpg",
+        "category": "geboorte"
+    },
+    {
+        "id": 31,
+        "name": "Fotokaart 31",
+        "image": "/_nuxt/static/img/kaart0031.jpeg",
+        "price": 0.90,
+        "slug": "31",
+        "stock": 10,
+        "image2": "/kaart0031.jpeg",
+        "category": "geboorte"
+    },
+    {
+        "id": 32,
+        "name": "Fotokaart 32",
+        "image": "/_nuxt/static/img/kaart0032.jpeg",
+        "price": 0.90,
+        "slug": "32",
+        "stock": 10,
+        "image2": "/kaart0032.jpeg",
+        "category": "geboorte"
+    },
+    {
+        "id": 33,
+        "name": "Fotokaart 33",
+        "image": "/_nuxt/static/img/kaart0033.jpeg",
+        "price": 0.90,
+        "slug": "33",
+        "stock": 10,
+        "image2": "/kaart0033.jpeg",
+        "category": "geboorte"
+    },
+    {
+        "id": 34,
+        "name": "Fotokaart 34",
+        "image": "/_nuxt/static/img/kaart0034.jpeg",
+        "price": 0.90,
+        "slug": "34",
+        "stock": 10,
+        "image2": "/kaart0034.jpeg",
+        "category": "geboorte"
+    },
+    {
+        "id": 35,
+        "name": "Fotokaart 35",
+        "image": "/_nuxt/static/img/kaart0035.jpeg",
+        "price": 0.90,
+        "slug": "35",
+        "stock": 10,
+        "image2": "/kaart0035.jpeg",
+        "category": "geboorte"
+    },
+    {
+        "id": 36,
+        "name": "Fotokaart 36",
+        "image": "/_nuxt/static/img/kaart0036.jpeg",
+        "price": 0.90,
+        "slug": "36",
+        "stock": 10,
+        "image2": "/kaart0036.jpeg",
+        "category": "verjaardag jongen"
+    },
+    {
+        "id": 37,
+        "name": "Fotokaart 37",
+        "image": "/_nuxt/static/img/kaart0037.jpeg",
+        "price": 0.90,
+        "slug": "37",
+        "stock": 10,
+        "image2": "/kaart0037.jpeg",
+        "category": "verjaardag jongen"
+    },
+    {
+        "id": 38,
+        "name": "Fotokaart 38",
+        "image": "/_nuxt/static/img/kaart0038.jpeg",
+        "price": 0.90,
+        "slug": "38",
+        "stock": 10,
+        "image2": "/kaart0038.jpeg",
+        "category": "verjaardag jongen"
     }
 ]
