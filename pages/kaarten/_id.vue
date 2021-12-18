@@ -56,7 +56,7 @@
                 <p>€ {{ product.price.toFixed(2) }} p/st.</p>
                 <div class="product__info__box" v-if="product.id == PC">
                     <div v-if="product.stock !== 0">
-                        <input name="amount" type="text" v-model.number="quantity" @keyup.enter="addToCart(product)">
+                        <input name="amount" type="number" v-model.number="quantity" @keyup.enter="addToCart(product)">
                     </div>
 
                     <button v-if="product.stock !== 0" class="button-1" v-on:click="addToCart(product)">In winkelwagen</button>
@@ -69,20 +69,35 @@
 
 
 
-
-            <div class="modal-overlay" v-show="showModal" @click="showModal = false" v-if="product.id == PC">
-                <div class="modal" @click.stop>
-                    <h1>Opgeslagen in uw winkelwagen!</h1>
-                    <img class="modal-image" :src="product.image" alt="">
-                    <h2>{{ product.name }}</h2>
-                    <h3></h3>
-                    <p>Aantal: {{ product.quantity }}</p>
-                    <p>Price: €{{ product.price.toFixed(2) }}</p>
-                    <p>Total item cost: €{{ (product.price * product.quantity).toFixed(2) }}</p>
-                    <NuxtLink class="button-1" to="/winkelwagen">Naar winkelwagen</NuxtLink>
-                    <div class="button-2" @click="showModal = false">Verder winkelen</div>
+            <transition name="fade">
+                <div class="modal-overlay" v-show="showModal" @click="showModal = false" v-if="product.id == PC">
+                    <div class="modal" @click.stop>
+                        <Loading />
+                        <div class="modal__header">
+                            <span>&#10003;</span>
+                            <h2>Toegevoegd aan je winkelwagen</h2>
+                        </div>                  
+                        <span class="modal__close" @click="showModal = false">&#10060;</span>
+                        <div class="modal__product">
+                            <div class="modal__product__img">
+                                <img :src="require(`@/static/img${product.image2}`)" alt="">
+                            </div>
+                            
+                            <div class="modal__product__info">
+                                <h2>{{ product.name }}</h2>
+                                <h3>{{ product.category }}</h3>
+                                <p>Aantal: {{ product.quantity }}</p>
+                                <p>€ {{ product.price.toFixed(2) }}</p>
+                                <!-- <p>Total item cost: €{{ (product.price * product.quantity).toFixed(2) }}</p> -->
+                            </div>
+                        </div>
+                        <div class="modal__buttons">
+                            <NuxtLink class="button-1" to="/winkelwagen">Naar winkelwagen</NuxtLink>
+                            <button class="button-2" @click="showModal = false">Verder winkelen</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </transition>
         </div>
     </section>
 
@@ -150,7 +165,7 @@ export default {
             if (product.quantity > product.stock) {
                 document.querySelector(".error-2").style.display = "block";
             } 
-            if (product.quantity < product.stock && product.quantity > 0) {
+            if (product.quantity <= product.stock && product.quantity > 0) {
                 this.$store.commit("addToCart", product);
                 this.showModal = true
             }
@@ -164,8 +179,13 @@ export default {
                 document.querySelector(".notification-label").innerHTML = "99+";
             } else if (this.cartItemCount == 0) {
                 document.querySelector(".notification-label").style.display = "none";
-            }                       
+            }        
+            
+            setTimeout(() => {
+                document.querySelector(".loadingbullets").style.display = "none";
+            }, 1000)
         },
+
     },
 }
 
@@ -284,20 +304,33 @@ input[type=number] {
 
 
 
-
-
-
-
-
-
-
-
-
 .error-1, .error-2 {
     display: none;
     color: rgb(156, 6, 6);
     font-size: 16px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .modal-overlay {
     position: fixed;
@@ -310,20 +343,185 @@ input[type=number] {
     align-items: center;
     justify-content: center;
     z-index: 999999;
+    transition: all 3s ease-in-out;
 }
 
 .modal {
+    max-width: 900px;
     background-color: white;
     width: 90%;    
     border-radius: 5px;
     padding: 20px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal__close {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #3a524dbe;
+    font-weight: 600;
+}
+
+.modal__header {
+    display: flex;
+}
+
+.modal__header h2 {
+    margin-bottom: 30px;
+    color: #3A524D;
+    margin-right: 40px;
+}
+
+.modal__header span {
+    color: #3A524D;
+    border-radius: 50%; 
+    height: fit-content;
+    font-size: 20px;
+    max-width: 35px;
+    max-height: 35px;
+    min-width: 35px;
+    min-height: 35px;
+    width: 35px;
+    height: 35px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    padding-top: 1.5px;
+    font-family: 'Work Sans', serif;
+    border: 2px solid #3A524D;
+}
+
+
+.modal__product {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.modal__product__img {
+    border-radius: 5px;
+    border: 1px solid #3a524db4;
+    padding: 10px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin: 0px 30px 20px 0px;
+}
+
+.modal__product img {
+    max-width: 60%;
+}
+
+.modal__product__info {
+    width: 50%;
+}
+
+.modal__product__info h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #3A524D;
+}
+
+.modal__product__info p {
+    margin-bottom: 5px;
+}
+
+
+.modal__buttons {
+    display: flex;
+    align-items: center;
+}
+
+.modal__buttons a {
+    margin-right: 18px;
+}
+
+.modal__buttons a, .modal__buttons button {   
+    width: calc(50% - 10px);
+    height: 100%;
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+    .modal__header h2 {
+        font-size: 25px;
+    }
+
+    .modal__header span {
+        font-size: 17px;
+        border: 1.5px solid #3A524D;
+        max-width: 30px;
+        max-height: 30px;
+        min-width: 30px;
+        min-height: 30px;
+    }
+
+    .modal__product h2 {
+        font-size: 25px;
+    }
+
+
+
+
+
+
+    .modal__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal__buttons a {
+        margin: 0px 0px 5px 0px;
+    }
+
+    .modal__buttons a, .modal__buttons button {   
+        width: 100%;
+    }
+
+    
+
 
 }
 
-.modal-image {
-    height: 200px;
-    max-width: 200px;
+
+
+
+.fade-enter-active, .fade-leave-active {
+    transition: all 300ms ease-in-out;
 }
+
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>

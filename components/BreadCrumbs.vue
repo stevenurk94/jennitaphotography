@@ -28,10 +28,16 @@ div {
 
 span {
     font-family: 'Work Sans', sans-serif;
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
     color: #3A524D;
     margin-right: 5px;
+}
+
+a {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 a:visited {

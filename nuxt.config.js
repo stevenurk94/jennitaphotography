@@ -4,6 +4,9 @@ export default {
   //   base: '/static-jennitaphotography/'
   // },
   // ssr: 'false',
+
+  // Transition between pages
+  pageTransition: 'pages',
   
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -20,14 +23,15 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap'},
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap'}
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap' }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/css/reset.css',
+    '~/assets/pageTransition.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
