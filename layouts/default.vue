@@ -102,10 +102,16 @@ h3 {
 
 p {
   font-family: 'Work Sans', sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
 }
 
+a {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: black;
+}
 
 
 .breadcrumbs, section {
