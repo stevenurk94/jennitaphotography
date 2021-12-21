@@ -1,5 +1,6 @@
 <template>
     <div class="breadcrumbs">
+        <span v-if="cartbreadcrumbs" class="arrow">&#8592;</span>
         <span v-for="(item, index) in items" :key="index">
             <NuxtLink v-if="item.url" :to="item.url">{{ item.label }}</NuxtLink>
             <span v-else class="inactive">{{ item.label }}</span>
@@ -15,6 +16,9 @@ export default {
         items: {
             type: Array,
             required: true,
+        },
+        cartbreadcrumbs: {
+            required: true
         }
     }
 }
@@ -38,6 +42,10 @@ a {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 a:visited {

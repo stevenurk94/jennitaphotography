@@ -21,13 +21,6 @@
 
 <style scoped>
 
-
-
-
-
-
-
-
 .home {
   background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 50%)), url("~/assets/img/kaart0014.jpeg");
   /* background: linear-gradient(
@@ -65,6 +58,7 @@
   /* background: url("~/assets/img/image00006.jpeg"); */
   width: 100%;
   height: 100vh;
+  max-width: 100%;
   background-position: center;
   background-size: cover;
   display: flex;
