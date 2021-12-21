@@ -3,19 +3,17 @@
         <BreadCrumbs :items="breadcrumbs" :cartbreadcrumbs="true"/>
         <h1 v-if="cartItemCount">Uw winkelwagen</h1>
         <section>
-            <div class="items">
+            <div class="items" v-if="cartItemCount">
                 <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
-                    <div class="items__card__img">
+                    <NuxtLink class="items__card__img" :to="`/kaarten/${ product.slug }`">
                         <img :src="require(`~/assets/img${product.image2}`)" alt="">
-                    </div>
+                    </NuxtLink>
                 
                     <div class="items__card__info">
-                        <h2>{{ product.name }}</h2>
+                        <NuxtLink :to="`/kaarten/${ product.slug }`">{{ product.name }}</NuxtLink>
                         <h3>{{ product.category }}</h3>
-                        
-                        <h3>Prijs per stuk: € {{ (product.price * 1).toFixed(2) }}</h3>
-                        <h3>Totaal: € {{ (product.price * product.quantity).toFixed(2) }}</h3>
-                        <p style="text-decoration:underline;cursor:pointer;" v-on:click="removeProductFromCart(product)">&#128465; Uit winkelwagen verwijderen</p>
+                        <p>€ {{ (product.price * product.quantity).toFixed(2) }}</p>
+                        <p class="items__card__info__remove" v-on:click="removeProductFromCart(product)">&#128465; Verwijderen</p>
                         
                         <div class="items__card__info__quantity">
                             <button @click="removeOneFromCart(product)">&#8722;</button>
@@ -27,23 +25,18 @@
                 </div>
 
             </div>
-
-
-
             <div class="summary" v-if="cartItemCount">
                 <h2>Subtotaal: € {{ (cartTotal).toFixed(2) }}</h2>
-                <NuxtLink v-if="cartItemCount" class="button-1" to="/winkelwagen/gegevens">Afrekenen</NuxtLink>
+                <NuxtLink class="button-1" to="/winkelwagen/gegevens">Afrekenen</NuxtLink>
             </div>
 
 
 
 
-
-
-            <div v-if="!cartItemCount">
-                <h1>Helaas, u heeft geen producten in uw winkelwagen..</h1>
-            </div>
+            
         </section>
+
+        <EmptyCart  v-if="!cartItemCount"/>
         
     </main> 
 </template>
@@ -164,7 +157,7 @@ section {
 }
 
 
-
+/* ########## IMAGE ########## */
 
 .items__card__img {
     border: 1px solid #3a524db4;
@@ -176,8 +169,11 @@ section {
     height: 200px;
     margin-right: 25px;
     padding: 10px;
+    transition: all 300ms ease-in-out;
+}
 
-
+.items__card__img:hover {
+    transform: scale(1.01);
 }
 
 .items__card__img img {
@@ -190,11 +186,46 @@ section {
 
 
 
+/* ########## INFO TITLE ########## */
+
+.items__card__info a {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+.items__card__info a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* ########## INFO SUBTITLE ########## */
+
+.items__card__info h3:nth-child(2) {
+    text-transform: uppercase;
+    color: #3A524D;
+    font-size: 17px;
+}
 
 
 
 
 
+/* ########## INFO REMOVE ########## */
+
+.items__card__info__remove {
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+
+
+
+
+/* ########## INFO QUANTITY ########## */ 
 
 .items__card__info__quantity {
     display: flex;
@@ -270,5 +301,20 @@ section {
 .summary h2 {
     margin-bottom: 50px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </style>
