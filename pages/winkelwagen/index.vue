@@ -32,7 +32,7 @@
                 </div>
 
             </div>
-            <div class="summary" v-if="cartItemCount">
+            <div class="summary sticky" v-if="cartItemCount">
                 <div class="summary__subtotal">
                     <h3>Subtotaal</h3>
                     <h3>€ {{ (cartTotal).toFixed(2) }}</h3>
@@ -338,6 +338,8 @@ section {
     padding: 30px;
     height: fit-content;
     background: #3a524d65;
+    position: sticky;
+    top: 90px;
 }
 
 .summary__subtotal {
@@ -366,7 +368,6 @@ section {
 
 
 
-
 @media only screen and (max-width: 958px) {
 
     section {
@@ -381,8 +382,8 @@ section {
     .summary {
         margin-top: 70px;
         width: 100%;
+        /* position: inherit; */
     }
-    
 }
 
 @media only screen and (max-width: 758px) {
@@ -397,9 +398,6 @@ section {
         content: "🗑";
         font-size: 23px;
     }
-
-
-
 }
 
 
