@@ -10,24 +10,36 @@
                     </NuxtLink>
                 
                     <div class="items__card__info">
-                        <NuxtLink :to="`/kaarten/${ product.slug }`">{{ product.name }}</NuxtLink>
-                        <h3>{{ product.category }}</h3>
-                        <p>€ {{ (product.price * product.quantity).toFixed(2) }}</p>
-                        <p class="items__card__info__remove" v-on:click="removeProductFromCart(product)">&#128465; Verwijderen</p>
-                        
-                        <div class="items__card__info__quantity">
-                            <button @click="removeOneFromCart(product)">&#8722;</button>
-                            <p>{{ product.quantity }}</p>
-                            <button @click="addOneToCart(product)">&#43;</button>
+                        <div class="items__card__info__title">
+                            <NuxtLink :to="`/kaarten/${ product.slug }`">{{ product.name }}</NuxtLink>
+                            <h3>{{ product.category }}</h3>
                         </div>
+                       
 
+                        <div class="items__card__info__options">
+                            <div class="items__card__info__options__change">
+                                <p class="items__card__info__options__change__remove" v-on:click="removeProductFromCart(product)"></p>
+                                <div class="items__card__info__options__change__quantity">
+                                    <button @click="removeOneFromCart(product)">&#8722;</button>
+                                    <p>{{ product.quantity }}</p>
+                                    <button @click="addOneToCart(product)">&#43;</button>
+                                </div>
+                            </div>
+                            
+                            <p>€ {{ (product.price * product.quantity).toFixed(2) }}</p>
+                        </div>                      
                     </div>
                 </div>
 
             </div>
             <div class="summary" v-if="cartItemCount">
-                <h2>Subtotaal: € {{ (cartTotal).toFixed(2) }}</h2>
-                <NuxtLink class="button-1" to="/winkelwagen/gegevens">Afrekenen</NuxtLink>
+                <div class="summary__subtotal">
+                    <h3>Subtotaal</h3>
+                    <h3>€ {{ (cartTotal).toFixed(2) }}</h3>
+                </div>
+                <p>Inclusief btw</p>
+
+                <NuxtLink class="button-1" to="/winkelwagen/gegevens">Ik ga bestellen</NuxtLink>
             </div>
 
 
@@ -143,10 +155,12 @@ h1 {
 
 section {
     display: flex;
+    /* justify-content: space-between; */
 }
 
 .items {
-    width: 66%;
+    width: 60%;
+    margin-right: 85px;
 }
 
 
@@ -154,7 +168,17 @@ section {
     border-bottom: 1px solid #3a524db4;
     padding: 30px 0px;
     display: flex;
+
 }
+
+
+
+
+
+
+
+
+
 
 
 /* ########## IMAGE ########## */
@@ -165,8 +189,10 @@ section {
     display: inherit;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
+    /* width: 110px;
+    height: 110px; */
     margin-right: 25px;
     padding: 10px;
     transition: all 300ms ease-in-out;
@@ -184,67 +210,73 @@ section {
 
 
 
-
+.items__card__info {
+    width: 80%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 
 /* ########## INFO TITLE ########## */
 
-.items__card__info a {
+.items__card__info__title a {
     font-family: 'IBM Plex Serif', serif;
     font-size: 25px;
     font-weight: 600;
 
 }
 
-.items__card__info a:hover {
+.items__card__info__title a:hover {
     text-decoration: underline;
 }
 
-
-
-/* ########## INFO SUBTITLE ########## */
-
-.items__card__info h3:nth-child(2) {
+.items__card__info__title h3 {
     text-transform: uppercase;
     color: #3A524D;
     font-size: 17px;
 }
 
+.items__card__info__options {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 25px;
+}
 
+.items__card__info__options__change {
+    display: flex;
+    align-items: center;
+}
 
-
-
-/* ########## INFO REMOVE ########## */
-
-.items__card__info__remove {
-    text-decoration: underline;
+.items__card__info__options__change__remove {
     cursor: pointer;
+    margin-right: 25px;
+}
 
+.items__card__info__options__change__remove::before {
+    content: "🗑 Verwijderen";
 }
 
 
 
-
-
-/* ########## INFO QUANTITY ########## */ 
-
-.items__card__info__quantity {
+.items__card__info__options__change__quantity {
     display: flex;
-    /* border: 1px solid #3a524db4; */
     border-radius: 5px;
     width: fit-content;   
-    margin-top: 15px;
     align-items: center;
     padding: 0;
 }
 
-.items__card__info__quantity button {
+.items__card__info__options__change__quantity button {
     background: transparent;
     border: 1px solid #3a524db4;
     font-size: 20px;
     cursor: pointer;
     padding: 5px 10px;
     line-height: 1;
-    /* vertical-align: middle; */
+    /* border: none; */
     font-family: 'Work Sans', sans-serif;
     font-weight: 600;
     transition: all 300ms ease-in-out;
@@ -252,21 +284,21 @@ section {
     color: #3A524D;
 }
 
-.items__card__info__quantity button:hover {
+.items__card__info__options__change__quantity button:hover {
     border-color: #3A524D;
 }
 
-.items__card__info__quantity button:nth-child(1) {
+.items__card__info__options__change__quantity button:nth-child(1) {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
-.items__card__info__quantity button:nth-child(3) {
+.items__card__info__options__change__quantity button:nth-child(3) {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
-.items__card__info__quantity p {
+.items__card__info__options__change__quantity p {
     font-size: 16px;
     width: 44px;
     border-top: 1px solid #3a524db4;
@@ -279,6 +311,9 @@ section {
 }
 
 
+.items__card__info__options > p {
+    font-weight: 700;
+}
 
 
 
@@ -287,19 +322,40 @@ section {
 
 
 
+
+
+
+
+
+
+
+
+
+/* ########## SUMMARY ########## */
 .summary {
     width: 33%;
-    border: 1px solid #3a524db4;
     border-radius: 5px;
     padding: 30px;
     height: fit-content;
-    background: #3a524db4;
+    background: #3a524d65;
 }
 
+.summary__subtotal {
+    display: flex;
+    justify-content: space-between;
+}
 
-
-.summary h2 {
+.summary p {
+    margin-top: 2px;
     margin-bottom: 50px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.541);
+}
+
+.summary a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -311,9 +367,40 @@ section {
 
 
 
+@media only screen and (max-width: 958px) {
+
+    section {
+        display: block;
+    }
+
+    .items {
+        width: 100%;
+        margin: 0;
+    }
+
+    .summary {
+        margin-top: 70px;
+        width: 100%;
+    }
+    
+}
+
+@media only screen and (max-width: 758px) {
+
+    .items__card__info__options__change__remove {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .items__card__info__options__change__remove::before {
+        content: "🗑";
+        font-size: 23px;
+    }
 
 
 
+}
 
 
 
