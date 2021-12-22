@@ -392,6 +392,7 @@ section {
         position: absolute;
         top: 0;
         right: 0;
+        margin: 0;
     }
 
     .items__card__info__options__change__remove::before {
