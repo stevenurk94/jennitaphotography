@@ -51,7 +51,6 @@ export default {
             .catch(e => {
                 console.log(e.error)
             })
-
         }
     }, 
 
@@ -80,26 +79,3 @@ export default {
 }
 </script>
 
-
-<style scoped>
-
-
-form {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    right: 0;
-    left: 0;
-    margin: auto;
-}
-
-form > input {
-    height: 30px;
-    width: 100%;
-    margin: 10px 0px;
-}
-
-
-
-
-</style>

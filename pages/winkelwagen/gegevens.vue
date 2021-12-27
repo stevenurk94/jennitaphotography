@@ -3,42 +3,41 @@
 
         <StepIndicator :items="stepindicator" />
 
-        <section class="section">
-            
+        <section>
             <form @submit.prevent="saveCustomerDetails">
                 <h2>Gegevens</h2>
                 
-                <div class="half">
+                <div class="input half">
                     <input name="firstName" type="text" :value="firstName">
                     <span>Voornaam *</span>
                 </div>
 
-                <div class="half">
+                <div class="input half">
                     <input name="lastName" type="text" :value="lastName">
                     <span>Achternaam *</span>
                 </div>
 
-                <div class="half">
+                <div class="input half">
                     <input name="streetName" type="text" :value="streetName">
                     <span>Straatnaam *</span>
                 </div>
 
-                <div class="quarter">
+                <div class="input quarter">
                     <input name="streetNumber" type="number" :value="streetNumber">
                     <span>Huisnummer *</span>
                 </div>
 
-                <div class="quarter">
+                <div class="input quarter">
                     <input name="addition" type="text" :value="addition">
                     <span>Toevoeging</span>
                 </div>
 
-                <div class="half">
+                <div class="input half">
                     <input name="zipCode" type="text" :value="zipCode">
                     <span>Postcode *</span>
                 </div>
 
-                <div class="half">
+                <div class="input half">
                     <input name="place" type="text" :value="place">
                     <span>Woonplaats *</span>
                 </div>
@@ -48,12 +47,12 @@
                     <label for="country"></label>
                 </div> -->
 
-                <div>
+                <div class="input">
                     <input name="email" type="text" :value="email">
                     <span>E-mailadres *</span>
                 </div>
 
-                <div>
+                <div class="input">
                     <input name="phoneNumber" type="text" :value="phoneNumber">
                     <span>Telefoonnummer</span>
                 </div>              
@@ -175,9 +174,6 @@ export default {
         }
     },
 
-
-
-
     methods: {
 
         async saveCustomerDetails () {
@@ -225,12 +221,7 @@ export default {
                 
             })
         })
-            
-
-    }
-
-
-  
+    }  
 }
 </script>
 
@@ -250,7 +241,7 @@ export default {
 
 
 
-<style scoped>
+<style>
 
 /* main {
     background: #f0f2f5;
@@ -262,54 +253,45 @@ h2 {
     width: 100%;
 }
 
-.section {
-    display: flex;
-    justify-content: space-between;
-}
-
 form {
     width: 100%;
     max-width: 800px;
     display: flex;
     flex-wrap: wrap;
-    /* margin-right: 85px; */
-    border: 1px solid #3a524db4;
     border-radius: 5px;
-    padding: 30px 40px;
-    background: white;
     left: 0;
     right: 0;
     margin: auto;
 }
 
-form div {
+form .input {
     margin: 10px 0px;
     position: relative;
     width: 100%;
 }
 
-form div.half {
+form .input.half {
     width: calc(50% - 10px);
 }
 
-form div.quarter {
+form .input.quarter {
     width: calc(25% - 10px);
 }
 
-form div:nth-child(2), form div:nth-child(4), form div:nth-child(7) {
+form .input:nth-child(2), form .input:nth-child(4), form .input:nth-child(7) {
     margin-right: 20px;
 }
 
-form div:nth-child(5) {
+form .input:nth-child(5) {
     margin-right: 10px;
 }
 
-form div:nth-child(10) {
+form .input:nth-child(10) {
     margin-bottom: 40px;
 }
 
 
-form input {
+form .input input {
     border-radius: 5px;
     border: 1px solid #999;
     padding: 13px 15px;
@@ -319,7 +301,7 @@ form input {
 }
 
 
-form div span {
+form .input span {
     position: absolute;
     left: 15px;
     top: 15px;
@@ -333,11 +315,11 @@ form div span {
 }
 
 
-form input:hover, form input:focus, form input.filled {
+form .input input:hover, form .input input:focus, form .input input.filled {
     border: 1.1px solid #3A524D;
 }
 
-form input:focus ~ span, form input.filled ~ span {
+form .input input:focus ~ span, form .input input.filled ~ span {
     transform: scale(.75) translate(-3px, -36px);
     padding: 2px 5px;
     color: #3A524D;
@@ -346,13 +328,82 @@ form input:focus ~ span, form input.filled ~ span {
 
 
 
+
+
+
+
+/* RADIO BUTTONS */
+
+
+
+form input[type="radio"] {
+    display: none;
+}
+
+form .radio {
+    cursor: pointer;
+    padding: 13px 15px;
+    width: 100%;
+    margin: 10px 0px;
+    border: 1.4px solid #999;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 300ms ease-in-out;
+}
+
+form .radio__button {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: 1.5px solid #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+form .radio__button::before {
+    content: "";
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    transition: all 300ms ease-in-out;
+}
+
+form input[type="radio"]:checked + .radio .radio__button::before {
+    background: #3A524D;
+}
+
+form input[type="radio"]:checked + .radio {
+    border: 1.4px solid #3A524D;
+}
+
+.radio__text {
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+.radio__img {
+    height: 20px;
+    position: absolute;
+    right: 15px;
+}
+
+.radio__img.creditcard {
+    right: 18.5px;
+}
+
+
+
+/* 
 .summary {
     width: 33%;
     border-radius: 5px;
     padding: 30px;
     height: fit-content;
-    /* background: #3a524d65; */
     border: 1px solid #3a524db4;
-}
+} */
 
 </style>

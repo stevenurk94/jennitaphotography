@@ -6,15 +6,21 @@
             <form @submit.prevent="saveShipping">
                 <h2>Verzending</h2>
 
-                <div class="shipping">
-                    <input type="radio" id="shipping" name="shipping" :checked="shipping == null || shipping == 'Verzending via PostNL'" value="Verzending via PostNL">
-                    <label for="shipping">Verzending via PostNL</label>
-                </div>
+                <input type="radio" id="shipping" name="shipping" :checked="shipping == null || shipping == 'Verzending via PostNL'" value="Verzending via PostNL">
+                <label class="radio" for="shipping">
 
-                <div v-if="zipCode >= '8320' && zipCode < '8323' || zipCode >= '8280' && zipCode < '8282'" class="shipping">
-                    <input type="radio" id="shippingFree" name="shipping" :checked="shipping == 'Gratis bezorging in Genemuiden en Urk'" value="Gratis bezorging in Genemuiden en Urk">
-                    <label for="shippingFree">Gratis bezorging in Genemuiden en Urk</label>
-                </div>
+                    <span class="radio__button"></span>
+                    <p class="radio__text">Verzending via PostNL</p>
+
+                </label>
+
+                <input type="radio" id="shippingFree" name="shipping" :checked="shipping == 'Gratis bezorging in Genemuiden en Urk'" value="Gratis bezorging in Genemuiden en Urk" v-if="zipCode >= '8320' && zipCode < '8323' || zipCode >= '8280' && zipCode < '8282'">
+                <label class="radio" for="shippingFree" v-if="zipCode >= '8320' && zipCode < '8323' || zipCode >= '8280' && zipCode < '8282'">
+
+                    <span class="radio__button"></span>
+                    <p class="radio__text">Gratis bezorging in Genemuiden en Urk</p>
+
+                </label>
                 
                 <button class="button-1" type="submit">Doorgaan</button>
             </form>
@@ -76,30 +82,3 @@ export default {
 }
 </script>
 
-
-<style scoped>
-
-form {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    right: 0;
-    left: 0;
-    margin: auto;
-}
-
-form > input {
-    height: 30px;
-    width: 100%;
-    margin: 10px 0px;
-}
-
-.shipping {
-    display: flex;
-}
-
-
-
-
-</style>

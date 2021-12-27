@@ -189,8 +189,8 @@ section {
     display: inherit;
     justify-content: center;
     align-items: center;
-    width: 170px;
     height: 170px;
+    width: 140px;
     /* width: 110px;
     height: 110px; */
     margin-right: 25px;
@@ -203,9 +203,9 @@ section {
 }
 
 .items__card__img img {
-    width: 100%;
     height: 100%;
-    object-fit: cover;
+    width: 100%;
+    object-fit: contain;
 }
 
 
