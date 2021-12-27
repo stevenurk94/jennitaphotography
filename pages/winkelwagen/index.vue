@@ -155,7 +155,7 @@ h1 {
 
 section {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
 
 .items {

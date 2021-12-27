@@ -121,6 +121,12 @@ a {
 
 
 
+
+
+
+
+
+
 .button-1 {
   cursor: pointer;
   text-align: center;
@@ -165,7 +171,24 @@ a {
 .button-2:hover {
   background: #3a524d;
   border: 1.5px solid #3a524d;
- }
+}
+
+
+
+
+/* GENERAL CSS SETTINGS */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 
 </style>

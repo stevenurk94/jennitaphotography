@@ -1,6 +1,5 @@
 <template>
 <main>
-
     <BreadCrumbs :items="breadcrumbs"/>
     <h2>Fotokaarten</h2>
     <section class="products">

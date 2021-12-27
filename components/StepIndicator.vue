@@ -2,13 +2,12 @@
     <section>
 
         <div class="StepIndicatorItems">
-            <div class="item" v-for="(item, index) in items" :key="index">
+            <div class="item" v-for="(item, index) in items" :key="index" :class="item.url ? 'completed' : '' || item.page ? 'active' : ''">
                 <NuxtLink v-if="item.url" :to="item.url">{{ item.label }}</NuxtLink>
                 <p v-else-if="item.page" class="active">{{ item.label }}</p>
-                <p v-else>{{ item.label }}</p>
-            </div>
-        </div>
-        
+                <p v-else>{{ item.label }}</p>                
+            </div>            
+        </div>   
 
         <div class="StepIndicator">
             <div class="step" v-for="(item, index) in items" :key="index" :class="item.url ? 'completed' : '' || item.page ? 'active' : ''">
@@ -31,10 +30,54 @@ export default {
             type: Array,
             required: true,
         }
+    },
+
+    mounted: function () {
+        
+        const S1 = document.querySelector(".step:nth-of-type(1)");
+        const S2 = document.querySelector(".step:nth-of-type(2)");
+        const S3 = document.querySelector(".step:nth-of-type(3)");
+        const S4 = document.querySelector(".step:nth-of-type(4)");
+
+        const width1 = document.querySelector(".item:nth-of-type(1)").offsetWidth;
+        S1.style.setProperty("--step-width", width1 + "px");
+
+        const width2 = document.querySelector(".item:nth-of-type(2)").offsetWidth;
+        S2.style.setProperty("--step-width", width2 + "px");
+
+        const width3 = document.querySelector(".item:nth-of-type(3)").offsetWidth;
+        S3.style.setProperty("--step-width", width3 + "px");
+
+        const width4 = document.querySelector(".item:nth-of-type(4)").offsetWidth;
+        S4.style.setProperty("--step-width", width4 + "px");
+
+        const D12 = S2.offsetLeft - S1.offsetLeft;
+        const D23 = S3.offsetLeft - S2.offsetLeft;
+        const D34 = S4.offsetLeft - S3.offsetLeft;
+
+        S2.style.setProperty("--step-width-after", D12 + "px");
+        S4.style.setProperty("--step-width-after", D34 + "px");
+        S3.style.setProperty("--step-width-after", D23 + "px");
+
+
+        window.addEventListener("resize", () => {
+
+            const D12 = S2.offsetLeft - S1.offsetLeft;
+            const D23 = S3.offsetLeft - S2.offsetLeft;
+            const D34 = S4.offsetLeft - S3.offsetLeft;
+
+            S2.style.setProperty("--step-width-after", D12 + "px");
+            S3.style.setProperty("--step-width-after", D23 + "px");
+            S4.style.setProperty("--step-width-after", D34 + "px");
+
+        });
+
     }
 
 }
 </script>
+
+
 
 <style scoped>
 
@@ -43,22 +86,26 @@ export default {
 .StepIndicatorItems {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0px;
+    max-width: 800px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 10px auto;
 }
 
 .StepIndicatorItems a {
     color: #3A524D;
 }
 
-.StepIndicatorItems .item, .StepIndicatorItems a {
-    width: 25%;
+.StepIndicatorItems .item {
     text-align: center;
 }
 
 
-
 .StepIndicatorItems .item {
     color: #979797;
+    position: relative;
+    /* width: 25%; */
 }
 
 .StepIndicatorItems .active {
@@ -81,21 +128,26 @@ export default {
     counter-reset: step;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 50px;
+    max-width: 800px;
+    width: 100%;
+    right: 0;
+    left: 0;
+    margin: 0px auto 50px auto;
 }
 
-.StepIndicator .step {
-    width: 25%;
+.step {
+    /* width: 25%; */
+    width: var(--step-width);
     position: relative;
 }
 
-.StepIndicator .step span {
+.step span {
     position: relative;
     width: 100%;
     text-align: center;
 }
 
-.StepIndicator .step span::before {
+.step span::before {
     content: "";
     counter-increment: step;
     width: 25px;
@@ -112,7 +164,7 @@ export default {
     justify-content: center;
 }
 
-.StepIndicator .step span.completed::before {
+.step span.completed::before {
     content: "✓";/* ✓ */
     border-color: #3A524D;
     background: #3A524D;
@@ -121,7 +173,7 @@ export default {
     font-size: 15px;
 }
 
-.StepIndicator .step span.active::before {
+.step span.active::before {
     background: white;
     color: #bebebe;
     animation: bc 1.5s;
@@ -129,30 +181,30 @@ export default {
     color: #3A524D;
 }
 
-
-
-.StepIndicator .step::after {
+.step::after {
     content: "";
     position: absolute;
-    width: 100%;
+    width: var(--step-width-after);
+    left: calc(50% - var(--step-width-after));
+    /* width: 25%; */
+    /* left: -50%; */
     height: 3px;
-    background: #979797;
+    background: #bebebe;
     top: 47%;
     bottom: 52%;
-    left: -50%;
     z-index: -1;
 }
 
-.StepIndicator .step:first-child::after {
+.step:first-child::after {
     content: none;
 }
 
-.StepIndicator .step.active::after {
+.step.active::after {
     background: #3A524D;
     animation: bg 1s;
 }
 
-.StepIndicator .step.completed::after {
+.step.completed::after {
     background: #3A524D;
 }
 
