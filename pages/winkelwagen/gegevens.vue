@@ -61,46 +61,8 @@
 
             </form>
 
-            <!-- <div class="summary">
-                <h2>Winkelwagen</h2>
-                <button class="button-1">Doorgaan</button>
-
-            </div> -->
-
         </section>
 
-
-
-
-
-
-        <!-- <section>
-            <div class="container">
-                <div class="card">
-                    <form class="card-form">
-                        <div class="input">
-                            <input type="text" class="input-field" required/>
-                            <label class="input-label">Full name</label>
-                        </div>
-                                    <div class="input">
-                            <input type="text" class="input-field" required/>
-                            <label class="input-label">Email</label>
-                        </div>
-                                    <div class="input">
-                            <input type="password" class="input-field" required/>
-                            <label class="input-label">Password</label>
-                        </div>
-                        <div class="action">
-                            <button class="action-button">Get started</button>
-                        </div>
-                    </form>
-                    <div class="card-info">
-                        <p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
-                    </div>
-                </div>
-            </div>
-
-        </section> -->
     </main>
 </template>
 
@@ -252,7 +214,7 @@ export default {
     padding-bottom: 8px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;   
+    align-items: flex-end;
 }
 
 form {
@@ -288,10 +250,6 @@ form .input:nth-child(5) {
     margin-right: 10px;
 }
 
-form .input:nth-child(11) {
-    margin-bottom: 40px;
-}
-
 
 form .input input {
     border-radius: 5px;
@@ -319,7 +277,7 @@ form .input span {
 
 
 form .input input:hover, form .input input:focus, form .input input.filled {
-    border: 1.1px solid #3A524D;
+    border: 1.4px solid #3A524D;
 }
 
 form .input input:focus ~ span, form .input input.filled ~ span {
@@ -337,6 +295,13 @@ form .input input:focus ~ span, form .input input.filled ~ span {
         margin-right: 0;
     }
 }
+
+
+/* FORM BUTTONS */
+form:not(.div1__checkout) button {
+    margin: 20px 0 0 auto;
+}
+
 
 
 
@@ -385,6 +350,7 @@ form input[type="radio"]:checked + .radio .radio__button::before {
 
 form input[type="radio"]:checked + .radio {
     border: 1.4px solid #3A524D;
+    background: #3a524d15;
 }
 
 .radio__text {
@@ -403,14 +369,5 @@ form input[type="radio"]:checked + .radio {
 }
 
 
-
-/* 
-.summary {
-    width: 33%;
-    border-radius: 5px;
-    padding: 30px;
-    height: fit-content;
-    border: 1px solid #3a524db4;
-} */
 
 </style>

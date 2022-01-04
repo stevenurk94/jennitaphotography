@@ -131,46 +131,47 @@ section, .breadcrumbs, .StepIndicator {
   cursor: pointer;
   text-align: center;
   white-space: nowrap;
-  color: white;
-  padding: 0.5em 1.25em;
-
-
-  /* background: linear-gradient(#567670, #3a524d); */
-
-  background-color: #567670;
-  background-image: linear-gradient(rgb(0 0 0 / 5%), rgb(0 0 0 / 35%));
-
   font-family: 'Work Sans', sans-serif;
-  font-size: 1.5em;
-  text-decoration: none;
-  border-radius: 4px;
-  border: none;
-  transition: all 500ms ease-in-out;
-  box-shadow: 1px 1px rgb(0 0 0 / 16%), 0 2px 5px rgb(0 0 0 / 8%);
-  /* margin: 10px 0; */
-  overflow: hidden;
+  font-size: 16px;
+  outline: none;
+  min-height: 40px;
   font-weight: 500;
-  
+  text-decoration: none;
+  border-radius: 5px;
+  overflow: hidden; 
+  transition: all 500ms ease-in-out;
+  text-transform: uppercase;
+
+  border: none;
+  color: white;
+  background: #3a524d;
+  /* box-shadow: 1px 1px rgb(0 0 0 / 16%), 0 2px 5px rgb(0 0 0 / 8%);  */
+  padding: 15px 33px;
 }
 
 .button-2 {
   cursor: pointer;
-  padding: 0.5em 1.25em;
   text-align: center;
   white-space: nowrap;
-  color: #567670;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  outline: none;
+  min-height: 40px;
+  font-weight: 500;
   text-decoration: none;
-  border-radius: 4px;
-  font-size: 1.5em;
-  border: 1.5px solid #567670;
-  transition: all 450ms ease-in-out;
-  margin: 10px 0;
+  border-radius: 5px;
+  overflow: hidden; 
+  transition: all 500ms ease-in-out;
+  text-transform: uppercase;
+
+  border: 1px solid #3a524d;
+  color: #3a524d;
+  background: #3a524d15;
+  padding: 13px 33px;
 }
 
 .button-2:hover {
-  background: #3a524d;
-  border: 1.5px solid #3a524d;
+  background: #3a524d67;
 }
 
 

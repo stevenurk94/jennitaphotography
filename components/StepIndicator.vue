@@ -81,7 +81,12 @@ export default {
 
 <style scoped>
 
+.StepIndicator {
+    margin-top: 21px;
+}
+
 /* StepIndicatorItems */
+
 
 .StepIndicator__items {
     display: flex;
@@ -90,31 +95,28 @@ export default {
     width: 100%;
     left: 0;
     right: 0;
-    margin: 10px auto;
+    margin: 0 auto 10px auto;
 }
 
 .StepIndicator__items a {
     color: #3A524D;
+    text-decoration: underline;
+    font-size: 16px;
 }
 
-.StepIndicator__items .item {
+.StepIndicator__items .item p {
     text-align: center;
-}
-
-
-.StepIndicator__items .item {
     color: #979797;
     position: relative;
-    /* width: 25%; */
+    font-size: 16px;
 }
 
-.StepIndicator__items .active {
+
+.StepIndicator__items .item.active p {
     font-weight: bold;
     color: black;
-}
+    font-size: 16.5px;
 
-.StepIndicator__items a {
-    text-decoration: underline;
 }
 
 
@@ -150,9 +152,9 @@ export default {
 .step span::before {
     content: "";
     counter-increment: step;
-    width: 25px;
-    height: 25px;
-    border: 4px solid #bebebe;
+    width: 23px;
+    height: 23px;
+    border: 3px solid #bebebe;
     display: block;
     margin: 0 auto 0 auto;
     line-height: 27px;
@@ -171,6 +173,7 @@ export default {
     color: white;
     font-weight: bold;
     font-size: 15px;
+    padding-top: 1.5px;
 }
 
 .step span.active::before {
