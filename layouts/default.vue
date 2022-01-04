@@ -114,7 +114,7 @@ a {
 }
 
 
-.breadcrumbs, section {
+section, .breadcrumbs, .StepIndicator {
   max-width: 1523px;
   width: 95%;
 }

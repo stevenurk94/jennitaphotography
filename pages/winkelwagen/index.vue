@@ -26,16 +26,15 @@
                                 </div>
                             </div>
                             
-                            <p>€ {{ (product.price * product.quantity).toFixed(2) }}</p>
+                            <p>€ {{ (product.price * product.quantity).toFixed(2).replace(".", ",") }}</p>
                         </div>                      
                     </div>
                 </div>
-
             </div>
             <div class="summary sticky" v-if="cartItemCount">
                 <div class="summary__subtotal">
                     <h3>Subtotaal</h3>
-                    <h3>€ {{ (cartTotal).toFixed(2) }}</h3>
+                    <h3>€ {{ (cartTotal).toFixed(2).replace(".", ",") }}</h3>
                 </div>
                 <p>Inclusief btw</p>
 
@@ -95,8 +94,6 @@ export default {
 
             this.product = product
             this.$store.commit("addOneToCart", product);
-
-
 
             // NOTIFICATION LABEL UPDATING
             if (this.cartItemCount < 100 && this.cartItemCount != 0) {
@@ -168,16 +165,7 @@ section {
     border-bottom: 1px solid #3a524db4;
     padding: 30px 0px;
     display: flex;
-
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -286,6 +274,7 @@ section {
 
 .items__card__info__options__change__quantity button:hover {
     border-color: #3A524D;
+    background: #3a524d65;
 }
 
 .items__card__info__options__change__quantity button:nth-child(1) {
@@ -314,19 +303,6 @@ section {
 .items__card__info__options > p {
     font-weight: 700;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

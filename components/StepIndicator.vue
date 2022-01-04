@@ -1,7 +1,7 @@
 <template>
-    <section>
+    <div class="StepIndicator">
 
-        <div class="StepIndicatorItems">
+        <div class="StepIndicator__items">
             <div class="item" v-for="(item, index) in items" :key="index" :class="item.url ? 'completed' : '' || item.page ? 'active' : ''">
                 <NuxtLink v-if="item.url" :to="item.url">{{ item.label }}</NuxtLink>
                 <p v-else-if="item.page" class="active">{{ item.label }}</p>
@@ -9,7 +9,7 @@
             </div>            
         </div>   
 
-        <div class="StepIndicator">
+        <div class="StepIndicator__steps">
             <div class="step" v-for="(item, index) in items" :key="index" :class="item.url ? 'completed' : '' || item.page ? 'active' : ''">
                 <span v-if="item.url" class="completed"></span>
                 <span v-else-if="item.page" class="active"></span>
@@ -17,7 +17,7 @@
             </div>
         </div>
 
-    </section>
+    </div>
 </template>
 
 
@@ -83,7 +83,7 @@ export default {
 
 /* StepIndicatorItems */
 
-.StepIndicatorItems {
+.StepIndicator__items {
     display: flex;
     justify-content: space-between;
     max-width: 800px;
@@ -93,27 +93,27 @@ export default {
     margin: 10px auto;
 }
 
-.StepIndicatorItems a {
+.StepIndicator__items a {
     color: #3A524D;
 }
 
-.StepIndicatorItems .item {
+.StepIndicator__items .item {
     text-align: center;
 }
 
 
-.StepIndicatorItems .item {
+.StepIndicator__items .item {
     color: #979797;
     position: relative;
     /* width: 25%; */
 }
 
-.StepIndicatorItems .active {
+.StepIndicator__items .active {
     font-weight: bold;
     color: black;
 }
 
-.StepIndicatorItems a {
+.StepIndicator__items a {
     text-decoration: underline;
 }
 
@@ -122,9 +122,9 @@ export default {
 
 
 
-/* Step Indicator's */
+/* StepIndicatorSteps */
 
-.StepIndicator {
+.StepIndicator__steps {
     counter-reset: step;
     display: flex;
     justify-content: space-between;

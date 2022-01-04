@@ -21,7 +21,49 @@
                     </div>
                 </div>
 
-                <div class="div1__cart">
+                
+                <div class="div1__card">
+                    <h2>Verzending</h2>
+                    <p>{{ shipping }}</p>
+                </div>
+
+                <div class="div1__card">
+                    <h2>Betaalwijze</h2>
+                    <div v-if="paymethod == 'ideal'" class="div2__card__paymethod">
+                        <img src="~/assets/ideal-logo.svg" alt="">
+                        <p>iDEAL</p>
+                    </div>
+
+                    <div v-if="paymethod == 'card'" class="div2__card__paymethod">
+                        <img src="~/assets/creditcard-logo.svg" alt="">
+                        <p>Creditcard</p>
+                    </div>
+                </div>
+
+                <form @submit.prevent="betalen" class="div1__summary">
+
+                    <div class="div1__summary__item">
+                        <h3>Subtotaal</h3>
+                        <h3>€ {{ cartTotal.toFixed(2).replace(".", ",") }}</h3>
+                    </div>
+                    <div class="div1__summary__item">
+                        <h3>Verzending</h3>
+                        <h3>€ {{ shippingLabel }}</h3>
+
+                    </div>
+                    <div class="div1__summary__item">
+                        <h3>TOTAALPRIJS</h3>
+                        <h3>€ {{ (cartTotal + shippingCosts).toFixed(2).replace(".", ",") }}</h3>
+                    </div>
+                    
+                    <button type="submit" class="button-1">Afrekenen</button>
+                </form>
+
+
+            </div>
+            <div class="div2">
+
+                <div class="div2__cart">
                     <h2>Winkelwagen</h2>
                     <div class="items">
                         <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
@@ -44,45 +86,6 @@
                 </div>
 
 
-            </div>
-            <div class="div2">
-
-                <div class="div2__card">
-                    <h2>Verzending</h2>
-                    <p>{{ shipping }}</p>
-                </div>
-
-                <div class="div2__card">
-                    <h2>Betaalwijze</h2>
-                    <div v-if="paymethod == 'ideal'" class="div2__card__paymethod">
-                        <img src="~/assets/ideal-logo.svg" alt="">
-                        <p>iDEAL</p>
-                    </div>
-
-                    <div v-if="paymethod == 'card'" class="div2__card__paymethod">
-                        <img src="~/assets/creditcard-logo.svg" alt="">
-                        <p>Creditcard</p>
-                    </div>
-                </div>
-
-                <form @submit.prevent="betalen" class="div2__summary">
-
-                    <div class="div2__summary__item">
-                        <h3>Subtotaal</h3>
-                        <h3>€ {{ cartTotal.toFixed(2).replace(".", ",") }}</h3>
-                    </div>
-                    <div class="div2__summary__item">
-                        <h3>Verzending</h3>
-                        <h3>€ {{ shippingLabel }}</h3>
-
-                    </div>
-                    <div class="div2__summary__item">
-                        <h3>TOTAALPRIJS</h3>
-                        <h3>€ {{ (cartTotal + shippingCosts).toFixed(2).replace(".", ",") }}</h3>
-                    </div>
-                    
-                    <button type="submit" class="button-1">Afrekenen</button>
-                </form>
 
             </div>
 
@@ -256,13 +259,13 @@ section {
     padding-bottom: 10px;
 }
 
-.div1__card h2, .div1__cart > h2 {
+.div1__card h2, .div2__cart > h2 {
     border-bottom: 1px solid #3a524db4;
     margin-bottom: 10px;
     padding-bottom: 8px;
 }
 
-.div1__cart {
+.div2__cart {
     width: 100%;
 }
 
@@ -298,14 +301,18 @@ section {
     padding-bottom: 8px ;
 }
 
-form.div2__summary {
+
+
+/* ########## SUMMARY ########## */
+
+form.div1__summary {
     background: #3a524d65;
     position: sticky;
     top: 90px;
     padding: 15px;
 }
 
-.div2__summary__item {
+.div1__summary__item {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -314,7 +321,7 @@ form.div2__summary {
     border-bottom: 1px solid #3a524db4;
 }
 
-.div2__summary button {
+.div1__summary button {
     margin-top: 25px;
     width: 100%;
 }

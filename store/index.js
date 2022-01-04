@@ -39,6 +39,8 @@ export const mutations = ({
             state.formDetails[0].zipCode = customerDetails[0].zipCode;
             state.billingDetails[0].place = customerDetails[0].place;
             state.formDetails[0].place = customerDetails[0].place;
+            state.billingDetails[0].country = customerDetails[0].country;
+            state.formDetails[0].country = customerDetails[0].country;
             state.billingDetails[0].email = customerDetails[0].email;
             state.formDetails[0].email = customerDetails[0].email;
             state.billingDetails[0].phoneNumber = customerDetails[0].phoneNumber;
@@ -55,9 +57,24 @@ export const mutations = ({
     },
 
     // SAVING SHIPPINGDETAILS
-    saveShipping ( state, shipping ) { 
+    saveShipping ( state, shipping ) {
         state.billingDetails[0].shipping = shipping;
         state.formDetails[0].shipping = shipping;
+
+        if (shipping == "Verzending via PostNL") {
+            state.billingDetails[0].shippingCosts = 5;
+            state.formDetails[0].shippingCosts = 5;
+            state.billingDetails[0].shippingLabel = "5,00";
+            state.formDetails[0].shippingLabel = "5,00";
+
+        }
+        else if (shipping == "Gratis bezorging in Genemuiden en Urk") {
+            state.billingDetails[0].shippingCosts = 0;
+            state.formDetails[0].shippingCosts = 0;
+            state.billingDetails[0].shippingLabel = "0,00";
+            state.formDetails[0].shippingLabel = "0,00";
+        }
+
         updateCustomerDetails(state.billingDetails);
         updateFormDetails(state.formDetails);
     },

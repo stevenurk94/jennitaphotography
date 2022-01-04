@@ -1,90 +1,92 @@
 <template>
     <main>
         <StepIndicator :items="stepindicator" />
-        <section>
+        <section class="div1">
 
-            <div class="div1">
-                <div class="div1__card">
-                    <h2>Bezorgadres</h2>
-                    <div>
-                        <p>{{ firstName }} {{ lastName }}</p>
-                        <p>{{ streetName }} {{ streetNumber }}</p>
-                        <p>{{ zipCode }} {{ place }}</p>
-                    </div>
+            
+            <form @submit.prevent="betalen" class="title">
+                <h2>Overzicht</h2>                
+                <button type="submit" class="button-1">Bestellen en betalen</button>
+            </form>
+
+            <div class="div1__card">
+                <h2>Bezorgadres</h2>
+                <div>
+                    <p>{{ firstName }} {{ lastName }}</p>
+                    <p>{{ streetName }} {{ streetNumber }}</p>
+                    <p>{{ zipCode }} {{ place }}</p>
+                </div>
+            </div>
+
+            <div class="div1__card">
+                <h2>Contactgegevens</h2>
+                <div>
+                    <p>{{ email }}</p>
+                    <p>{{ phoneNumber }}</p>
+                </div>
+            </div>
+
+            
+            <div class="div1__card">
+                <h2>Verzending</h2>
+                <p>{{ shipping }}</p>
+            </div>
+
+            <div class="div1__card">
+                <h2>Betaalwijze</h2>
+                <div v-if="paymethod == 'ideal'" class="div1__card__paymethod">
+                    <img src="~/assets/ideal-logo.svg" alt="">
+                    <p>iDEAL</p>
                 </div>
 
-                <div class="div1__card">
-                    <h2>Contactgegevens</h2>
-                    <div>
-                        <p>{{ email }}</p>
-                        <p>{{ phoneNumber }}</p>
-                    </div>
+                <div v-if="paymethod == 'card'" class="div1__card__paymethod">
+                    <img src="~/assets/creditcard-logo.svg" alt="">
+                    <p>Creditcard</p>
                 </div>
+            </div>
 
-                <div class="div1__cart">
-                    <h2>Winkelwagen</h2>
-                    <div class="items">
-                        <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
-                            <div class="items__card__img">
-                                <img :src="require(`~/assets/img${product.image2}`)" alt="">
+            <div class="div1__cart">
+                <h2>Winkelwagen</h2>
+                <div class="items">
+                    <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
+                        <div class="items__card__img">
+                            <img :src="require(`~/assets/img${product.image2}`)" alt="">
+                        </div>
+                        <div class="items__card__info">
+                            <div class="items__card__info__title">
+                                <h2>{{ product.name }}</h2>
+                                <h3>{{ product.category }}</h3>
                             </div>
-                            <div class="items__card__info">
-                                <div class="items__card__info__title">
-                                    <h2>{{ product.name }}</h2>
-                                    <h3>{{ product.category }}</h3>
-                                </div>
-                                <div class="items__card__info__options">
-                                    <p>Aantal: {{ product.quantity }}</p>
-                                    <p><strong>€ {{ (product.price * product.quantity).toFixed(2).replace(".", ",") }}</strong></p>
-                                </div>                      
-                            </div>
+                            <div class="items__card__info__options">
+                                <p>Aantal: {{ product.quantity }}</p>
+                                <p><strong>€ {{ (product.price * product.quantity).toFixed(2).replace(".", ",") }}</strong></p>
+                            </div>                      
                         </div>
                     </div>
-
                 </div>
-
 
             </div>
-            <div class="div2">
 
-                <div class="div2__card">
-                    <h2>Verzending</h2>
-                    <p>{{ shipping }}</p>
+            <form @submit.prevent="betalen" class="div1__summary">
+
+                <div class="div1__summary__item">
+                    <h3>Subtotaal</h3>
+                    <h3>€ {{ cartTotal.toFixed(2).replace(".", ",") }}</h3>
                 </div>
+                <div class="div1__summary__item">
+                    <h3>Verzending</h3>
+                    <h3>€ {{ shippingLabel }}</h3>
 
-                <div class="div2__card">
-                    <h2>Betaalwijze</h2>
-                    <div v-if="paymethod == 'ideal'" class="div2__card__paymethod">
-                        <img src="~/assets/ideal-logo.svg" alt="">
-                        <p>iDEAL</p>
-                    </div>
-
-                    <div v-if="paymethod == 'card'" class="div2__card__paymethod">
-                        <img src="~/assets/creditcard-logo.svg" alt="">
-                        <p>Creditcard</p>
-                    </div>
                 </div>
+                <div class="div1__summary__item">
+                    <h3>TOTAALPRIJS</h3>
+                    <h3>€ {{ (cartTotal + shippingCosts).toFixed(2).replace(".", ",") }}</h3>
+                </div>
+                
+                <button type="submit" class="button-1">Afrekenen</button>
+            </form>
 
-                <form @submit.prevent="betalen" class="div2__summary">
 
-                    <div class="div2__summary__item">
-                        <h3>Subtotaal</h3>
-                        <h3>€ {{ cartTotal.toFixed(2).replace(".", ",") }}</h3>
-                    </div>
-                    <div class="div2__summary__item">
-                        <h3>Verzending</h3>
-                        <h3>€ {{ shippingLabel }}</h3>
-
-                    </div>
-                    <div class="div2__summary__item">
-                        <h3>TOTAALPRIJS</h3>
-                        <h3>€ {{ (cartTotal + shippingCosts).toFixed(2).replace(".", ",") }}</h3>
-                    </div>
-                    
-                    <button type="submit" class="button-1">Afrekenen</button>
-                </form>
-
-            </div>
 
         </section>
     </main>
@@ -243,35 +245,29 @@ section {
 }
 
 .div1 {
-    width: 52%;
-    margin-right: 45px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .div1__card {
-    width: 100%;
+    width: calc(50% - 20px);
     margin-bottom: 20px;
     padding-bottom: 10px;
 }
 
-.div1__card h2, .div1__cart > h2 {
-    border-bottom: 1px solid #3a524db4;
-    margin-bottom: 10px;
-    padding-bottom: 8px;
+.div1__card:nth-child(2n + 2) {
+    margin-right: 40px;
+}
+
+.div1__card > h2, .div1__cart > h2 {
+    /* border-bottom: 1px solid #3a524db4; */
+    padding-bottom: 5px;
+    font-size: 21px;
 }
 
 .div1__cart {
     width: 100%;
-}
-
-
-
-
-
-.div2 {
-    width: 45%;
+    margin: 10px 0px 30px 0px;
 }
 
 
@@ -281,31 +277,31 @@ section {
     margin-bottom: 20px;
 }
 
-.div2__card__paymethod {
+.div1__card__paymethod {
     display: flex;
     align-items: center;
 }
 
-.div2__card__paymethod img {
+.div1__card__paymethod img {
     height: 25px;
     margin-right: 15px;
     
 }
 
-.div2__card:not(form) > h2 {
-    border-bottom: 1px solid #3a524db4;
-    margin-bottom: 10px;
-    padding-bottom: 8px ;
-}
 
-form.div2__summary {
+
+
+/* ########## SUMMARY ########## */
+
+form.div1__summary {
     background: #3a524d65;
     position: sticky;
     top: 90px;
     padding: 15px;
+    width: 50%; 
 }
 
-.div2__summary__item {
+.div1__summary__item {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -314,22 +310,30 @@ form.div2__summary {
     border-bottom: 1px solid #3a524db4;
 }
 
-.div2__summary button {
+.div1__summary button {
     margin-top: 25px;
     width: 100%;
 }
 
 
 
+
+
+/* ########## CART ITEMS ########## */
+
 .items {
     width: 100%;
+    flex-wrap: wrap;
+    display: flex;
 }
 
 .items__card {
     border-bottom: 1px dashed #3a524db4;
     padding: 30px 0px;
     display: flex;
+    width: 100%;
 }
+
 
 
 /* ########## IMAGE ########## */
@@ -390,12 +394,12 @@ form.div2__summary {
 
 
 @media only screen and (max-width: 830px) {
-    section {
+    section.div1 {
         display: block;
         width: 95%;
     }
 
-    .div1, .div2 {
+    form.div1__summary, .div1__card {
         width: 100%;
         margin: 0;
     }

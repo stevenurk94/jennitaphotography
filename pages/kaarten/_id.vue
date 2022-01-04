@@ -53,7 +53,7 @@
             <div class="product__info" v-if="product.id == PC">
                 <h1>{{ product.name }}</h1>
                 <h3>{{ product.category }}</h3>
-                <p>€ {{ product.price.toFixed(2) }} p/st.</p>
+                <p>€ {{ product.price.toFixed(2).replace(".", ",") }} p/st.</p>
                 <div class="product__info__box" v-if="product.id == PC">
                     <div v-if="product.stock !== 0">
                         <input name="amount" type="number" v-model.number="quantity" @keyup.enter="addToCart(product)">

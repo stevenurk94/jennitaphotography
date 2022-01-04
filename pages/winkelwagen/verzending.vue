@@ -4,7 +4,7 @@
         <StepIndicator :items="stepindicator" />
         <section>
             <form @submit.prevent="saveShipping">
-                <h2>Verzending</h2>
+                <h2 class="title">Verzending</h2>
 
                 <input type="radio" id="shipping" name="shipping" :checked="shipping == null || shipping == 'Verzending via PostNL'" value="Verzending via PostNL">
                 <label class="radio" for="shipping">

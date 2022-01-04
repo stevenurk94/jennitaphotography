@@ -7,7 +7,7 @@
             <img :src="require(`~/assets/img${PhotoCards.image2}`)" alt="">
             <div>
                 <h3>{{ PhotoCards.name }}</h3>
-                <p>€ {{ PhotoCards.price.toFixed(2) }}</p>
+                <p>€ {{ PhotoCards.price.toFixed(2).replace(".", ",") }}</p>
             </div>
             <h3 class="products__cart__category">{{ PhotoCards.category }}</h3>
         </NuxtLink>

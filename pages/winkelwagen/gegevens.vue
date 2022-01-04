@@ -5,7 +5,7 @@
 
         <section>
             <form @submit.prevent="saveCustomerDetails">
-                <h2>Gegevens</h2>
+                <h2 class="title">Gegevens</h2>
                 
                 <div class="input half">
                     <input name="firstName" type="text" :value="firstName">
@@ -42,10 +42,10 @@
                     <span>Woonplaats *</span>
                 </div>
 
-                <!-- <div>
-                    <input name="country" value="Nederland (neem voor verzending naar buitenland via mail contact op)" type="text" readonly>
-                    <label for="country"></label>
-                </div> -->
+                <div class="input">
+                    <input name="country" value="Nederland" type="text" readonly class="filled">
+                    <span>Land</span>
+                </div>
 
                 <div class="input">
                     <input name="email" type="text" :value="email">
@@ -237,10 +237,6 @@ export default {
 
 
 
-
-
-
-
 <style>
 
 /* main {
@@ -249,8 +245,14 @@ export default {
     z-index: -999;
 } */
 
-h2 {
+.title {
     width: 100%;
+    border-bottom: 1px solid #3a524d4f;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;   
 }
 
 form {
@@ -286,7 +288,7 @@ form .input:nth-child(5) {
     margin-right: 10px;
 }
 
-form .input:nth-child(10) {
+form .input:nth-child(11) {
     margin-bottom: 40px;
 }
 
@@ -295,6 +297,7 @@ form .input input {
     border-radius: 5px;
     border: 1px solid #999;
     padding: 13px 15px;
+    font-family: 'Work Sans', sans-serif;
     font-size: 16px;
     width: 100%;
     transition: all 300ms ease-in-out;
@@ -328,12 +331,16 @@ form .input input:focus ~ span, form .input input.filled ~ span {
 
 
 
-
+@media only screen and (max-width: 700px) {
+    form .input.half, form .input.quarter {
+        width: 100%;
+        margin-right: 0;
+    }
+}
 
 
 
 /* RADIO BUTTONS */
-
 
 
 form input[type="radio"] {

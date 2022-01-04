@@ -5,7 +5,7 @@
         <section>
             <form @submit.prevent="savePaymethod">
 
-                <h2>Betaalwijze</h2>
+                <h2 class="title">Betaalwijze</h2>
                 <input type="radio" id="ideal" name="paymethod" :checked="paymethod == null || paymethod == 'ideal'" value="ideal">
                 <label class="radio" for="ideal">
 
@@ -76,7 +76,7 @@ export default {
             );
 
             this.$store.commit("savePaymethod", paymethod);
-            this.$router.push("/winkelwagen/overzicht");
+            this.$router.push("/winkelwagen/overzicht");            
         },
     }, 
 }
