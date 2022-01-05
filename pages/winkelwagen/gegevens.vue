@@ -201,15 +201,10 @@ export default {
 
 <style>
 
-/* main {
-    background: #f0f2f5;
-    background: #f8fbfe;
-    z-index: -999;
-} */
 
 .title {
     width: 100%;
-    border-bottom: 1px solid #3a524d4f;
+    border-bottom: 1px solid var(--clr-1-3);
     margin-bottom: 20px;
     padding-bottom: 8px;
     display: flex;
@@ -232,6 +227,7 @@ form .input {
     margin: 10px 0px;
     position: relative;
     width: 100%;
+    
 }
 
 form .input.half {
@@ -259,6 +255,7 @@ form .input input {
     font-size: 16px;
     width: 100%;
     transition: all 300ms ease-in-out;
+    background: transparent;
 }
 
 
@@ -277,13 +274,13 @@ form .input span {
 
 
 form .input input:hover, form .input input:focus, form .input input.filled {
-    border: 1.4px solid #3A524D;
+    border: 1.4px solid var(--clr-1-1);
 }
 
 form .input input:focus ~ span, form .input input.filled ~ span {
     transform: scale(.75) translate(-3px, -36px);
     padding: 2px 5px;
-    color: #3A524D;
+    color: var(--clr-1-1);
     border-radius: 10px;
 }
 
@@ -338,19 +335,20 @@ form .radio__button {
 
 form .radio__button::before {
     content: "";
-    width: 11px;
-    height: 11px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     transition: all 300ms ease-in-out;
 }
 
+
 form input[type="radio"]:checked + .radio .radio__button::before {
-    background: #3A524D;
+    background: var(--clr-1-1);
 }
 
 form input[type="radio"]:checked + .radio {
-    border: 1.4px solid #3A524D;
-    background: #3a524d15;
+    border: 1.4px solid var(--clr-1-1);
+    background: var(--clr-1-4);
 }
 
 .radio__text {

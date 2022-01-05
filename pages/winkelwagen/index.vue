@@ -162,7 +162,7 @@ section {
 
 
 .items__card {
-    border-bottom: 1px solid #3a524db4;
+    border-bottom: 1px dashed var(--clr-1-2);
     padding: 30px 0px;
     display: flex;
 }
@@ -172,7 +172,7 @@ section {
 /* ########## IMAGE ########## */
 
 .items__card__img {
-    border: 1px solid #3a524db4;
+    border: 1px solid var(--clr-1-2);
     border-radius: 5px;
     display: inherit;
     justify-content: center;
@@ -221,7 +221,7 @@ section {
 
 .items__card__info__title h3 {
     text-transform: uppercase;
-    color: #3A524D;
+    color: var(--clr-1-1);
     font-size: 17px;
 }
 
@@ -259,7 +259,7 @@ section {
 
 .items__card__info__options__change__quantity button {
     background: transparent;
-    border: 1px solid #3a524db4;
+    border: 1px solid var(--clr-1-2);
     font-size: 20px;
     cursor: pointer;
     padding: 5px 10px;
@@ -269,12 +269,11 @@ section {
     font-weight: 600;
     transition: all 300ms ease-in-out;
     height: 32px;
-    color: #3A524D;
+    color: var(--clr-1-1);
 }
 
 .items__card__info__options__change__quantity button:hover {
-    border-color: #3A524D;
-    background: #3a524d65;
+    background: var(--clr-1-3);
 }
 
 .items__card__info__options__change__quantity button:nth-child(1) {
@@ -290,8 +289,8 @@ section {
 .items__card__info__options__change__quantity p {
     font-size: 16px;
     width: 44px;
-    border-top: 1px solid #3a524db4;
-    border-bottom: 1px solid #3a524db4;
+    border-top: 1px solid var(--clr-1-2);
+    border-bottom: 1px solid var(--clr-1-2);
     height: 32px;
     display: flex;
     align-items: center;
@@ -313,7 +312,7 @@ section {
     border-radius: 5px;
     padding: 30px;
     height: fit-content;
-    background: #3a524d65;
+    background: var(--clr-1-3);
     position: sticky;
     top: 90px;
 }

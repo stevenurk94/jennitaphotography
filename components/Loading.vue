@@ -34,7 +34,7 @@
     border-radius: 50%;
     animation: dots 1s ease 0ms infinite;
     transform: scale(0);
-    background: #3A524D;
+    background: var(--clr-1-1);
 }
 
 .loadingbullets span:nth-child(1) {

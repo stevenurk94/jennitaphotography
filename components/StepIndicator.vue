@@ -99,7 +99,7 @@ export default {
 }
 
 .StepIndicator__items a {
-    color: #3A524D;
+    color: var(--clr-1-1);
     text-decoration: underline;
     font-size: 16px;
 }
@@ -168,8 +168,8 @@ export default {
 
 .step span.completed::before {
     content: "✓";/* ✓ */
-    border-color: #3A524D;
-    background: #3A524D;
+    border-color: var(--clr-1-1);
+    background: var(--clr-1-1);
     color: white;
     font-weight: bold;
     font-size: 15px;
@@ -180,8 +180,8 @@ export default {
     background: white;
     color: #bebebe;
     animation: bc 1.5s;
-    border-color: #3A524D;
-    color: #3A524D;
+    border-color: var(--clr-1-1);
+    color: var(--clr-1-1);
 }
 
 .step::after {
@@ -203,12 +203,12 @@ export default {
 }
 
 .step.active::after {
-    background: #3A524D;
+    background: var(--clr-1-1);
     animation: bg 1s;
 }
 
 .step.completed::after {
-    background: #3A524D;
+    background: var(--clr-1-1);
 }
 
 
@@ -218,7 +218,7 @@ export default {
     }
 
     to { 
-        border-color: #3A524D;
+        border-color: var(--clr-1-1);
     }
 }
 
@@ -230,7 +230,7 @@ export default {
     }
 
     to { 
-        background-color: #3A524D;
+        background-color: var(--clr-1-1);
     }
 }
 

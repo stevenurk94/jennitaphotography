@@ -6,7 +6,7 @@
 <style scoped>
 .footer-section {
     width: 100%;
-    background-color:#3A524D;
+    background-color:var(--clr-1-1);
     height: 350px;
 }
 </style>

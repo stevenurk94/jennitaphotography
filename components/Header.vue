@@ -127,7 +127,7 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     top: 0;
-    background: #3A524D;
+    background: var(--clr-1-1);
     display: flex;
     justify-content: center;
     position: fixed;

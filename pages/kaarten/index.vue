@@ -55,8 +55,7 @@ export default {
 <style scoped>
 
 main {
-    /* background: #f0f2f5; */
-    background: #f8fbfe;
+    background: var(--clr-bg);
 }
 
 

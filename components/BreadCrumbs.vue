@@ -34,7 +34,7 @@ span {
     font-family: 'Work Sans', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: #3A524D;
+    color: var(--clr-1-1);
     margin-right: 5px;
 }
 
@@ -49,7 +49,7 @@ a:hover {
 }
 
 a:visited {
-    color: #3A524D;
+    color: var(--clr-1-1);
 }
 
 span.inactive {

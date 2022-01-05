@@ -195,6 +195,11 @@ export default {
 
 <style scoped>
 
+main {
+    background: var(--clr-bg);
+}
+
+
 .product {
     display: flex;
     justify-content: space-between;
@@ -205,7 +210,7 @@ export default {
     display: flex;
     justify-content: center;
     width: calc(50% - 0.7%);
-    border: 1px solid #3a524db4;
+    border: 1px solid var(--clr-1-2);
     border-radius: 5px;
     padding: 10px;
 }
@@ -222,7 +227,7 @@ export default {
 
 .product__info h3 {
     text-transform: uppercase;
-    color: #3A524D;
+    color: var(--clr-1-1);
     font-weight: 700;
     letter-spacing: 1.2px;
     margin: 3px 0px 20px 0px;
@@ -235,13 +240,12 @@ export default {
 }
 
 .product__info__box div {
-    width: 25%;
     margin-right: 15px;
 }
 
 .product__info__box button {
     width: 70%;
-    max-width: 75%;
+    max-width: 300px;
 }
 
 
@@ -249,6 +253,7 @@ export default {
 .product__info__box div input {
     width: 100%;
     height: 65px;
+    max-width: 100px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
     border-radius: 4px;
@@ -364,12 +369,12 @@ export default {
 
 .modal__header h2 {
     margin-bottom: 30px;
-    color: #3A524D;
+    color: var(--clr-1-1);
     margin-right: 40px;
 }
 
 .modal__header span {
-    color: #3A524D;
+    color: var(--clr-1-1);
     border-radius: 50%; 
     height: fit-content;
     font-size: 20px;
@@ -386,7 +391,7 @@ export default {
     margin-right: 10px;
     padding-top: 1.5px;
     font-family: 'Work Sans', serif;
-    border: 2px solid #3A524D;
+    border: 2px solid var(--clr-1-1);
 }
 
 
@@ -397,7 +402,7 @@ export default {
 
 .modal__product__img {
     border-radius: 5px;
-    border: 1px solid #3a524db4;
+    border: 1px solid var(--clr-1-2);
     padding: 10px;
     width: 40%;
     display: flex;
@@ -417,7 +422,7 @@ export default {
     text-transform: uppercase;
     font-size: 16px;
     margin-bottom: 10px;
-    color: #3A524D;
+    color: var(--clr-1-1);
 }
 
 .modal__product__info p {
@@ -450,7 +455,7 @@ export default {
 
     .modal__header span {
         font-size: 17px;
-        border: 1.5px solid #3A524D;
+        border: 1.5px solid var(--clr-1-1);
         max-width: 30px;
         max-height: 30px;
         min-width: 30px;

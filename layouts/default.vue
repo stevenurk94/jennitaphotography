@@ -54,8 +54,21 @@ export default {
 <style>
 
 :root {
-  --bg: #fff;
+  
+
+  --clr-1-1: #3A524D;
+  --clr-1-2: #3A524D65; /* #3A524D62 & #3a524DB4*/
+  --clr-1-3: #3A524D3D;
+  --clr-1-4: #3A524D15;
+
+  --clr-bg: #F8FBFE;
+  
+
+
   --boxshadow: 0px 0.125rem 0.25rem 0px rgb(0 0 0 / 12%);
+
+  
+
 }
 
 * {
@@ -63,7 +76,6 @@ export default {
   list-style: none;
   -webkit-tap-highlight-color: transparent;
   outline: none;
-
 }
 
 *, *::before, *::after {
@@ -89,9 +101,6 @@ h1 {
 h2 {
   font-family: 'IBM Plex Serif', serif;
   font-size: 30px;
-  /* font-size: 20px;
-  font-weight: 100;
-  line-height: 1.2rem; */
 }
 
 h3 {
@@ -144,8 +153,7 @@ section, .breadcrumbs, .StepIndicator {
 
   border: none;
   color: white;
-  background: #3a524d;
-  /* box-shadow: 1px 1px rgb(0 0 0 / 16%), 0 2px 5px rgb(0 0 0 / 8%);  */
+  background: var(--clr-1-1);
   padding: 15px 33px;
 }
 
@@ -164,8 +172,8 @@ section, .breadcrumbs, .StepIndicator {
   transition: all 500ms ease-in-out;
   text-transform: uppercase;
 
-  border: 1px solid #3a524d;
-  color: #3a524d;
+  border: 1px solid var(--clr-1-1);
+  color: var(--clr-1-1);
   background: #3a524d15;
   padding: 13px 33px;
 }

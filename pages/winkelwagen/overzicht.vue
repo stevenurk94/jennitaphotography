@@ -250,11 +250,8 @@ section {
 }
 
 .div1__card > h2, .div1__cart > h2 {
-    /* border-bottom: 1px solid #3a524db4; */
     padding-bottom: 5px;
     font-size: 21px;
-    /* border-bottom: 1px dashed #3a524d4f;
-    margin-bottom: 7px; */
 }
 
 .div1__cart {
@@ -299,11 +296,11 @@ form.div1__checkout {
 /* ########## SUMMARY ########## */
 
 form.div1__summary {
-    background: #3a524d3d;
+    background: var(--clr-1-3);
     position: sticky;
     top: 90px;
-    padding: 15px;
-    width: 50%; 
+    padding: 30px;
+    width: 55%; 
     right: 0;
     left: 100%;
     border-radius: 5px;
@@ -317,7 +314,7 @@ form.div1__summary {
 }
 
 .div1__summary__item:first-child {
-    border-bottom: 1px solid #3a524d62;
+    border-bottom: 1px solid var(--clr-1-2);
     padding-top: 3px;
 }
 
@@ -339,7 +336,7 @@ form.div1__summary {
 }
 
 .items__card {
-    border-bottom: 1px dashed #3a524db4;
+    border-bottom: 1px dashed var(--clr-1-2);
     padding: 20px 0px;
     display: flex;
     width: 100%;
@@ -350,7 +347,7 @@ form.div1__summary {
 /* ########## IMAGE ########## */
 
 .items__card__img {
-    border: 1px solid #3a524db4;
+    border: 1px solid var(--clr-1-2);
     border-radius: 5px;
     display: inherit;
     justify-content: center;
@@ -388,7 +385,7 @@ form.div1__summary {
 
 .items__card__info__title h3 {
     text-transform: uppercase;
-    color: #3A524D;
+    color: var(--clr-1-1);
     font-size: 17px;
 }
 
