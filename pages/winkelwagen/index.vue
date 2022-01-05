@@ -173,7 +173,7 @@ section {
 
 .items__card__img {
     border: 1px solid var(--clr-1-2);
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     display: inherit;
     justify-content: center;
     align-items: center;
@@ -251,7 +251,7 @@ section {
 
 .items__card__info__options__change__quantity {
     display: flex;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     width: fit-content;   
     align-items: center;
     padding: 0;
@@ -277,13 +277,13 @@ section {
 }
 
 .items__card__info__options__change__quantity button:nth-child(1) {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
 }
 
 .items__card__info__options__change__quantity button:nth-child(3) {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 .items__card__info__options__change__quantity p {
@@ -309,7 +309,7 @@ section {
 /* ########## SUMMARY ########## */
 .summary {
     width: 33%;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding: 30px;
     height: fit-content;
     background: var(--clr-1-3);

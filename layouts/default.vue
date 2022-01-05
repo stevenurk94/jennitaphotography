@@ -62,6 +62,8 @@ export default {
   --clr-1-4: #3A524D15;
 
   --clr-bg: #F8FBFE;
+
+  --border-radius: 5px;
   
 
 

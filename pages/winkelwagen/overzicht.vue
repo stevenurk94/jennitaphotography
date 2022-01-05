@@ -303,7 +303,7 @@ form.div1__summary {
     width: 55%; 
     right: 0;
     left: 100%;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
 }
 
 .div1__summary__item {
@@ -348,7 +348,7 @@ form.div1__summary {
 
 .items__card__img {
     border: 1px solid var(--clr-1-2);
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     display: inherit;
     justify-content: center;
     align-items: center;

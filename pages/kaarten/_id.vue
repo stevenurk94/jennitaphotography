@@ -211,7 +211,7 @@ main {
     justify-content: center;
     width: calc(50% - 0.7%);
     border: 1px solid var(--clr-1-2);
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding: 10px;
 }
 
@@ -256,11 +256,12 @@ main {
     max-width: 100px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     padding: 0.5em 1em;
     border: 1px solid rgb(0 0 0 / 25%);
     cursor: text;
     text-align: center;
+    background: transparent;
 }
 
 .product__info__box div p {
@@ -343,7 +344,7 @@ main {
     max-width: 900px;
     background-color: white;
     width: 90%;    
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding: 20px 20px;
     position: relative;
     overflow: hidden;
@@ -401,7 +402,7 @@ main {
 }
 
 .modal__product__img {
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     border: 1px solid var(--clr-1-2);
     padding: 10px;
     width: 40%;

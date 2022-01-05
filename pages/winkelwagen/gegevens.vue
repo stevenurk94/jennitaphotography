@@ -217,7 +217,7 @@ form {
     max-width: 800px;
     display: flex;
     flex-wrap: wrap;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     left: 0;
     right: 0;
     margin: auto;
@@ -248,7 +248,7 @@ form .input:nth-child(5) {
 
 
 form .input input {
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     border: 1px solid #999;
     padding: 13px 15px;
     font-family: 'Work Sans', sans-serif;
@@ -281,7 +281,7 @@ form .input input:focus ~ span, form .input input.filled ~ span {
     transform: scale(.75) translate(-3px, -36px);
     padding: 2px 5px;
     color: var(--clr-1-1);
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
 
@@ -315,7 +315,7 @@ form .radio {
     width: 100%;
     margin: 10px 0px;
     border: 1.4px solid #999;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     display: flex;
     align-items: center;
     position: relative;

@@ -14,7 +14,7 @@
             <p>Ik zie u graag</p>
             <br>
             <p>Liefs, Jennita</p>
-            <button class="button-1">Fotokaarten bestellen</button>
+            <NuxtLink class="button-1" to="/kaarten/">Fotokaarten bestellen</NuxtLink>
             
 
         </div>
@@ -39,7 +39,7 @@ h2 {
 section {
     border: 1px solid var(--clr-1-2);
     margin: 50px 0px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding: 30px;   
     display: flex;
     max-width: 1200px;
@@ -51,13 +51,13 @@ section div {
 
 }
 
-section div button {
+section div a {
     margin-top: 50px;
 }
 
 section img {
     max-width: 300px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     bottom: 0;
     top: 0;
     margin: auto;
@@ -89,7 +89,7 @@ section img {
 }
 
 @media only screen and (max-width: 660px) {
-    section div button {
+    section div a {
         width: 100%;
         margin-top: 30px;
     }

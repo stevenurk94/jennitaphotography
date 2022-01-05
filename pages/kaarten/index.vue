@@ -72,7 +72,7 @@ h2 {
 
 .products__cart {
     box-shadow: 0 0 0 1px #dadce0;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     margin: 15px 12.5px; 
     overflow: hidden;
     cursor: pointer;
