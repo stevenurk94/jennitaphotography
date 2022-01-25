@@ -5,24 +5,50 @@
 
     <section>
         <div class="filter">
-            <h2>Categorie</h2>
+            <h2 class="checkmark__title">Categorie</h2>
             <input type="checkbox" id="blanco" v-on:change="blanco($event)" checked>
             <label class="checkmark" for="blanco">
-                <span class="checkmark__button"></span>
-                <span class="checkmark__text">Fotokaarten - Blanco</span>
+                <span class="checkmark__button">
+                    <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 45.701 45.7" style="enable-background:new 0 0 45.701 45.7;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M20.687,38.332c-2.072,2.072-5.434,2.072-7.505,0L1.554,26.704c-2.072-2.071-2.072-5.433,0-7.504    c2.071-2.072,5.433-2.072,7.505,0l6.928,6.927c0.523,0.522,1.372,0.522,1.896,0L36.642,7.368c2.071-2.072,5.433-2.072,7.505,0    c0.995,0.995,1.554,2.345,1.554,3.752c0,1.407-0.559,2.757-1.554,3.752L20.687,38.332z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
+                 <span class="checkmark__text">Fotokaarten - Blanco</span>
             </label>
 
             <input type="checkbox" id="geboorte" v-on:change="geboorte($event)" checked>
             <label class="checkmark" for="geboorte">
-                <span class="checkmark__button"></span>
+                <span class="checkmark__button">
+                    <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 45.701 45.7" style="enable-background:new 0 0 45.701 45.7;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M20.687,38.332c-2.072,2.072-5.434,2.072-7.505,0L1.554,26.704c-2.072-2.071-2.072-5.433,0-7.504    c2.071-2.072,5.433-2.072,7.505,0l6.928,6.927c0.523,0.522,1.372,0.522,1.896,0L36.642,7.368c2.071-2.072,5.433-2.072,7.505,0    c0.995,0.995,1.554,2.345,1.554,3.752c0,1.407-0.559,2.757-1.554,3.752L20.687,38.332z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
                 <span class="checkmark__text">Fotokaarten - Geboorte</span>
 
             </label>
             <input type="checkbox" id="verjaardag_jongen" v-on:change="verjaardag_jongen($event)" checked>
             <label class="checkmark" for="verjaardag_jongen">
-                <span class="checkmark__button"></span>
+                <span class="checkmark__button">
+                    <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 45.701 45.7" style="enable-background:new 0 0 45.701 45.7;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M20.687,38.332c-2.072,2.072-5.434,2.072-7.505,0L1.554,26.704c-2.072-2.071-2.072-5.433,0-7.504    c2.071-2.072,5.433-2.072,7.505,0l6.928,6.927c0.523,0.522,1.372,0.522,1.896,0L36.642,7.368c2.071-2.072,5.433-2.072,7.505,0    c0.995,0.995,1.554,2.345,1.554,3.752c0,1.407-0.559,2.757-1.554,3.752L20.687,38.332z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
                 <span class="checkmark__text">Fotokaarten - Verjaardag Jongen</span>
             </label>
+
+
         </div>
 
 
@@ -174,6 +200,11 @@ main section {
     border-radius: var(--border-radius);
     border: 1px solid var(--clr-1-2);
     padding: 20px;
+    height: fit-content;
+    position: sticky;
+    top: 110px;
+    margin-right: 50px;
+    min-width: 330px;
 }
 
 

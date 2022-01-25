@@ -63,6 +63,9 @@ export default {
 
   --clr-bg: #F8FBFE;
 
+  --clr-2-1: #CF937E;
+  --clr-2-2: #E8A68E;
+
   --clr-3: black;
 
   --border-radius: 5px;
@@ -70,6 +73,7 @@ export default {
 
 
   --boxshadow: 0px 0.125rem 0.25rem 0px rgb(0 0 0 / 12%);
+  
 
 
 }
@@ -194,7 +198,7 @@ section, .breadcrumbs, .StepIndicator {
 
   border: none;
   color: white;
-  background: var(--clr-1-1);
+  background: var(--clr-2-1);
   padding: 15px 33px;
 }
 
