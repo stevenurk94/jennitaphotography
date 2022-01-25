@@ -64,7 +64,9 @@ export default {
   --clr-bg: #F8FBFE;
 
   --clr-2-1: #CF937E;
-  --clr-2-2: #E8A68E;
+  --clr-2-2: #E8A68E; /*#bd570f */
+  --clr-2-3: #cf947e4f;
+
 
   --clr-3: black;
 
@@ -193,13 +195,18 @@ section, .breadcrumbs, .StepIndicator {
   text-decoration: none;
   border-radius: 5px;
   overflow: hidden; 
-  transition: all 500ms ease-in-out;
+  transition: all 200ms ease-in-out;
   text-transform: uppercase;
 
   border: none;
   color: white;
   background: var(--clr-2-1);
   padding: 15px 33px;
+}
+
+.button-1:hover {
+  box-shadow: 0 4px 11px var(--clr-2-3);
+  transform: translateY(-3px);
 }
 
 .button-2 {
