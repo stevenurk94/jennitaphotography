@@ -56,7 +56,7 @@
 
 
         <div class="products">
-            <h2 v-if="v_blanco === true">Fotokaarten - Blanco</h2>
+            <h2 class="products__title" v-if="v_blanco === true">Fotokaarten - Blanco</h2>
             <div class="products__wrapper" v-if="v_blanco === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsBlanco" :key="PhotoCards.id">
                     <img :src="require(`~/assets/img${PhotoCards.image2}`)" alt="">
@@ -68,7 +68,7 @@
                 </NuxtLink>
             </div>
 
-            <h2 v-if="v_geboorte === true">Fotokaarten - Geboorte</h2>
+            <h2 class="products__title" v-if="v_geboorte === true">Fotokaarten - Geboorte</h2>
             <div class="products__wrapper" v-if="v_geboorte === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsGeboorte" :key="PhotoCards.id">
                     <img :src="require(`~/assets/img${PhotoCards.image2}`)" alt="">
@@ -80,7 +80,7 @@
                 </NuxtLink>
             </div>
 
-            <h2 v-if="v_verjaardag_jongen === true">Fotokaarten - Verjaardag Jongen</h2>
+            <h2 class="products__title" v-if="v_verjaardag_jongen === true">Fotokaarten - Verjaardag Jongen</h2>
             <div class="products__wrapper" v-if="v_verjaardag_jongen === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsVerjaardagJongen" :key="PhotoCards.id">
                     <img :src="require(`~/assets/img${PhotoCards.image2}`)" alt="">
@@ -218,16 +218,27 @@ main section {
     min-width: 950px;
 }
 
+.products__title {
+    border-bottom: 1px solid var(--clr-1-3);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.products__title:not(:first-child) {
+    margin-top: 50px;
+}
+
 .products__wrapper {
     display: flex;
     flex-wrap: wrap;
+    min-width: 973px;
 }
 
 
 .products__wrapper__cart {
     box-shadow: 0 0 0 1px #dadce0;
     border-radius: var(--border-radius);
-    margin: 15px 13px; 
+    margin: 15px 1.25%; 
     overflow: hidden;
     cursor: pointer;
     width: calc(25% - 20px);
