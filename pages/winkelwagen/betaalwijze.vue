@@ -76,7 +76,7 @@ export default {
             );
 
             this.$store.commit("savePaymethod", paymethod);
-            this.$router.push("/winkelwagen/overzicht");            
+            this.$router.push("/winkelwagen/overzicht");
         },
     }, 
 }

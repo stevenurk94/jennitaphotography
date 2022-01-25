@@ -23,6 +23,10 @@
         </nav>
 
         <NuxtLink class="nav-logo" to="/">JF</NuxtLink>
+        <!-- <NuxtLink class="nav-logo" to="/">
+            <img src="~/static/logo1.png" alt="">
+        </NuxtLink> -->
+        
 
         <NuxtLink class="cart" to="/winkelwagen">
 
@@ -106,6 +110,12 @@ header.scrolled .nav-section.open path {
     z-index: 10;
     transition: all 400ms ease-in-out;
     color: white;
+    /* width: 80px; */
+}
+
+.nav-logo img {
+    width: 100%;
+    height: 100%;
 }
 
 header.scrolled .nav-logo {

@@ -63,13 +63,14 @@ export default {
 
   --clr-bg: #F8FBFE;
 
+  --clr-3: black;
+
   --border-radius: 5px;
   
 
 
   --boxshadow: 0px 0.125rem 0.25rem 0px rgb(0 0 0 / 12%);
 
-  
 
 }
 
@@ -94,36 +95,74 @@ main {
 
 
 
-h1 {
+/* ########### FONTS ############ */
+
+h1, h2, h3, h4, h5, h6 {
   font-family: 'IBM Plex Serif', serif;
-  font-size: 40px;
+  color: var(--clr-3);
+}
+
+p, a {
+  font-family: 'Work Sans', sans-serif;
+  color: var(--clr-3)
+}
+
+
+
+h1 {
+  font-size: calc(30px + 0.6vmax);
   font-weight: 700;
 }
 
+/*
+
+WAAR WORDT WAT GEBRUIKT?
+
+H1: 
+-- Homepage: titel
+-- Winkelwagen: titel
+-- Overzichtspagina: titel
+-- Productpagina: productnaam-titel
+
+H2:
+-- Homepage: voorstelblok
+-- Afrekenformulier: titels + afrekenoverzicht: alle titels + productnamen
+-- Winkelwagen-modal: modal-titel + productnaam
+
+H3: 
+-- Overzichtspagina: productnaam + categorienaam
+-- Productpagina: categorienaam
+-- Winkelwagen-modal: categorienaam
+-- Winkelwagen: categorienaam + summary: subtotaal
+-- Overzichtspagina: categorienaam
+
+
+
+*/
+
+
 h2 {
-  font-family: 'IBM Plex Serif', serif;
   font-size: 30px;
 }
 
 h3 {
-  font-family: 'IBM Plex Serif', serif;
   font-size: 20px;
   font-weight: 600;
 }
 
 p {
-  font-family: 'Work Sans', sans-serif;
   font-size: 17px;
   font-weight: 400;
 }
 
 a {
-  font-family: 'Work Sans', sans-serif;
   font-weight: 400;
   font-size: 15px;
-  color: black;
 }
 
+
+
+/* ############################## */
 
 section, .breadcrumbs, .StepIndicator {
   max-width: 1523px;

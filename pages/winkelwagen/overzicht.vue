@@ -219,13 +219,6 @@ export default {
             }
         }
     },
-
-    mounted: function () {
-        const test = 5;
-        console.log(test)
-
-        console.log(test.toString(35),",00")
-    }
 }
 </script>
 

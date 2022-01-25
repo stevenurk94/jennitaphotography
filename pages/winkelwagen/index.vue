@@ -4,6 +4,7 @@
         <h1 v-if="cartItemCount">Uw winkelwagen</h1>
         <section>
             <div class="items" v-if="cartItemCount">
+
                 <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
                     <NuxtLink class="items__card__img" :to="`/kaarten/${ product.slug }`">
                         <img :src="require(`~/assets/img${product.image2}`)" alt="">
@@ -30,7 +31,9 @@
                         </div>                      
                     </div>
                 </div>
+
             </div>
+
             <div class="summary sticky" v-if="cartItemCount">
                 <div class="summary__subtotal">
                     <h3>Subtotaal</h3>
