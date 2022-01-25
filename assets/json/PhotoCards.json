@@ -7,7 +7,8 @@
         "slug": "1",
         "stock": 10,
         "image2": "/kaart0001.jpeg",
-        "category": "blanco"
+        "category": "blanco",
+        "catid": true
     },
     {
         "id": 2,
