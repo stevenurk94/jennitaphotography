@@ -95,7 +95,7 @@ export default {
     width: 100%;
     left: 0;
     right: 0;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 0px auto;
 }
 
 .StepIndicator__items a {

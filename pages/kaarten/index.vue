@@ -5,7 +5,7 @@
 
     <section>
         <div class="filter">
-            <h2 class="checkmark__title">Categorie</h2>
+            <h3>Categorie</h3>
             <input type="checkbox" id="blanco" v-on:change="blanco($event)" checked>
             <label class="checkmark" for="blanco">
                 <span class="checkmark__button">
@@ -182,12 +182,6 @@ main {
     background: var(--clr-bg);
 }
 
-
-h1 {
-    max-width: 1523px;
-    width: 95%;
-}
-
 main section {
     display: flex;
     justify-content: space-between;
@@ -220,7 +214,6 @@ main section {
 
 .products__title {
     border-bottom: 1px solid var(--clr-1-3);
-    padding-bottom: 8px;
     margin-bottom: 12px;
 }
 
@@ -375,10 +368,14 @@ main section {
 
 .products__wrapper__cart div h3 {
     font-size: 17px;
+    padding-bottom: 0;
+    font-weight: 600;
 }
 
 .products__wrapper__cart p {
     font-size: 15px;
+    line-height: 1;
+    padding-bottom: 0;
 }
 
 
@@ -407,12 +404,13 @@ main section {
 
 .products__wrapper__cart__category {
     text-transform: uppercase;
-    color: #3A524D;
+    color: var(--clr-3-2);
     margin: 2px 10px 15px 10px;
     width: 85%;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.2px;
+    padding-bottom: 0;
 
 }
 

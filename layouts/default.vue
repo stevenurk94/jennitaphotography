@@ -61,15 +61,14 @@ export default {
   --clr-1-3: #3A524D3D;
   --clr-1-4: #3A524D15;
 
-  --clr-bg: #F8FBFE;
-
-  --clr-2-1: #CF937E;
+  --clr-2-1: #C8764E;
   --clr-2-2: #E8A68E; /*#bd570f */
   --clr-2-3: #cf947e4f;
 
+  --clr-3-1: #333;
+  --clr-3-2: #999;
 
-  --clr-3: black;
-
+  --clr-bg: #fbfbfb;
   --border-radius: 5px;
   
 
@@ -105,20 +104,38 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'IBM Plex Serif', serif;
-  color: var(--clr-3);
+  color: var(--clr-3-1);
 }
 
 p, a {
   font-family: 'Work Sans', sans-serif;
-  color: var(--clr-3)
+  color: var(--clr-3-1);
 }
 
+p {
+  line-height: 1.7;
+  font-size: 17px;
+  font-weight: 400;
+}
 
 
 h1 {
-  font-size: calc(30px + 0.6vmax);
+  font-size: calc(25px + 0.6vmax);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 26px;
+  padding-bottom: 8px;
   font-weight: 700;
 }
+
+h3 {
+  font-size: 23px;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
 
 /*
 
@@ -147,19 +164,9 @@ H3:
 */
 
 
-h2 {
-  font-size: 30px;
-}
 
-h3 {
-  font-size: 20px;
-  font-weight: 600;
-}
 
-p {
-  font-size: 17px;
-  font-weight: 400;
-}
+
 
 a {
   font-weight: 400;

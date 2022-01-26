@@ -213,7 +213,7 @@ section {
 
 .items__card__info__title a {
     font-family: 'IBM Plex Serif', serif;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 600;
 
 }
@@ -225,7 +225,7 @@ section {
 .items__card__info__title h3 {
     text-transform: uppercase;
     color: var(--clr-1-1);
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .items__card__info__options {
@@ -248,6 +248,7 @@ section {
 
 .items__card__info__options__change__remove::before {
     content: "🗑 Verwijderen";
+    font-size: 16px;
 }
 
 
@@ -325,8 +326,12 @@ section {
     justify-content: space-between;
 }
 
+.summary__subtotal h3 {
+    padding-bottom: 0;
+    font-size: 20px;
+}
+
 .summary p {
-    margin-top: 2px;
     margin-bottom: 50px;
     font-size: 15px;
     color: rgba(0, 0, 0, 0.541);

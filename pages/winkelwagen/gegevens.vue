@@ -190,28 +190,3 @@ export default {
 
 
 
-
-
-
-
-
-
-
-
-
-<style scoped>
-
-.title {
-    width: 100%;
-    border-bottom: 1px solid var(--clr-1-3);
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-
-
-
-</style>

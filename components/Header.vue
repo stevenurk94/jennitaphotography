@@ -24,9 +24,9 @@
 
         <NuxtLink class="nav-logo" to="/">JF</NuxtLink>
         <!-- <NuxtLink class="nav-logo" to="/">
-            <img src="~/static/logo1.png" alt="">
-        </NuxtLink> -->
-        
+            <img src="~/static/Middel 9.png" alt="">
+        </NuxtLink>
+         -->
 
         <NuxtLink class="cart" to="/winkelwagen">
 

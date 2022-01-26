@@ -4,8 +4,6 @@
   <section class="home">
     <div>
       <h1>Steun het goede doel:<br>Kom over en help</h1>
-    </div>
-    <div>
       <NuxtLink class="button-1" to="/kaarten/">Direct bestellen</NuxtLink>
     </div>
 
@@ -75,10 +73,18 @@
   flex-direction: column;
   text-align: center;
   max-width: 90%;
-  width: 90%;
+  background: rgba(255, 255, 255, 0.158);
+  padding: 50px;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(3px);
 }
 
-
+.home div h1 {
+  color: white;
+  font-size: 50px;
+  margin-bottom: 50px;
+  line-height: 1.2;
+}
 
 
 

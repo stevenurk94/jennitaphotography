@@ -231,6 +231,7 @@ main {
     font-weight: 700;
     letter-spacing: 1.2px;
     margin: 3px 0px 20px 0px;
+    font-size: 17px;
 }
 
 .product__info__box {

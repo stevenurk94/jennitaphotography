@@ -365,21 +365,27 @@ form.div1__summary {
     width: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 /* ########## TITLE ########## */
 
+.items__card__info__title {
+    margin-bottom: 6px;
+
+}
+
 .items__card__info__title h2 {
     font-family: 'IBM Plex Serif', serif;
-    font-size: 25px;
+    font-size: 19px;
     font-weight: 600;
+    padding-bottom: 1px;
 }
 
 .items__card__info__title h3 {
     text-transform: uppercase;
-    color: var(--clr-1-1);
-    font-size: 17px;
+    color: var(--clr-3-2);
+    font-size: 11px;
 }
 
 .items__card__info__options {
@@ -387,10 +393,12 @@ form.div1__summary {
     justify-content: space-between;
     width: 100%;
     align-items: center;
-    margin-bottom: 15px;
+    margin-top: 4px;
 }
 
-
+.items__card__info__options p {
+    font-size: 15px;
+}
 
 
 
