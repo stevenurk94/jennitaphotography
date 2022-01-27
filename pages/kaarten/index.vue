@@ -6,7 +6,7 @@
     <section>
         <div class="filter">
             <h3>Categorie</h3>
-            <input type="checkbox" id="blanco" v-on:change="blanco($event)" checked>
+            <input type="checkbox" id="blanco" v-on:change="blanco($event)" :checked="v_blanco">
             <label class="checkmark" for="blanco">
                 <span class="checkmark__button">
                     <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 45.701 45.7" style="enable-background:new 0 0 45.701 45.7;" xml:space="preserve">
@@ -20,7 +20,7 @@
                  <span class="checkmark__text">Blanco</span>
             </label>
 
-            <input type="checkbox" id="geboorte" v-on:change="geboorte($event)" checked>
+            <input type="checkbox" id="geboorte" v-on:change="geboorte($event)" :checked="v_geboorte">
             <label class="checkmark" for="geboorte">
                 <span class="checkmark__button">
                     <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 45.701 45.7" style="enable-background:new 0 0 45.701 45.7;" xml:space="preserve">
@@ -34,7 +34,7 @@
                 <span class="checkmark__text">Geboorte</span>
 
             </label>
-            <input type="checkbox" id="verjaardag_jongen" v-on:change="verjaardag_jongen($event)" checked>
+            <input type="checkbox" id="verjaardag_jongen" v-on:change="verjaardag_jongen($event)" :checked="v_verjaardag_jongen">
             <label class="checkmark" for="verjaardag_jongen">
                 <span class="checkmark__button">
                     <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 45.701 45.7" style="enable-background:new 0 0 45.701 45.7;" xml:space="preserve">
@@ -177,6 +177,25 @@ export default {
             })
         },
     },
+
+    mounted: function () {
+
+        if (new URLSearchParams(window.location.search).get("category") == "blanco") {
+            this.v_blanco = true
+            this.v_geboorte = false
+            this.v_verjaardag_jongen = false
+        }
+        if (new URLSearchParams(window.location.search).get("category") == "geboorte") {
+            this.v_blanco = false
+            this.v_geboorte = true
+            this.v_verjaardag_jongen = false
+        }
+        if (new URLSearchParams(window.location.search).get("category") == "verjaardag_jongen") {
+            this.v_blanco = false
+            this.v_geboorte = false
+            this.v_verjaardag_jongen = true
+        }
+    }
   
 }
 

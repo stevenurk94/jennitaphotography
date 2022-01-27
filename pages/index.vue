@@ -10,7 +10,7 @@
   </section>
 
   <Intro />
-  <CardsCollage />
+  <!-- <CardsCollage /> -->
     
 </main>
 

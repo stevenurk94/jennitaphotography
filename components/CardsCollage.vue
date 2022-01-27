@@ -65,11 +65,12 @@ div:nth-child(2) {
     right: 0;
     left: 0;
     margin: auto;
+    max-width: 95%;
 }
 
 a {
     border-radius: var(--border-radius);
-    height: 300px;
+    max-height: 300px;
     object-fit: cover;
     overflow: hidden;
     transition: all 300ms ease-in-out;
@@ -87,10 +88,41 @@ a:hover {
 img {
     width: 100%;
     height: 100%;
-
+    object-fit: fill;
 }
 
 
 
+@media only screen and (max-width: 1200px) {
+
+    a:nth-child(5) {
+        grid-column: span 1;
+    }
+
+   
+
+    div:nth-child(2) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 520px) {
+  
+
+    div:nth-child(2) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    a:nth-child(2){
+        grid-column: span 1;
+    }
+
+    a:nth-child(5), a:nth-child(6)  {
+        grid-column: span 2;
+    }
+
+
+}
 
 </style>
