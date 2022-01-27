@@ -10,7 +10,7 @@
             <h3>Wanneer ben ik gestart?</h3>
             <p>Vanaf 2020 ben ik gestart met mijn kaarten verkoop en heb ik mij bij 'Kom over en help' aangemeld als vrijwilliger. De reden dat ik voor 'Kom over en help' heb gekozen, is dat ik achter de visie sta en de organisatie graag wil steunen wat betreft de mensen die ik kwetsbare omstandigheden leven.</p>
             <p>Helpt u ook mee om mensen die in kwetsbare omstandigheden leven een hoopvolle toekomst te geven? Dit kan door mijn fotocollectie te bekijken en uw bestelling te plaatsen.</p>
-            <p>Ik zie u graag</p>
+            <p>Ik zie u graag.</p>
             <p>Liefs, Jennita</p>
             <br>
             <br>

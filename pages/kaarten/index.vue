@@ -17,7 +17,7 @@
                         </g>
                     </svg>
                 </span>
-                 <span class="checkmark__text">Fotokaarten - Blanco</span>
+                 <span class="checkmark__text">Blanco</span>
             </label>
 
             <input type="checkbox" id="geboorte" v-on:change="geboorte($event)" checked>
@@ -31,7 +31,7 @@
                         </g>
                     </svg>
                 </span>
-                <span class="checkmark__text">Fotokaarten - Geboorte</span>
+                <span class="checkmark__text">Geboorte</span>
 
             </label>
             <input type="checkbox" id="verjaardag_jongen" v-on:change="verjaardag_jongen($event)" checked>
@@ -45,7 +45,7 @@
                         </g>
                     </svg>
                 </span>
-                <span class="checkmark__text">Fotokaarten - Verjaardag Jongen</span>
+                <span class="checkmark__text">Verjaardag Jongen</span>
             </label>
 
 
@@ -56,39 +56,50 @@
 
 
         <div class="products">
-            <h2 class="products__title" v-if="v_blanco === true">Fotokaarten - Blanco</h2>
+            <h2 class="products__title" v-if="v_blanco === true">Blanco</h2>
             <div class="products__wrapper" v-if="v_blanco === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsBlanco" :key="PhotoCards.id">
                     <img :src="require(`~/assets/img${PhotoCards.image2}`)" alt="">
                     <div>
-                        <h3>{{ PhotoCards.name }}</h3>
+                        <div class="products__wrapper__cart__info">
+                            <h3>{{ PhotoCards.name }}</h3>
+                            <h3>{{ PhotoCards.category }}</h3>
+                        </div>
                         <p>€ {{ PhotoCards.price.toFixed(2).replace(".", ",") }}</p>
                     </div>
-                    <h3 class="products__wrapper__cart__category">{{ PhotoCards.category }}</h3>
+                    
+                    
                 </NuxtLink>
             </div>
 
-            <h2 class="products__title" v-if="v_geboorte === true">Fotokaarten - Geboorte</h2>
+            <h2 class="products__title" v-if="v_geboorte === true">Geboorte</h2>
             <div class="products__wrapper" v-if="v_geboorte === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsGeboorte" :key="PhotoCards.id">
                     <img :src="require(`~/assets/img${PhotoCards.image2}`)" alt="">
                     <div>
-                        <h3>{{ PhotoCards.name }}</h3>
+                        <div class="products__wrapper__cart__info">
+                            <h3>{{ PhotoCards.name }}</h3>
+                            <h3>{{ PhotoCards.category }}</h3>
+                        </div>                        
                         <p>€ {{ PhotoCards.price.toFixed(2).replace(".", ",") }}</p>
                     </div>
-                    <h3 class="products__wrapper__cart__category">{{ PhotoCards.category }}</h3>
+                    
                 </NuxtLink>
             </div>
 
-            <h2 class="products__title" v-if="v_verjaardag_jongen === true">Fotokaarten - Verjaardag Jongen</h2>
+            <h2 class="products__title" v-if="v_verjaardag_jongen === true">Verjaardag Jongen</h2>
             <div class="products__wrapper" v-if="v_verjaardag_jongen === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsVerjaardagJongen" :key="PhotoCards.id">
                     <img :src="require(`~/assets/img${PhotoCards.image2}`)" alt="">
                     <div>
-                        <h3>{{ PhotoCards.name }}</h3>
+                        <div class="products__wrapper__cart__info">
+                            <h3>{{ PhotoCards.name }}</h3>
+                            <h3>{{ PhotoCards.category }}</h3>
+                        </div>
                         <p>€ {{ PhotoCards.price.toFixed(2).replace(".", ",") }}</p>
                     </div>
-                    <h3 class="products__wrapper__cart__category">{{ PhotoCards.category }}</h3>
+                    
+                    
                 </NuxtLink>
             </div>
 
@@ -169,12 +180,9 @@ export default {
   
 }
 
-
-
-
-
-
 </script>
+
+
 
 <style scoped>
 
@@ -198,7 +206,7 @@ main section {
     position: sticky;
     top: 110px;
     margin-right: 50px;
-    min-width: 330px;
+    min-width: 300px;
 }
 
 
@@ -209,7 +217,6 @@ main section {
 
 .products {
     width: 68%;
-    min-width: 950px;
 }
 
 .products__title {
@@ -222,21 +229,24 @@ main section {
 }
 
 .products__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 973px;
+    display: grid;
+    gap: 25px 3%;
+    grid-template-columns: repeat(3, 1fr); 
+    padding-top: 15px;
 }
 
+
+
+
+
+
+/* ########## PRODUCTS CART ########## */
 
 .products__wrapper__cart {
     box-shadow: 0 0 0 1px #dadce0;
     border-radius: var(--border-radius);
-    margin: 15px 1.25%; 
     overflow: hidden;
     cursor: pointer;
-    width: calc(25% - 20px);
-    min-width: 225px;
-
     background: #fff;
     transition: all .2s ease-out;
     display: flex;
@@ -245,146 +255,11 @@ main section {
     color: black;
 }
 
-.products__wrapper__cart:nth-child(4n + 1) {
-    margin-left: 0px;
-}
-
-.products__wrapper__cart:nth-child(4n + 4) {
-    margin-right: 0px;
-}
-
-/* @media only screen and (max-width: 1290px) {
-
-    .products__cart {
-        width: calc(25% - 20px);
-        margin: 15px 1.08%;
-    }
-
-    .products__cart:nth-child(5n + 1), .products__cart:nth-child(5n + 5) {
-        margin-left: 1.08%;
-        margin-right: 1.08%;
-    }
-
-    .products__cart:nth-child(4n + 1) {
-        margin-left: 0px;
-    }
-
-    .products__cart:nth-child(4n + 4) {
-        margin-right: 0px;
-    }
-} */
-
-@media only screen and (max-width: 1013px) {
-
-    .products__cart {
-        width: calc(33% - 20px);
-        margin: 15px 1.81%;
-    }
-
-    .products__cart:nth-child(5n + 1), .products__cart:nth-child(5n + 5), .products__cart:nth-child(4n + 1), .products__cart:nth-child(4n + 4) {
-        margin-left: 1.81%;
-        margin-right: 1.81%;
-    }
-
-    .products__cart:nth-child(3n + 1) {
-        margin-left: 0px;
-    }
-
-    .products__cart:nth-child(3n + 3) {
-        margin-right: 0px;
-    }
-}
-
-@media only screen and (max-width: 766px) {
-    .products__cart {
-        width: calc(50% - 20px);
-        margin: 15px 2.7%;
-    }
-
-    .products__cart:nth-child(5n + 1), .products__cart:nth-child(5n + 5), .products__cart:nth-child(4n + 1), .products__cart:nth-child(4n + 4), .products__cart:nth-child(3n + 1), .products__cart:nth-child(3n + 3) {
-        margin-left: 2.7%;
-        margin-right: 2.7%;
-    }
-
-    .products__cart:nth-child(2n + 1) {
-        margin-left: 0px;
-    }
-
-    .products__cart:nth-child(2n + 2) {
-        margin-right: 0px;
-    }
-}
-
-@media only screen and (max-width: 501px) {
-    .products__cart {
-        width: 47.5%;
-        margin: 15px 2.5%;
-        min-width: auto;
-    }
-
-    .products__cart:nth-child(5n + 1), .products__cart:nth-child(5n + 5), .products__cart:nth-child(4n + 1), .products__cart:nth-child(4n + 4), .products__cart:nth-child(3n + 1), .products__cart:nth-child(3n + 3) {
-        margin-left: 2.5%;
-        margin-right: 2.5%;
-    }
-
-    .products__cart:nth-child(2n + 1) {
-        margin-left: 0px;
-    }
-
-    .products__cart:nth-child(2n + 2) {
-        margin-right: 0px;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    .products__cart {
-        width: 48.5%;
-        margin: 10px 1.5%;
-        min-width: auto;
-    }
-
-    .products__cart:nth-child(5n + 1), .products__cart:nth-child(5n + 5), .products__cart:nth-child(4n + 1), .products__cart:nth-child(4n + 4), .products__cart:nth-child(3n + 1), .products__cart:nth-child(3n + 3) {
-        margin-left: 1.5%;
-        margin-right: 1.5%;
-    }
-
-    .products__cart:nth-child(2n + 1) {
-        margin-left: 0px;
-    }
-
-    .products__cart:nth-child(2n + 2) {
-        margin-right: 0px;
-    }
-}
-
-
-
-
-
-
 .products__wrapper__cart:hover {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%);
 }
 
-.products__wrapper__cart div h3 {
-    font-size: 17px;
-    padding-bottom: 0;
-    font-weight: 600;
-}
-
-.products__wrapper__cart p {
-    font-size: 15px;
-    line-height: 1;
-    padding-bottom: 0;
-}
-
-
-
 .products__wrapper__cart img {
-    /* width: 100%;
-    height: 180px;
-    object-fit: cover;
-    object-position: middle; */
     object-fit: contain;
     height: 220px;
     width: 90%;
@@ -393,7 +268,8 @@ main section {
     margin: 15px 10px;
 }
 
-.products__wrapper__cart div {
+
+.products__wrapper__cart > div {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -401,18 +277,134 @@ main section {
     width: 85%;
 }
 
+.products__wrapper__cart__info h3:first-child  {
+    font-size: 17px;
+    padding-bottom: 0;
+    font-weight: 600;
+}
 
-.products__wrapper__cart__category {
+.products__wrapper__cart__info h3:last-child {
     text-transform: uppercase;
     color: var(--clr-3-2);
-    margin: 2px 10px 15px 10px;
+    margin: 2px 0 15px 0;
     width: 85%;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.2px;
     padding-bottom: 0;
+}
+
+
+.products__wrapper__cart p {
+    font-size: 15px;
+    line-height: 1.2;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1050px) {
+
+    main section {
+        display: block;
+    }
+
+    .filter {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        position: unset;
+        margin-bottom: 6%;
+        padding: 17px 20px 20px 20px;
+    }
+
+    .filter h3 {
+        width: 100%;
+    }
+
+    .filter .checkmark {
+        padding: 10px 15px;
+        border: 1px solid var(--clr-1-3);
+        border-radius: var(--border-radius);
+        width: fit-content;
+        margin: 10px 3% 0 0;
+    }
+
+    .filter input[type="checkbox"]:checked:checked + .checkmark {
+        background: var(--clr-1-1);
+    }
+
+    .filter input[type="checkbox"]:checked:checked + .checkmark .checkmark__text {
+        color: white;
+    }
+
+    .filter .checkmark__button {
+        display: none;
+    }
+
+    .filter .checkmark__text {
+        margin: 0;
+    }
+
+    .products {
+        width: 100%;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 680px) {
+
+    .products__wrapper {
+        gap: 25px 3%;
+        grid-template-columns: repeat(3, 1fr); 
+        padding-top: 2%;
+    }
+
+    .products__wrapper__cart img {
+        height: 100%;
+        margin: 10px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .products__wrapper__cart > div {
+        display: block;
+        margin: 4px 5px 5px 5px;
+    }
+   
+    .products__wrapper__cart__info h3:last-child {
+        margin-bottom: 10px;
+    }
+
+    .products__wrapper__cart p {
+        height: fit-content;
+    }
+
 
 }
 
+@media only screen and (max-width: 550px) {
+    
+    .products__wrapper {
+        gap: 25px 3%;
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+
+}
 
 </style>

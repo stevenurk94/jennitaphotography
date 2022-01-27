@@ -10,6 +10,7 @@
   </section>
 
   <Intro />
+  <CardsCollage />
     
 </main>
 
@@ -94,8 +95,6 @@
 
 <script>
 export default {
-
   layout: "home"
-  
 }
 </script>

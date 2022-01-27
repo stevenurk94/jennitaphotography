@@ -94,47 +94,16 @@ export default {
 
     methods: {
         addOneToCart( product ) {
-
             this.product = product
             this.$store.commit("addOneToCart", product);
-
-            // NOTIFICATION LABEL UPDATING
-            if (this.cartItemCount < 100 && this.cartItemCount != 0) {
-                document.querySelector(".notification-label").innerHTML = this.cartItemCount;
-                document.querySelector(".notification-label").style.display = "flex";
-            } else if (this.cartItemCount >= 100) {
-                document.querySelector(".notification-label").innerHTML = "99+";
-            } else if (this.cartItemCount == 0) {
-                document.querySelector(".notification-label").style.display = "none";
-            }
         },
 
         removeOneFromCart( product ) {
             this.$store.commit("removeOneFromCart", product);
-
-            // NOTIFICATION LABEL UPDATING
-            if (this.cartItemCount < 100 && this.cartItemCount != 0) {
-                document.querySelector(".notification-label").innerHTML = this.cartItemCount;
-                document.querySelector(".notification-label").style.display = "flex";
-            } else if (this.cartItemCount >= 100) {
-                document.querySelector(".notification-label").innerHTML = "99+";
-            } else if (this.cartItemCount == 0) {
-                document.querySelector(".notification-label").style.display = "none";
-            }
         },
 
         removeProductFromCart( product ) {
             this.$store.commit("removeProductFromCart", product);
-
-            // NOTIFICATION LABEL UPDATING
-            if (this.cartItemCount < 100 && this.cartItemCount != 0) {
-                document.querySelector(".notification-label").innerHTML = this.cartItemCount;
-                document.querySelector(".notification-label").style.display = "flex";
-            } else if (this.cartItemCount >= 100) {
-                document.querySelector(".notification-label").innerHTML = "99+";
-            } else if (this.cartItemCount == 0) {
-                document.querySelector(".notification-label").style.display = "none";
-            }
         },
     },
 }
@@ -148,7 +117,7 @@ export default {
 <style scoped>
 
 h1 {
-    max-width: 1523px;
+    max-width: var(--website-width);
     width: 95%;
 }
 

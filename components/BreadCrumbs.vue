@@ -18,7 +18,6 @@ export default {
             required: true,
         },
         cartbreadcrumbs: {
-            required: true
         }
     }
 }

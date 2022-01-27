@@ -11,51 +11,10 @@
 </template>
 
 
-
-
-<script>
-
-export default {
-
-  computed: {
-    cartItemCount () {
-      return this.$store.getters.cartItemCount
-    },
-  },
-
-  mounted: function() {
-
-    if (this.cartItemCount < 100 && this.cartItemCount != 0) {
-      document.querySelector(".notification-label").innerHTML = this.cartItemCount;
-      document.querySelector(".notification-label").style.display = "flex";
-    } else if (this.cartItemCount >= 100) {
-      document.querySelector(".notification-label").innerHTML = "99+";
-    } else if (this.cartItemCount == 0) {
-      document.querySelector(".notification-label").style.display = "none";
-    }
-  }
-}
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
 
 :root {
   
-
   --clr-1-1: #3A524D;
   --clr-1-2: #3A524D65; /* #3A524D62 & #3a524DB4*/
   --clr-1-3: #3A524D3D;
@@ -70,6 +29,7 @@ export default {
 
   --clr-bg: #fbfbfb;
   --border-radius: 5px;
+  --website-width: 1286px;
   
 
 
@@ -120,7 +80,7 @@ p {
 
 
 h1 {
-  font-size: calc(25px + 0.6vmax);
+  font-size: calc(23px + 0.6vmax);
   font-weight: 800;
 }
 
@@ -178,7 +138,7 @@ a {
 /* ############################## */
 
 section, .breadcrumbs, .StepIndicator {
-  max-width: 1523px;
+  max-width: var(--website-width);
   width: 95%;
 }
 
@@ -204,6 +164,7 @@ section, .breadcrumbs, .StepIndicator {
   overflow: hidden; 
   transition: all 200ms ease-in-out;
   text-transform: uppercase;
+  letter-spacing: 1.3px;
 
   border: none;
   color: white;
@@ -230,6 +191,7 @@ section, .breadcrumbs, .StepIndicator {
   overflow: hidden; 
   transition: all 500ms ease-in-out;
   text-transform: uppercase;
+  letter-spacing: 1.3px;
 
   border: 1px solid var(--clr-1-1);
   color: var(--clr-1-1);

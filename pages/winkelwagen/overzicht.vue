@@ -79,7 +79,7 @@
                     <h3>€ {{ (cartTotal + shippingCosts).toFixed(2).replace(".", ",") }}</h3>
                 </div>
                 
-                <button type="submit" class="button-1">Afrekenen</button>
+                <button type="submit" class="button-1">Bestellen en betalen</button>
             </form>
 
 

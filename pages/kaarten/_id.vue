@@ -169,17 +169,6 @@ export default {
                 this.$store.commit("addToCart", product);
                 this.showModal = true
             }
-
-
-            // NOTIFICATION LABEL UPDATING
-            if (this.cartItemCount < 100 && this.cartItemCount != 0) {
-                document.querySelector(".notification-label").innerHTML = this.cartItemCount;
-                document.querySelector(".notification-label").style.display = "flex";
-            } else if (this.cartItemCount >= 100) {
-                document.querySelector(".notification-label").innerHTML = "99+";
-            } else if (this.cartItemCount == 0) {
-                document.querySelector(".notification-label").style.display = "none";
-            }        
             
             setTimeout(() => {
                 document.querySelector(".loadingbullets").style.display = "none";
@@ -253,12 +242,11 @@ main {
 
 .product__info__box div input {
     width: 100%;
-    height: 65px;
+    height: 55px;
     max-width: 100px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
     border-radius: var(--border-radius);
-    padding: 0.5em 1em;
     border: 1px solid rgb(0 0 0 / 25%);
     cursor: text;
     text-align: center;
