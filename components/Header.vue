@@ -21,13 +21,26 @@
             <!-- <div class="left-fade"></div> -->
             <ul>
                 <li>
-                    <NuxtLink to="/">Home</NuxtLink>
+                    <h3>Menu</h3>
                 </li>
                 <li>
-                    <NuxtLink to="/kaarten">Kaarten bestellen</NuxtLink>
+                    <NuxtLink to="/">Home
+                        <span>&#8250;</span>
+                    </NuxtLink>
+                    
                 </li>
                 <li>
-                    <a href="mailto:info@jennitaphotography.nl">Contact</a>
+                    <NuxtLink to="/kaarten">Kaarten bestellen
+                        <!-- <svg class="menu-desktop__icon-button-list" width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.243.757L5.485 5 1.243 9.243" stroke="currentColor" stroke-width="1.5" fill="none" fill-rule="evenodd"></path>
+                        </svg> -->
+                        <span>&#8250;</span>
+                    </NuxtLink>                   
+                </li>
+                <li>
+                    <a href="mailto:info@jennitaphotography.nl">Contact
+                        <span>&#8250;</span>
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -117,52 +130,19 @@ header.scrolled .navbar.open .navbar__logo {
 /* ########## NAVBAR ITEMS ########## */
 
 
-/* .navbar nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: all .75s cubic-bezier(0.87, 0, 0.13, 1);
-  opacity: 0;
-  visibility: hidden;
-} */
 
-/* header .navbar.open nav {
-    visibility: visible;
-    opacity: 1;
-} */
 
 
 
 header .navbar nav ul {
     display: flex;
-    /* transform: translate(0, -50%) scale(1.5) rotate(0deg);
-    transition: all .75s cubic-bezier(0.87, 0, 0.13, 1);
-    opacity: 0; */
+
 }
 /* header .navbar.open nav ul {
     transform: translate(0, 0) scale(1) rotate(0deg);
     opacity: 1;
 } */
-/* 
-header .navbar nav ul li {
-    font-size: 19px;
-    font-weight: 500;
-    height: 100%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin: 0 1.25rem;
-    flex-wrap: nowrap;
-    line-height: 50px;
-    flex-direction: column;
-} */
+
 
 
 header .navbar nav ul li a {
@@ -175,18 +155,6 @@ header .navbar nav ul li a {
     letter-spacing: 0.8px;
     position: relative;
     padding: 5px 0;
-
-
-
-    /* color: rgba(255, 255, 255, 0.5);
-    position: relative;
-    width: 100%;
-    transition: all ease-in 250ms;
-    text-decoration: none;
-    font-size: 40px;
-    padding: 14px 32px;
-    text-align: center;
-    font-weight: bold; */
 }
 header .navbar nav ul li a:hover, header .navbar nav ul li a.nuxt-link-exact-active.nuxt-link-active {
     color: white;
@@ -195,7 +163,7 @@ header .navbar nav ul li a::after {
     content: "";
     width: 0;
     height: 1.5px;
-    background: white;
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 50px;
     bottom: 0;
     left: 0;
@@ -221,6 +189,16 @@ header.scrolled .navbar nav ul li a::after {
     background: black;
 }
 
+
+
+/* header .navbar nav ul li a svg {
+    transform: rotate(90deg);
+    margin-left: 3px;
+}
+
+header .navbar nav ul li a svg path {
+    fill: none;
+} */
 
 
 /* 
@@ -271,7 +249,7 @@ header .navbar .background-image {
 
 /* ### MENU BUTTON ### */
 
-header .navbar input[type="checkbox"] {
+header .navbar input[type="checkbox"], header .navbar nav ul li a span, header .navbar nav ul li h3 {
   display: none;
 }
 
@@ -335,6 +313,144 @@ header .navbar input:checked ~ label span:nth-child(3) {
 }
 
 
+
+
+
+@media only screen and (max-width: 850px) {
+
+    header .navbar label {
+        display: flex;
+        order: -1;
+    }
+
+    header .navbar nav {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        opacity: 0;
+        visibility: hidden;
+        background: linear-gradient(rgb(0 0 0 / 80%), rgb(0 0 0 / 60%)), url("~/assets/img/kaart0004.jpeg");
+        background-size: cover;
+        opacity: 0;
+        transition: opacity 50ms ease-in-out;
+    }
+
+    header .navbar.open nav {
+        opacity: 1;
+    }
+
+    header .navbar.open nav {
+        visibility: visible;
+        opacity: 1;
+        overflow-y: hidden;
+    }
+
+    header .navbar nav ul {
+        padding-top: 33%;
+        display: block;
+        right: 0;
+        left: 0;
+        margin: auto;
+        width: 95%;
+    }
+
+    header .navbar nav ul li {
+        border-bottom: .5px solid rgba(255, 255, 255, 0.6);
+    }
+
+
+    header .navbar nav ul li h3 {
+        display: block;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+        text-align: center;
+        margin-bottom: 13px;
+    }
+
+    header .navbar nav ul li a {
+        margin: 0;
+        padding: 14px 15px 15px 15px;  
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0;
+    }
+
+    header .navbar nav ul li:nth-child(1) h3 {
+        transition: opacity 150ms ease-in-out;
+        opacity: 0;
+    }
+    header .navbar nav ul li:nth-child(2) a {
+        /* transform: translateX(-10%); */
+        transition: all 250ms ease-in-out;
+    }    
+    header .navbar nav ul li:nth-child(3) a {
+        /* transform: translateX(-20%); */
+        transition: all 350ms ease-in-out;
+    }
+    header .navbar nav ul li:nth-child(4) a {
+        /* transform: translateX(-30%); */
+        transition: all 450ms ease-in-out;
+    }
+    header .navbar.open nav ul li a, header .navbar.open nav ul li h3 {
+        /* transform: translate(0); */
+        opacity: 1;
+    }
+
+
+
+
+
+    header.scrolled .navbar nav ul li a {
+        color: rgba(255, 255, 255, 0.767);
+    }
+
+    header.scrolled .navbar nav ul li a.nuxt-link-exact-active.nuxt-link-active {
+        color: white;
+    }
+
+    header .navbar nav ul li a span {
+        display: block;
+        color: rgba(255, 255, 255, 0.767);
+        font-size: 30px;
+        font-weight: 400;
+        padding-bottom: 2px;
+    }
+
+
+
+
+
+
+
+
+    /* .navbar nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all .75s cubic-bezier(0.87, 0, 0.13, 1);
+  opacity: 0;
+  visibility: hidden;
+} */
+
+/* header .navbar.open nav {
+    visibility: visible;
+    opacity: 1;
+} */
+
+}
 
 
 
@@ -472,12 +588,6 @@ export default {
             }
         },
     },
-
-
-
-
-
-
 }
 </script>
 

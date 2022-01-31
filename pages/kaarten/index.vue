@@ -2,7 +2,6 @@
 <main>
     <BreadCrumbs :items="breadcrumbs"/>
 
-
     <section>
         <div class="filter">
             <h3>Categorie</h3>
@@ -178,25 +177,24 @@ export default {
         },
     },
 
-    mounted: function () {
+    // mounted: function () {
 
-        if (new URLSearchParams(window.location.search).get("category") == "blanco") {
-            this.v_blanco = true
-            this.v_geboorte = false
-            this.v_verjaardag_jongen = false
-        }
-        if (new URLSearchParams(window.location.search).get("category") == "geboorte") {
-            this.v_blanco = false
-            this.v_geboorte = true
-            this.v_verjaardag_jongen = false
-        }
-        if (new URLSearchParams(window.location.search).get("category") == "verjaardag_jongen") {
-            this.v_blanco = false
-            this.v_geboorte = false
-            this.v_verjaardag_jongen = true
-        }
-    }
-  
+    //     if (new URLSearchParams(window.location.search).get("category") == "blanco") {
+    //         this.v_blanco = true
+    //         this.v_geboorte = false
+    //         this.v_verjaardag_jongen = false
+    //     }
+    //     if (new URLSearchParams(window.location.search).get("category") == "geboorte") {
+    //         this.v_blanco = false
+    //         this.v_geboorte = true
+    //         this.v_verjaardag_jongen = false
+    //     }
+    //     if (new URLSearchParams(window.location.search).get("category") == "verjaardag_jongen") {
+    //         this.v_blanco = false
+    //         this.v_geboorte = false
+    //         this.v_verjaardag_jongen = true
+    //     }
+    // }
 }
 
 </script>

@@ -10,6 +10,20 @@
 
 <style scoped>
 
+
+* {
+  text-decoration: none;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+
+
 main {
   padding: 0;
 }
