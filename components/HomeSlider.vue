@@ -7,23 +7,19 @@
             <input type="radio" name="radio-btn" id="radio4">
 
             <div class="wrapper__slide first">
-                <!-- <img src="~/assets/img/kaart0014.jpeg" alt=""> -->
                 <img src="~/assets/img/kaart0018.jpeg" alt="">
                 
             </div>
             <div class="wrapper__slide">
-                <!-- <img src="~/assets/img/kaart0016.jpeg" alt=""> -->
-                <img src="~/assets/img/kaart0017.jpeg" alt="">
+                <img src="~/assets/img/kaart0019.jpeg" alt="">
 
             </div>
             <div class="wrapper__slide">
-                <!-- <img src="~/assets/img/kaart0021.jpeg" alt=""> -->
                 <img src="~/assets/img/kaart0016.jpeg" alt="">
 
             </div>
             <div class="wrapper__slide">
-                <!-- <img src="~/assets/img/kaart0024.jpeg" alt=""> -->
-                <img src="~/assets/img/kaart0015.jpeg" alt="">
+                <img src="~/assets/img/kaart0014.jpeg" alt="">
 
             </div>
 
