@@ -26,6 +26,7 @@
 
 main {
   padding: 0;
+  position: relative;
 }
 
 header {

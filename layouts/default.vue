@@ -3,9 +3,7 @@
     <header>
       <Header />
     </header>
-    
     <Nuxt />
-
     <Footer />
   </div>
 </template>
@@ -204,6 +202,76 @@ section, .breadcrumbs, .StepIndicator {
 }
 
 
+
+
+
+/* ########## LOADING ANIMATIONS ########## */
+
+.loading1::after {
+  content: "";
+  width: 28px;
+  height: 28px;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  animation: loading1 1.2s infinite;
+  display: flex;
+  border-top-color: white;
+}
+
+
+@keyframes loading1 {
+  from {
+    transform: rotate(0deg); /* rotate(0turn) */
+    /* border-left-color: transparent;
+    border-bottom-color: transparent; */
+  }
+
+  to {
+    transform: rotate(360deg); /* rotate(1turn) */
+    /* border-left-color: white;
+    border-bottom-color: white; */
+  }
+}
+
+
+.loading-2 {
+  /* display: inline-block; */
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.loading-2 div {
+  /* display: block; */
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  margin: 8px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  animation: loading2 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.loading-2 div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loading-2 div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loading-2 div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes loading2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 
 /* GENERAL CSS SETTINGS */

@@ -1,5 +1,5 @@
 <template>
-    <div class="navbar">
+    <section class="navbar">
 
         <NuxtLink class="navbar__logo" to="/">JF</NuxtLink>
         <!-- <NuxtLink class="nav__logo" to="/">
@@ -57,7 +57,7 @@
         </NuxtLink>
 
 
-    </div>
+    </section>
 
 </template>
 
@@ -81,8 +81,6 @@ header .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: var(--website-width);
-    width: 95%;
     right: 0;
     left: 0;
     margin: auto;
@@ -102,7 +100,7 @@ header .navbar {
     padding: 25px 0;
     cursor: pointer;
     z-index: 10;
-    transition: all 400ms ease-in-out;
+    transition: padding 200ms ease-in-out;
     color: white;
     /* width: 80px; */
 }
@@ -336,7 +334,7 @@ header .navbar input:checked ~ label span:nth-child(3) {
         background: linear-gradient(rgb(0 0 0 / 80%), rgb(0 0 0 / 60%)), url("~/assets/img/kaart0004.jpeg");
         background-size: cover;
         opacity: 0;
-        transition: opacity 50ms ease-in-out;
+        transition: opacity 60ms ease-in-out;
     }
 
     header .navbar.open nav {
