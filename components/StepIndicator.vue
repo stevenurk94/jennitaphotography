@@ -11,9 +11,15 @@
 
         <div class="StepIndicator__steps">
             <div class="step" v-for="(item, index) in items" :key="index" :class="item.url ? 'completed' : '' || item.page ? 'active' : ''">
-                <span v-if="item.url" class="completed"></span>
-                <span v-else-if="item.page" class="active"></span>
-                <span v-else></span>
+                <span v-if="item.url" class="completed">
+                    <span><Checkmark /></span>
+                </span>
+                <span v-else-if="item.page" class="active">
+                    <span></span>
+                </span>
+                <span v-else>
+                    <span></span>
+                </span>
             </div>
         </div>
 
@@ -143,14 +149,17 @@ export default {
     position: relative;
 }
 
-.step span {
+.step > span {
     position: relative;
     width: 100%;
     text-align: center;
 }
 
-.step span::before {
-    content: "";
+
+
+
+
+.step > span > span {
     counter-increment: step;
     width: 23px;
     height: 23px;
@@ -166,8 +175,12 @@ export default {
     justify-content: center;
 }
 
-.step span.completed::before {
-    content: "✓";/* ✓ */
+.step > span > span svg {
+    fill: white;
+}
+
+.step > span.completed > span {
+    content: "✓";
     border-color: var(--clr-1-1);
     background: var(--clr-1-1);
     color: white;
@@ -176,13 +189,27 @@ export default {
     padding-top: 1.5px;
 }
 
-.step span.active::before {
+.step > span.completed > span svg {
+    margin: 1px 2px 2px 2px;
+
+    
+}
+
+
+.step > span.active > span {
     background: white;
     color: #bebebe;
     animation: bc 1.5s;
     border-color: var(--clr-1-1);
     color: var(--clr-1-1);
 }
+
+
+
+
+
+
+
 
 .step::after {
     content: "";

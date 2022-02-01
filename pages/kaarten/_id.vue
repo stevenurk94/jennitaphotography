@@ -1,43 +1,5 @@
 <template>
 <main>
-    <!-- <picture class=" width-cover"> 
-        <source 
-            media="(min-width: 768px)" 
-            type="image/webp" 
-            sizes=" (min-width: 1200px) 1200px, (min-width: 992px) 992px, (min-width: 768px) 768px, (min-width: 576px) 576px" 
-            srcset=" 
-            https://plate-assets.com/prod1-img/1f4beed156/spg-18113-wandeling-hoog_laag-32.jpg?width=700&amp;height=430&amp;mode=crop&amp;format=webp&amp;signature=cc86aaaca89c5f0bde5076fa453ea5b773d89742 1200w , 
-            https://plate-assets.com/prod1-img/1f4beed156/spg-18113-wandeling-hoog_laag-32.jpg?width=579&amp;height=430&amp;mode=crop&amp;format=webp&amp;signature=dcb43841c5c6cd596d51484855742a407bf13a9e 992w , 
-            https://plate-assets.com/prod1-img/1f4beed156/spg-18113-wandeling-hoog_laag-32.jpg?width=448&amp;height=430&amp;mode=crop&amp;format=webp&amp;signature=07a7b9f6c5329e148f63fc21452c74bc109c630c 768w , 
-            https://plate-assets.com/prod1-img/1f4beed156/spg-18113-wandeling-hoog_laag-32.jpg?width=768&amp;height=430&amp;mode=crop&amp;format=webp&amp;signature=8d42ea39d542c316ca12a59599255dd8d5dfbfd1 576w "> 
-            
-        <source 
-            media="(min-width: 768px)" 
-            type="image/jpeg" 
-            sizes=" (min-width: 1200px) 1200px, (min-width: 992px) 992px, (min-width: 768px) 768px, (min-width: 576px) 576px" 
-            srcset=" 
-            https://plate-assets.com/prod1-img/1f4beed156/spg-18113-wandeling-hoog_laag-32.jpg?width=700&amp;height=430&amp;mode=crop&amp;format=jpeg&amp;signature=c184177e76623fee0a70e2b53d0e53c14d8c7fd9 1200w , 
-            https://plate-assets.com/prod1-img/1f4beed156/spg-18113-wandeling-hoog_laag-32.jpg?width=579&amp;height=430&amp;mode=crop&amp;format=jpeg&amp;signature=ce68112fcb32d4e6160b74bd1c2087474e9b4d86 992w , 
-            https://plate-assets.com/prod1-img/1f4beed156/spg-18113-wandeling-hoog_laag-32.jpg?width=448&amp;height=430&amp;mode=crop&amp;format=jpeg&amp;signature=5f8e145bd13da08f547aafa2299e308cfb3f9efb 768w , 
-            https://plate-assets.com/prod1-img/1f4beed156/spg-18113-wandeling-hoog_laag-32.jpg?width=768&amp;height=430&amp;mode=crop&amp;format=jpeg&amp;signature=2e91f615361a29eeafc3751234f79185c2f27370 576w "> 
-        
-        <source 
-            type="image/webp" 
-            media="(max-width:767px)" 
-            srcset=" 
-            https://plate-assets.com/prod1-img/1f4beed156/spg-18113-wandeling-hoog_laag-32.jpg?width=576&amp;height=323&amp;mode=crop&amp;format=webp&amp;signature=79b778e5921702f803f3cd3c342f15d71c38e2be ">
-            
-        <source 
-            type="image/jpeg" 
-            media="(max-width:767px)" 
-            srcset="
-            https://plate-assets.com/prod1-img/1f4beed156/spg-18113-wandeling-hoog_laag-32.jpg?width=576&amp;height=323&amp;mode=crop&amp;format=jpeg&amp;signature=2a259b9440eabc07a9d2b758e2d03448070d1cd5 ">
-            
-        <img 
-            src=" https://plate-assets.com/prod1-img/1f4beed156/spg-18113-wandeling-hoog_laag-32.jpg?width=576&amp;height=323&amp;mode=crop&amp;format=jpeg&amp;signature=2a259b9440eabc07a9d2b758e2d03448070d1cd5 " 
-            alt="spg-18113-wandeling-hoog_laag-32"> 
-            
-    </picture> -->
 
     <BreadCrumbs :items="breadcrumbs"/>
     <section>
@@ -46,7 +8,7 @@
         <div v-for="product in PhotoCards" :key="product.id" :product="product"  class="product">
 
             <div class="product__img" v-if="product.id == PC">
-                <img :src="require(`~/assets/img${product.image2}`)" alt="">
+                <img :src="require(`~/assets/img${product.image.jpeg.original}`)" alt="">
 
             </div>
 
@@ -74,13 +36,17 @@
                     <div class="modal" @click.stop>
                         <Loading />
                         <div class="modal__header">
-                            <span>&#10003;</span>
-                            <h2>Toegevoegd aan je winkelwagen</h2>
+                            <span>
+                                <Checkmark />
+                            </span>
+                            <h3>Toegevoegd aan je winkelwagen</h3>
                         </div>                  
-                        <span class="modal__close" @click="showModal = false">&#10060;</span>
+                        <span class="modal__close" @click="showModal = false">
+                            <Cross />
+                        </span>
                         <div class="modal__product">
                             <div class="modal__product__img">
-                                <img :src="require(`~/assets/img${product.image2}`)" alt="">
+                                <img :src="require(`~/assets/img${product.image.jpeg.original}`)" alt="">
                             </div>
                             
                             <div class="modal__product__info">
@@ -311,9 +277,7 @@ main {
 
 
 
-
-
-
+/* ########## MODAL ########## */
 
 .modal-overlay {
     position: fixed;
@@ -330,21 +294,22 @@ main {
 }
 
 .modal {
-    max-width: 900px;
+    max-width: 700px;
     background-color: white;
     width: 90%;    
     border-radius: var(--border-radius);
     padding: 20px 20px;
     position: relative;
     overflow: hidden;
+    
 }
 
 .modal__close {
     position: absolute;
-    top: 10px;
-    right: 5px;
-    width: 50px;
-    height: 50px;
+    top: 15px;
+    right: 15px;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -353,35 +318,31 @@ main {
     font-weight: 600;
 }
 
+.modal__close svg {
+    fill: var(--clr-1-1);
+}
+
 .modal__header {
     display: flex;
 }
 
-.modal__header h2 {
-    margin-bottom: 30px;
+.modal__header h3 {
+    margin: 0 30px 20px 0;
     color: var(--clr-1-1);
-    margin-right: 40px;
+    line-height: 1.2;
 }
 
 .modal__header span {
-    color: var(--clr-1-1);
-    border-radius: 50%; 
-    height: fit-content;
-    font-size: 20px;
-    max-width: 35px;
-    max-height: 35px;
-    min-width: 35px;
-    min-height: 35px;
-    width: 35px;
-    height: 35px;
-    font-weight: 900;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
     margin-right: 10px;
-    padding-top: 1.5px;
-    font-family: 'Work Sans', serif;
-    border: 2px solid var(--clr-1-1);
+    border: 3px solid var(--clr-1-1);
+}
+
+.modal__header span svg {
+    fill: var(--clr-1-1);
+    margin: 4px 3.3px 3px 3px;
 }
 
 
@@ -394,10 +355,10 @@ main {
     border-radius: var(--border-radius);
     border: 1px solid var(--clr-1-2);
     padding: 10px;
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: center;
-    margin: 0px 30px 20px 0px;
+    margin: 0 30px 0 0;
 }
 
 .modal__product img {
@@ -408,10 +369,14 @@ main {
     width: 50%;
 }
 
+.modal__product__info h2 {
+    padding-bottom: 5px;
+}
+
 .modal__product__info h3 {
     text-transform: uppercase;
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     color: var(--clr-1-1);
 }
 
@@ -468,7 +433,7 @@ main {
     }
 
     .modal__buttons a {
-        margin: 0px 0px 5px 0px;
+        margin: 0px 0px 10px 0px;
     }
 
     .modal__buttons a, .modal__buttons button {   

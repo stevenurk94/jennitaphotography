@@ -1,10 +1,10 @@
 <template>
     <div>
-        <header>
-            <Header />
-        </header>
-        <Nuxt />
-        <Footer />
+      <header>
+          <Header />
+      </header>
+      <Nuxt />
+      <Footer />
     </div>
 </template>
 

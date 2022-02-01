@@ -50,7 +50,7 @@
                 <div class="items">
                     <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
                         <div class="items__card__img">
-                            <img :src="require(`~/assets/img${product.image2}`)" alt="">
+                            <img :src="require(`~/assets/img${product.image.jpeg.original}`)" alt="">
                         </div>
                         <div class="items__card__info">
                             <div class="items__card__info__title">

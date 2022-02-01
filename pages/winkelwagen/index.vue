@@ -2,12 +2,12 @@
     <main>
         <BreadCrumbs :items="breadcrumbs" :cartbreadcrumbs="true"/>
         <h1 v-if="cartItemCount">Uw winkelwagen</h1>
-        <section>
+        <section class="cart-section">
             <div class="items" v-if="cartItemCount">
 
                 <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
                     <NuxtLink class="items__card__img" :to="`/kaarten/${ product.slug }`">
-                        <img :src="require(`~/assets/img${product.image2}`)" alt="">
+                        <img :src="require(`~/assets/img${product.image.jpeg.original}`)" alt="">
                     </NuxtLink>
                 
                     <div class="items__card__info">
@@ -122,7 +122,7 @@ h1 {
 }
 
 
-section {
+.cart-section {
     display: flex;
     justify-content: space-between;
 }
@@ -322,7 +322,7 @@ section {
 
 @media only screen and (max-width: 958px) {
 
-    section {
+    .cart-section {
         display: block;
     }
 

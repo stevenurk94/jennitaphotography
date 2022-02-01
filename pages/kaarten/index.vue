@@ -7,19 +7,26 @@
             <h3>Categorie</h3>
             <input type="checkbox" id="blanco" v-on:change="blanco($event)" :checked="v_blanco">
             <label class="checkmark" for="blanco">
-                <Checkmark />
+                <span class="checkmark__button">
+                    <Checkmark />
+                </span>
+                
                  <span class="checkmark__text">Blanco</span>
             </label>
 
             <input type="checkbox" id="geboorte" v-on:change="geboorte($event)" :checked="v_geboorte">
             <label class="checkmark" for="geboorte">
-                <Checkmark />
+                <span class="checkmark__button">
+                    <Checkmark />
+                </span>
                 <span class="checkmark__text">Geboorte</span>
 
             </label>
             <input type="checkbox" id="verjaardag_jongen" v-on:change="verjaardag_jongen($event)" :checked="v_verjaardag_jongen">
             <label class="checkmark" for="verjaardag_jongen">
-                <Checkmark />
+                <span class="checkmark__button">
+                    <Checkmark />
+                </span>
                 <span class="checkmark__text">Verjaardag Jongen</span>
             </label>
         </div>
@@ -32,7 +39,7 @@
             <h2 class="products__title" v-if="v_blanco === true">Blanco</h2>
             <div class="products__wrapper" v-if="v_blanco === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsBlanco" :key="PhotoCards.id">
-                    <img :src="require(`~/assets/img${PhotoCards.image2}`)" alt="">
+                    <img :src="require(`~/assets/img${PhotoCards.image.jpeg.original}`)" alt="">
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
@@ -48,7 +55,7 @@
             <h2 class="products__title" v-if="v_geboorte === true">Geboorte</h2>
             <div class="products__wrapper" v-if="v_geboorte === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsGeboorte" :key="PhotoCards.id">
-                    <img :src="require(`~/assets/img${PhotoCards.image2}`)" alt="">
+                    <img :src="require(`~/assets/img${PhotoCards.image.jpeg.original}`)" alt="">
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
@@ -63,7 +70,7 @@
             <h2 class="products__title" v-if="v_verjaardag_jongen === true">Verjaardag Jongen</h2>
             <div class="products__wrapper" v-if="v_verjaardag_jongen === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsVerjaardagJongen" :key="PhotoCards.id">
-                    <img :src="require(`~/assets/img${PhotoCards.image2}`)" alt="">
+                    <img :src="require(`~/assets/img${PhotoCards.image.jpeg.original}`)" alt="">
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>

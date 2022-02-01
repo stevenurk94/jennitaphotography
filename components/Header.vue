@@ -334,17 +334,18 @@ header .navbar input:checked ~ label span:nth-child(3) {
         background: linear-gradient(rgb(0 0 0 / 80%), rgb(0 0 0 / 60%)), url("~/assets/img/kaart0004.jpeg");
         background-size: cover;
         opacity: 0;
-        transition: opacity 60ms ease-in-out;
+        transition: opacity 60ms ease-in-out, transform 50ms cubic-bezier(.19,1.22,1);
+        transform: scaleY(0);
+        transform-origin: top;
     }
 
     header .navbar.open nav {
         opacity: 1;
-    }
-
-    header .navbar.open nav {
-        visibility: visible;
-        opacity: 1;
+        transform: scaleY(1);
         overflow-y: hidden;
+        visibility: visible;
+        transition: transform 100ms cubic-bezier(.19,1,.22,1);
+
     }
 
     header .navbar nav ul {
@@ -486,16 +487,16 @@ header .navbar input:checked ~ label span:nth-child(3) {
     text-align: center;
 }
 
-path {
+header svg path {
     fill: white;
     transition: all 400ms ease-in-out;
 }
 
-header.scrolled path {
+header.scrolled svg path {
     fill: black;
 }
 
-header.scrolled .navbar.open path {
+header.scrolled .navbar.open svg path {
     fill: white;
 }
 

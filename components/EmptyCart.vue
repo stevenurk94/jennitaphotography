@@ -1,20 +1,22 @@
 <template>
-    <section>
-        <div class="empty">
-            <h1>Helaas, u heeft geen producten in uw winkelwagen..</h1>
-            <NuxtLink class="button-1" to="/kaarten">Bestellen</NuxtLink>
-        </div>
-    </section>  
+    <section class="empty">
+        <h1>Je hebt geen fotokaarten in je winkelwagen.</h1>
+        <NuxtLink class="button-1" to="/kaarten">Verder winkelen</NuxtLink>
+    </section>
 </template>
 
 
 
 <style scoped>
 
-.empty h1 {
-    margin-bottom: 50px;
+.empty {
+    margin-top: 10px;
 }
 
+
+h1 {
+    margin-bottom: 50px;
+}
 
 
 </style>

@@ -86,7 +86,7 @@ input[type="radio"] {
     position: absolute;
     width: fit-content;
     display: flex;
-    margin: auto auto 50px auto;
+    margin: auto auto 3.5% auto;
     left: 0;
     right: 0;
     bottom: 0;
@@ -133,7 +133,7 @@ input[type="radio"] {
     position: absolute;
     display: flex;
     width: fit-content;
-    margin: auto auto 50px auto;
+    margin: auto auto 3.5% auto;
     left: 0;
     right: 0;
     bottom: 0;
@@ -175,7 +175,7 @@ export default {
             if (counter > 4) {
                 counter = 1;
             }
-        }, 5000);
+        }, 7000);
     }
 }
 </script>

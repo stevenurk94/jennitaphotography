@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout">
     <header>
       <Header />
     </header>
@@ -17,6 +17,7 @@
   --clr-1-2: #3A524D65; /* #3A524D62 & #3a524DB4*/
   --clr-1-3: #3A524D3D;
   --clr-1-4: #3A524D15;
+
 
   --clr-2-1: #C8764E;
   --clr-2-2: #E8A68E; /*#bd570f */
@@ -46,6 +47,12 @@
 
 *, ::before, ::after {
   box-sizing: border-box;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 

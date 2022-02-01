@@ -42,10 +42,10 @@
   flex-direction: column;
   text-align: center;
   max-width: 90%;
-  background: rgba(255, 255, 255, 0.158);
+  /* background: rgba(255, 255, 255, 0.158); */
   padding: 50px;
   border-radius: var(--border-radius);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px);
 }
 
 .home div h1 {
