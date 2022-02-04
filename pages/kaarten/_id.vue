@@ -112,7 +112,7 @@ export default {
                     label: PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).name
                 }
             ]
-        }
+        },
     },
 
     methods: {
@@ -125,22 +125,49 @@ export default {
             document.querySelector(".error-1").style.display = "none";
             document.querySelector(".error-2").style.display = "none";
 
+            // if (product.quantity <= 0) {
+            //     document.querySelector(".error-1").style.display = "block";
+            // } 
+            // if (product.quantity > product.stock) {
+            //     document.querySelector(".error-2").style.display = "block";
+            // } 
+            // if (product.quantity <= product.stock && product.quantity > 0) {
+            //     this.$store.commit("addToCart", product);
+            //     this.showModal = true
+            // }
+
             if (product.quantity <= 0) {
                 document.querySelector(".error-1").style.display = "block";
             } 
-            if (product.quantity > product.stock) {
+            
+            else if (this.$store.getters.cartItems.find(item => item.id === product.id)) {
+                if (this.$store.getters.cartItems.find(item => item.id === product.id).quantity + product.quantity > product.stock) {
+                    document.querySelector(".error-2").style.display = "block";
+                } 
+                
+                else if (product.quantity > product.stock) {
+                    document.querySelector(".error-2").style.display = "block";
+                } 
+                
+                else {
+                    this.$store.commit("addToCart", product);
+                    this.showModal = true
+                }
+            }
+            
+            else if (product.quantity > product.stock) {
                 document.querySelector(".error-2").style.display = "block";
-            } 
-            if (product.quantity <= product.stock && product.quantity > 0) {
+            }
+
+            else {
                 this.$store.commit("addToCart", product);
                 this.showModal = true
             }
             
             setTimeout(() => {
                 document.querySelector(".loadingbullets").style.display = "none";
-            }, 1000)
+            }, 800)
         },
-
     },
 }
 
@@ -217,6 +244,7 @@ main {
     cursor: text;
     text-align: center;
     background: transparent;
+    color: var(--clr-3-1);
 }
 
 .product__info__box div p {
@@ -247,7 +275,6 @@ main {
     .product__info__box {
         width: 100%;
         display: flex;
-        justify-content: space-between;
     }
 }
 
@@ -257,6 +284,11 @@ main {
     display: none;
     color: rgb(156, 6, 6);
     font-size: 16px;
+    padding: 5px 18px;
+    background: rgb(156, 6, 6, .3);
+    border-radius: var(--border-radius);
+    width: fit-content;
+    border: 1px solid rgb(156 6 6);
 }
 
 
@@ -404,10 +436,6 @@ main {
 
 @media only screen and (max-width: 767px) {
 
-    .modal__header h2 {
-        font-size: 25px;
-    }
-
     .modal__header span {
         font-size: 17px;
         border: 1.5px solid var(--clr-1-1);
@@ -415,10 +443,6 @@ main {
         max-height: 30px;
         min-width: 30px;
         min-height: 30px;
-    }
-
-    .modal__product h2 {
-        font-size: 25px;
     }
 
 

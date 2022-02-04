@@ -120,7 +120,7 @@ export const mutations = ({
             if (item.quantity > 1) {
                 item.quantity--
             } else {
-                state.cart = state.cart.filter( item => item.id !== product.id)
+                state.cart = state.cart.filter(item => item.id !== product.id)
             }
         }
 
@@ -140,7 +140,7 @@ export const mutations = ({
         let item = state.cart.find(item => item.id === product.id)
 
         if (item) {
-            state.cart = state.cart.filter( item => item.id !== product.id)
+            state.cart = state.cart.filter(item => item.id !== product.id)
         }
 
         updateLocalStorage(state.cart)

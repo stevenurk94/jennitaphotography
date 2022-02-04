@@ -2,6 +2,7 @@
     <main>
         <BreadCrumbs :items="breadcrumbs" :cartbreadcrumbs="true"/>
         <h1 v-if="cartItemCount">Uw winkelwagen</h1>
+        
         <section class="cart-section">
             <div class="items" v-if="cartItemCount">
 
@@ -19,7 +20,13 @@
 
                         <div class="items__card__info__options">
                             <div class="items__card__info__options__change">
-                                <p class="items__card__info__options__change__remove" v-on:click="removeProductFromCart(product)"></p>
+                                <span class="items__card__info__options__change__remove" v-on:click="removeProductFromCart(product)">
+                                    <span>
+                                        <TrashBin />
+                                    </span>
+                                    <p>Verwijderen</p>
+                                </span>
+                                
                                 <div class="items__card__info__options__change__quantity">
                                     <button @click="removeOneFromCart(product)">&#8722;</button>
                                     <p>{{ product.quantity }}</p>
@@ -28,7 +35,8 @@
                             </div>
                             
                             <p>€ {{ (product.price * product.quantity).toFixed(2).replace(".", ",") }}</p>
-                        </div>                      
+                        </div>
+                        <p :class="'error' + ' product-' + JSON.stringify(product.id)">Helaas, hier hebben we momenteel {{ product.stock }} voorradig</p>                      
                     </div>
                 </div>
 
@@ -94,12 +102,20 @@ export default {
 
     methods: {
         addOneToCart( product ) {
-            this.product = product
-            this.$store.commit("addOneToCart", product);
+
+            if ((this.$store.getters.cartItems.find(item => item.id === product.id).quantity) + 1 > product.stock) {
+                document.querySelector(".error" + ".product-" + JSON.stringify(product.id)).style.display = "block";
+            } 
+
+            else if ((this.$store.getters.cartItems.find(item => item.id === product.id).quantity) < product.stock) {
+                this.product = product
+                this.$store.commit("addOneToCart", product);
+            }
         },
 
         removeOneFromCart( product ) {
             this.$store.commit("removeOneFromCart", product);
+            document.querySelector(".error" + ".product-" + JSON.stringify(product.id)).style.display = "none";
         },
 
         removeProductFromCart( product ) {
@@ -121,6 +137,17 @@ h1 {
     width: 95%;
 }
 
+.error {
+    width: 100%;
+    max-width: var(--website-width);
+    color: rgb(156, 6, 6);
+    display: none;
+    background: rgb(156, 6, 6, .3);
+    border-radius: var(--border-radius);
+    padding: 5px 18px;
+    width: fit-content;
+    border: 1px solid rgb(156 6 6);
+}
 
 .cart-section {
     display: flex;
@@ -212,11 +239,21 @@ h1 {
 
 .items__card__info__options__change__remove {
     cursor: pointer;
+    display: flex;
     margin-right: 25px;
 }
 
-.items__card__info__options__change__remove::before {
-    content: "🗑 Verwijderen";
+.items__card__info__options__change__remove span {
+    display: none;
+    width: 14px;
+    height: 14px;
+}
+
+.items__card__info__options__change__remove span svg {
+    fill: var(--clr-1-2)
+}
+
+.items__card__info__options__change__remove p {
     font-size: 16px;
 }
 
@@ -302,7 +339,7 @@ h1 {
 
 .summary p {
     margin-bottom: 50px;
-    font-size: 15px;
+    font-size: calc(12px + .2vmax);
     color: rgba(0, 0, 0, 0.541);
 }
 
@@ -342,14 +379,19 @@ h1 {
 
     .items__card__info__options__change__remove {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 2px;
+        right: 2px;
         margin: 0;
     }
 
-    .items__card__info__options__change__remove::before {
-        content: "🗑";
-        font-size: 23px;
+    .items__card__info__options__change__remove span {
+        display: block;
+        width: 18px;
+        height: 18px;
+    }
+
+    .items__card__info__options__change__remove p {
+        display: none;
     }
 }
 

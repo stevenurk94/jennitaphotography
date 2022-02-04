@@ -279,6 +279,7 @@ main section {
     font-size: 17px;
     padding-bottom: 0;
     font-weight: 600;
+    line-height: 1;
 }
 
 .products__wrapper__cart__info h3:last-child {
@@ -390,6 +391,7 @@ main section {
 
     .products__wrapper__cart p {
         height: fit-content;
+        margin-bottom: 7px;
     }
 
 

@@ -88,7 +88,7 @@ export default {
 <style scoped>
 
 .StepIndicator {
-    margin-top: 21px;
+    margin-top: 17px;
 }
 
 /* StepIndicatorItems */
@@ -107,21 +107,21 @@ export default {
 .StepIndicator__items a {
     color: var(--clr-1-1);
     text-decoration: underline;
-    font-size: 16px;
+    /* font-size: 16px; */
 }
 
 .StepIndicator__items .item p {
     text-align: center;
     color: #979797;
     position: relative;
-    font-size: 16px;
+    /* font-size: 16px; */
 }
 
 
 .StepIndicator__items .item.active p {
     font-weight: bold;
     color: black;
-    font-size: 16.5px;
+    /* font-size: 16.5px; */
 
 }
 
@@ -161,9 +161,9 @@ export default {
 
 .step > span > span {
     counter-increment: step;
-    width: 23px;
-    height: 23px;
-    border: 3px solid #bebebe;
+    width: 20px;
+    height: 20px;
+    border: 2.5px solid #bebebe;
     display: block;
     margin: 0 auto 0 auto;
     line-height: 27px;
@@ -180,12 +180,10 @@ export default {
 }
 
 .step > span.completed > span {
-    content: "✓";
     border-color: var(--clr-1-1);
     background: var(--clr-1-1);
     color: white;
     font-weight: bold;
-    font-size: 15px;
     padding-top: 1.5px;
 }
 
@@ -218,10 +216,10 @@ export default {
     left: calc(50% - var(--step-width-after));
     /* width: 25%; */
     /* left: -50%; */
-    height: 3px;
+    height: 2.6px;
     background: #bebebe;
-    top: 47%;
-    bottom: 52%;
+    top: 48%;
+    bottom: 51%;
     z-index: -1;
 }
 
