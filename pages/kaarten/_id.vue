@@ -16,8 +16,7 @@
                 <h1>{{ product.name }}</h1>
                 <h3>{{ product.category }}</h3>
                 <p class="product__info__price">€ {{ product.price.toFixed(2).replace(".", ",") }} p/st.</p>
-                <p class="product__info__stock" v-if="product.stock">Momenteel {{ product.stock }} op voorraad</p>
-                <p class="product__info__stock empty" v-if="!product.stock">Helaas, dit artikel is uitverkocht!</p>
+                <p class="product__info__stock message orange" v-if="!product.stock">Helaas, dit artikel is uitverkocht!</p>
 
                 <div class="product__info__box" v-if="product.id == PC">
                     <div v-if="product.stock !== 0">
@@ -28,8 +27,8 @@
                     
                                         
                 </div>
-                <p class="error">Voer een geldig getal in</p>
-                <p class="error">Helaas, we hebben van {{ product.name }} momenteel {{product.stock }} voorradig</p>
+                <p class="product__info__error message orange">Voer een geldig getal in</p>
+                <p class="product__info__error message orange">Helaas, we hebben van {{ product.name }} momenteel {{product.stock }} voorradig</p>
             </div>
 
 
@@ -125,8 +124,8 @@ export default {
             this.product = product
             product.quantity = this.quantity
 
-            document.querySelector(".error:nth-of-type(3)").style.display = "none";
-            document.querySelector(".error:nth-of-type(4)").style.display = "none";
+            document.querySelector(".product__info__error:nth-of-type(2)").style.display = "none";
+            document.querySelector(".product__info__error:nth-of-type(3)").style.display = "none";
 
             // if (product.quantity <= 0) {
             //     document.querySelector(".error-1").style.display = "block";
@@ -140,16 +139,16 @@ export default {
             // }
 
             if (product.quantity < 1) {
-                document.querySelector(".error:nth-of-type(3)").style.display = "block";
+                document.querySelector(".product__info__error:nth-of-type(2)").style.display = "block";
             } 
             
             else if (this.$store.getters.cartItems.find(item => item.id === product.id)) {
                 if (this.$store.getters.cartItems.find(item => item.id === product.id).quantity + product.quantity > product.stock) {
-                    document.querySelector(".error:nth-of-type(4)").style.display = "block";
+                    document.querySelector(".product__info__error:nth-of-type(3)").style.display = "block";
                 } 
                 
                 else if (product.quantity > product.stock) {
-                    document.querySelector(".error:nth-of-type(4)").style.display = "block";
+                    document.querySelector(".product__info__error:nth-of-type(3)").style.display = "block";
                 } 
                 
                 else {
@@ -159,7 +158,7 @@ export default {
             }
             
             else if (product.quantity > product.stock) {
-                document.querySelector(".error:nth-of-type(4)").style.display = "block";
+                document.querySelector(".product__info__error:nth-of-type(4)").style.display = "block";
             }
 
             else {
@@ -221,19 +220,16 @@ main {
 
 .product__info__stock {
     margin: 10px 0;
-    color: var(--clr-1-1);
-    background: var(--clr-1-3);
-    padding: 0 14px;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--clr-1-1);
-    width: fit-content;
-    font-size: 15px;
 }
 
-.product__info__stock.empty {
-    border-color: var(--clr-2-1);
-    background: var(--clr-2-3);
-    color: var(--clr-2-1);
+
+
+
+.product__info__error {
+    display: none;
+    /* border: 1px solid rgb(156 6 6); */
+    /* background: rgb(156, 6, 6, .3); */
+    /* color: rgb(156, 6, 6); */
 }
 
 .product__info__box {
@@ -297,29 +293,6 @@ main {
         display: flex;
     }
 }
-
-
-
-.error {
-    display: none;
-    font-size: 16px;
-    padding: 0 14px;
-    border-radius: var(--border-radius);
-    width: fit-content;
-    /* border: 1px solid rgb(156 6 6); */
-    /* background: rgb(156, 6, 6, .3); */
-    /* color: rgb(156, 6, 6); */
-    border: 1px solid var(--clr-2-1);
-    background: var(--clr-2-3);
-    color: var(--clr-2-1);
-
-
-}
-
-
-
-
-
 
 
 

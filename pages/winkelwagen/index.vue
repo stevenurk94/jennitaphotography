@@ -17,7 +17,7 @@
                             <h3>{{ product.category }}</h3>
                         </div>
 
-                        <p :class="'error' + ' product-' + JSON.stringify(product.id)">Helaas, hier hebben we momenteel {{ product.stock }} voorradig</p>
+                        <p :class="'items__card__info__error message orange' + ' product-' + JSON.stringify(product.id)">Helaas, hier hebben we momenteel {{ product.stock }} voorradig</p>
                        
 
                         <div class="items__card__info__options">
@@ -108,7 +108,7 @@ export default {
         addOneToCart( product ) {
 
             if ((this.$store.getters.cartItems.find(item => item.id === product.id).quantity) + 1 > product.stock) {
-                document.querySelector(".error" + ".product-" + JSON.stringify(product.id)).style.display = "block";
+                document.querySelector(".items__card__info__error" + ".product-" + JSON.stringify(product.id)).style.display = "block";
             } 
 
             else if ((this.$store.getters.cartItems.find(item => item.id === product.id).quantity) < product.stock) {
@@ -119,7 +119,7 @@ export default {
 
         removeOneFromCart( product ) {
             this.$store.commit("removeOneFromCart", product);
-            document.querySelector(".error" + ".product-" + JSON.stringify(product.id)).style.display = "none";
+            document.querySelector(".items__card__info__error" + ".product-" + JSON.stringify(product.id)).style.display = "none";
         },
 
         removeProductFromCart( product ) {
@@ -139,22 +139,6 @@ export default {
 h1 {
     max-width: var(--website-width);
     width: 95%;
-}
-
-.error {
-    width: 100%;
-    max-width: var(--website-width);
-    display: none;
-    border-radius: var(--border-radius);
-    padding: 0 14px;
-    width: fit-content;
-    /* color: rgb(156, 6, 6); */
-    /* background: rgb(156, 6, 6, .3); */
-    /* border: 1px solid rgb(156 6 6); */
-    color: var(--clr-2-1);
-    background: var(--clr-2-3);
-    border: 1px solid var(--clr-2-1);
-    font-size: 15px;
 }
 
 .cart-section {
@@ -231,6 +215,12 @@ h1 {
     color: var(--clr-1-1);
     font-size: 15px;
 }
+
+
+.items__card__info__error {
+    display: none;
+}
+
 
 .items__card__info__options {
     display: flex;

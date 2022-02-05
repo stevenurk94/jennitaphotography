@@ -30,9 +30,6 @@
 	--border-radius: 5px;
 	--website-width: 1286px;
 	--boxshadow: 0px 0.125rem 0.25rem 0px rgb(0 0 0 / 12%);
-	
-
-
 }
 
 * {
@@ -72,6 +69,64 @@ main {
 
 
 /* ########### FONTS ############ */
+
+
+/* IBM PLEX SERIF */
+@font-face {
+	font-family: 'IBM Plex Serif';
+	font-weight: 400;
+	src: url(assets/fonts/IBMPlexSerif-Regular.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: 'IBM Plex Serif';
+	font-weight: 500;
+	src: url(assets/fonts/IBMPlexSerif-Medium.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: 'IBM Plex Serif';
+	font-weight: 600;
+	src: url(assets/fonts/IBMPlexSerif-SemiBold.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: 'IBM Plex Serif';
+	font-weight: 700;
+	src: url(assets/fonts/IBMPlexSerif-Bold.woff2) format('woff2');
+}
+
+/* WORK SANS */
+@font-face {
+	font-family: 'Work Sans';
+	font-weight: 300;
+	src: url(assets/fonts/WorkSans-Light.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: 'Work Sans';
+	font-weight: 400;
+	src: url(assets/fonts/WorkSans-Medium.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: 'Work Sans';
+	font-weight: 500;
+	src: url(assets/fonts/WorkSans-Regular.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: 'Work Sans';
+	font-weight: 600;
+	src: url(assets/fonts/WorkSans-SemiBold.woff2) format('woff2');
+}
+
+
+
+
+
+
+
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'IBM Plex Serif', serif;
@@ -144,6 +199,27 @@ a {
 	font-size: 15px;
 }
 
+
+/* ########### MESSAGES ########## */
+
+.message {
+	font-size: 15px;
+	padding: 0 14px;
+	border-radius: var(--border-radius);
+	width: fit-content;
+}
+
+.message.green {
+	color: var(--clr-1-1);
+	border: 1px solid var(--clr-1-1);
+	background-color: var(--clr-1-3);
+}
+
+.message.orange {
+	color: var(--clr-2-1);
+	border: 1px solid var(--clr-2-1);
+	background-color: var(--clr-2-3);
+}
 
 
 /* ############################## */

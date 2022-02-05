@@ -3,7 +3,9 @@
 
         <StepIndicator :items="stepindicator" />
         <section>
+            
             <form @submit.prevent="savePaymethod">
+                <p class="message orange">Er ging iets fout met betalen, probeer het opnieuw.</p>
 
                 <h2 class="title">Betaalwijze</h2>
                 <input type="radio" id="ideal" name="paymethod" :checked="paymethod == null || paymethod == 'ideal'" value="ideal">
@@ -82,3 +84,5 @@ export default {
 }
 
 </script>
+
+
