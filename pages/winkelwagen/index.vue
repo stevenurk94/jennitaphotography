@@ -16,6 +16,8 @@
                             <NuxtLink :to="`/kaarten/${ product.slug }`">{{ product.name }}</NuxtLink>
                             <h3>{{ product.category }}</h3>
                         </div>
+
+                        <p :class="'error' + ' product-' + JSON.stringify(product.id)">Helaas, hier hebben we momenteel {{ product.stock }} voorradig</p>
                        
 
                         <div class="items__card__info__options">
@@ -35,8 +37,10 @@
                             </div>
                             
                             <p>€ {{ (product.price * product.quantity).toFixed(2).replace(".", ",") }}</p>
+                            
                         </div>
-                        <p :class="'error' + ' product-' + JSON.stringify(product.id)">Helaas, hier hebben we momenteel {{ product.stock }} voorradig</p>                      
+                        
+                                              
                     </div>
                 </div>
 
@@ -140,13 +144,17 @@ h1 {
 .error {
     width: 100%;
     max-width: var(--website-width);
-    color: rgb(156, 6, 6);
     display: none;
-    background: rgb(156, 6, 6, .3);
     border-radius: var(--border-radius);
-    padding: 5px 18px;
+    padding: 0 14px;
     width: fit-content;
-    border: 1px solid rgb(156 6 6);
+    /* color: rgb(156, 6, 6); */
+    /* background: rgb(156, 6, 6, .3); */
+    /* border: 1px solid rgb(156 6 6); */
+    color: var(--clr-2-1);
+    background: var(--clr-2-3);
+    border: 1px solid var(--clr-2-1);
+    font-size: 15px;
 }
 
 .cart-section {

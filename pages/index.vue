@@ -11,7 +11,7 @@
 
 		<Intro />
 		<!-- <CardsCollage /> -->
-		<InstaCollage />
+		<!-- <InstaCollage /> -->
 			
 	</main>
 
