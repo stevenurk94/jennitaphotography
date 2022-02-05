@@ -52,7 +52,7 @@
 }
 
 ::selection {
-	background: var(--clr-1-2);
+	background: var(--clr-1-3);
 }
 
 .layout {

@@ -1,12 +1,10 @@
 <template>
     <section class="navbar">
 
-        <!-- <NuxtLink class="navbar__logo" to="/">JF</NuxtLink> -->
         <NuxtLink class="navbar__logo" to="/">
             <img src="~/static/Logo website.png" alt="">
         </NuxtLink>
         
-
         <input type="checkbox" id="toggle">
         <label for="toggle">
             <span></span>
@@ -102,6 +100,7 @@ header .navbar {
     transition: padding 200ms ease-in-out;
     color: white; */
     width: 205px;
+    z-index: 2;
 }
 
 header.scrolled .navbar__logo {
@@ -125,10 +124,8 @@ header.scrolled .navbar__logo img {
 
 }
 
-
-
-header.scrolled .navbar.open .navbar__logo {
-    color: white;
+header.scrolled .navbar.open .navbar__logo img {
+    filter: invert(1);
 }
 
 
