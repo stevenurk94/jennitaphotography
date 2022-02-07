@@ -1,29 +1,6 @@
 <template>
 
 <main>
-
-    <section class="testimonial-grid">
-        <div class="testimonial">
-            <p>Heee, welkom!</p>
-            <p>Leuk dat je een kijkje neemt op mijn site.</p>
-            <p>Ik ben Jennita Altena en verkoop mijn eigen fotokaarten sinds 2021. Met deze kaartenverkoop gaat 25% naar het goede doel 'Kom over en help'.</p>
-            <p>'Kom over en help' steunen mensen die in kwetsbare omstandigheden leven en door middel van mijn kaartenverkoop wil ik daar graag een steentje aan bijdragen. Want hoe rijk zijn wij in Nederland gezegend met dat wat wij allemaal mogen ontvangen in tegenstelling tot wat deze mensen moeten missen…?!</p>
-            <p>Door jouw bestelling te plaatsen, help je deze mensen.</p>
-            <p>Zie ik jou?</p>
-            <p>Liefs, Jennita</p>
-            <NuxtLink class="button-1" to="/kaarten/">Fotokaarten bestellen</NuxtLink>
-        </div>
-        <div class="testimonial">
-            <!-- <img src="~/assets/home-picture.jpg" alt=""> -->
-        </div>     
-
-    </section>
-
-
-
-
-
-
     <!-- <picture class=" width-cover"> 
         <source 
             media="(min-width: 768px)" 
@@ -89,13 +66,169 @@
     </section> -->
 
 
+
+    <div id="menu-toggle">
+        <div id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="cross">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+
     
 </main>
 
 </template>
 
+<script>
+export default {
+    mounted: function () {
+
+        const test = document.querySelector("#menu-toggle")
+        test.addEventListener("click", () => {
+            test.classList.add("open")
+        })
+        
+    }
+}
+</script>
+
+
 
 <style scoped>
+
+
+span {
+    display: block;
+    background: #566973;
+    border-radius: 2px;
+    transition: all 150ms ease-in-out;
+}
+
+#menu-toggle {
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+    position: relative;
+    position: relative;
+    cursor: pointer;
+    background: rgba(255, 255, 255, .4);
+    border-radius: 5px;
+}
+
+#menu-toggle #hamburger {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+#menu-toggle #hamburger span {
+    width: 60px;
+    height: 4px;
+    position: relative;
+    top: 24px;
+    left: 20px;
+    margin: 10px 0;
+}
+
+
+#menu-toggle #hamburger span:nth-child(1) {
+    transition-delay: 0.5s;
+}
+#menu-toggle #hamburger span:nth-child(2) {
+    transition-delay: 0.625s;
+}
+#menu-toggle #hamburger span:nth-child(3) {
+    transition-delay: 0.75s;
+}
+#menu-toggle #cross {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotate(45deg);
+}
+#menu-toggle #cross span:nth-child(1) {
+    height: 0%;
+    width: 4px;
+    position: absolute;
+    top: 10%;
+    left: 48px;
+    transition-delay: 0s;
+}
+#menu-toggle #cross span:nth-child(2) {
+    width: 0%;
+    height: 4px;
+    position: absolute;
+    left: 10%;
+    top: 48px;
+    transition-delay: 0.25s;
+}
+#menu-toggle.open #hamburger span {
+    width: 0%;
+}
+#menu-toggle.open #hamburger span:nth-child(1) {
+    transition-delay: 0s;
+}
+#menu-toggle.open #hamburger span:nth-child(2) {
+    transition-delay: 0.125s;
+}
+#menu-toggle.open #hamburger span:nth-child(3) {
+    transition-delay: 0.25s;
+}
+#menu-toggle.open #cross span:nth-child(1) {
+    height: 80%;
+    transition-delay: 0.625s;
+}
+#menu-toggle.open #cross span:nth-child(2) {
+    width: 80%;
+    transition-delay: 0.375s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* section img {
@@ -122,61 +255,7 @@
 
 
 
-
-
-
-
-
-.testimonial-grid {
-    display: grid;
-    /* gap: 30px; */
-    grid-template-columns: repeat(4, 1fr);   
-    margin-top: 100px;  
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: rgb(0 0 0 / 20%) 0px 2px 8px 0px;
-}
-
-
-
-.testimonial {
-    background: var(--clr-1-3);
-    padding: 40px;
-}
-
-
-
-.testimonial img {
-    width: 100%;
-    height: 100%;
-    max-height: 500px;
-    object-fit: contain;
-}
-
-.testimonial p {
-    line-height: 1.7;
-    margin-bottom: 10px;
-}
-
-.testimonial p:nth-child(7) {
-    margin-bottom: 50px;
-
-}
-
-.testimonial:nth-child(2) {
-    /* grid-column: span 2;
-    grid-row: span 2; */
-    background-image: url("~/assets/home-picture.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 510px;
-}
-
-.testimonial:nth-child(1) {
-    grid-column: span 3;
-}
-
-
-
 </style>
+
+
+

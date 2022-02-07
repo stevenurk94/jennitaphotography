@@ -158,7 +158,7 @@ export default {
             }
             
             else if (product.quantity > product.stock) {
-                document.querySelector(".product__info__error:nth-of-type(4)").style.display = "block";
+                document.querySelector(".product__info__error:nth-of-type(3)").style.display = "block";
             }
 
             else {
