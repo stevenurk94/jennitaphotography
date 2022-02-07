@@ -43,7 +43,8 @@ footer section {
 
 footer section img {
     filter: invert(1);
-    width: 200px;
+    width: calc(10% + 47px);
+    margin: 10px 0;
 }
 
 h1 {
@@ -98,11 +99,15 @@ li:not(:last-child) a::after {
 
 
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 900px) {
 
     footer section {
         display: block;
         width: 90%;
+    }
+
+    footer section img {
+        width: calc(2% + 111px);
     }
 
     ul {
@@ -112,12 +117,40 @@ li:not(:last-child) a::after {
 }
 
 
-@media only screen and (max-width: 454px) {
+@media only screen and (max-width: 480px) {
+
+    footer section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer section img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    ul {
+        display: block;
+        margin-top: 10px;
+    }
+
+
+    ul li {
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: fit-content;
+    }
 
     li:not(:last-child) a::after {
         content: "";
+        margin: 0;
     }
+    
+    li svg {
+        margin: auto 4px auto 0;
 
+    }
 }
 
 
