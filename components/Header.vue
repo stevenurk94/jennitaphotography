@@ -475,11 +475,13 @@ export default {
                 navMenu.classList.add("open");
                 menuOpen = true;
                 navButton.checked = true;
+                document.querySelector("body").style.overflow = "hidden";
 
             } else {
                 navMenu.classList.remove("open");
                 menuOpen = false;
                 navButton.checked = false;
+                document.querySelector("body").style.overflow = "";
             }
         });
 
