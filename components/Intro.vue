@@ -62,44 +62,11 @@ section div img {
 
 @media only screen and (max-width: 860px) {
 
-    section > div {
-        display: block;
-    }
-
-    section div div:first-child {
-        min-width: 100%;
-    }
-
-    section div img {
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-
-
-/* 
-    section div div {
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
-
-    section img {
-        width: 100%;
-        margin: 70px auto 0 auto;
-        max-width: 400px;
-        left: 0;
-        right: 0;
-        display: block;
-    } */
 
 }
 
 @media only screen and (max-width: 660px) {
-    /* section div a {
-        width: 100%;
-        margin-top: 30px;
-    } */
+ 
 }
 
 

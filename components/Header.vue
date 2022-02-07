@@ -24,7 +24,7 @@
                     </NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/kaarten">Kaarten bestellen
+                    <NuxtLink to="/kaarten">Webshop
                         <span>&#8250;</span>
                     </NuxtLink>                   
                 </li>
@@ -117,11 +117,11 @@ header.scrolled .navbar.open .navbar__logo img {
     header .navbar__logo {
         width: calc(2% + 140px);
     }
-    header .navbar__logo img {
-        margin: 6px 0 5px 0;
+    header.scrolled .navbar__logo {
+        width: calc(2% + 120px);
     }
-    header.scrolled .navbar__logo img {
-        margin: 3px 0 4px 0;
+    header .navbar__logo img, header.scrolled .navbar__logo img {
+        margin: 6px 0 5px 0;
     }
 }
 
