@@ -15,7 +15,7 @@
                     <a href="mailto:info@jennitaphotography.nl">info@jennitaphotography.nl</a>
                 </li>
                 <li>
-                    <NuxtLink to="/">Cookiebeleid & instellingen</NuxtLink>
+                    <NuxtLink to="/cookiebeleid">Cookiebeleid & instellingen</NuxtLink>
                 </li>
             </ul>
         </section>

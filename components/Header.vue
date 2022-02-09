@@ -82,7 +82,7 @@ header .navbar {
 
 /* ########## NAVBAR LOGO ########## */
 header .navbar__logo {
-    width: calc(8% + 87px);
+    width: calc(6.5% + 87px);
     z-index: 2;
 }
 
@@ -96,7 +96,7 @@ header .navbar__logo img {
     height: 100%;
     filter: invert(1);
     transition: all 150ms ease-in-out;
-    margin: 15px 0 14px 0;
+    margin: 13.5px 0 12.5px 0;
 }
 
 header.scrolled .navbar__logo {

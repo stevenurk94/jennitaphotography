@@ -136,6 +136,11 @@ export default {
 
 <style scoped>
 
+main {
+    background: var(--clr-bg);
+}
+
+
 h1 {
     max-width: var(--website-width);
     width: 95%;

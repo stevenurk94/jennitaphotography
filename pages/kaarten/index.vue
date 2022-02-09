@@ -198,7 +198,7 @@ main section {
 .filter {
     width: 28%;
     border-radius: var(--border-radius);
-    border: 1px solid var(--clr-1-2);
+    border: 1px solid var(--clr-1-3);
     padding: 20px;
     height: fit-content;
     position: sticky;
@@ -254,12 +254,14 @@ main section {
 }
 
 .products__wrapper__cart:hover {
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%);
+    /* box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%); */
+    box-shadow: var(--boxshadow);
+    transform: scale(100.3%);
 }
 
 .products__wrapper__cart img {
     object-fit: contain;
-    height: 220px;
+    height: 100%;
     width: 90%;
     right: 0;
     left: 0;
@@ -271,8 +273,7 @@ main section {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 10px 10px 5px 10px;
-    width: 85%;
+    width: 87%;
 }
 
 .products__wrapper__cart__info h3:first-child  {
@@ -286,7 +287,6 @@ main section {
     text-transform: uppercase;
     color: var(--clr-3-2);
     margin: 2px 0 15px 0;
-    width: 85%;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.2px;
@@ -326,7 +326,7 @@ main section {
         flex-wrap: wrap;
         position: unset;
         margin-bottom: 6%;
-        padding: 17px 20px 20px 20px;
+        padding: 2.6% 3% 3% 3%;
     }
 
     .filter h3 {
@@ -374,7 +374,6 @@ main section {
     }
 
     .products__wrapper__cart img {
-        height: 100%;
         margin: 10px;
         object-fit: cover;
         object-position: center;
