@@ -1,0 +1,95 @@
+/* ########### FONTS ############ */
+/* IBM PLEX SERIF */
+@font-face {
+	font-family: 'IBM Plex Serif';
+	font-weight: 400;
+	src: url(assets/fonts/IBMPlexSerif-Regular.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'IBM Plex Serif';
+	font-weight: 500;
+	src: url(assets/fonts/IBMPlexSerif-Medium.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'IBM Plex Serif';
+	font-weight: 600;
+	src: url(assets/fonts/IBMPlexSerif-SemiBold.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'IBM Plex Serif';
+	font-weight: 700;
+	src: url(assets/fonts/IBMPlexSerif-Bold.woff2) format('woff2');
+}
+
+/* WORK SANS */
+@font-face {
+	font-family: 'Work Sans';
+	font-weight: 300;
+	src: url(assets/fonts/WorkSans-Light.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'Work Sans';
+	font-weight: 400;
+	src: url(assets/fonts/WorkSans-Medium.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'Work Sans';
+	font-weight: 500;
+	src: url(assets/fonts/WorkSans-Regular.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'Work Sans';
+	font-weight: 600;
+	src: url(assets/fonts/WorkSans-SemiBold.woff2) format('woff2');
+}
+
+
+
+/* ########## FONT SPECIFICATION ########## */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'IBM Plex Serif', serif;
+	color: var(--clr-3-1);
+}
+
+h1 {
+	font-size: 32px;
+	font-weight: 800;
+}
+h2 {
+	font-size: 26px;
+	padding-bottom: 8px;
+	font-weight: 700;
+}
+h3 {
+	font-size: 22px;
+	font-weight: 600;
+	padding-bottom: 8px;
+}
+
+p, a {
+	font-family: 'Work Sans', sans-serif;
+	color: var(--clr-3-1);
+}
+p {
+	line-height: 1.7;
+	font-size: 17px;
+	font-weight: 400;
+}
+a {
+	font-weight: 400;
+	font-size: 15px;
+}
+
+
+
+@media only screen and (max-width: 1450px) {
+	h1 {
+		font-size: calc(23px + .6vmax);
+	}
+	h2 {
+		font-size: calc(22px + .3vmax);
+	}
+	h3 {
+		font-size: calc(20px + .2vmax);
+	}
+}
