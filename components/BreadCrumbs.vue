@@ -1,10 +1,15 @@
 <template>
     <div class="breadcrumbs">
         <span v-if="cartbreadcrumbs" class="arrow">&#8592;</span>
-        <span v-for="(item, index) in items" :key="index">
+        <span class="breadcrumbs__desktop" v-for="(item, index) in items" :key="index">
             <NuxtLink v-if="item.url" :to="item.url">{{ item.label }}</NuxtLink>
             <span v-else class="inactive">{{ item.label }}</span>
             <span v-if="index < (items.length - 1)" class="arrow">&#8250;</span>
+        </span>
+        <span class="breadcrumbs__mobile">
+            <span class="arrow">&#8592;</span>
+            <NuxtLink v-if="this.$route.path == '/kaarten'" to="/">Terug</NuxtLink>
+            <NuxtLink v-else to="/kaarten">Terug</NuxtLink>
         </span>
     </div>
     
@@ -12,6 +17,11 @@
 
 <script>
 export default {
+    data () { 
+        return {
+            screenwidth: "",
+        }
+    },
     props: {
         items: {
             type: Array,
@@ -19,7 +29,7 @@ export default {
         },
         cartbreadcrumbs: {
         }
-    }
+    },
 }
 </script>
 
@@ -59,5 +69,21 @@ span.arrow {
     font-size: 22px;
     margin-left: 2px;
 }
+
+.breadcrumbs__mobile {
+    display: none;
+}
+
+
+@media only screen and (max-width: 545px) {
+    .breadcrumbs__mobile {
+        display: block;
+    }
+    .breadcrumbs__desktop {
+        display: none;
+    }
+}
+
+
 
 </style>

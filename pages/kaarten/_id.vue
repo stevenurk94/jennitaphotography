@@ -9,7 +9,6 @@
 
             <div class="product__img" v-if="product.id == PC">
                 <img :src="require(`~/assets/img${product.image.jpeg.original}`)" alt="">
-
             </div>
 
             <div class="product__info" v-if="product.id == PC">
@@ -32,7 +31,7 @@
             </div>
 
 
-
+            <!-- ProductModal -->
             <transition name="fade">
                 <div class="modal-overlay" v-show="showModal" @click="showModal = false" v-if="product.id == PC">
                     <div class="modal" @click.stop>
@@ -41,7 +40,7 @@
                             <span>
                                 <Checkmark />
                             </span>
-                            <h3>Toegevoegd aan je winkelwagen</h3>
+                            <p>Toegevoegd aan je winkelwagen</p>
                         </div>                  
                         <span class="modal__close" @click="showModal = false">
                             <Cross />
@@ -55,8 +54,8 @@
                                 <h2>{{ product.name }}</h2>
                                 <h3>{{ product.category }}</h3>
                                 <p>Aantal: {{ product.quantity }}</p>
-                                <p>€ {{ product.price.toFixed(2) }}</p>
-                                <!-- <p>Total item cost: €{{ (product.price * product.quantity).toFixed(2) }}</p> -->
+                                <!-- <p>€ {{ product.price.toFixed(2) }}</p> -->
+                                <p>€ {{ (product.price * product.quantity).toFixed(2).replace(".", ",") }}</p>
                             </div>
                         </div>
                         <div class="modal__buttons">
@@ -68,9 +67,6 @@
             </transition>
         </div>
     </section>
-
-
-
 </main>
 </template>
 
@@ -118,7 +114,6 @@ export default {
     },
 
     methods: {
-
         addToCart( product ) {
 
             this.product = product
@@ -168,7 +163,7 @@ export default {
             
             setTimeout(() => {
                 document.querySelector(".loadingbullets").style.display = "none";
-            }, 800)
+            }, 600)
         },
     },
 }
@@ -183,7 +178,6 @@ main {
     background: var(--clr-bg);
 }
 
-
 .product {
     display: flex;
     justify-content: space-between;
@@ -194,7 +188,7 @@ main {
     display: flex;
     justify-content: center;
     width: calc(50% - 0.7%);
-    border: 1px solid var(--clr-1-2);
+    border: 1px solid var(--clr-1-3);
     border-radius: var(--border-radius);
     padding: 10px;
 }
@@ -227,9 +221,6 @@ main {
 
 .product__info__error {
     display: none;
-    /* border: 1px solid rgb(156 6 6); */
-    /* background: rgb(156, 6, 6, .3); */
-    /* color: rgb(156, 6, 6); */
 }
 
 .product__info__box {
@@ -279,6 +270,7 @@ main {
 
     .product__img, .product__img img {
         width: 100%;
+        min-width: auto;
     }
 
     .product__info {
@@ -324,7 +316,7 @@ main {
 }
 
 .modal {
-    max-width: 700px;
+    max-width: 600px;
     background-color: white;
     width: 90%;    
     border-radius: var(--border-radius);
@@ -334,12 +326,39 @@ main {
     
 }
 
+.modal__header {
+    display: flex;
+    border-bottom: 1px solid var(--clr-1-3);
+}
+
+.modal__header span {
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    margin-right: 7px;
+    border: 2px solid var(--clr-1-1);
+}
+
+.modal__header span svg {
+    fill: var(--clr-1-1);
+    margin: 4px 3.3px 3px 3px;
+}
+
+.modal__header p {
+    margin: 0 30px 15px 0;
+    color: var(--clr-1-1);
+    line-height: 1.2;
+    font-size: 19.5px;
+    font-weight: 700;
+    padding-bottom: 0;
+}
+
 .modal__close {
     position: absolute;
     top: 15px;
     right: 15px;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -352,72 +371,59 @@ main {
     fill: var(--clr-1-1);
 }
 
-.modal__header {
-    display: flex;
-}
 
-.modal__header h3 {
-    margin: 0 30px 20px 0;
-    color: var(--clr-1-1);
-    line-height: 1.2;
-}
 
-.modal__header span {
-    border-radius: 50%;
-    width: 27px;
-    height: 27px;
-    margin-right: 10px;
-    border: 3px solid var(--clr-1-1);
-}
 
-.modal__header span svg {
-    fill: var(--clr-1-1);
-    margin: 4px 3.3px 3px 3px;
-}
 
 
 .modal__product {
     display: flex;
-    margin-bottom: 30px;
+    margin: 25px 0;
 }
 
 .modal__product__img {
     border-radius: var(--border-radius);
-    border: 1px solid var(--clr-1-2);
-    padding: 10px;
-    width: 50%;
+    border: 1px solid var(--clr-1-3);
+    padding: 5px;
+    width: 100px;
     display: flex;
     justify-content: center;
-    margin: 0 30px 0 0;
+    margin: 0 25px 0 0;
+    margin-right: 5%;
 }
 
-.modal__product img {
-    max-width: 60%;
+.modal__product__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .modal__product__info {
     width: 50%;
+    padding-top: 3px;
 }
 
 .modal__product__info h2 {
     padding-bottom: 5px;
+    font-size: 23px;
 }
 
 .modal__product__info h3 {
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 13px;
     margin-bottom: 4px;
     color: var(--clr-1-1);
 }
 
 .modal__product__info p {
-    margin-bottom: 5px;
+    font-size: 16px;
 }
-
 
 .modal__buttons {
     display: flex;
     align-items: center;
+    border-top: 1px solid var(--clr-1-3);
+    padding-top: 21px;
 }
 
 .modal__buttons a {
@@ -435,18 +441,11 @@ main {
 @media only screen and (max-width: 767px) {
 
     .modal__header span {
-        font-size: 17px;
-        border: 1.5px solid var(--clr-1-1);
-        max-width: 30px;
-        max-height: 30px;
-        min-width: 30px;
-        min-height: 30px;
+        max-width: 23px;
+        max-height: 23px;
+        min-width: 23px;
+        min-height: 23px;
     }
-
-
-
-
-
 
     .modal__buttons {
         display: flex;
@@ -461,10 +460,6 @@ main {
     .modal__buttons a, .modal__buttons button {   
         width: 100%;
     }
-
-    
-
-
 }
 
 

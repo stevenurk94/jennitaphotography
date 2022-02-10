@@ -6,28 +6,20 @@
         <div class="filter">
             <h3>Categorie</h3>
             <input type="checkbox" id="blanco" v-on:change="blanco($event)" :checked="v_blanco">
-            <label class="checkmark" for="blanco">
-                <span class="checkmark__button">
-                    <Checkmark />
-                </span>
-                
-                 <span class="checkmark__text">Blanco</span>
+            <label class="filter__checkmark" for="blanco">
+                <span class="filter__checkmark__button"><Checkmark /></span>
+                <span class="filter__checkmark__text">Blanco</span>
             </label>
 
             <input type="checkbox" id="geboorte" v-on:change="geboorte($event)" :checked="v_geboorte">
-            <label class="checkmark" for="geboorte">
-                <span class="checkmark__button">
-                    <Checkmark />
-                </span>
-                <span class="checkmark__text">Geboorte</span>
-
+            <label class="filter__checkmark" for="geboorte">
+                <span class="filter__checkmark__button"><Checkmark /></span>
+                <span class="filter__checkmark__text">Geboorte</span>
             </label>
             <input type="checkbox" id="verjaardag_jongen" v-on:change="verjaardag_jongen($event)" :checked="v_verjaardag_jongen">
-            <label class="checkmark" for="verjaardag_jongen">
-                <span class="checkmark__button">
-                    <Checkmark />
-                </span>
-                <span class="checkmark__text">Verjaardag Jongen</span>
+            <label class="filter__checkmark" for="verjaardag_jongen">
+                <span class="filter__checkmark__button"><Checkmark /></span>
+                <span class="filter__checkmark__text">Verjaardag Jongen</span>
             </label>
         </div>
 
@@ -184,7 +176,7 @@ export default {
 
 <style scoped>
 
-main {
+main, body {
     background: var(--clr-bg);
 }
 
@@ -206,6 +198,93 @@ main section {
     margin-right: 50px;
     min-width: 300px;
 }
+
+.filter input[type="checkbox"] {
+    display: none;
+}
+
+.filter h3 {
+    margin-bottom: 14px;
+}
+
+.filter__checkmark {
+    cursor: pointer;
+    width: 100%;
+    margin: 23px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 300ms ease-in-out;
+    padding-left: 2px;
+}
+.filter__checkmark:nth-child(3) {
+    margin-top: 0;
+}
+.filter__checkmark:last-child {
+    margin-bottom: 0;
+}
+
+
+.filter__checkmark__button {
+    height: 20px;
+    width: 20px;
+    border-radius: var(--border-radius);
+    border: 1.5px solid #999;
+    text-align: center;
+    transition: all 300ms ease-in-out;
+}
+
+.filter__checkmark__button svg {
+    fill: white;
+}
+
+.filter__checkmark__button::before {
+    content: "";
+    font-size: 13px;
+    font-weight: 800;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    color: white;
+}
+
+.filter__checkmark__button svg {
+    display: none;
+    margin: 1px;
+}
+
+.filter__checkmark__text {
+    margin-left: 10px;
+    font-size: 15px;
+    font-family: 'Work Sans', sans-serif;
+    transition: all 300ms ease-in-out;
+}
+
+.filter__checkmark:hover .filter__checkmark__text {
+    color: var(--clr-1-1);
+}
+
+.filter__checkmark:hover .filter__checkmark__button {
+    border-color: var(--clr-1-1);
+}
+
+input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button {
+    background: var(--clr-1-1);
+    border-color: var(--clr-1-1);
+    border: 2px solid var(--clr-1-1);
+}
+
+input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button {
+    background: var(--clr-1-1);
+    border-color: var(--clr-1-1);
+    border: 2px solid var(--clr-1-1);
+}
+
+input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button svg {
+    display: block;
+}
+
+
 
 
 
@@ -254,9 +333,7 @@ main section {
 }
 
 .products__wrapper__cart:hover {
-    /* box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%); */
     box-shadow: var(--boxshadow);
-    transform: scale(100.3%);
 }
 
 .products__wrapper__cart img {
@@ -319,21 +396,22 @@ main section {
     main section {
         display: block;
     }
+    
 
     .filter {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         position: unset;
-        margin-bottom: 6%;
         padding: 2.6% 3% 3% 3%;
     }
 
     .filter h3 {
         width: 100%;
+        margin-bottom: 5px;
     }
 
-    .filter .checkmark {
+    .filter .filter__checkmark {
         padding: 10px 15px;
         border: 1px solid var(--clr-1-3);
         border-radius: var(--border-radius);
@@ -341,24 +419,28 @@ main section {
         margin: 10px 3% 0 0;
     }
 
-    .filter input[type="checkbox"]:checked:checked + .checkmark {
+    .filter input[type="checkbox"]:checked:checked + .filter__checkmark {
         background: var(--clr-1-1);
     }
 
-    .filter input[type="checkbox"]:checked:checked + .checkmark .checkmark__text {
+    .filter input[type="checkbox"]:checked:checked + .filter__checkmark .filter__checkmark__text {
         color: white;
     }
 
-    .filter .checkmark__button {
+    .filter .filter__checkmark__button {
         display: none;
     }
 
-    .filter .checkmark__text {
+    .filter .filter__checkmark__text {
         margin: 0;
     }
 
     .products {
         width: 100%;
+    }
+
+    .products__title {
+        margin-top: 50px;
     }
 }
 
