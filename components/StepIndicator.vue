@@ -77,9 +77,7 @@ export default {
             S4.style.setProperty("--step-width-after", D34 + "px");
 
         });
-
     }
-
 }
 </script>
 
@@ -91,7 +89,7 @@ export default {
     margin-top: 17px;
 }
 
-/* StepIndicatorItems */
+/* ########## StepIndicatorItems ########## */
 
 
 .StepIndicator__items {
@@ -107,30 +105,36 @@ export default {
 .StepIndicator__items a {
     color: var(--clr-1-1);
     text-decoration: underline;
-    /* font-size: 16px; */
+    line-height: 1.7;
 }
 
 .StepIndicator__items .item p {
     text-align: center;
     color: #979797;
     position: relative;
-    /* font-size: 16px; */
+    font-size: 16px;
 }
 
 
 .StepIndicator__items .item.active p {
     font-weight: bold;
     color: black;
-    /* font-size: 16.5px; */
 
+}
+
+@media only screen and (max-width: 767px) {
+    .StepIndicator__items a {
+        font-size: 14px;
+    }
+    .StepIndicator__items .item p {
+        font-size: 15px;
+    }
 }
 
 
 
 
-
-
-/* StepIndicatorSteps */
+/* ########## StepIndicatorSteps ########## */
 
 .StepIndicator__steps {
     counter-reset: step;
@@ -209,13 +213,11 @@ export default {
 
 
 
-.step::after {
+.step:not(:first-child):after {
     content: "";
     position: absolute;
     width: var(--step-width-after);
     left: calc(50% - var(--step-width-after));
-    /* width: 25%; */
-    /* left: -50%; */
     height: 2.6px;
     background: #bebebe;
     top: 48%;
@@ -223,8 +225,9 @@ export default {
     z-index: -1;
 }
 
-.step:first-child::after {
-    content: none;
+.step:nth-child(2):after {
+    left: calc(48% - var(--step-width-after));
+
 }
 
 .step.active::after {

@@ -86,3 +86,8 @@ export default {
 </script>
 
 
+<style scoped>
+form .message.orange {
+    display: none;
+}
+</style>

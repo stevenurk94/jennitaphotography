@@ -2,14 +2,29 @@
 
 	<main>
 		<HomeSlider />
+		
 		<section class="home">
-			<div>
-				<h1>Steun het goede doel:<br>Kom over en help</h1>
-				<NuxtLink class="button-1" to="/kaarten/">Direct bestellen</NuxtLink>
+			<div class="home__block">
+				<h1>Steun het goede doel</h1>
+				<h2>Kom over en help</h2>
+				<NuxtLink class="button-1" to="/kaarten/">Fotokaarten bekijken</NuxtLink>
 			</div>
 		</section>
 
 		<Intro />
+
+		
+		
+		<!-- <section class="home2">
+			<div class="home2__block">
+				<h1>Steun het goede doel</h1>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat placeat facilis odit consectetur excepturi nemo doloribus nobis, voluptate esse vel cum modi. Ipsam laborum iusto consectetur hic quo, deserunt dicta?</p>
+				<NuxtLink class="button-1" to="/kaarten/">Direct bestellen</NuxtLink>
+			</div>
+		</section> -->
+
+		
+
 		<!-- <CardsCollage /> -->
 		<!-- <InstaCollage /> -->
 			
@@ -21,6 +36,8 @@
 
 <style scoped>
 
+
+
 .home {
 	background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 50%));
 	position: relative;
@@ -31,30 +48,81 @@
 	z-index: 1;
 }
 
-.home div {
+.home__block {
 	top: 0;
 	right: 0;
 	left: 0;
 	bottom: 0;
 	margin: auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
 	max-width: 90%;
-	/* background: rgba(255, 255, 255, 0.158); */
-	padding: 50px;
 	border-radius: var(--border-radius);
-	backdrop-filter: blur(2px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.home div h1 {
+.home__block h1 {
 	color: white;
 	font-size: 50px;
-	margin-bottom: 50px;
-	line-height: 1.2;
+	line-height: 1.3;
+	text-align: center;
 }
+
+.home__block h2 {
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 10px 0 45px 0;
+	text-align: center;
+}
+
+
+
+/* 
+.home2 {
+	background: var(--clr-3-1);
+	width: 50%;
+	height: 100vh;
+	max-width: 100%;
+	left: 0;
+	right: 0;
+	margin: auto auto auto 0;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home2::after {
+	content: "";
+	position: absolute;
+	transform: skewX(-8deg);
+	width: 120px;
+	right: -60px;
+	height: 100%;
+	background: var(--clr-3-1);
+}
+
+
+.home2__block {
+	width: 80%;
+}
+
+.home2__block h1, .home2__block p {
+	color: white;
+}
+
+.home2__block h1 {
+	color: white;
+	line-height: 1.3;
+	font-size: 45px;
+}
+
+.home2__block p {
+	margin-bottom: 40px;
+} */
+
 
 </style>
 

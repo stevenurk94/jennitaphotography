@@ -47,12 +47,6 @@ span {
     margin-right: 5px;
 }
 
-a {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-}
-
 a:hover {
     text-decoration: underline;
 }
@@ -79,11 +73,9 @@ span.arrow {
     .breadcrumbs__mobile {
         display: block;
     }
-    .breadcrumbs__desktop {
+    .breadcrumbs__desktop, .breadcrumbs > span:first-child {
         display: none;
     }
 }
-
-
 
 </style>

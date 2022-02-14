@@ -3,7 +3,7 @@
         <BreadCrumbs :items="breadcrumbs" :cartbreadcrumbs="true"/>
         <h1 v-if="cartItemCount">Uw winkelwagen</h1>
         
-        <section class="cart-section">
+        <section>
             <div class="items" v-if="cartItemCount">
 
                 <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
@@ -146,7 +146,7 @@ h1 {
     width: 95%;
 }
 
-.cart-section {
+section {
     display: flex;
     justify-content: space-between;
 }
@@ -158,7 +158,7 @@ h1 {
 
 
 .items__card {
-    border-bottom: 1px dashed var(--clr-1-2);
+    border-bottom: 1px dashed var(--clr-1-3);
     padding: 30px 0px;
     display: flex;
 }
@@ -168,17 +168,17 @@ h1 {
 /* ########## IMAGE ########## */
 
 .items__card__img {
-    border: 1px solid var(--clr-1-2);
+    border: 1px solid var(--clr-1-3);
     border-radius: var(--border-radius);
     display: inherit;
     justify-content: center;
     align-items: center;
-    height: 170px;
-    width: 140px;
-    /* width: 110px;
-    height: 110px; */
-    margin-right: 25px;
-    padding: 10px;
+    height: 140px;
+    min-height: 140px;
+    width: 115px;
+    min-width: 115px;
+    margin-right: calc(3% + 2px);
+    padding: 5px;
     transition: all 300ms ease-in-out;
 }
 
@@ -189,7 +189,7 @@ h1 {
 .items__card__img img {
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 
@@ -200,14 +200,15 @@ h1 {
     display: flex;
     flex-direction: column;
     position: relative;
+    padding: .8% 0;
 }
 
 /* ########## INFO TITLE ########## */
 
 .items__card__info__title a {
     font-family: 'IBM Plex Serif', serif;
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
 
 }
 
@@ -218,7 +219,7 @@ h1 {
 .items__card__info__title h3 {
     text-transform: uppercase;
     color: var(--clr-1-1);
-    font-size: 15px;
+    font-size: 13px;
 }
 
 
@@ -232,7 +233,6 @@ h1 {
     justify-content: space-between;
     width: 100%;
     align-items: center;
-    margin-bottom: 25px;
 }
 
 .items__card__info__options__change {
@@ -257,7 +257,7 @@ h1 {
 }
 
 .items__card__info__options__change__remove p {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 
@@ -272,14 +272,14 @@ h1 {
 
 .items__card__info__options__change__quantity button {
     background: transparent;
-    border: 1px solid var(--clr-1-2);
+    border: 1px solid var(--clr-1-3);
     font-size: 20px;
     cursor: pointer;
     padding: 5px 10px;
+    font-weight: 500;
     line-height: 1;
     /* border: none; */
     font-family: 'Work Sans', sans-serif;
-    font-weight: 600;
     transition: all 300ms ease-in-out;
     height: 32px;
     color: var(--clr-1-1);
@@ -302,8 +302,8 @@ h1 {
 .items__card__info__options__change__quantity p {
     font-size: 16px;
     width: 44px;
-    border-top: 1px solid var(--clr-1-2);
-    border-bottom: 1px solid var(--clr-1-2);
+    border-top: 1px solid var(--clr-1-3);
+    border-bottom: 1px solid var(--clr-1-3);
     height: 32px;
     display: flex;
     align-items: center;
@@ -328,6 +328,7 @@ h1 {
     background: var(--clr-1-3);
     position: sticky;
     top: 90px;
+    min-width: 350px;
 }
 
 .summary__subtotal {
@@ -337,12 +338,12 @@ h1 {
 
 .summary__subtotal h3 {
     padding-bottom: 0;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .summary p {
     margin-bottom: 50px;
-    font-size: calc(12px + .2vmax);
+    font-size: calc(12px + .15vmax);
     color: rgba(0, 0, 0, 0.541);
 }
 
@@ -362,7 +363,7 @@ h1 {
 
 @media only screen and (max-width: 958px) {
 
-    .cart-section {
+    section {
         display: block;
     }
 
@@ -374,11 +375,12 @@ h1 {
     .summary {
         margin-top: 70px;
         width: 100%;
-        /* position: inherit; */
+        min-width: auto;
+        padding: 20px;
     }
 }
 
-@media only screen and (max-width: 758px) {
+@media only screen and (max-width: 658px) {
 
     .items__card__info__options__change__remove {
         position: absolute;
@@ -389,8 +391,8 @@ h1 {
 
     .items__card__info__options__change__remove span {
         display: block;
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
     }
 
     .items__card__info__options__change__remove p {

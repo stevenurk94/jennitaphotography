@@ -380,6 +380,7 @@ header .navbar input:checked ~ label span:nth-child(3) {
     position: relative;
     width: 37px;
     height: 37px;
+    margin-left: 11%;
 }
 
 .cart__notification {
@@ -413,6 +414,11 @@ header.scrolled .navbar.open svg path {
     fill: white;
 }
 
+@media only screen and (max-width: 900px) {
+    .cart {
+        margin-left: 0;
+    }
+}
 
 </style>
 

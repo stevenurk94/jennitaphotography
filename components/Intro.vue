@@ -3,10 +3,11 @@
         <h1>Even voorstellen...</h1>
         <div>
             <div>
-                <img src="~/assets/home-picture.jpg" alt="">
+                
                 <p>Heee, welkom!</p>
                 <p>Leuk dat je een kijkje neemt op mijn site.</p>
                 <p>Ik ben Jennita Altena en verkoop mijn eigen fotokaarten sinds 2021. Met deze kaartenverkoop gaat 25% naar het goede doel 'Kom over en help'.</p>
+                <img src="~/assets/home-picture.jpg" alt="">
                 <p>'Kom over en help' steunen mensen die in kwetsbare omstandigheden leven en door middel van mijn kaartenverkoop wil ik daar graag een steentje aan bijdragen. Want hoe rijk zijn wij in Nederland gezegend met dat wat wij allemaal mogen ontvangen in tegenstelling tot wat deze mensen moeten missen…?!</p>
                 <p>Door jouw bestelling te plaatsen, help je deze mensen.</p>
                 <p>Zie ik jou?</p>
@@ -56,13 +57,14 @@ section > div {
 section div div img {
     float: right;
     width: 29%;
-    height: 529px;
+    height: 548px;
     object-fit: cover;
-    margin: -40px -40px -55px 3%;
+    margin: -186px -40px -73px 3%;
 }
 
 section div div p {
     margin-bottom: 10px;
+    width: 70%;
 }
 section div div p:last-child {
     margin-bottom: 40px;
@@ -79,9 +81,12 @@ section div div p:last-child {
         width: calc(150px + 15%);
         height: auto;
         object-fit: cover;
-        margin: 0 0 0 10px;
+        margin: -140px 0 0 10px;
         border-radius: var(--border-radius);
+    }
 
+    section div div p {
+        width: 62%;
     }
  
 }
@@ -105,10 +110,13 @@ section div div p:last-child {
         margin: auto;
     }
 
-
     section div div img {
         width: 45%;
-        margin: 3% 0 0 2%;
+        margin: 1% 0 0 2%;
+    }
+
+    section div div p {
+        width: auto;
     }
 
     section div a {
@@ -117,8 +125,6 @@ section div div p:last-child {
         right: 0;
         margin: auto;
     }
-
-
 }
 
 
