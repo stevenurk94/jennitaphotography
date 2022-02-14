@@ -85,11 +85,15 @@ form .input input:focus ~ span, form .input input.filled ~ span {
         width: 100%;
         margin-right: 0;
     }
+
+    form .input input, form .input span {
+        font-size: 15px;
+    }
 }
 
 
 /* FORM BUTTONS */
-form:not(.div1__checkout) button {
+form:not(.overview__checkout) button {
     margin: 20px 0 0 auto;
 }
 
@@ -105,7 +109,7 @@ form input[type="radio"] {
 
 form .radio {
     cursor: pointer;
-    padding: 13px 15px;
+    padding: 11px 15px;
     width: 100%;
     margin: 10px 0px;
     border: 1.4px solid #999;

@@ -54,6 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-size: 32px;
 	font-weight: 800;
+	line-height: 1.5;
 }
 h2 {
 	font-size: 26px;
@@ -91,5 +92,12 @@ a {
 	}
 	h3 {
 		font-size: calc(20px + .2vmax);
+	}
+}
+
+
+@media only screen and (max-width: 767px) {
+	p {
+		font-size: 16px;
 	}
 }
