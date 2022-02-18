@@ -1,7 +1,7 @@
 <template>
     <main>
 
-        <StepIndicator :items="stepindicator" />
+        <PagepartsStepIndicator :items="stepindicator" />
         <section>
             <form @submit.prevent="saveShipping">
                 <h2 class="title">Verzending</h2>

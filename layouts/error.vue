@@ -10,7 +10,7 @@
 
 <style scoped>
 section {
-    margin: 7% 0 50px 0;
+    margin: 100px 0 0 0;
 }
 
 section h1 {
@@ -20,7 +20,21 @@ section h1 {
 
 section h2 {
     margin: 10px 0 50px 0;
+}
 
+
+@media only screen and (max-width: 767px) {
+    section {
+        margin: 60px 0 0 0;
+    }
+
+    section h1 {
+        font-size: calc(40px);
+    }
+
+    section h2 {
+        margin: 0 0 50px 0;
+    }
 }
 
 </style>

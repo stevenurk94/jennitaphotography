@@ -1,7 +1,7 @@
 <template>
 
 	<main>
-		<HomeSlider />
+		<PagepartsHomeSlider />
 		
 		<section class="home">
 			<div class="home__block">
@@ -11,7 +11,7 @@
 			</div>
 		</section>
 
-		<Intro />
+		<PagepartsIntro />
 
 		
 		
@@ -67,6 +67,7 @@
 	font-size: 50px;
 	line-height: 1.3;
 	text-align: center;
+	margin-bottom: 1%;
 }
 
 .home__block h2 {
@@ -77,7 +78,13 @@
 	text-align: center;
 }
 
-
+@media only screen and (max-width: 767px) {
+	.home__block h1 {
+		font-size: calc(32px + 2vmax);
+		line-height: 1.1;
+		margin-bottom: 5%;
+	}
+}
 
 /* 
 .home2 {

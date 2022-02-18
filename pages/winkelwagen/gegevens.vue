@@ -1,7 +1,7 @@
 <template>
     <main>
 
-        <StepIndicator :items="stepindicator" />
+        <PagepartsStepIndicator :items="stepindicator" />
 
         <section>
             <form @submit.prevent="saveCustomerDetails">

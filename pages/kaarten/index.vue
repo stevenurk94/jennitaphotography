@@ -1,24 +1,24 @@
 <template>
 <main>
-    <BreadCrumbs :items="breadcrumbs"/>
+    <PagepartsBreadCrumbs :items="breadcrumbs"/>
 
     <section>
         <div class="filter">
             <h3>Categorie</h3>
             <input type="checkbox" id="blanco" v-on:change="blanco($event)" :checked="v_blanco">
             <label class="filter__checkmark" for="blanco">
-                <span class="filter__checkmark__button"><Checkmark /></span>
+                <span class="filter__checkmark__button"><IconsCheckmark /></span>
                 <span class="filter__checkmark__text">Blanco</span>
             </label>
 
             <input type="checkbox" id="geboorte" v-on:change="geboorte($event)" :checked="v_geboorte">
             <label class="filter__checkmark" for="geboorte">
-                <span class="filter__checkmark__button"><Checkmark /></span>
+                <span class="filter__checkmark__button"><IconsCheckmark /></span>
                 <span class="filter__checkmark__text">Geboorte</span>
             </label>
             <input type="checkbox" id="verjaardag_jongen" v-on:change="verjaardag_jongen($event)" :checked="v_verjaardag_jongen">
             <label class="filter__checkmark" for="verjaardag_jongen">
-                <span class="filter__checkmark__button"><Checkmark /></span>
+                <span class="filter__checkmark__button"><IconsCheckmark /></span>
                 <span class="filter__checkmark__text">Verjaardag Jongen</span>
             </label>
         </div>
@@ -176,10 +176,6 @@ export default {
 
 <style scoped>
 
-main, body {
-    background: var(--clr-bg);
-}
-
 main section {
     display: flex;
     justify-content: space-between;
@@ -320,20 +316,15 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
 /* ########## PRODUCTS CART ########## */
 
 .products__wrapper__cart {
-    box-shadow: 0 0 0 1px #dadce0;
     border-radius: var(--border-radius);
     overflow: hidden;
     cursor: pointer;
-    background: #fff;
+    background: var(--clr-3-3);
     transition: all .2s ease-out;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: black;
-}
-
-.products__wrapper__cart:hover {
-    box-shadow: var(--boxshadow);
 }
 
 .products__wrapper__cart img {
@@ -478,7 +469,7 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
 
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 630px) {
     
     .products__wrapper {
         gap: 25px 3%;

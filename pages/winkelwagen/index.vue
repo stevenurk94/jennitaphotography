@@ -1,6 +1,6 @@
 <template>
     <main>
-        <BreadCrumbs :items="breadcrumbs" :cartbreadcrumbs="true"/>
+        <PagepartsBreadCrumbs :items="breadcrumbs" :cartbreadcrumbs="true"/>
         <h1 v-if="cartItemCount">Uw winkelwagen</h1>
         
         <section>
@@ -24,7 +24,7 @@
                             <div class="items__card__info__options__change">
                                 <span class="items__card__info__options__change__remove" v-on:click="removeProductFromCart(product)">
                                     <span>
-                                        <TrashBin />
+                                        <IconsTrashBin />
                                     </span>
                                     <p>Verwijderen</p>
                                 </span>
@@ -62,7 +62,7 @@
             
         </section>
 
-        <EmptyCart  v-if="!cartItemCount"/>
+        <PagepartsEmptyCart  v-if="!cartItemCount"/>
         
     </main> 
 </template>
@@ -135,11 +135,6 @@ export default {
 
 
 <style scoped>
-
-main {
-    background: var(--clr-bg);
-}
-
 
 h1 {
     max-width: var(--website-width);

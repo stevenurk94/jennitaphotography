@@ -1,7 +1,7 @@
 <template>
 <main>
 
-    <BreadCrumbs :items="breadcrumbs"/>
+    <PagepartsBreadCrumbs :items="breadcrumbs"/>
     <section>
         
 
@@ -38,12 +38,12 @@
                         <Loading />
                         <div class="modal__header">
                             <span>
-                                <Checkmark />
+                                <IconsCheckmark />
                             </span>
                             <p>Toegevoegd aan je winkelwagen</p>
                         </div>                  
                         <span class="modal__close" @click="showModal = false">
-                            <Cross />
+                            <IconsCross />
                         </span>
                         <div class="modal__product">
                             <div class="modal__product__img">
@@ -174,10 +174,6 @@ export default {
 
 <style scoped>
 
-main {
-    background: var(--clr-bg);
-}
-
 .product {
     display: flex;
     justify-content: space-between;
@@ -188,9 +184,9 @@ main {
     display: flex;
     justify-content: center;
     width: calc(50% - 0.7%);
-    border: 1px solid var(--clr-1-3);
     border-radius: var(--border-radius);
     padding: 10px;
+    background: var(--clr-3-3);
 }
 
 .product__img img {
@@ -336,7 +332,7 @@ main {
     width: 23px;
     height: 23px;
     margin-right: 7px;
-    border: 2px solid var(--clr-1-1);
+    border: 2.5px solid var(--clr-1-1);
 }
 
 .modal__header span svg {

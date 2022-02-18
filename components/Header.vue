@@ -53,6 +53,77 @@
 </template>
 
 
+
+
+<script>
+export default {
+
+    mounted: function() {
+        
+        // SCROLL TRIGGER HEADER
+        const header = document.querySelector("header");
+
+        window.onscroll = function() {
+            if (window.scrollY > 100) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        }
+  
+        // NAV-open/close
+        const navButton = document.getElementById("toggle");
+        const navMenu = document.querySelector("header .navbar");
+        const navItems = document.querySelectorAll("header .navbar nav li");
+        let menuOpen = false;
+
+        navButton.addEventListener("change", function() {
+
+            if(!menuOpen) {
+                navMenu.classList.add("open");
+                menuOpen = true;
+                navButton.checked = true;
+            } else {
+                navMenu.classList.remove("open");
+                menuOpen = false;
+                navButton.checked = false;
+            }
+        });
+
+        navItems.forEach((item) => {
+            item.addEventListener("click", function () {
+                navMenu.classList.remove("open");
+                menuOpen = false;
+                navButton.checked = false;
+            })
+        })
+
+
+
+
+
+        // PULLING PRODUCTS FROM LOCAL-STORAGE
+        this.$store.commit("updateCartFromLocalStorage")
+        this.$store.commit("updateBillingDetailsFromLocalStorage")
+        this.$store.commit("updateFormDetailsLocalStorage")
+    },
+
+    computed: {
+        cartItemCount () {
+            if (this.$store.getters.cartItemCount < 100 && this.$store.getters.cartItemCount != 0) {
+                return this.$store.getters.cartItemCount
+            } else if (this.$store.getters.cartItemCount >= 100) {
+                return "99+"
+            }
+        },
+    },
+}
+</script>
+
+
+
+
+
 <style>
 
 /* ########## HEADER SETTINGS ########## */
@@ -448,62 +519,4 @@ header.scrolled .navbar.open svg path {
 
 
 
-
-
-
-
-
-<script>
-export default {
-
-    mounted: function() {
-        
-        // SCROLL TRIGGER HEADER
-        const header = document.querySelector("header");
-
-        window.onscroll = function() {
-            if (window.scrollY > 100) {
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
-        }
-  
-        // NAV-open/close
-        const navButton = document.getElementById("toggle");
-        const navMenu = document.querySelector("header .navbar");
-
-        let menuOpen = false;
-
-        navButton.addEventListener("change", function() {
-
-            if(!menuOpen) {
-                navMenu.classList.add("open");
-                menuOpen = true;
-                navButton.checked = true;
-            } else {
-                navMenu.classList.remove("open");
-                menuOpen = false;
-                navButton.checked = false;
-            }
-        });
-
-
-        // PULLING PRODUCTS FROM LOCAL-STORAGE
-        this.$store.commit("updateCartFromLocalStorage")
-        this.$store.commit("updateBillingDetailsFromLocalStorage")
-        this.$store.commit("updateFormDetailsLocalStorage")
-    },
-
-    computed: {
-        cartItemCount () {
-            if (this.$store.getters.cartItemCount < 100 && this.$store.getters.cartItemCount != 0) {
-                return this.$store.getters.cartItemCount
-            } else if (this.$store.getters.cartItemCount >= 100) {
-                return "99+"
-            }
-        },
-    },
-}
-</script>
 
