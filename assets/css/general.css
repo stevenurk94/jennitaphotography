@@ -13,6 +13,7 @@
 
 	--clr-3-1: #333;
 	--clr-3-2: #999;
+	--clr-3-3: #ececec;
 
 	--clr-bg: #fbfbfb;
 	--border-radius: 5px;
@@ -106,6 +107,10 @@ section, .breadcrumbs, .StepIndicator {
 	color: white;
 	background: var(--clr-2-1);
 	padding: 15px 33px;
+	display: flex;
+	width: fit-content;
+	justify-content: center;
+	align-items: center;
 }
 
 .button-1:hover {
