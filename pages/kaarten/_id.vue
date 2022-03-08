@@ -8,15 +8,15 @@
         <div v-for="product in PhotoCards" :key="product.id" :product="product"  class="product">
 
             <div class="product__img" v-if="product.id == PC">
-                <img :src="require(`~/assets/img${product.image._1024}`)" alt="">
+                <!-- <img :src="require(`~/assets/img${product.image._1024}`)" alt=""> -->
 
 
-                <!-- <img
-                    srcset="
-                        require(`~/assets/img${product.image._320}`) 320w,
-                        require(`~/assets/img${product.image._640}`) 640w
-                        require(`~/assets/img${product.image._768}`) 768w
-                        require(`~/assets/img${product.image._1024}`) 1024w"
+                <img
+                    :srcset="
+                        require('~/assets/img' + `${product.image._320}`) + ' 320w, ' +
+                        require('~/assets/img' + `${product.image._640}`) + ' 640w, ' +
+                        require('~/assets/img' + `${product.image._768}`) + ' 768w, ' +
+                        require('~/assets/img' + `${product.image._1024}`) + ' 1024w'"
                     :src="require(`~/assets/img${product.image._1024}`)" 
                     sizes="
                         (max-width: 320px) 320px,
@@ -24,7 +24,7 @@
                         (min-width: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) 640px, 768px"
                     alt=""
-                > -->
+                >
 
 
 
