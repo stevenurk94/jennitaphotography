@@ -8,7 +8,7 @@
 
                 <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
                     <NuxtLink class="items__card__img" :to="`/kaarten/${ product.slug }`">
-                        <img :src="require(`~/assets/img${product.image.jpeg.original}`)" alt="">
+                        <img :src="require(`~/assets/img${product.image._320}`)" alt="">
                     </NuxtLink>
                 
                     <div class="items__card__info">

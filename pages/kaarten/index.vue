@@ -31,7 +31,7 @@
             <h2 class="products__title" v-if="v_blanco === true">Blanco</h2>
             <div class="products__wrapper" v-if="v_blanco === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsBlanco" :key="PhotoCards.id">
-                    <img :src="require(`~/assets/img${PhotoCards.image.jpeg.original}`)" alt="">
+                    <img :src="require(`~/assets/img${PhotoCards.image._1024}`)" alt="">
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
@@ -47,7 +47,7 @@
             <h2 class="products__title" v-if="v_geboorte === true">Geboorte</h2>
             <div class="products__wrapper" v-if="v_geboorte === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsGeboorte" :key="PhotoCards.id">
-                    <img :src="require(`~/assets/img${PhotoCards.image.jpeg.original}`)" alt="">
+                    <img :src="require(`~/assets/img${PhotoCards.image._1024}`)" alt="">
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
@@ -62,7 +62,7 @@
             <h2 class="products__title" v-if="v_verjaardag_jongen === true">Verjaardag Jongen</h2>
             <div class="products__wrapper" v-if="v_verjaardag_jongen === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsVerjaardagJongen" :key="PhotoCards.id">
-                    <img :src="require(`~/assets/img${PhotoCards.image.jpeg.original}`)" alt="">
+                    <img :src="require(`~/assets/img${PhotoCards.image._1024}`)" alt="">
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>

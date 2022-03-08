@@ -45,12 +45,13 @@
                 </div>
             </div>
 
+
             <div class="overview__cart">
                 <h2>Winkelwagen</h2>
                 <div class="overview__cart__items">
                     <div class="overview__cart__items__card" v-for="product in orderedproducts" :key="product.id" >
                         <div class="overview__cart__items__card__img">
-                            <img :src="require(`~/assets/img${product.image.jpeg.original}`)" alt="">
+                            <img :src="require(`~/assets/img${product.image._320}`)" alt="">
                         </div>
                         <div class="overview__cart__items__card__info">
                             <div class="overview__cart__items__card__info__title">

@@ -8,7 +8,27 @@
         <div v-for="product in PhotoCards" :key="product.id" :product="product"  class="product">
 
             <div class="product__img" v-if="product.id == PC">
-                <img :src="require(`~/assets/img${product.image.jpeg.original}`)" alt="">
+                <img :src="require(`~/assets/img${product.image._1024}`)" alt="">
+
+
+                <!-- <img
+                    srcset="
+                        require(`~/assets/img${product.image._320}`) 320w,
+                        require(`~/assets/img${product.image._640}`) 640w
+                        require(`~/assets/img${product.image._768}`) 768w
+                        require(`~/assets/img${product.image._1024}`) 1024w"
+                    :src="require(`~/assets/img${product.image._1024}`)" 
+                    sizes="
+                        (max-width: 320px) 320px,
+                        (min-width: 320px) and (max-width: 640px) 640px,
+                        (min-width: 640px) and (max-width: 768px) 768px,
+                        (min-width: 768px) 640px, 768px"
+                    alt=""
+                > -->
+
+
+
+
             </div>
 
             <div class="product__info" v-if="product.id == PC">
@@ -35,7 +55,7 @@
             <transition name="fade">
                 <div class="modal-overlay" v-show="showModal" @click="showModal = false" v-if="product.id == PC">
                     <div class="modal" @click.stop>
-                        <Loading />
+                        <IconsLoading />
                         <div class="modal__header">
                             <span>
                                 <IconsCheckmark />
@@ -47,7 +67,7 @@
                         </span>
                         <div class="modal__product">
                             <div class="modal__product__img">
-                                <img :src="require(`~/assets/img${product.image.jpeg.original}`)" alt="">
+                                <img :src="require(`~/assets/img${product.image._320}`)" alt="">
                             </div>
                             
                             <div class="modal__product__info">

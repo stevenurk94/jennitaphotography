@@ -343,7 +343,7 @@ header .navbar input:checked ~ label span:nth-child(3) {
         bottom: 0;
         opacity: 0;
         visibility: hidden;
-        background: linear-gradient(rgb(0 0 0 / 80%), rgb(0 0 0 / 60%)), url("~/assets/img/kaart0004.jpeg");
+        background: linear-gradient(rgb(0 0 0 / 80%), rgb(0 0 0 / 60%)), url("~/assets/img/1024/kaart0004.jpeg");
         background-size: cover;
         opacity: 0;
         transition: opacity 60ms ease-in-out, transform 50ms cubic-bezier(.19,1.22,1);

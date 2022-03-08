@@ -1,11 +1,11 @@
 <template>
     <section>
         <div>
-            <img src="~/assets/img/kaart0018.jpeg" alt="">
-            <img src="~/assets/img/kaart0019.jpeg" alt="">
-            <img src="~/assets/img/kaart0016.jpeg" alt="">
-            <img src="~/assets/img/kaart0014.jpeg" alt="">
-            <img src="~/assets/img/kaart0018.jpeg" alt="">
+            <img src="~/assets/img/1024/kaart0018.jpeg" alt="">
+            <img src="~/assets/img/1024/kaart0019.jpeg" alt="">
+            <img src="~/assets/img/1024/kaart0016.jpeg" alt="">
+            <img src="~/assets/img/1024/kaart0014.jpeg" alt="">
+            <img src="~/assets/img/1024/kaart0018.jpeg" alt="">
         </div>
     </section>
 
