@@ -143,11 +143,11 @@
 
                     <img             
                         srcset="
-                            ~/assets/img/320/kaart0001.jpg 320w,
-                            ~/assets/img/640/kaart0001.jpg 640w,
-                            ~/assets/img/768/kaart0001.jpg 768w,
-                            ~/assets/img/1024/kaart0001.jpg 1024w" 
-                        src="~/assets/img/768/kaart0001.jpg"
+                            ~/assets/img/320/kaart0001.jpeg 320w,
+                            ~/assets/img/640/kaart0001.jpeg 640w,
+                            ~/assets/img/768/kaart0001.jpeg 768w,
+                            ~/assets/img/1024/kaart0001.jpeg 1024w" 
+                        src="~/assets/img/768/kaart0001.jpeg"
                         sizes="
                             (max-width: 320px) 320px,
                             (min-width: 320px) and (max-width: 640px) 640px,
