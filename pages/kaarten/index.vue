@@ -56,7 +56,7 @@
                     </div>
                 </NuxtLink>
             </div>
-<!-- 
+
             <h2 class="products__title" v-if="v_geboorte === true">Geboorte</h2>
             <div class="products__wrapper" v-if="v_geboorte === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsGeboorte" :key="PhotoCards.id">
@@ -86,7 +86,7 @@
                     
                     
                 </NuxtLink>
-            </div> -->
+            </div>
 
         </div>
     </section>
