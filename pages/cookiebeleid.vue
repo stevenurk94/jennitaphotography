@@ -1,7 +1,6 @@
 <template>
     <main>
         <section>
-            <BreadCrumbs :items="breadcrumbs"/>
             <h1>Cookiebeleid</h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam necessitatibus voluptatum molestias amet ut illo, voluptate reprehenderit debitis hic ab exercitationem, voluptates doloremque expedita quos incidunt aut voluptas aliquam unde.</p>
             <h2>Google Analytics</h2>
@@ -13,23 +12,7 @@
     </main>
 </template>
 
-<script>
-export default {
-    computed: {
-        breadcrumbs() {
-            return [
-                {
-                    label: "Home",
-                    url: "/"
-                },
-                {
-                    label: "Cookiebeleid"
-                }
-            ]
-        }
-    }
-}
-</script>
+
 
 <style scoped>
 

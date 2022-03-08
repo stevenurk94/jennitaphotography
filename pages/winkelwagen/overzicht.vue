@@ -102,7 +102,6 @@ export default {
         async betalen () {
 
             await fetch("http://localhost:4242/create-checkout-session", {
-                // mode: "no-cors",
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -113,15 +112,10 @@ export default {
                 }),
             })
 
-            .then(response => {
-                console.log(response)
-                response.text().then((data) => {
-                    console.log("data:" + data);
-                });
-                if (response.ok) return response.json()
+            .then(response => {           
+                if (response.ok) return response.json() 
                 return response.json().then(json => Promise.reject(json))
             })
-
 
             .then(({ url }) => {
                 window.location = url
@@ -132,9 +126,6 @@ export default {
                 console.log("Error: ", e.error)
             })
 
-
-        
-        
         }
     }, 
 
