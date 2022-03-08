@@ -9,14 +9,12 @@
 
             <div class="product__img" v-if="product.id == PC">
                 <!-- <img :src="require(`~/assets/img${product.image._1024}`)" alt=""> -->
-
-
                 <img
                     :srcset="
-                        require('~/assets/img' + `${product.image._320}`) + ' 320w, ' +
-                        require('~/assets/img' + `${product.image._640}`) + ' 640w, ' +
-                        require('~/assets/img' + `${product.image._768}`) + ' 768w, ' +
-                        require('~/assets/img' + `${product.image._1024}`) + ' 1024w'"
+                        require(`~/assets/img${product.image._320}`) + ' 320w, ' +
+                        require(`~/assets/img${product.image._640}`) + ' 640w, ' +
+                        require(`~/assets/img${product.image._768}`) + ' 768w, ' +
+                        require(`~/assets/img${product.image._1024}`) + ' 1024w'"
                     :src="require(`~/assets/img${product.image._768}`)" 
                     sizes="
                         (max-width: 320px) 320px,
@@ -25,10 +23,6 @@
                         (min-width: 768px) 640px, 768px"
                     alt=""
                 >
-
-
-
-
             </div>
 
             <div class="product__info" v-if="product.id == PC">
