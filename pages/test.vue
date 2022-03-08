@@ -140,20 +140,23 @@
             <div class="product__img">
                 <!-- <img src="~/assets/img/test/1024.jpg" alt=""> -->
 
-<!-- 
+
                     <img             
                         srcset="
-                            ~/assets/img/test/320.jpg 320w,
-                            ~/assets/img/test/640.jpg 640w,
-                            ~/assets/img/test/768.jpg 768w,
-                            ~/assets/img/test/1024.jpg 1024w" 
-                        src="~/assets/img/test/768.jpg"
+                            ~/assets/img/320/kaart0001.jpg 320w,
+                            ~/assets/img/640/kaart0001.jpg 640w,
+                            ~/assets/img/768/kaart0001.jpg 768w,
+                            ~/assets/img/1024/kaart0001.jpg 1024w" 
+                        src="~/assets/img/768/kaart0001.jpg"
                         sizes="
                             (max-width: 320px) 320px,
                             (min-width: 320px) and (max-width: 640px) 640px,
                             (min-width: 640px) and (max-width: 768px) 768px,
                             (min-width: 768px) 640px, 768px"
-                    > -->
+                    >
+
+
+
 
                     
                     <!-- <img             

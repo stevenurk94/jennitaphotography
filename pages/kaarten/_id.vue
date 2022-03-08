@@ -17,7 +17,7 @@
                         require('~/assets/img' + `${product.image._640}`) + ' 640w, ' +
                         require('~/assets/img' + `${product.image._768}`) + ' 768w, ' +
                         require('~/assets/img' + `${product.image._1024}`) + ' 1024w'"
-                    :src="require(`~/assets/img${product.image._1024}`)" 
+                    :src="require(`~/assets/img${product.image._768}`)" 
                     sizes="
                         (max-width: 320px) 320px,
                         (min-width: 320px) and (max-width: 640px) 640px,
