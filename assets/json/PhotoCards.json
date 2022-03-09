@@ -414,9 +414,9 @@
         "stock": 10,
         "image": {
             "_1024": "/1024/kaart0030.jpg",
-            "_768": "/768/kaart0030.jpeg",
-            "_640": "/640/kaart0030.jpeg",
-            "_320": "/320/kaart0030.jpeg"
+            "_768": "/768/kaart0030.jpg",
+            "_640": "/640/kaart0030.jpg",
+            "_320": "/320/kaart0030.jpg"
         },
         "category": "geboorte"
     },
