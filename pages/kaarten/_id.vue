@@ -8,7 +8,7 @@
         <div v-for="product in PhotoCards" :key="product.id" :product="product"  class="product">
             <div class="product__img" v-if="product.id == PC" style="position: relative;">
                 <IconsLoading v-if="showLoading"/>
-                <!-- <img
+                <img
                     @load="showLoading = false"
                     :srcset="
                         require(`~/assets/img${product.image._320}`) + ' 320w, ' +
@@ -22,9 +22,9 @@
                         (min-width: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) 640px, 768px"
                     alt=""
-                > -->
+                >
 
-                <picture>
+                <!-- <picture>
                     <source
                         type="image/webp"
                         media="                       
@@ -54,7 +54,7 @@
                         @load="showLoading = false"
                         :src="require(`~/assets/img${product.image._768}`)" 
                         alt="">
-                </picture>
+                </picture> -->
 
 
 

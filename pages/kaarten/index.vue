@@ -28,15 +28,28 @@
             <div class="products__wrapper" v-if="v_blanco === true">
                 <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsBlanco" :key="PhotoCards.id">
-                    <img
+                    <!-- <img
                         @load="showLoading = false"
-                        :srcset="
-                            require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
+                        :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
                         :src="require(`~/assets/img${PhotoCards.image._320}`)" 
                         sizes="
                             (max-width: 320px) 320px"
                         alt=""
-                    >
+                    > -->
+                    <picture>
+                        <source
+                            type="image/webp"
+                            media="(max-width: 320px) 320px"
+                            :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
+                        <source
+                            type="image/jpeg"
+                            media="(max-width: 320px) 320px"
+                            :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
+                        <img 
+                            @load="showLoading = false"
+                            :src="require(`~/assets/img${PhotoCards.image._320}`)" 
+                            alt="">
+                    </picture>
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
