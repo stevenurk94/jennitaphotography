@@ -28,7 +28,6 @@
             <div class="products__wrapper" v-if="v_blanco === true">
                 <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsBlanco" :key="PhotoCards.id">
-                    
                     <img
                         @load="showLoading = false"
                         :srcset="
