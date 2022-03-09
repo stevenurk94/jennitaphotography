@@ -40,7 +40,7 @@
                         <source
                             type="image/webp"
                             media="(max-width: 320px) 320px"
-                            :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
+                            :srcset="require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w '">
                         <source
                             type="image/jpeg"
                             media="(max-width: 320px) 320px"
