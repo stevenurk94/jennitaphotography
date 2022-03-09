@@ -49,7 +49,6 @@
             <transition name="fade">
                 <div class="modal-overlay" v-show="showModal" @click="showModal = false" v-if="product.id == PC">
                     <div class="modal" @click.stop>
-                        <IconsLoading />
                         <div class="modal__header">
                             <span>
                                 <IconsCheckmark />
@@ -95,7 +94,7 @@ export default {
             PhotoCards,
             product: null,
             quantity: 1,
-            showModal: false
+            showModal: false,
         }
     },
 

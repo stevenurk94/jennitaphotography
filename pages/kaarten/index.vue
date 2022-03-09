@@ -60,7 +60,16 @@
             <h2 class="products__title" v-if="v_geboorte === true">Geboorte</h2>
             <div class="products__wrapper" v-if="v_geboorte === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsGeboorte" :key="PhotoCards.id">
-                    <img :src="require(`~/assets/img${PhotoCards.image._1024}`)" alt="">
+
+
+                    <img
+                        :srcset="
+                            require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
+                        :src="require(`~/assets/img${PhotoCards.image._320}`)" 
+                        sizes="
+                            (max-width: 320px) 320px"
+                        alt=""
+                    >
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
@@ -68,14 +77,22 @@
                         </div>                        
                         <p>€ {{ PhotoCards.price.toFixed(2).replace(".", ",") }}</p>
                     </div>
-                    
                 </NuxtLink>
             </div>
 
             <h2 class="products__title" v-if="v_verjaardag_jongen === true">Verjaardag Jongen</h2>
             <div class="products__wrapper" v-if="v_verjaardag_jongen === true">
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsVerjaardagJongen" :key="PhotoCards.id">
-                    <img :src="require(`~/assets/img${PhotoCards.image._1024}`)" alt="">
+
+
+                    <img
+                        :srcset="
+                            require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
+                        :src="require(`~/assets/img${PhotoCards.image._320}`)" 
+                        sizes="
+                            (max-width: 320px) 320px"
+                        alt=""
+                    >
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
@@ -83,8 +100,6 @@
                         </div>
                         <p>€ {{ PhotoCards.price.toFixed(2).replace(".", ",") }}</p>
                     </div>
-                    
-                    
                 </NuxtLink>
             </div>
 
@@ -162,6 +177,7 @@ export default {
             })
         },
     },
+
 
     // mounted: function () {
 
