@@ -9,7 +9,10 @@
             "_1024": "/1024/kaart0001.jpeg",
             "_768": "/768/kaart0001.jpeg",
             "_640": "/640/kaart0001.jpeg",
-            "_320": "/320/kaart0001.jpeg"
+            "_320": "/320/kaart0001.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0001.webp"
+            }
         },
         "category": "blanco"
     },
@@ -23,7 +26,10 @@
             "_1024": "/1024/kaart0002.jpeg",
             "_768": "/768/kaart0002.jpeg",
             "_640": "/640/kaart0002.jpeg",
-            "_320": "/320/kaart0002.jpeg"
+            "_320": "/320/kaart0002.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0002.webp"
+            }
         },
         "category": "blanco"
     },
@@ -37,7 +43,10 @@
             "_1024": "/1024/kaart0003.jpeg",
             "_768": "/768/kaart0003.jpeg",
             "_640": "/640/kaart0003.jpeg",
-            "_320": "/320/kaart0003.jpeg"
+            "_320": "/320/kaart0003.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0003.webp"
+            }
 
         },
         "category": "blanco"
@@ -52,7 +61,10 @@
             "_1024": "/1024/kaart0004.jpeg",
             "_768": "/768/kaart0004.jpeg",
             "_640": "/640/kaart0004.jpeg",
-            "_320": "/320/kaart0004.jpeg"
+            "_320": "/320/kaart0004.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0004.webp"
+            }
         },
         "category": "blanco"
     },
@@ -66,7 +78,10 @@
             "_1024": "/1024/kaart0005.jpeg",
             "_768": "/768/kaart0005.jpeg",
             "_640": "/640/kaart0005.jpeg",
-            "_320": "/320/kaart0005.jpeg"
+            "_320": "/320/kaart0005.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0005.webp"
+            }
         },
         "category": "blanco"
     },
@@ -80,7 +95,10 @@
             "_1024": "/1024/kaart0006.jpeg",
             "_768": "/768/kaart0006.jpeg",
             "_640": "/640/kaart0006.jpeg",
-            "_320": "/320/kaart0006.jpeg"
+            "_320": "/320/kaart0006.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0006.webp"
+            }
         },
         "category": "blanco"
     },
@@ -94,7 +112,10 @@
             "_1024": "/1024/kaart0007.jpeg",
             "_768": "/768/kaart0007.jpeg",
             "_640": "/640/kaart0007.jpeg",
-            "_320": "/320/kaart0007.jpeg"
+            "_320": "/320/kaart0007.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0007.webp"
+            }
         },
         "category": "blanco"
     },
@@ -108,7 +129,10 @@
             "_1024": "/1024/kaart0008.jpeg",
             "_768": "/768/kaart0008.jpeg",
             "_640": "/640/kaart0008.jpeg",
-            "_320": "/320/kaart0008.jpeg"
+            "_320": "/320/kaart0008.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0008.webp"
+            }
         },
         "category": "blanco"
     },
@@ -122,7 +146,10 @@
                 "_1024": "/1024/kaart0009.jpeg",
                 "_768": "/768/kaart0009.jpeg",
                 "_640": "/640/kaart0009.jpeg",
-                "_320": "/320/kaart0009.jpeg"
+                "_320": "/320/kaart0009.jpeg",         
+                "webp": {
+                    "_320": "/webp/320/kaart0009.webp"
+                }
         },
         "category": "blanco"
     },
@@ -136,7 +163,10 @@
             "_1024": "/1024/kaart0010.jpeg",
             "_768": "/768/kaart0010.jpeg",
             "_640": "/640/kaart0010.jpeg",
-            "_320": "/320/kaart0010.jpeg"
+            "_320": "/320/kaart0010.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0010.webp"
+            }
         },
         "category": "blanco"
     },
@@ -150,7 +180,10 @@
             "_1024": "/1024/kaart0011.jpeg",
             "_768": "/768/kaart0011.jpeg",
             "_640": "/640/kaart0011.jpeg",
-            "_320": "/320/kaart0011.jpeg"
+            "_320": "/320/kaart0011.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0011.webp"
+            }
         },
         "category": "blanco"
     },
@@ -164,7 +197,10 @@
             "_1024": "/1024/kaart0012.jpeg",
             "_768": "/768/kaart0012.jpeg",
             "_640": "/640/kaart0012.jpeg",
-            "_320": "/320/kaart0012.jpeg"
+            "_320": "/320/kaart0012.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0012.webp"
+            }
         },
         "category": "blanco"
     },
@@ -178,7 +214,10 @@
             "_1024": "/1024/kaart0013.jpeg",
             "_768": "/768/kaart0013.jpeg",
             "_640": "/640/kaart0013.jpeg",
-            "_320": "/320/kaart0013.jpeg"
+            "_320": "/320/kaart0013.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0013.webp"
+            }
         },
         "category": "blanco"
     },
@@ -192,7 +231,10 @@
             "_1024": "/1024/kaart0014.jpeg",
             "_768": "/768/kaart0014.jpeg",
             "_640": "/640/kaart0014.jpeg",
-            "_320": "/320/kaart0014.jpeg"
+            "_320": "/320/kaart0014.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0014.webp"
+            }
         },
         "category": "blanco"
     },
@@ -206,7 +248,10 @@
             "_1024": "/1024/kaart0015.jpeg",
             "_768": "/768/kaart0015.jpeg",
             "_640": "/640/kaart0015.jpeg",
-            "_320": "/320/kaart0015.jpeg"
+            "_320": "/320/kaart0015.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0015.webp"
+            }
         },
         "category": "blanco"
     },
@@ -220,7 +265,10 @@
             "_1024": "/1024/kaart0016.jpeg",
             "_768": "/768/kaart0016.jpeg",
             "_640": "/640/kaart0016.jpeg",
-            "_320": "/320/kaart0016.jpeg"
+            "_320": "/320/kaart0016.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0016.webp"
+            }
         },
         "category": "blanco"
     },
@@ -234,7 +282,10 @@
             "_1024": "/1024/kaart0017.jpeg",
             "_768": "/768/kaart0017.jpeg",
             "_640": "/640/kaart0017.jpeg",
-            "_320": "/320/kaart0017.jpeg"
+            "_320": "/320/kaart0017.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0017.webp"
+            }
         },
         "category": "blanco"
     },
@@ -248,7 +299,10 @@
             "_1024": "/1024/kaart0018.jpeg",
             "_768": "/768/kaart0018.jpeg",
             "_640": "/640/kaart0018.jpeg",
-            "_320": "/320/kaart0018.jpeg"
+            "_320": "/320/kaart0018.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0018.webp"
+            }
         },
         "category": "blanco"
     },
@@ -262,7 +316,10 @@
             "_1024": "/1024/kaart0019.jpeg",
             "_768": "/768/kaart0019.jpeg",
             "_640": "/640/kaart0019.jpeg",
-            "_320": "/320/kaart0019.jpeg"
+            "_320": "/320/kaart0019.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0019.webp"
+            }
         },
         "category": "blanco"
     },
@@ -276,7 +333,10 @@
             "_1024": "/1024/kaart0020.jpeg",
             "_768": "/768/kaart0020.jpeg",
             "_640": "/640/kaart0020.jpeg",
-            "_320": "/320/kaart0020.jpeg"
+            "_320": "/320/kaart0020.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0020.webp"
+            }
         },
         "category": "blanco"
     },
@@ -290,7 +350,10 @@
             "_1024": "/1024/kaart0021.jpeg",
             "_768": "/768/kaart0021.jpeg",
             "_640": "/640/kaart0021.jpeg",
-            "_320": "/320/kaart0021.jpeg"
+            "_320": "/320/kaart0021.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0021.webp"
+            }
         },
         "category": "blanco"
     },
@@ -304,7 +367,10 @@
             "_1024": "/1024/kaart0022.jpeg",
             "_768": "/768/kaart0022.jpeg",
             "_640": "/640/kaart0022.jpeg",
-            "_320": "/320/kaart0022.jpeg"
+            "_320": "/320/kaart0022.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0022.webp"
+            }
         },
         "category": "blanco"
     },
@@ -318,7 +384,10 @@
             "_1024": "/1024/kaart0023.jpeg",
             "_768": "/768/kaart0023.jpeg",
             "_640": "/640/kaart0023.jpeg",
-            "_320": "/320/kaart0023.jpeg"
+            "_320": "/320/kaart0023.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0023.webp"
+            }
         },
         "category": "blanco"
     },
@@ -332,7 +401,10 @@
             "_1024": "/1024/kaart0024.jpeg",
             "_768": "/768/kaart0024.jpeg",
             "_640": "/640/kaart0024.jpeg",
-            "_320": "/320/kaart0024.jpeg"
+            "_320": "/320/kaart0024.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0024.webp"
+            }
         },
         "category": "blanco"
     },
@@ -346,7 +418,10 @@
             "_1024": "/1024/kaart0025.jpeg",
             "_768": "/768/kaart0025.jpeg",
             "_640": "/640/kaart0025.jpeg",
-            "_320": "/320/kaart0025.jpeg"
+            "_320": "/320/kaart0025.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0025.webp"
+            }
         },
         "category": "blanco"
     },
@@ -360,7 +435,10 @@
             "_1024": "/1024/kaart0026.jpeg",
             "_768": "/768/kaart0026.jpeg",
             "_640": "/640/kaart0026.jpeg",
-            "_320": "/320/kaart0026.jpeg"
+            "_320": "/320/kaart0026.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0026.webp"
+            }
         },
         "category": "blanco"
     },
@@ -374,7 +452,10 @@
             "_1024": "/1024/kaart0027.jpeg",
             "_768": "/768/kaart0027.jpeg",
             "_640": "/640/kaart0027.jpeg",
-            "_320": "/320/kaart0027.jpeg"
+            "_320": "/320/kaart0027.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0027.webp"
+            }
         },
         "category": "geboorte"
     },
@@ -388,7 +469,10 @@
             "_1024": "/1024/kaart0028.jpeg",
             "_768": "/768/kaart0028.jpeg",
             "_640": "/640/kaart0028.jpeg",
-            "_320": "/320/kaart0028.jpeg"
+            "_320": "/320/kaart0028.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0028.webp"
+            }
         },
         "category": "geboorte"
     },
@@ -402,7 +486,10 @@
             "_1024": "/1024/kaart0029.jpeg",
             "_768": "/768/kaart0029.jpeg",
             "_640": "/640/kaart0029.jpeg",
-            "_320": "/320/kaart0029.jpeg"
+            "_320": "/320/kaart0029.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0029.webp"
+            }
         },
         "category": "geboorte"
     },
@@ -416,7 +503,10 @@
             "_1024": "/1024/kaart0030.jpg",
             "_768": "/768/kaart0030.jpg",
             "_640": "/640/kaart0030.jpg",
-            "_320": "/320/kaart0030.jpg"
+            "_320": "/320/kaart0030.jpg",
+            "webp": {
+                "_320": "/webp/320/kaart0030.webp"
+            }
         },
         "category": "geboorte"
     },
@@ -430,7 +520,10 @@
             "_1024": "/1024/kaart0031.jpeg",
             "_768": "/768/kaart0031.jpeg",
             "_640": "/640/kaart0031.jpeg",
-            "_320": "/320/kaart0031.jpeg"
+            "_320": "/320/kaart0031.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0031.webp"
+            }
         },
         "category": "geboorte"
     },
@@ -444,7 +537,10 @@
             "_1024": "/1024/kaart0032.jpeg",
             "_768": "/768/kaart0032.jpeg",
             "_640": "/640/kaart0032.jpeg",
-            "_320": "/320/kaart0032.jpeg"
+            "_320": "/320/kaart0032.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0032.webp"
+            }
         },
         "category": "geboorte"
     },
@@ -458,7 +554,10 @@
             "_1024": "/1024/kaart0033.jpeg",
             "_768": "/768/kaart0033.jpeg",
             "_640": "/640/kaart0033.jpeg",
-            "_320": "/320/kaart0033.jpeg"
+            "_320": "/320/kaart0033.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0033.webp"
+            }
         },
         "category": "geboorte"
     },
@@ -472,7 +571,10 @@
             "_1024": "/1024/kaart0034.jpeg",
             "_768": "/768/kaart0034.jpeg",
             "_640": "/640/kaart0034.jpeg",
-            "_320": "/320/kaart0034.jpeg"
+            "_320": "/320/kaart0034.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0034.webp"
+            }
         },
         "category": "geboorte"
     },
@@ -486,7 +588,10 @@
             "_1024": "/1024/kaart0035.jpeg",
             "_768": "/768/kaart0035.jpeg",
             "_640": "/640/kaart0035.jpeg",
-            "_320": "/320/kaart0035.jpeg"
+            "_320": "/320/kaart0035.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0035.webp"
+            }
         },
         "category": "geboorte"
     },
@@ -500,7 +605,10 @@
             "_1024": "/1024/kaart0036.jpeg",
             "_768": "/768/kaart0036.jpeg",
             "_640": "/640/kaart0036.jpeg",
-            "_320": "/320/kaart0036.jpeg"
+            "_320": "/320/kaart0036.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0036.webp"
+            }
         },
         "category": "verjaardag jongen"
     },
@@ -514,7 +622,10 @@
             "_1024": "/1024/kaart0037.jpeg",
             "_768": "/768/kaart0037.jpeg",
             "_640": "/640/kaart0037.jpeg",
-            "_320": "/320/kaart0037.jpeg"
+            "_320": "/320/kaart0037.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0037.webp"
+            }
         },
         "category": "verjaardag jongen"
     },
@@ -528,7 +639,10 @@
             "_1024": "/1024/kaart0038.jpeg",
             "_768": "/768/kaart0038.jpeg",
             "_640": "/640/kaart0038.jpeg",
-            "_320": "/320/kaart0038.jpeg"
+            "_320": "/320/kaart0038.jpeg",
+            "webp": {
+                "_320": "/webp/320/kaart0038.webp"
+            }
         },
         "category": "verjaardag jongen"
     }
