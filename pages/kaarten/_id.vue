@@ -6,9 +6,9 @@
         
 
         <div v-for="product in PhotoCards" :key="product.id" :product="product"  class="product">
-            <div class="product__img" v-if="product.id == PC" style="position: relative;">
+            <div class="product__img" v-if="product.id == PC">
                 <IconsLoading v-if="showLoading"/>
-                <img
+                <!-- <img
                     @load="showLoading = false"
                     :srcset="
                         require(`~/assets/img${product.image._320}`) + ' 320w, ' +
@@ -22,24 +22,24 @@
                         (min-width: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) 640px, 768px"
                     alt=""
-                >
+                > -->
 
-                <!-- <picture>
+                <picture>
                     <source
                         type="image/webp"
-                        media="                       
+                        sizes="                       
                             (max-width: 320px) 320px,
                             (min-width: 320px) and (max-width: 640px) 640px,
                             (min-width: 640px) and (max-width: 768px) 768px,
                             (min-width: 768px) 640px, 768px"
                         :srcset="
-                            require(`~/assets/img${product.image._320}`) + ' 320w, ' +
-                            require(`~/assets/img${product.image._640}`) + ' 640w, ' +
-                            require(`~/assets/img${product.image._768}`) + ' 768w, ' +
-                            require(`~/assets/img${product.image._1024}`) + ' 1024w'">
+                            require(`~/assets/img${product.image.webp._320}`) + ' 320w, ' +
+                            require(`~/assets/img${product.image.webp._640}`) + ' 640w, ' +
+                            require(`~/assets/img${product.image.webp._768}`) + ' 768w, ' +
+                            require(`~/assets/img${product.image.webp._1024}`) + ' 1024w'">
                     <source
                         type="image/jpeg"
-                        media="                       
+                        sizes="                       
                             (max-width: 320px) 320px,
                             (min-width: 320px) and (max-width: 640px) 640px,
                             (min-width: 640px) and (max-width: 768px) 768px,
@@ -54,7 +54,7 @@
                         @load="showLoading = false"
                         :src="require(`~/assets/img${product.image._768}`)" 
                         alt="">
-                </picture> -->
+                </picture>
 
 
 
@@ -224,11 +224,17 @@ export default {
     border-radius: var(--border-radius);
     padding: 10px;
     background: var(--clr-3-3);
+    position: relative;
+}
+
+.product__img picture {
+    width: 70%;
+    min-width: 300px;
 }
 
 .product__img img {
-    width: 70%;
-    min-width: 300px;
+    width: 100%;
+    height: 100%;
 }
 
 .product__info {
