@@ -39,11 +39,11 @@
                     <picture>
                         <source
                             type="image/webp"
-                            media="(max-width: 320px) 320px"
+                            sizes="(max-width: 320px) 320px"
                             :srcset="require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w '">
                         <source
                             type="image/jpeg"
-                            media="(max-width: 320px) 320px"
+                            sizes="(max-width: 320px) 320px"
                             :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
                         <img 
                             @load="showLoading = false"
@@ -64,7 +64,7 @@
             <div class="products__wrapper" v-if="v_geboorte === true">
                 <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsGeboorte" :key="PhotoCards.id">
-                    <img
+                    <!-- <img
                         @load="showLoading = false"
                         :srcset="
                             require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
@@ -72,7 +72,21 @@
                         sizes="
                             (max-width: 320px) 320px"
                         alt=""
-                    >
+                    > -->
+                    <picture>
+                        <source
+                            type="image/webp"
+                            sizes="(max-width: 320px) 320px"
+                            :srcset="require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w '">
+                        <source
+                            type="image/jpeg"
+                            sizes="(max-width: 320px) 320px"
+                            :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
+                        <img 
+                            @load="showLoading = false"
+                            :src="require(`~/assets/img${PhotoCards.image._320}`)" 
+                            alt="">
+                    </picture>
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
@@ -87,7 +101,7 @@
             <div class="products__wrapper" v-if="v_verjaardag_jongen === true">
                 <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsVerjaardagJongen" :key="PhotoCards.id">
-                    <img
+                    <!-- <img
                         @load="showLoading = false"
                         :srcset="
                             require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
@@ -95,7 +109,21 @@
                         sizes="
                             (max-width: 320px) 320px"
                         alt=""
-                    >
+                    > -->
+                    <picture>
+                        <source
+                            type="image/webp"
+                            sizes="(max-width: 320px) 320px"
+                            :srcset="require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w '">
+                        <source
+                            type="image/jpeg"
+                            sizes="(max-width: 320px) 320px"
+                            :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
+                        <img 
+                            @load="showLoading = false"
+                            :src="require(`~/assets/img${PhotoCards.image._320}`)" 
+                            alt="">
+                    </picture>
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
