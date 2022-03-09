@@ -392,7 +392,7 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
 }
 
 .products__wrapper__cart picture {
-    object-fit: contain;
+    
     height: 100%;
     width: 90%;
     right: 0;
@@ -401,6 +401,7 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
 }
 
 .products__wrapper__cart img {
+    object-fit: contain;
     width: 100%;
     height: 100%;
 }
@@ -515,7 +516,7 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
         padding-top: 2%;
     }
 
-    .products__wrapper__cart img {
+    .products__wrapper__cart picture {
         margin: 10px;
         object-fit: cover;
         object-position: center;
