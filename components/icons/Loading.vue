@@ -6,13 +6,15 @@
     </div>
 </template>
 
+
+
+
 <style scoped>
 
 
 
 .loadingbullets {
     display: flex;
-    align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
@@ -25,6 +27,7 @@
     border-radius: 10px;
     z-index: 3;
     background: white;
+    padding-top: 20%;
 }
 
 .loadingbullets span {
@@ -34,7 +37,7 @@
     border-radius: 50%;
     animation: dots 1s ease 0ms infinite;
     transform: scale(0);
-    background: var(--clr-1-1);
+    background: var(--clr-1-2);
 }
 
 .loadingbullets span:nth-child(1) {

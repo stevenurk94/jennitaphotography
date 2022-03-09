@@ -5,7 +5,7 @@
     <section>
         <div class="filter">
             <h3>Categorie</h3>
-            <input type="checkbox" id="blanco" v-on:change="blanco($event)" :checked="v_blanco">
+            <input type="checkbox" id="blanco" v-on:change="blanco($event)" :checked="v_blanco" >
             <label class="filter__checkmark" for="blanco">
                 <span class="filter__checkmark__button"><IconsCheckmark /></span>
                 <span class="filter__checkmark__text">Blanco</span>
@@ -22,19 +22,15 @@
                 <span class="filter__checkmark__text">Verjaardag Jongen</span>
             </label>
         </div>
-
-
-
-
-
-        <div class="products">
+        
+        <div class="products" >
             <h2 class="products__title" v-if="v_blanco === true">Blanco</h2>
             <div class="products__wrapper" v-if="v_blanco === true">
+                <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsBlanco" :key="PhotoCards.id">
-                    <!-- <img :src="require(`~/assets/img${PhotoCards.image._1024}`)" alt=""> -->
-
-
+                    
                     <img
+                        @load="showLoading = false"
                         :srcset="
                             require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
                         :src="require(`~/assets/img${PhotoCards.image._320}`)" 
@@ -42,11 +38,6 @@
                             (max-width: 320px) 320px"
                         alt=""
                     >
-
-
-
-
-
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
@@ -59,10 +50,10 @@
 
             <h2 class="products__title" v-if="v_geboorte === true">Geboorte</h2>
             <div class="products__wrapper" v-if="v_geboorte === true">
+                <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsGeboorte" :key="PhotoCards.id">
-
-
                     <img
+                        @load="showLoading = false"
                         :srcset="
                             require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
                         :src="require(`~/assets/img${PhotoCards.image._320}`)" 
@@ -82,10 +73,10 @@
 
             <h2 class="products__title" v-if="v_verjaardag_jongen === true">Verjaardag Jongen</h2>
             <div class="products__wrapper" v-if="v_verjaardag_jongen === true">
+                <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsVerjaardagJongen" :key="PhotoCards.id">
-
-
                     <img
+                        @load="showLoading = false"
                         :srcset="
                             require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
                         :src="require(`~/assets/img${PhotoCards.image._320}`)" 
@@ -110,7 +101,6 @@
 </template>
  
 <script>
-
 import PhotoCards from "~/assets/json/PhotoCards.json";
 
 export default {
@@ -121,29 +111,30 @@ export default {
             v_blanco: true,
             v_geboorte: true,
             v_verjaardag_jongen: true,
+            showLoading: true,
         }
     },
 
     methods: {
         blanco (event) {
             if (event.target.checked) {
-                this.v_blanco = true
+                this.v_blanco = true;
             } else {
-                this.v_blanco = false
+                this.v_blanco = false;
             }
         },
         geboorte (event) {
             if (event.target.checked) {
-                this.v_geboorte = true
+                this.v_geboorte = true;
             } else {
-                this.v_geboorte = false
+                this.v_geboorte = false;
             }
         },
         verjaardag_jongen (event) {
             if (event.target.checked) {
-                this.v_verjaardag_jongen = true
+                this.v_verjaardag_jongen = true;
             } else {
-                this.v_verjaardag_jongen = false
+                this.v_verjaardag_jongen = false;
             }
         }
     },
@@ -160,7 +151,6 @@ export default {
                 }
             ]
         },
-
         PhotoCardsBlanco: function() {
             return this.PhotoCards.filter(function(u) {
                 return u.category == "blanco"
@@ -177,6 +167,8 @@ export default {
             })
         },
     },
+
+
 
 
     // mounted: function () {
@@ -197,6 +189,8 @@ export default {
     //         this.v_verjaardag_jongen = true
     //     }
     // }
+
+
 }
 
 </script>
@@ -335,6 +329,7 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
     gap: 25px 3%;
     grid-template-columns: repeat(3, 1fr); 
     padding-top: 15px;
+    position: relative;
 }
 
 

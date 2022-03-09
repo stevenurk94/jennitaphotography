@@ -7,9 +7,11 @@
 
         <div v-for="product in PhotoCards" :key="product.id" :product="product"  class="product">
 
-            <div class="product__img" v-if="product.id == PC">
-                <!-- <img :src="require(`~/assets/img${product.image._1024}`)" alt=""> -->
+            <div class="product__img" v-if="product.id == PC" style="position: relative;">
+
+                <IconsLoading v-if="showLoading"/>
                 <img
+                    @load="showLoading = false"
                     :srcset="
                         require(`~/assets/img${product.image._320}`) + ' 320w, ' +
                         require(`~/assets/img${product.image._640}`) + ' 640w, ' +
@@ -24,7 +26,6 @@
                     alt=""
                 >
             </div>
-
             <div class="product__info" v-if="product.id == PC">
                 <h1>{{ product.name }}</h1>
                 <h3>{{ product.category }}</h3>
@@ -95,6 +96,7 @@ export default {
             product: null,
             quantity: 1,
             showModal: false,
+            showLoading: true,
         }
     },
 
@@ -135,17 +137,6 @@ export default {
             document.querySelector(".product__info__error:nth-of-type(2)").style.display = "none";
             document.querySelector(".product__info__error:nth-of-type(3)").style.display = "none";
 
-            // if (product.quantity <= 0) {
-            //     document.querySelector(".error-1").style.display = "block";
-            // } 
-            // if (product.quantity > product.stock) {
-            //     document.querySelector(".error-2").style.display = "block";
-            // } 
-            // if (product.quantity <= product.stock && product.quantity > 0) {
-            //     this.$store.commit("addToCart", product);
-            //     this.showModal = true
-            // }
-
             if (product.quantity < 1) {
                 document.querySelector(".product__info__error:nth-of-type(2)").style.display = "block";
             } 
@@ -171,12 +162,12 @@ export default {
 
             else {
                 this.$store.commit("addToCart", product);
-                this.showModal = true
+                this.showModal = true;
             }
             
-            setTimeout(() => {
-                document.querySelector(".loadingbullets").style.display = "none";
-            }, 600)
+            // setTimeout(() => {
+            //     document.querySelector(".loadingbullets").style.display = "none";
+            // }, 600)
         },
     },
 }
