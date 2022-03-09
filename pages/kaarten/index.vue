@@ -391,13 +391,18 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
     color: black;
 }
 
-.products__wrapper__cart img {
+.products__wrapper__cart picture {
     object-fit: contain;
     height: 100%;
     width: 90%;
     right: 0;
     left: 0;
     margin: 15px 10px;
+}
+
+.products__wrapper__cart img {
+    width: 100%;
+    height: 100%;
 }
 
 
