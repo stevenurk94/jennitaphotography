@@ -1,7 +1,7 @@
 <template>
     <footer>
         <section>
-            <img src="~/static/Logo website.png" alt="">
+            <img src="~/static/jf_logo_386.png" alt="">
             <div>
                 <ul class="socialmedia">
                     <li>

@@ -47,6 +47,7 @@
                             :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
                         <img 
                             @load="showLoading = false"
+                            :class="PhotoCards.position"
                             :src="require(`~/assets/img${PhotoCards.image._320}`)" 
                             alt="">
                     </picture>
@@ -84,6 +85,7 @@
                             :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
                         <img 
                             @load="showLoading = false"
+                            :class="PhotoCards.position"
                             :src="require(`~/assets/img${PhotoCards.image._320}`)" 
                             alt="">
                     </picture>
@@ -121,6 +123,7 @@
                             :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
                         <img 
                             @load="showLoading = false"
+                            :class="PhotoCards.position"
                             :src="require(`~/assets/img${PhotoCards.image._320}`)" 
                             alt="">
                     </picture>
@@ -392,7 +395,6 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
 }
 
 .products__wrapper__cart picture {
-    
     height: 100%;
     width: 90%;
     right: 0;
@@ -401,9 +403,16 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
 }
 
 .products__wrapper__cart img {
-    object-fit: contain;
     width: 100%;
     height: 100%;
+}
+
+.products__wrapper__cart img.standing {
+    object-fit: cover;
+}
+
+.products__wrapper__cart img.lying {
+    object-fit: contain;
 }
 
 

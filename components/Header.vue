@@ -2,7 +2,7 @@
     <section class="navbar">
 
         <NuxtLink class="navbar__logo" to="/">
-            <img src="~/static/Logo website.png" alt="">
+            <img src="~/static/jf_logo_386.png" alt="">
         </NuxtLink>
         
         <input type="checkbox" id="toggle">
