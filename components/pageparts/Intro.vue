@@ -7,7 +7,31 @@
                 <p>Heee, welkom!</p>
                 <p>Leuk dat je een kijkje neemt op mijn site.</p>
                 <p>Ik ben Jennita Altena en verkoop mijn eigen fotokaarten sinds 2021. Met deze kaartenverkoop gaat 25% naar het goede doel 'Kom over en help'.</p>
-                <img src="~/assets/home-picture.jpg" alt="">
+
+                <picture>
+                    <source
+                        type="image/webp"
+                        sizes="
+                            (max-width: 320px) 160px,
+                            (min-width: 320px) and (max-width: 520px) 320px,
+                            (min-width: 520px) 640px"
+                        srcset="
+                            ~/assets/intro_picture/webp_160.webp 160w,
+                            ~/assets/intro_picture/webp_320.webp 320w,
+                            ~/assets/intro_picture/webp_640.webp 640w">
+                    <source
+                        type="image/jpeg"
+                        sizes="
+                            (max-width: 320px) 160px,
+                            (min-width: 320px) and (max-width: 520px) 320px,
+                            (min-width: 520px 640px"
+                        srcset="
+                            ~/assets/intro_picture/jpg_160.jpg 160w,
+                            ~/assets/intro_picture/jpg_320.jpg 320w,
+                            ~/assets/intro_picture/jpg_640.jpg 640w">
+                    <img src="~/assets/intro_picture/jpg_640.jpg" alt="">
+                </picture>
+
                 <p>'Kom over en help' steunen mensen die in kwetsbare omstandigheden leven en door middel van mijn kaartenverkoop wil ik daar graag een steentje aan bijdragen. Want hoe rijk zijn wij in Nederland gezegend met dat wat wij allemaal mogen ontvangen in tegenstelling tot wat deze mensen moeten missen…?!</p>
                 <p>Door jouw bestelling te plaatsen, help je deze mensen.</p>
                 <p>Zie ik jou?</p>
@@ -62,6 +86,7 @@ section div div img {
     object-fit: cover;
     margin: -186px -40px -73px 3%;
 }
+
 
 section div div p {
     margin-bottom: 10px;

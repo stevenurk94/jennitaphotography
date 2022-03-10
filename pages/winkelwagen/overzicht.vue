@@ -51,7 +51,24 @@
                 <div class="overview__cart__items">
                     <div class="overview__cart__items__card" v-for="product in orderedproducts" :key="product.id" >
                         <div class="overview__cart__items__card__img">
-                            <img :src="require(`~/assets/img${product.image._320}`)" alt="">
+                            <!-- <img :src="require(`~/assets/img${product.image._320}`)" alt=""> -->
+
+                            <picture>
+                                <source
+                                    type="image/webp"
+                                    sizes="(min-width: 260px) 160px, 320px"
+                                    :srcset="
+                                        require(`~/assets/img${product.image.webp._160}`) + ' 160w, ' +
+                                        require(`~/assets/img${product.image.webp._320}`) + ' 320w'">
+                                <source
+                                    type="image/jpeg"
+                                    sizes="(min-width: 260px) 160px, 320px"
+                                    :srcset="
+                                        require(`~/assets/img${product.image._160}`) + ' 160w, ' +
+                                        require(`~/assets/img${product.image._320}`) + ' 320w'">
+                                <img :src="require(`~/assets/img${product.image._160}`)" alt="">
+                            </picture>
+
                         </div>
                         <div class="overview__cart__items__card__info">
                             <div class="overview__cart__items__card__info__title">
@@ -259,10 +276,8 @@ section {
     font-size: 19px;
 }
 
-
 .overview__card p {
     font-size: 16px;
-
 }
 
 .overview__cart {
@@ -331,6 +346,11 @@ form.overview__checkout {
     transition: all 300ms ease-in-out;
 }
 
+.overview__cart__items__card__img picture {
+    height: 100%;
+    width: 100%;
+}
+
 .overview__cart__items__card__img img {
     height: 100%;
     width: 100%;
@@ -349,7 +369,6 @@ form.overview__checkout {
 
 .overview__cart__items__card__info__title {
     margin-bottom: 6px;
-
 }
 
 .overview__cart__items__card__info__title h2 {
@@ -424,43 +443,33 @@ form.overview__summary {
         display: block;
         margin-top: 0;
     }
-
     form.overview__checkout {
         margin: 0;
     }
-
     form.overview__checkout button {
         position: relative;
         margin: 25px 0 0 0;
         width: 100%;
     }
-
     form.overview__summary, .overview__card {
         width: 100%;
         margin: 10px 0px;
     }
-
     .overview__card > h2, .overview__cart > h2 {
         font-size: 18px;
     }
-
     .overview__card p {
         font-size: 15px;
     }
-
     .overview__cart__items__card__info__title h2 {
         font-size: 15.5px;
     }
-
     .overview__cart__items__card__info__title h3 {
         font-size: 9px;
     }
-
     form.overview__summary {
         padding: 20px;
     }
-
-
 }
 
 

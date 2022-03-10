@@ -8,7 +8,21 @@
 
                 <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
                     <NuxtLink class="items__card__img" :to="`/kaarten/${ product.slug }`">
-                        <img :src="require(`~/assets/img${product.image._320}`)" alt="">
+                        <picture>
+                            <source
+                                type="image/webp"
+                                sizes="(min-width: 260px) 160px, 320px"
+                                :srcset="
+                                    require(`~/assets/img${product.image.webp._160}`) + ' 160w, ' +
+                                    require(`~/assets/img${product.image.webp._320}`) + ' 320w'">
+                            <source
+                                type="image/jpeg"
+                                sizes="(min-width: 260px) 160px, 320px"
+                                :srcset="
+                                    require(`~/assets/img${product.image._160}`) + ' 160w, ' +
+                                    require(`~/assets/img${product.image._320}`) + ' 320w'">
+                            <img :src="require(`~/assets/img${product.image._160}`)" alt="">
+                        </picture>
                     </NuxtLink>
                 
                     <div class="items__card__info">
@@ -177,8 +191,9 @@ section {
     transition: all 300ms ease-in-out;
 }
 
-.items__card__img:hover {
-    transform: scale(1.01);
+.items__card__img picture {
+    width: 100%;
+    height: 100%;
 }
 
 .items__card__img img {

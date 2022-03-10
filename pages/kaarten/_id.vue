@@ -8,22 +8,6 @@
         <div v-for="product in PhotoCards" :key="product.id" :product="product"  class="product">
             <div class="product__img" v-if="product.id == PC">
                 <IconsLoading v-if="showLoading"/>
-                <!-- <img
-                    @load="showLoading = false"
-                    :srcset="
-                        require(`~/assets/img${product.image._320}`) + ' 320w, ' +
-                        require(`~/assets/img${product.image._640}`) + ' 640w, ' +
-                        require(`~/assets/img${product.image._768}`) + ' 768w, ' +
-                        require(`~/assets/img${product.image._1024}`) + ' 1024w'"
-                    :src="require(`~/assets/img${product.image._768}`)" 
-                    sizes="
-                        (max-width: 320px) 320px,
-                        (min-width: 320px) and (max-width: 640px) 640px,
-                        (min-width: 640px) and (max-width: 768px) 768px,
-                        (min-width: 768px) 640px, 768px"
-                    alt=""
-                > -->
-
                 <picture>
                     <source
                         type="image/webp"
@@ -55,9 +39,6 @@
                         :src="require(`~/assets/img${product.image._768}`)" 
                         alt="">
                 </picture>
-
-
-
             </div>
             <div class="product__info" v-if="product.id == PC">
                 <h1>{{ product.name }}</h1>
@@ -301,13 +282,12 @@ export default {
 
 
 @media only screen and (max-width: 767px) {
-    
     .product {
         display: flex;
         flex-direction: column;
     }
 
-    .product__img, .product__img img {
+    .product__img {
         width: 100%;
         min-width: auto;
     }
@@ -328,7 +308,12 @@ export default {
 
 
 
-
+@media only screen and (max-width: 420px) {
+    .product__img picture {
+        width: 100%;
+        min-width: auto;
+    }
+}
 
 
 

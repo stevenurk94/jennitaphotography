@@ -28,29 +28,30 @@
             <div class="products__wrapper" v-if="v_blanco === true">
                 <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsBlanco" :key="PhotoCards.id">
-                    <!-- <img
-                        @load="showLoading = false"
-                        :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
-                        :src="require(`~/assets/img${PhotoCards.image._320}`)" 
-                        sizes="
-                            (max-width: 320px) 320px"
-                        alt=""
-                    > -->
                     <picture>
                         <source
                             type="image/webp"
-                            sizes="(max-width: 320px) 320px"
-                            :srcset="require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w '">
+                            sizes="
+                                (max-width: 340px) 160px,
+                                (min-width: 340px) 320px"
+                            :srcset="
+                                require(`~/assets/img${PhotoCards.image.webp._160}`) + ' 160w, ' +
+                                require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w '">
                         <source
                             type="image/jpeg"
-                            sizes="(max-width: 320px) 320px"
-                            :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
+                            sizes="
+                                (max-width: 340px) 160px,
+                                (min-width: 340px) 320px"
+                            :srcset="
+                                require(`~/assets/img${PhotoCards.image._160}`) + ' 160w, ' +
+                                require(`~/assets/img${PhotoCards.image._320}`) + ' 320w, '">
                         <img 
                             @load="showLoading = false"
                             :class="PhotoCards.position"
                             :src="require(`~/assets/img${PhotoCards.image._320}`)" 
                             alt="">
                     </picture>
+
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
@@ -527,9 +528,8 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
 
     .products__wrapper__cart picture {
         margin: 10px;
-        object-fit: cover;
-        object-position: center;
     }
+    
 
     .products__wrapper__cart > div {
         display: block;

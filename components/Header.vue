@@ -13,6 +13,33 @@
             <span></span>
         </label>
 
+        <!-- <img class="backgroundimage" src="~/assets/img/1024/kaart0004.jpeg" alt=""> -->
+        <picture class="background_picture">
+            <source
+                type="image/webp"
+                sizes="
+                    (max-width: 320px) 320px,
+                    (min-width: 320px) and (max-width: 530px) 640px,
+                    (min-width: 640px) 768px, 1024px"
+                srcset="
+                    ~/assets/img/webp/320/kaart0004.webp 320w,
+                    ~/assets/img/webp/640/kaart0004.webp 640w,
+                    ~/assets/img/webp/768/kaart0004.webp 768w,
+                    ~/assets/img/webp/1024/kaart0004.webp 1024w">
+            <source
+                type="image/jpeg"
+                sizes="
+                    (max-width: 320px) 320px,
+                    (min-width: 320px) and (max-width: 530px) 640px,
+                    (min-width: 640px) 768px, 1024px"
+                srcset="
+                    ~/assets/img/320/kaart0004.jpeg 320w,
+                    ~/assets/img/640/kaart0004.jpeg 640w,
+                    ~/assets/img/768/kaart0004.jpeg 768w,
+                    ~/assets/img/1024/kaart0004.jpeg 1024w">
+            <img class="background_image" src="~/assets/img/768/kaart0004.jpeg" alt="">
+        </picture>
+
         <nav>
             <ul>
                 <li>
@@ -259,7 +286,7 @@ header.scrolled .navbar nav ul li a::after {
 
 /* ########## MENU BUTTON ########## */
 
-header .navbar input[type="checkbox"], header .navbar nav ul li a span, header .navbar nav ul li h3 {
+header .navbar input[type="checkbox"], header .navbar nav ul li a span, header .navbar nav ul li h3, .background_image {
   display: none;
 }
 
@@ -343,22 +370,46 @@ header .navbar input:checked ~ label span:nth-child(3) {
         bottom: 0;
         opacity: 0;
         visibility: hidden;
-        background: linear-gradient(rgb(0 0 0 / 80%), rgb(0 0 0 / 60%)), url("~/assets/img/1024/kaart0004.jpeg");
+        background: linear-gradient(rgb(0 0 0 / 80%), rgb(0 0 0 / 60%));
         background-size: cover;
         opacity: 0;
         transition: opacity 60ms ease-in-out, transform 50ms cubic-bezier(.19,1.22,1);
-        transform: scaleY(0);
         transform-origin: top;
     }
 
     header .navbar.open nav {
         opacity: 1;
-        transform: scaleY(1);
         overflow-y: hidden;
         visibility: visible;
         transition: transform 100ms cubic-bezier(.19,1,.22,1);
-
     }
+
+    
+    header .navbar .background_image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 60ms ease-in-out, transform 50ms cubic-bezier(.19,1.22,1);
+        transform-origin: top;
+    }
+
+    header .navbar.open .background_image {
+        visibility: visible;
+        opacity: 1;
+        overflow-y: hidden;
+        transition: transform 100ms cubic-bezier(.19,1,.22,1);
+        transform-origin: top;
+    }
+
 
     header .navbar nav ul {
         padding-top: 140px;
