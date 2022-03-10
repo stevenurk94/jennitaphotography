@@ -17,7 +17,8 @@
                 "_320": "/webp/320/kaart0001.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 2,
@@ -37,7 +38,8 @@
                 "_320": "/webp/320/kaart0002.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 3,
@@ -58,7 +60,8 @@
             }
 
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 4,
@@ -78,7 +81,8 @@
                 "_320": "/webp/320/kaart0004.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 5,
@@ -98,7 +102,8 @@
                 "_320": "/webp/320/kaart0005.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 6,
@@ -118,7 +123,8 @@
                 "_320": "/webp/320/kaart0006.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 7,
@@ -138,7 +144,8 @@
                 "_320": "/webp/320/kaart0007.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 8,
@@ -158,7 +165,8 @@
                 "_320": "/webp/320/kaart0008.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 9,
@@ -178,7 +186,8 @@
                     "_320": "/webp/320/kaart0009.webp"
                 }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "lying"
     },
     {
         "id": 10,
@@ -198,7 +207,8 @@
                 "_320": "/webp/320/kaart0010.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 11,
@@ -218,7 +228,8 @@
                 "_320": "/webp/320/kaart0011.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "lying"
     },
     {
         "id": 12,
@@ -238,7 +249,8 @@
                 "_320": "/webp/320/kaart0012.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 13,
@@ -258,7 +270,8 @@
                 "_320": "/webp/320/kaart0013.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 14,
@@ -278,7 +291,8 @@
                 "_320": "/webp/320/kaart0014.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "lying"
     },
     {
         "id": 15,
@@ -298,7 +312,8 @@
                 "_320": "/webp/320/kaart0015.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 16,
@@ -318,7 +333,8 @@
                 "_320": "/webp/320/kaart0016.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "lying"
     },
     {
         "id": 17,
@@ -338,7 +354,8 @@
                 "_320": "/webp/320/kaart0017.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 18,
@@ -358,7 +375,8 @@
                 "_320": "/webp/320/kaart0018.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "lying"
     },
     {
         "id": 19,
@@ -378,7 +396,8 @@
                 "_320": "/webp/320/kaart0019.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "lying  "
     },
     {
         "id": 20,
@@ -398,7 +417,8 @@
                 "_320": "/webp/320/kaart0020.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 21,
@@ -418,7 +438,8 @@
                 "_320": "/webp/320/kaart0021.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "lying"
     },
     {
         "id": 22,
@@ -438,7 +459,8 @@
                 "_320": "/webp/320/kaart0022.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "lying"
     },
     {
         "id": 23,
@@ -458,7 +480,8 @@
                 "_320": "/webp/320/kaart0023.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "lying"
     },
     {
         "id": 24,
@@ -478,7 +501,8 @@
                 "_320": "/webp/320/kaart0024.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "lying"
     },
     {
         "id": 25,
@@ -498,7 +522,8 @@
                 "_320": "/webp/320/kaart0025.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 26,
@@ -518,7 +543,8 @@
                 "_320": "/webp/320/kaart0026.webp"
             }
         },
-        "category": "blanco"
+        "category": "blanco",
+        "position": "standing"
     },
     {
         "id": 27,
@@ -538,7 +564,8 @@
                 "_320": "/webp/320/kaart0027.webp"
             }
         },
-        "category": "geboorte"
+        "category": "geboorte",
+        "position": "standing"
     },
     {
         "id": 28,
@@ -558,7 +585,8 @@
                 "_320": "/webp/320/kaart0028.webp"
             }
         },
-        "category": "geboorte"
+        "category": "geboorte",
+        "position": "standing"
     },
     {
         "id": 29,
@@ -578,7 +606,8 @@
                 "_320": "/webp/320/kaart0029.webp"
             }
         },
-        "category": "geboorte"
+        "category": "geboorte",
+        "position": "standing"
     },
     {
         "id": 30,
@@ -598,7 +627,8 @@
                 "_320": "/webp/320/kaart0030.webp"
             }
         },
-        "category": "geboorte"
+        "category": "geboorte",
+        "position": "standing"
     },
     {
         "id": 31,
@@ -618,7 +648,8 @@
                 "_320": "/webp/320/kaart0031.webp"
             }
         },
-        "category": "geboorte"
+        "category": "geboorte",
+        "position": "standing"
     },
     {
         "id": 32,
@@ -638,7 +669,8 @@
                 "_320": "/webp/320/kaart0032.webp"
             }
         },
-        "category": "geboorte"
+        "category": "geboorte",
+        "position": "standing"
     },
     {
         "id": 33,
@@ -658,7 +690,8 @@
                 "_320": "/webp/320/kaart0033.webp"
             }
         },
-        "category": "geboorte"
+        "category": "geboorte",
+        "position": "standing"
     },
     {
         "id": 34,
@@ -678,7 +711,8 @@
                 "_320": "/webp/320/kaart0034.webp"
             }
         },
-        "category": "geboorte"
+        "category": "geboorte",
+        "position": "standing"
     },
     {
         "id": 35,
@@ -698,7 +732,8 @@
                 "_320": "/webp/320/kaart0035.webp"
             }
         },
-        "category": "geboorte"
+        "category": "geboorte",
+        "position": "standing"
     },
     {
         "id": 36,
@@ -718,7 +753,8 @@
                 "_320": "/webp/320/kaart0036.webp"
             }
         },
-        "category": "verjaardag jongen"
+        "category": "verjaardag jongen",
+        "position": "standing"
     },
     {
         "id": 37,
@@ -738,7 +774,8 @@
                 "_320": "/webp/320/kaart0037.webp"
             }
         },
-        "category": "verjaardag jongen"
+        "category": "verjaardag jongen",
+        "position": "standing"
     },
     {
         "id": 38,
@@ -758,6 +795,7 @@
                 "_320": "/webp/320/kaart0038.webp"
             }
         },
-        "category": "verjaardag jongen"
+        "category": "verjaardag jongen",
+        "position": "standing"
     }
 ]
