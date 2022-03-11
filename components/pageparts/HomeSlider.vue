@@ -97,6 +97,7 @@
                 <img
                     class="blur sliderImage" 
                     @load="removeBlur"
+                    loading="lazy"
                     src="~/assets/img/1024/kaart0016.jpeg" 
                     alt="">
             </picture>
