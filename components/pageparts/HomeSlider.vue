@@ -268,18 +268,5 @@ export default {
             };
         }
     },
-
-    // mounted: function () {
-
-    //     const test = document.querySelectorAll("picture .sliderImage");
-    //     test.forEach(item => {
-    //         item.onload = function () {
-    //             item.classList.remove("blur");
-    //             item.classList.add("noblur");
-    //         }
-    //     });
-
-
-    // }
 }
 </script>
