@@ -130,6 +130,7 @@
                 <img 
                     class="blur sliderImage" 
                     @load="removeBlur"
+                    loading="lazy"
                     src="~/assets/img/1024/kaart0014.jpeg" 
                     alt="">
             </picture>
@@ -163,6 +164,7 @@
                 <img 
                     class="blur sliderImage" 
                     @load="removeBlur"
+                    loading="lazy"
                     src="~/assets/img/1024/kaart0018.jpeg" 
                     alt="">
             </picture>
