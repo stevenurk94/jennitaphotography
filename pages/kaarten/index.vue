@@ -47,6 +47,7 @@
                                 require(`~/assets/img${PhotoCards.image._320}`) + ' 320w, '">
                         <img 
                             @load="showLoading = false"
+                            loading="lazy"
                             :class="PhotoCards.position"
                             :src="require(`~/assets/img${PhotoCards.image._320}`)" 
                             alt="">
