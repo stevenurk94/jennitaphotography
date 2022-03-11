@@ -33,18 +33,20 @@
                             type="image/webp"
                             sizes="
                                 (max-width: 340px) 160px,
-                                (min-width: 340px) 320px"
+                                (min-width: 340px) 320px, 640px"
                             :srcset="
                                 require(`~/assets/img${PhotoCards.image.webp._160}`) + ' 160w, ' +
-                                require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w '">
+                                require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w, ' +
+                                require(`~/assets/img${PhotoCards.image.webp._640}`) + ' 640w'">
                         <source
                             type="image/jpeg"
                             sizes="
                                 (max-width: 340px) 160px,
-                                (min-width: 340px) 320px"
+                                (min-width: 340px) 320px, 640px"
                             :srcset="
                                 require(`~/assets/img${PhotoCards.image._160}`) + ' 160w, ' +
-                                require(`~/assets/img${PhotoCards.image._320}`) + ' 320w, '">
+                                require(`~/assets/img${PhotoCards.image._320}`) + ' 320w, ' + 
+                                require(`~/assets/img${PhotoCards.image._640}`) + ' 640w '">
                         <img 
                             @load="showLoading = false"
                             :loading="PhotoCards.loading"
@@ -67,24 +69,25 @@
             <div class="products__wrapper" v-if="v_geboorte === true">
                 <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsGeboorte" :key="PhotoCards.id">
-                    <!-- <img
-                        @load="showLoading = false"
-                        :srcset="
-                            require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
-                        :src="require(`~/assets/img${PhotoCards.image._320}`)" 
-                        sizes="
-                            (max-width: 320px) 320px"
-                        alt=""
-                    > -->
                     <picture>
                         <source
                             type="image/webp"
-                            sizes="(max-width: 320px) 320px"
-                            :srcset="require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w '">
+                            sizes="
+                                (max-width: 340px) 160px,
+                                (min-width: 340px) 320px, 640px"
+                            :srcset="
+                                require(`~/assets/img${PhotoCards.image.webp._160}`) + ' 160w, ' +
+                                require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w, ' +
+                                require(`~/assets/img${PhotoCards.image.webp._640}`) + ' 640w'">
                         <source
                             type="image/jpeg"
-                            sizes="(max-width: 320px) 320px"
-                            :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
+                            sizes="
+                                (max-width: 340px) 160px,
+                                (min-width: 340px) 320px, 640px"
+                            :srcset="
+                                require(`~/assets/img${PhotoCards.image._160}`) + ' 160w, ' +
+                                require(`~/assets/img${PhotoCards.image._320}`) + ' 320w, ' + 
+                                require(`~/assets/img${PhotoCards.image._640}`) + ' 640w '">
                         <img 
                             @load="showLoading = false"
                             :loading="PhotoCards.loading"
@@ -106,24 +109,25 @@
             <div class="products__wrapper" v-if="v_verjaardag_jongen === true">
                 <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsVerjaardagJongen" :key="PhotoCards.id">
-                    <!-- <img
-                        @load="showLoading = false"
-                        :srcset="
-                            require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '"
-                        :src="require(`~/assets/img${PhotoCards.image._320}`)" 
-                        sizes="
-                            (max-width: 320px) 320px"
-                        alt=""
-                    > -->
                     <picture>
                         <source
                             type="image/webp"
-                            sizes="(max-width: 320px) 320px"
-                            :srcset="require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w '">
+                            sizes="
+                                (max-width: 340px) 160px,
+                                (min-width: 340px) 320px, 640px"
+                            :srcset="
+                                require(`~/assets/img${PhotoCards.image.webp._160}`) + ' 160w, ' +
+                                require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w, ' +
+                                require(`~/assets/img${PhotoCards.image.webp._640}`) + ' 640w'">
                         <source
                             type="image/jpeg"
-                            sizes="(max-width: 320px) 320px"
-                            :srcset="require(`~/assets/img${PhotoCards.image._320}`) + ' 320w '">
+                            sizes="
+                                (max-width: 340px) 160px,
+                                (min-width: 340px) 320px, 640px"
+                            :srcset="
+                                require(`~/assets/img${PhotoCards.image._160}`) + ' 160w, ' +
+                                require(`~/assets/img${PhotoCards.image._320}`) + ' 320w, ' + 
+                                require(`~/assets/img${PhotoCards.image._640}`) + ' 640w '">
                         <img 
                             @load="showLoading = false"
                             :loading="PhotoCards.loading"
