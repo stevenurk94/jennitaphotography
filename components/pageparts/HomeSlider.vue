@@ -250,12 +250,36 @@ div img {
 export default {
     methods: {
         removeBlur () {
-            const test = document.querySelectorAll("picture .sliderImage");
-            test.forEach(item => {
-                item.classList.remove("blur");
-                item.classList.add("noblur");
-            });
+            if (document.readyState == 'complete') {
+                const test = document.querySelectorAll("picture .sliderImage");
+                test.forEach(item => {
+                    item.classList.remove("blur");
+                    // item.classList.add("noblur");
+                });                
+            }
+            document.onreadystatechange = () => {
+                if (document.readyState == 'complete') {
+                    const test = document.querySelectorAll("picture .sliderImage");
+                    test.forEach(item => {
+                        item.classList.remove("blur");
+                        item.classList.add("noblur");
+                    });                
+                }
+            };
         }
-    }
+    },
+
+    // mounted: function () {
+
+    //     const test = document.querySelectorAll("picture .sliderImage");
+    //     test.forEach(item => {
+    //         item.onload = function () {
+    //             item.classList.remove("blur");
+    //             item.classList.add("noblur");
+    //         }
+    //     });
+
+
+    // }
 }
 </script>
