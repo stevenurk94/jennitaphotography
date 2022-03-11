@@ -28,7 +28,11 @@
                         ~/assets/img/768/kaart0018.jpeg 768w,
                         ~/assets/img/1024/kaart0018.jpeg 1024w,
                         ~/assets/img/1600/kaart0018.jpeg 1600w">
-                <img class="blur sliderImage" @load="removeBlur" loading="lazy" src="~/assets/img/1024/kaart0018.jpeg" alt="">
+                <img 
+                    class="blur sliderImage" 
+                    @load="removeBlur"
+                    src="~/assets/img/1024/kaart0018.jpeg" 
+                    alt="">
             </picture>
             <picture>
                 <source
@@ -57,7 +61,11 @@
                         ~/assets/img/768/kaart0019.jpeg 768w,
                         ~/assets/img/1024/kaart0019.jpeg 1024w,
                         ~/assets/img/1600/kaart0019.jpeg 1600w">
-                <img src="~/assets/img/1024/kaart0019.jpeg" alt="">
+                <img 
+                    class="blur sliderImage" 
+                    @load="removeBlur"
+                    src="~/assets/img/1024/kaart0019.jpeg" 
+                    alt="">
             </picture>
             <picture>
                 <source
@@ -86,7 +94,11 @@
                         ~/assets/img/768/kaart0016.jpeg 768w,
                         ~/assets/img/1024/kaart0016.jpeg 1024w,
                         ~/assets/img/1600/kaart0016.jpeg 1600w">
-                <img src="~/assets/img/1024/kaart0016.jpeg" alt="">
+                <img
+                    class="blur sliderImage" 
+                    @load="removeBlur"
+                    src="~/assets/img/1024/kaart0016.jpeg" 
+                    alt="">
             </picture>
             <picture>
                 <source
@@ -115,7 +127,11 @@
                         ~/assets/img/768/kaart0014.jpeg 768w,
                         ~/assets/img/1024/kaart0014.jpeg 1024w,
                         ~/assets/img/1600/kaart0014.jpeg 1600w">
-                <img src="~/assets/img/1024/kaart0014.jpeg" alt="">
+                <img 
+                    class="blur sliderImage" 
+                    @load="removeBlur"
+                    src="~/assets/img/1024/kaart0014.jpeg" 
+                    alt="">
             </picture>
             <picture>
                 <source
@@ -144,7 +160,11 @@
                         ~/assets/img/768/kaart0018.jpeg 768w,
                         ~/assets/img/1024/kaart0018.jpeg 1024w,
                         ~/assets/img/1600/kaart0018.jpeg 1600w">
-                <img src="~/assets/img/1024/kaart0018.jpeg" alt="">
+                <img 
+                    class="blur sliderImage" 
+                    @load="removeBlur"
+                    src="~/assets/img/1024/kaart0018.jpeg" 
+                    alt="">
             </picture>
         </div>
     </section>
@@ -182,11 +202,13 @@ div img {
 
 .blur {
     filter: blur(10px);
+    opacity: 0;
     transition: all 1000ms ease-in-out;
 }
 
 .noblur {
     transition: all 1000ms ease-in-out;
+    opacity: 1;
 }
 
 
@@ -228,9 +250,11 @@ div img {
 export default {
     methods: {
         removeBlur () {
-            const image_1 = document.querySelector("picture .sliderImage:nth-of-type(1)");
-            image_1.classList.remove("blur");
-            image_1.classList.add("noblur");
+            const test = document.querySelectorAll("picture .sliderImage");
+            test.forEach(item => {
+                item.classList.remove("blur");
+                item.classList.add("noblur");
+            });
         }
     }
 }
