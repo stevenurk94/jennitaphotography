@@ -62,7 +62,8 @@
                         ~/assets/img/1024/kaart0019.jpeg 1024w,
                         ~/assets/img/1600/kaart0019.jpeg 1600w">
                 <img 
-                    class="blur sliderImage" 
+                    class="blur sliderImage"
+                    loading="lazy"
                     @load="removeBlur"
                     src="~/assets/img/1024/kaart0019.jpeg" 
                     alt="">
