@@ -121,40 +121,30 @@ export default {
     head () {
         return {
             title: PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).name,
-            link: [
-                {
-                    rel: "preload",
-                    imagesrcset: 
-                        require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image.webp._320) + ' 320w, ' +
-                        require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image.webp._640) + ' 640w, ' +
-                        require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image.webp._768) + ' 768w, ' +
-                        require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image.webp._1024) + ' 1024w',
-                    imagesizes: "(max-width: 320px) 320px, (min-width: 320px) and (max-width: 640px) 640px, (min-width: 640px) and (max-width: 768px) 768px, (min-width: 768px) 640px, 768px", 
-                    as: "image"
-                },
-                {
-                    rel: "preload",
-                    imagesrcset: 
-                        require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image._320) + ' 320w, ' +
-                        require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image._640) + ' 640w, ' +
-                        require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image._768) + ' 768w, ' +
-                        require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image._1024) + ' 1024w',
-                    imagesizes: "(max-width: 320px) 320px, (min-width: 320px) and (max-width: 640px) 640px, (min-width: 640px) and (max-width: 768px) 768px, (min-width: 768px) 640px, 768px", 
-                    as: "image"
-                }
-            ]
+            // link: [
+            //     {
+            //         rel: "preload",
+            //         imagesrcset: 
+            //             require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image.webp._320) + ' 320w, ' +
+            //             require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image.webp._640) + ' 640w, ' +
+            //             require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image.webp._768) + ' 768w, ' +
+            //             require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image.webp._1024) + ' 1024w',
+            //         imagesizes: "(max-width: 320px) 320px, (min-width: 320px) and (max-width: 640px) 640px, (min-width: 640px) and (max-width: 768px) 768px, (min-width: 768px) 640px, 768px", 
+            //         as: "image"
+            //     },
+            //     {
+            //         rel: "preload",
+            //         imagesrcset: 
+            //             require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image._320) + ' 320w, ' +
+            //             require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image._640) + ' 640w, ' +
+            //             require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image._768) + ' 768w, ' +
+            //             require(`~/assets/img` + PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).image._1024) + ' 1024w',
+            //         imagesizes: "(max-width: 320px) 320px, (min-width: 320px) and (max-width: 640px) 640px, (min-width: 640px) and (max-width: 768px) 768px, (min-width: 768px) 640px, 768px", 
+            //         as: "image"
+            //     }
+            // ]
         }
     },
-
-        // require(`~/assets/img${product.image.webp._320}`) + ' 320w, ' +
-        // require(`~/assets/img${product.image.webp._640}`) + ' 640w, ' +
-        // require(`~/assets/img${product.image.webp._768}`) + ' 768w, ' +
-        // require(`~/assets/img${product.image.webp._1024}`) + ' 1024w'">
-
-
-
-
-
     computed: {
         cartItemCount () {
             return this.$store.getters.cartItemCount

@@ -8,7 +8,7 @@
         </span>
         <span class="breadcrumbs__mobile">
             <span class="arrow">&#8592;</span>
-            <NuxtLink v-if="this.$route.path == '/kaarten'" to="/">Terug</NuxtLink>
+            <NuxtLink v-if="this.$route.path == '/kaarten' || this.$route.path == '/kaarten/' " to="/">Terug</NuxtLink>
             <NuxtLink v-else to="/kaarten">Terug</NuxtLink>
         </span>
     </div>

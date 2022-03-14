@@ -37,7 +37,7 @@
                     ~/assets/img/640/kaart0004.jpeg 640w,
                     ~/assets/img/768/kaart0004.jpeg 768w,
                     ~/assets/img/1024/kaart0004.jpeg 1024w">
-            <img class="background_image" src="~/assets/img/768/kaart0004.jpeg" alt="">
+            <img class="background_image" src="~/assets/img/768/kaart0004.jpeg" alt="" loading="lazy">
         </picture>
 
         <nav>
@@ -286,7 +286,7 @@ header.scrolled .navbar nav ul li a::after {
 
 /* ########## MENU BUTTON ########## */
 
-header .navbar input[type="checkbox"], header .navbar nav ul li a span, header .navbar nav ul li h3, .background_image {
+header .navbar input[type="checkbox"], header .navbar nav ul li a span, header .navbar nav ul li h3, .background_image, .background_picture {
   display: none;
 }
 
@@ -384,6 +384,15 @@ header .navbar input:checked ~ label span:nth-child(3) {
         transition: transform 100ms cubic-bezier(.19,1,.22,1);
     }
 
+    .background_picture {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+    }
     
     header .navbar .background_image {
         position: absolute;
@@ -400,6 +409,10 @@ header .navbar input:checked ~ label span:nth-child(3) {
         opacity: 0;
         transition: opacity 60ms ease-in-out, transform 50ms cubic-bezier(.19,1.22,1);
         transform-origin: top;
+    }
+
+    header .navbar.open .background_picture {
+        display: block;
     }
 
     header .navbar.open .background_image {
