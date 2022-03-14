@@ -12,6 +12,15 @@
     </main>
 </template>
 
+<script>
+export default {
+    head () {
+        return {
+            title: "Cookiebeleid & instellingen"
+        }
+    }
+}
+</script>
 
 
 <style scoped>

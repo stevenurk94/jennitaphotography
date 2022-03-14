@@ -75,7 +75,7 @@
                         </span>
                         <div class="modal__product">
                             <div class="modal__product__img">
-                                <img :src="require(`~/assets/img${product.image._320}`)" alt="">
+                                <img loading="lazy" :src="require(`~/assets/img${product.image._320}`)" alt="">
                             </div>
                             
                             <div class="modal__product__info">
@@ -103,7 +103,17 @@
 import PhotoCards from "~/assets/json/PhotoCards.json";
 
 export default {
-
+    head () {
+        return {
+            title: PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9,))).name,
+            link: [{
+                rel: "preload",
+                // imagesrcset: PhotoCards.find(element => element.id === parseInt(this.$route.path.slice(9, )))`~/assets/img${product.image.webp._320}`) + ' 320w',
+                imagesizes: "(max-width: 320px) 320px, (min-width: 320px) and (max-width: 640px) 640px, (min-width: 640px) and (max-width: 768px) 768px, (min-width: 768px) 640px, 768px", 
+                as: "image"
+            }]
+        }
+    },
     data () {
         return {
             PhotoCards,

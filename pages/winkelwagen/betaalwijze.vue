@@ -39,6 +39,12 @@
 
 export default {
 
+    head () {
+        return {
+            title: "Betaalwijze"
+        }
+    },
+
     computed: {
         paymethod () {
             if (this.$store.getters.formDetails[0]) {

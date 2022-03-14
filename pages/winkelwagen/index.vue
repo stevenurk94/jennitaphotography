@@ -89,7 +89,11 @@ import _ from "lodash";
 
 
 export default {
-
+    head () {
+        return {
+            title: "Winkelwagen"
+        }
+    },
     computed: {
 
         products () {

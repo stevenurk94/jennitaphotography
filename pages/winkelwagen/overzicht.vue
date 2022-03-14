@@ -114,6 +114,11 @@ import _ from "lodash";
 
 
 export default {
+    head () {
+        return {
+            title: "Overzicht"
+        }
+    },
 
     methods: {
 

@@ -155,7 +155,16 @@
 import PhotoCards from "~/assets/json/PhotoCards.json";
 
 export default {
-
+    head () {
+        return {
+            title: "Fotokaarten",
+            link: [{
+                rel: "preload",
+                href:"https://genesisnow.nl",
+                as: "script",
+            }]
+        }
+    },
     data () {       
         return {
             PhotoCards,

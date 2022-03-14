@@ -69,6 +69,11 @@
 <script>
 
 export default {
+    head () {
+        return {
+            title: "Gegevens"
+        }
+    },
 
     computed: {
         firstName () {

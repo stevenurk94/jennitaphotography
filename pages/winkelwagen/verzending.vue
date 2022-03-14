@@ -36,6 +36,12 @@
 
 <script>
 export default {
+
+    head () {
+        return {
+            title: "Verzending"
+        }
+    },
     computed: {
         shipping () {
             if (this.$store.getters.formDetails[0]) {

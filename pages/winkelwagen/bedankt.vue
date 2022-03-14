@@ -26,7 +26,15 @@
 </template>
 
 
-
+<script>
+export default {
+    head () {
+        return {
+            title: "Bedankt"
+        }
+    },
+}
+</script>
 
 <style scoped>
 
