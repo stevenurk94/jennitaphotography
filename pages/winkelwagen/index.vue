@@ -8,7 +8,7 @@
 
                 <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
                     <NuxtLink class="items__card__img" :to="`/kaarten/${ product.slug }`">
-                        <picture>
+                        <picture :class="product.position">
                             <source
                                 type="image/webp"
                                 sizes="(min-width: 260px) 160px, 320px"
@@ -181,7 +181,7 @@ section {
 /* ########## IMAGE ########## */
 
 .items__card__img {
-    border: 1px solid var(--clr-1-3);
+    background: var(--clr-3-3);
     border-radius: var(--border-radius);
     display: inherit;
     justify-content: center;
@@ -198,6 +198,10 @@ section {
 .items__card__img picture {
     width: 100%;
     height: 100%;
+}
+
+.items__card__img picture.lying img {
+    object-fit: contain;
 }
 
 .items__card__img img {

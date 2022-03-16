@@ -74,7 +74,7 @@
                             <IconsCross />
                         </span>
                         <div class="modal__product">
-                            <div class="modal__product__img">
+                            <div class="modal__product__img" :class="product.position">
                                 <img loading="lazy" :src="require(`~/assets/img${product.image._320}`)" alt="">
                             </div>
                             
@@ -432,7 +432,7 @@ export default {
 
 .modal__product__img {
     border-radius: var(--border-radius);
-    border: 1px solid var(--clr-1-3);
+    background: var(--clr-3-3);
     padding: 5px;
     width: 100px;
     display: flex;
@@ -445,6 +445,10 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.modal__product__img.lying img {
+    object-fit: contain;
 }
 
 .modal__product__info {

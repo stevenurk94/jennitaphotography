@@ -51,9 +51,7 @@
                 <div class="overview__cart__items">
                     <div class="overview__cart__items__card" v-for="product in orderedproducts" :key="product.id" >
                         <div class="overview__cart__items__card__img">
-                            <!-- <img :src="require(`~/assets/img${product.image._320}`)" alt=""> -->
-
-                            <picture>
+                            <picture :class="product.position">
                                 <source
                                     type="image/webp"
                                     sizes="(min-width: 260px) 160px, 320px"
@@ -337,7 +335,7 @@ form.overview__checkout {
 /* ########## IMAGE ########## */
 
 .overview__cart__items__card__img {
-    border: 1px solid var(--clr-1-3);
+    background: var(--clr-3-3);
     border-radius: var(--border-radius);
     display: inherit;
     justify-content: center;
@@ -360,6 +358,10 @@ form.overview__checkout {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.overview__cart__items__card__img picture.lying img {
+    object-fit: contain;
 }
 
 

@@ -28,33 +28,31 @@
             <div class="products__wrapper" v-if="v_blanco === true">
                 <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsBlanco" :key="PhotoCards.id">
-                    <picture>
-                        <source
-                            type="image/webp"
-                            sizes="
-                                (max-width: 340px) 160px,
-                                (min-width: 340px) 320px, 640px"
-                            :srcset="
-                                require(`~/assets/img${PhotoCards.image.webp._160}`) + ' 160w, ' +
-                                require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w, ' +
-                                require(`~/assets/img${PhotoCards.image.webp._640}`) + ' 640w'">
-                        <source
-                            type="image/jpeg"
-                            sizes="
-                                (max-width: 340px) 160px,
-                                (min-width: 340px) 320px, 640px"
-                            :srcset="
-                                require(`~/assets/img${PhotoCards.image._160}`) + ' 160w, ' +
-                                require(`~/assets/img${PhotoCards.image._320}`) + ' 320w, ' + 
-                                require(`~/assets/img${PhotoCards.image._640}`) + ' 640w '">
-                        <img 
-                            @load="showLoading = false"
-                            :loading="PhotoCards.loading"
-                            :class="PhotoCards.position"
-                            :src="require(`~/assets/img${PhotoCards.image._320}`)" 
-                            alt="">
-                    </picture>
-
+                        <picture :class="PhotoCards.position">
+                            <source
+                                type="image/webp"
+                                sizes="
+                                    (max-width: 340px) 160px,
+                                    (min-width: 340px) 320px, 640px"
+                                :srcset="
+                                    require(`~/assets/img${PhotoCards.image.webp._160}`) + ' 160w, ' +
+                                    require(`~/assets/img${PhotoCards.image.webp._320}`) + ' 320w, ' +
+                                    require(`~/assets/img${PhotoCards.image.webp._640}`) + ' 640w'">
+                            <source
+                                type="image/jpeg"
+                                sizes="
+                                    (max-width: 340px) 160px,
+                                    (min-width: 340px) 320px, 640px"
+                                :srcset="
+                                    require(`~/assets/img${PhotoCards.image._160}`) + ' 160w, ' +
+                                    require(`~/assets/img${PhotoCards.image._320}`) + ' 320w, ' + 
+                                    require(`~/assets/img${PhotoCards.image._640}`) + ' 640w '">
+                            <img 
+                                @load="showLoading = false"
+                                :loading="PhotoCards.loading"
+                                :src="require(`~/assets/img${PhotoCards.image._320}`)" 
+                                alt="">
+                        </picture>
                     <div>
                         <div class="products__wrapper__cart__info">
                             <h3>{{ PhotoCards.name }}</h3>
@@ -69,7 +67,7 @@
             <div class="products__wrapper" v-if="v_geboorte === true">
                 <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsGeboorte" :key="PhotoCards.id">
-                    <picture>
+                    <picture :class="PhotoCards.position">
                         <source
                             type="image/webp"
                             sizes="
@@ -91,7 +89,6 @@
                         <img 
                             @load="showLoading = false"
                             :loading="PhotoCards.loading"
-                            :class="PhotoCards.position"
                             :src="require(`~/assets/img${PhotoCards.image._320}`)" 
                             alt="">
                     </picture>
@@ -109,7 +106,7 @@
             <div class="products__wrapper" v-if="v_verjaardag_jongen === true">
                 <IconsLoading v-if="showLoading"/>
                 <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCardsVerjaardagJongen" :key="PhotoCards.id">
-                    <picture>
+                    <picture :class="PhotoCards.position">
                         <source
                             type="image/webp"
                             sizes="
@@ -131,7 +128,6 @@
                         <img 
                             @load="showLoading = false"
                             :loading="PhotoCards.loading"
-                            :class="PhotoCards.position"
                             :src="require(`~/assets/img${PhotoCards.image._320}`)" 
                             alt="">
                     </picture>
@@ -144,7 +140,6 @@
                     </div>
                 </NuxtLink>
             </div>
-
         </div>
     </section>
 </main>
@@ -158,11 +153,6 @@ export default {
     head () {
         return {
             title: "Fotokaarten",
-            link: [{
-                rel: "preload",
-                href:"https://genesisnow.nl",
-                as: "script",
-            }]
         }
     },
     data () {       
@@ -417,19 +407,22 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
     right: 0;
     left: 0;
     margin: 15px 10px;
+    
 }
+
+.products__wrapper__cart picture.lying {
+    margin: calc(3vw + 40px) 10px;
+}
+
+.products__wrapper__cart picture.tall {
+    padding: 0 calc(1.1vw + 16px);
+}
+
 
 .products__wrapper__cart img {
     width: 100%;
     height: 100%;
-}
-
-.products__wrapper__cart img.standing {
     object-fit: cover;
-}
-
-.products__wrapper__cart img.lying {
-    object-fit: contain;
 }
 
 
@@ -529,6 +522,18 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
     .products__title {
         margin-top: 50px;
     }
+
+    .products__wrapper__cart picture.lying {
+        margin: calc(7vw + 40px) 10px;
+    }
+
+    .products__wrapper__cart picture.tall {
+        padding: 0 calc(3.5vw + 3px);
+    }
+
+
+
+
 }
 
 
@@ -561,17 +566,16 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
         margin-bottom: 7px;
     }
 
-
 }
 
 @media only screen and (max-width: 630px) {
-    
     .products__wrapper {
         gap: 25px 3%;
         grid-template-columns: repeat(2, 1fr); 
     }
-
-
+    .products__wrapper__cart picture.tall {
+        padding: 0 6.2vw;
+    }
 }
 
 </style>
