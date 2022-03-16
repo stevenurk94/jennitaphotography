@@ -9,9 +9,9 @@ export default {
   head: {
     
     title: 'Jennita Photography',
-    // htmlAttrs: {
-    //   lang: 'en'
-    // },
+    htmlAttrs: {
+      lang: 'nl'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -19,7 +19,14 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/image00015.png' },
+      { rel: 'icon', href: '/jf_icon_16.png', sizes: '16x16' },
+      { rel: 'icon', href: '/jf_icon_32.png', sizes: '32x32' },
+      { rel: 'icon', href: '/jf_icon_57.png', sizes: '57x57' },
+      { rel: 'icon', href: '/jf_icon_76.png', sizes: '76x76' },
+      { rel: 'icon', href: '/jf_icon_96.png', sizes: '96x96' },
+      { rel: 'apple-touch-icon', href: '/jf_icon_120.png', sizes: '120x120' },
+      { rel: 'apple-touch-icon', href: '/jf_icon_152.png', sizes: '152x152' },
+      { rel: 'apple-touch-icon', href: '/jf_icon_180.png', sizes: '180x180' },
       { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap' },
       { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
@@ -27,14 +34,7 @@ export default {
       { rel: 'stylesheet', media: 'print', onload: 'this.onload=null;this.removeAttribute("media");', href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap' },
-
-
-
     ],
-
-//     <noscript>
-//     <link rel="stylesheet" href="(font CSS URL here)">
-// </noscript>
 
     // Google Tag Manager - Configuration
     // __dangerouslyDisableSanitizers: ['script'],
