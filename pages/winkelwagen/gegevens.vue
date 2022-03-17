@@ -8,52 +8,78 @@
                 <h2 class="title">Gegevens</h2>
                 
                 <div class="input half">
-                    <input name="firstName" type="text" :value="firstName" maxlength="20">
-                    <!-- oninput="this.value=this.value.replace(/[^a-zA-Z-]*$/,'');" -->
+                    <input 
+                        name="firstName" 
+                        type="text" 
+                        :value="firstName" 
+                        maxlength="20" 
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Voornaam *</span>
                     <span class="input__error"></span>
                 </div>
 
                 <div class="input half">
-                    <input name="lastName" type="text" :value="lastName" maxlength="20">
-                    <!-- oninput="this.value=this.value.replace(/[^a-zA-Z-]*$/,'');" -->
+                    <input 
+                        name="lastName" 
+                        type="text" 
+                        :value="lastName" 
+                        maxlength="20" 
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Achternaam *</span>
                     <span class="input__error"></span>
                 </div>
 
                 <div class="input half">
-                    <input name="streetName" type="text" :value="streetName" maxlength="150">
-                    <!-- oninput="this.value=this.value.replace(/[^a-zA-Z-]*$/,'');" -->
+                    <input 
+                        name="streetName" 
+                        type="text" 
+                        :value="streetName" 
+                        maxlength="150" 
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Straatnaam *</span>
                     <span class="input__error"></span>
                 </div>
 
                 <div class="input quarter">
-                    <input name="streetNumber" type="number" :value="streetNumber" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-                    <!-- oninput="this.value=this.value.replace(/[^0-9]*$/,'');" -->
+                    <input 
+                        name="streetNumber" 
+                        type="number" 
+                        :value="streetNumber" 
+                        maxlength="5" 
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Huisnummer *</span>
                     <span class="input__error"></span>
                 </div>
 
                 <div class="input quarter">
-                    <input name="addition" type="text" :value="addition" maxlength="20">
-                    <!-- oninput="this.value=this.value.replace(/[^a-zA-Z0-9- ]*$/,'');" -->
+                    <input 
+                        name="addition" 
+                        type="text" 
+                        :value="addition" 
+                        maxlength="20" 
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Toevoeging</span>
                     <span class="input__error"></span>
                 </div>
 
                 <div class="input half">
-                    <input name="zipCode" type="text" :value="zipCode" oninput="this.value=this.value.replace(/[^\dA-Z]/gi, '').replace(/(.{4})/g, '$1 ').trim();" maxlength="7">
-                    <!-- oninput="this.value=this.value.replace(/[^a-zA-Z0-9- ]*$/,'');" -->
+                    <input 
+                        name="zipCode" 
+                        type="text" 
+                        :value="zipCode" 
+                        maxlength="7"
+                        oninput="this.value=this.value.replace(/[^\dA-Z]/gi, '').replace(/(.{4})/g, '$1 ').trim().toUpperCase();">
                     <span class="input__label">Postcode *</span>
                     <span class="input__error"></span>
-
-                    <!-- return /^[1-9][0-9]{3}[\s][A-Za-z]{2}$/.test(input); -->
                 </div>
 
                 <div class="input half">
-                    <input name="place" type="text" :value="place" maxlength="150">
-                    <!-- oninput="this.value=this.value.replace(/[^a-zA-Z-]*$/,'');" -->
+                    <input 
+                        name="place" 
+                        type="text" 
+                        :value="place" 
+                        maxlength="150" 
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Woonplaats *</span>
                     <span class="input__error"></span>
                 </div>
@@ -65,14 +91,24 @@
                 </div>
 
                 <div class="input">
-                    <input name="email" type="text" :value="email" maxlength="150">
+                    <input 
+                        name="email" 
+                        type="text" 
+                        :value="email" 
+                        maxlength="150" 
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <!-- oninput="this.value=this.value.replace(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}*$/,'');" -->
                     <span class="input__label">Emailadres *</span>
                     <span class="input__error"></span>
                 </div>
 
                 <div class="input">
-                    <input name="phoneNumber" type="number" :value="phoneNumber" maxlength="30" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                    <input 
+                        name="phoneNumber" 
+                        type="number" 
+                        :value="phoneNumber" 
+                        maxlength="30" 
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <!-- oninput="this.value=this.value.replace(/[^0-9]*$/,'');" -->
                     <span class="input__label">Telefoonnummer</span>
                     <span class="input__error"></span>
@@ -157,9 +193,6 @@ export default {
                 }
             ]
         },
-
-
-
     },
 
     
@@ -174,9 +207,7 @@ export default {
             const place_input = document.querySelector("form .input input[name='place']");
             const email_input = document.querySelector("form .input input[name='email']");
             const phoneNumber_input = document.querySelector("form .input input[name='phoneNumber']");
-            const { firstName, lastName, streetName, streetNumber, addition, zipCode, place, country, email, phoneNumber } = Object.fromEntries(
-                new FormData(event.target)
-            );
+            const { firstName, lastName, streetName, streetNumber, addition, zipCode, place, country, email, phoneNumber } = Object.fromEntries(new FormData(event.target));
             const customerDetails = [{ firstName, lastName, streetName, streetNumber, addition, zipCode, place, country, email, phoneNumber }];
 
             function setErrorFor(input, message) {
@@ -193,15 +224,12 @@ export default {
                 input__error.innerText = "";
             }
             function isReg_1(input) {
-                return /^([a-zA-Z- ])*$/.test(input);
+                return /^([a-zA-Z0-9- ])*$/.test(input);
             }
             function isReg_2(input) {
                 return /^([0-9])*$/.test(input);
             }
             function isReg_3(input) {
-                return /^([a-zA-Z0-9 ])*$/.test(input);
-            }
-            function isReg_4(input) {
                 return /^[1-9][0-9]{3}[\s][A-Za-z]{2}$/.test(input);
             }
             function isEmail(email) {
@@ -268,7 +296,7 @@ export default {
                 if (customerDetails[0].zipCode == "") {
                     setErrorFor(zipCode_input, "");
                     return false;
-                } else if (!isReg_4(customerDetails[0].zipCode)) {
+                } else if (!isReg_3(customerDetails[0].zipCode)) {
                     setErrorFor(zipCode_input, "Let op! Gebruik de volgende notatie: 1234 AA");
                     return false;
                 } else {
@@ -334,13 +362,11 @@ export default {
             }
         },
     },
-
     mounted: function () {
-
         const form = document.querySelector("form");
         const formChilds = document.querySelectorAll("form input");
 
-        setTimeout(function() {
+        function filled () {
             formChilds.forEach((item) => {
                 item.classList.remove("filled");
 
@@ -350,21 +376,14 @@ export default {
                     item.classList.remove("filled");
                 }  
             })
+        }
+        setTimeout(function() {
+            filled();
 	    }, 300);
 
         form.addEventListener("input", () => {
-
-            formChilds.forEach((item) => {
-                item.classList.remove("filled");
-
-                if ( item.value ) {
-                    item.classList.add("filled");
-                } else {
-                    item.classList.remove("filled");
-                }
-                
-            })
-        })
+            filled();
+        });
     }  
 }
 </script>
