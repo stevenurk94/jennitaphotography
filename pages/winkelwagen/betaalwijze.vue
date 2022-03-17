@@ -2,10 +2,13 @@
     <main>
 
         <PagepartsStepIndicator :items="stepindicator" />
+        
         <section>
             
+            
             <form @submit.prevent="savePaymethod">
-                <p class="message orange">Er ging iets fout met betalen, probeer het opnieuw.</p>
+                <p class="message orange">Er ging iets fout met betalen, probeer het opnieuw</p>
+                
 
                 <h2 class="title">Betaalwijze</h2>
                 <input type="radio" id="ideal" name="paymethod" :checked="paymethod == null || paymethod == 'ideal'" value="ideal">
@@ -76,24 +79,29 @@ export default {
     
     
     methods: {
-
         async savePaymethod () {
-
-            const { paymethod } = Object.fromEntries(
-                new FormData(event.target)
-            );
-
+            const { paymethod } = Object.fromEntries(new FormData(event.target));
             this.$store.commit("savePaymethod", paymethod);
             this.$router.push("/winkelwagen/overzicht");
         },
-    }, 
+    },
+
+    mounted: function () {
+        if (new URLSearchParams(window.location.search).get("cancel") == "true") {
+            document.querySelector("section p.message.orange").style.display = "block";
+        }
+    }
 }
 
 </script>
 
 
 <style scoped>
-form .message.orange {
+section p.message.orange {
     display: none;
+    width: 100%;
+    padding: 7px 15px;
+    margin: 5px 0 35px 0;
 }
+
 </style>

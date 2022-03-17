@@ -1,7 +1,12 @@
 <template>
     <main>
         <PagepartsStepIndicator :items="stepindicator" />
+
+        
+
         <section class="overview">
+
+            <p class="message orange">Er ging iets fout met betalen, probeer het opnieuw</p>
 
             
             <form @submit.prevent="betalen" class="overview__checkout">
@@ -440,6 +445,13 @@ form.overview__summary {
 }
 
 
+/* ### Error message ### */
+
+section p.message.orange {
+    width: 100%;
+    padding: 7px 15px;
+    margin: 5px 0 35px 0;
+}
 
 
 
