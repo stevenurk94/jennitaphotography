@@ -53,8 +53,12 @@ form .input input {
     background: transparent;
 }
 
+form .input input[name="zipCode"] {
+    text-transform: uppercase;
+}
 
-form .input span {
+
+form .input .input__label {
     position: absolute;
     left: 15px;
     top: 15px;
@@ -67,18 +71,36 @@ form .input span {
     pointer-events: none;
 }
 
+form .input .input__error {
+    font-family: 'Work Sans', sans-serif;
+    line-height: 2;
+    margin-left: 5px;
+    font-size: 10.5px;
+    color: var(--clr-4);
+}
+
 
 form .input input:hover, form .input input:focus, form .input input.filled {
     border: 1px solid var(--clr-1-1);
 }
 
-form .input input:focus ~ span, form .input input.filled ~ span {
+form .input input:focus ~ .input__label, form .input input.filled ~ .input__label {
     transform: scale(.75) translate(-3px, -36px);
     padding: 2px 5px;
     color: var(--clr-1-1);
     border-radius: var(--border-radius);
 }
 
+form .input input.error {
+    border: 1px solid var(--clr-4);
+}
+
+form .input input.error ~ .input__label {
+    transform: scale(.75) translate(-3px, -36px);
+    padding: 2px 5px;
+    color: var(--clr-4);
+    border-radius: var(--border-radius);
+}
 
 @media only screen and (max-width: 700px) {
     form .input.half, form .input.quarter {
@@ -86,7 +108,7 @@ form .input input:focus ~ span, form .input input.filled ~ span {
         margin-right: 0;
     }
 
-    form .input input, form .input span {
+    form .input input, form .input .input__label {
         font-size: 15px;
     }
 }
