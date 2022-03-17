@@ -4,77 +4,78 @@
         <PagepartsStepIndicator :items="stepindicator" />
 
         <section>
-            <form @submit.prevent="saveCustomerDetails">
+            <form @submit.prevent="saveCustomerDetails($event)">
                 <h2 class="title">Gegevens</h2>
                 
                 <div class="input half">
-                    <input name="firstName" type="text" :value="firstName">
+                    <input name="firstName" type="text" :value="firstName" maxlength="20">
                     <!-- oninput="this.value=this.value.replace(/[^a-zA-Z-]*$/,'');" -->
                     <span class="input__label">Voornaam *</span>
-                    <span class="input__error">Error</span>
+                    <span class="input__error"></span>
                 </div>
 
                 <div class="input half">
-                    <input name="lastName" type="text" :value="lastName">
+                    <input name="lastName" type="text" :value="lastName" maxlength="20">
                     <!-- oninput="this.value=this.value.replace(/[^a-zA-Z-]*$/,'');" -->
                     <span class="input__label">Achternaam *</span>
-                    <span class="input__error">Error</span>
+                    <span class="input__error"></span>
                 </div>
 
                 <div class="input half">
-                    <input name="streetName" type="text" :value="streetName">
+                    <input name="streetName" type="text" :value="streetName" maxlength="150">
                     <!-- oninput="this.value=this.value.replace(/[^a-zA-Z-]*$/,'');" -->
                     <span class="input__label">Straatnaam *</span>
-                    <span class="input__error">Error</span>
+                    <span class="input__error"></span>
                 </div>
 
                 <div class="input quarter">
-                    <input name="streetNumber" type="number" :value="streetNumber" oninput="this.value=this.value.replace(/[^0-9]{2,5}*$/,'');">
+                    <input name="streetNumber" type="number" :value="streetNumber" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <!-- oninput="this.value=this.value.replace(/[^0-9]*$/,'');" -->
                     <span class="input__label">Huisnummer *</span>
-                    <span class="input__error">Error</span>
+                    <span class="input__error"></span>
                 </div>
 
                 <div class="input quarter">
-                    <input name="addition" type="text" :value="addition">
+                    <input name="addition" type="text" :value="addition" maxlength="20">
                     <!-- oninput="this.value=this.value.replace(/[^a-zA-Z0-9- ]*$/,'');" -->
                     <span class="input__label">Toevoeging</span>
-                    <span class="input__error">Error</span>
+                    <span class="input__error"></span>
                 </div>
 
                 <div class="input half">
-                    <input name="zipCode" type="text" :value="zipCode" >
+                    <input name="zipCode" type="text" :value="zipCode" oninput="this.value=this.value.replace(/[^\dA-Z]/gi, '').replace(/(.{4})/g, '$1 ').trim();" maxlength="7">
                     <!-- oninput="this.value=this.value.replace(/[^a-zA-Z0-9- ]*$/,'');" -->
                     <span class="input__label">Postcode *</span>
-                    <span class="input__error">Error</span>
+                    <span class="input__error"></span>
+
+                    <!-- return /^[1-9][0-9]{3}[\s][A-Za-z]{2}$/.test(input); -->
                 </div>
 
                 <div class="input half">
-                    <input name="place" type="text" :value="place">
+                    <input name="place" type="text" :value="place" maxlength="150">
                     <!-- oninput="this.value=this.value.replace(/[^a-zA-Z-]*$/,'');" -->
                     <span class="input__label">Woonplaats *</span>
-                    <span class="input__error">Error</span>
+                    <span class="input__error"></span>
                 </div>
 
                 <div class="input">
                     <input name="country" value="Nederland" type="text" readonly class="filled">
-                    <!-- oninput="this.value=this.value.replace(/[^a-zA-Z-]*$/,'');" -->
                     <span class="input__label">Land</span>
-                    <span class="input__error">Error</span>
+                    <span class="input__error"></span>
                 </div>
 
                 <div class="input">
-                    <input name="email" type="text" :value="email" >
+                    <input name="email" type="text" :value="email" maxlength="150">
                     <!-- oninput="this.value=this.value.replace(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}*$/,'');" -->
-                    <span class="input__label">E-mailadres *</span>
-                    <span class="input__error">Error</span>
+                    <span class="input__label">Emailadres *</span>
+                    <span class="input__error"></span>
                 </div>
 
                 <div class="input">
-                    <input name="phoneNumber" type="text" :value="phoneNumber">
+                    <input name="phoneNumber" type="number" :value="phoneNumber" maxlength="30" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <!-- oninput="this.value=this.value.replace(/[^0-9]*$/,'');" -->
                     <span class="input__label">Telefoonnummer</span>
-                    <span class="input__error">Error</span>
+                    <span class="input__error"></span>
                 </div>              
                 <button class="button-1" type="submit">Doorgaan</button>
             </form>
@@ -85,6 +86,7 @@
 </template>
 
 <script>
+
 
 export default {
     head () {
@@ -154,71 +156,183 @@ export default {
                     label: "Overzicht"
                 }
             ]
-        }
+        },
+
+
+
     },
 
+    
     methods: {
-
-        async setErrorFor(input, message) {
-            const formControl = input.parentElement;
-            const small = formControl.querySelector(".input__error");
-            formControl.className = 'form-control error';
-            small.innerText = message;
-        },
-        async saveCustomerDetails () {
-
-            const { 
-                firstName, lastName, streetName, streetNumber, addition, zipCode, place, country, email, phoneNumber } = Object.fromEntries(
+        async saveCustomerDetails (event) {
+            const firstName_input = document.querySelector("form .input input[name='firstName']");
+            const lastName_input = document.querySelector("form .input input[name='lastName']");
+            const streetName_input = document.querySelector("form .input input[name='streetName']");
+            const streetNumber_input = document.querySelector("form .input input[name='streetNumber']");
+            const addition_input = document.querySelector("form .input input[name='addition']");
+            const zipCode_input = document.querySelector("form .input input[name='zipCode']");
+            const place_input = document.querySelector("form .input input[name='place']");
+            const email_input = document.querySelector("form .input input[name='email']");
+            const phoneNumber_input = document.querySelector("form .input input[name='phoneNumber']");
+            const { firstName, lastName, streetName, streetNumber, addition, zipCode, place, country, email, phoneNumber } = Object.fromEntries(
                 new FormData(event.target)
             );
             const customerDetails = [{ firstName, lastName, streetName, streetNumber, addition, zipCode, place, country, email, phoneNumber }];
 
-
-            if (customerDetails[0].firstName == "") {
-                setErrorFor(customerDetails[0].firstName, "Voornaam kan niet leeg zijn");
-            } 
-            if (customerDetails[0].lastName == "") {
-                setErrorFor(customerDetails[0].lastName, "Achternaam kan niet leeg zijn");
-            } 
-            if (customerDetails[0].streetName == "") {
-                setErrorFor(customerDetails[0].streetName, "Straatnaam kan niet leeg zijn");
-            } 
-            if (customerDetails[0].streetNumber == "") {
-                setErrorFor(customerDetails[0].streetNumber, "streetNumber kan niet leeg zijn");
-            } 
-            if (customerDetails[0].addition == "") {
-                setErrorFor(customerDetails[0].addition, "addition kan niet leeg zijn");
-            } 
-            if (customerDetails[0].zipCode == "") {
-                setErrorFor(customerDetails[0].zipCode, "zipCode kan niet leeg zijn");
-            } 
-            if (customerDetails[0].place == "") {
-                setErrorFor(customerDetails[0].place, "place kan niet leeg zijn");
-            } 
-            if (customerDetails[0].email == "") {
-                setErrorFor(customerDetails[0].email, "email kan niet leeg zijn");
-            } 
-            if (customerDetails[0].phoneNumber == "") {
-                setErrorFor(customerDetails[0].phoneNumber, "phoneNumber kan niet leeg zijn");
+            function setErrorFor(input, message) {
+                input.classList.remove("filled");
+                input.classList.add("error");
+                const formControl = input.parentElement;
+                const input__error = formControl.querySelector(".input__error");
+                input__error.innerText = message;
             }
-            
-
-            else {
+            function setSuccessFor(input) {
+                input.className = "filled";
+                const formControl = input.parentElement;
+                const input__error = formControl.querySelector(".input__error");
+                input__error.innerText = "";
+            }
+            function isReg_1(input) {
+                return /^([a-zA-Z- ])*$/.test(input);
+            }
+            function isReg_2(input) {
+                return /^([0-9])*$/.test(input);
+            }
+            function isReg_3(input) {
+                return /^([a-zA-Z0-9 ])*$/.test(input);
+            }
+            function isReg_4(input) {
+                return /^[1-9][0-9]{3}[\s][A-Za-z]{2}$/.test(input);
+            }
+            function isEmail(email) {
+                return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+            }
+            function checkFirstname () {
+                if (customerDetails[0].firstName == "") {
+                    setErrorFor(firstName_input, "");
+                    return false;
+                } else if (!isReg_1(customerDetails[0].firstName)) {
+                    setErrorFor(firstName_input, "Let op! Voer een geldige voornaam in");
+                    return false;
+                } else {
+                    setSuccessFor(firstName_input);
+                    return true;
+                }
+            }
+            function checkLastname () {
+                if (customerDetails[0].lastName == "") {
+                    setErrorFor(lastName_input, "");
+                    return false;
+                } else if (!isReg_1(customerDetails[0].lastName)) {
+                    setErrorFor(lastName_input, "Let op! Voer een geldige achternaam in");
+                    return false;
+                } else {
+                    setSuccessFor(lastName_input);
+                    return true;
+                }
+            }
+            function checkStreetname () {
+                if (customerDetails[0].streetName == "") {
+                    setErrorFor(streetName_input, "");
+                    return false;
+                } else if (!isReg_1(customerDetails[0].streetName)) {
+                    setErrorFor(streetName_input, "Let op! Voer een geldige straatnaam in");
+                    return false;
+                } else {
+                    setSuccessFor(streetName_input);
+                    return true;
+                }
+            }
+            function checkStreetnumber () {
+                if (customerDetails[0].streetNumber == "") {
+                    setErrorFor(streetNumber_input, "");
+                    return false;
+                } else if (!isReg_2(customerDetails[0].streetNumber)) {
+                    setErrorFor(streetNumber_input, "Let op! Voer een geldig huisnummer in");
+                    return false;
+                } else {
+                    setSuccessFor(streetNumber_input);
+                    return true;
+                }
+            }
+            function checkAddition () {
+                if (!isReg_1(customerDetails[0].addition)) {
+                    setErrorFor(addition_input, "");
+                    return false;
+                } else {
+                    setSuccessFor(addition_input);
+                    return true;
+                }
+            }
+            function checkZipcode () {
+                if (customerDetails[0].zipCode == "") {
+                    setErrorFor(zipCode_input, "");
+                    return false;
+                } else if (!isReg_4(customerDetails[0].zipCode)) {
+                    setErrorFor(zipCode_input, "Let op! Gebruik de volgende notatie: 1234 AA");
+                    return false;
+                } else {
+                    setSuccessFor(zipCode_input);
+                    return true;
+                }
+            }
+            function checkPlace () {
+                if (customerDetails[0].place == "") {
+                    setErrorFor(place_input, "");
+                    return false;
+                } else if (!isReg_1(customerDetails[0].place)) {
+                    setErrorFor(place_input, "Let op! Voer een geldige plaatsnaam in");
+                    return false;
+                } else {
+                    setSuccessFor(place_input);
+                    return true;
+                }
+            }
+            function checkEmail () {
+                if (customerDetails[0].email == "") {
+                    setErrorFor(email_input, "");
+                    return false;
+                } else if (!isEmail(customerDetails[0].email)) {
+                    setErrorFor(email_input, "Let op! Gebruik een geldig emailadres");
+                    return false;
+                } else {
+                    setSuccessFor(email_input);
+                    return true;
+                }
+            }
+            function checkPhonenumber () {
+                if (!isReg_2(customerDetails[0].phoneNumber)) {
+                    setErrorFor(phoneNumber_input, "Let op! Gebruik een geldig telefoonnummer");
+                    return false;
+                } else {
+                    setSuccessFor(phoneNumber_input);
+                    return true;
+                }
+            }
+            function validateForm() {
+                checkFirstname();
+                checkLastname();
+                checkStreetname();
+                checkStreetnumber();
+                checkAddition();
+                checkZipcode();
+                checkPlace();
+                checkEmail();
+                checkPhonenumber();
+                if (!checkFirstname() || !checkLastname() || !checkStreetname() || !checkStreetnumber() || !checkAddition() || !checkZipcode() || !checkPlace() || !checkEmail() || !checkPhonenumber()) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+            validateForm();
+            if (!validateForm()) {
+                event.preventDefault();
+            } else {
                 this.$store.commit("saveCustomerDetails", customerDetails);
                 this.$router.push("/winkelwagen/verzending");
             }
-
-
-
-
-
-
-
         },
-
-
-
-
     },
 
     mounted: function () {
