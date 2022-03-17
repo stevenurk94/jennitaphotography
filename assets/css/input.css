@@ -95,7 +95,7 @@ form .input input.error {
     border: 1px solid var(--clr-4);
 }
 
-form .input input.error ~ .input__label {
+form .input input.error:focus ~ .input__label {
     transform: scale(.75) translate(-3px, -36px);
     padding: 2px 5px;
     color: var(--clr-4);
