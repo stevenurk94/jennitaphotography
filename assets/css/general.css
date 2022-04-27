@@ -120,6 +120,11 @@ section, .breadcrumbs, .StepIndicator {
 	transform: translateY(-3px);
 }
 
+.button-1.disabled {
+	pointer-events: none;
+	background-color: #c8764ea8;
+}
+
 .button-2 {
 	cursor: pointer;
 	text-align: center;
