@@ -12,6 +12,7 @@ function updateFormDetails( formDetails ) {
 }
 
 
+
 export const state = () => ({
     cart: [],
     billingDetails: [],
@@ -39,8 +40,6 @@ export const mutations = ({
             state.formDetails[0].zipCode = customerDetails[0].zipCode;
             state.billingDetails[0].place = customerDetails[0].place;
             state.formDetails[0].place = customerDetails[0].place;
-            state.billingDetails[0].country = customerDetails[0].country;
-            state.formDetails[0].country = customerDetails[0].country;
             state.billingDetails[0].email = customerDetails[0].email;
             state.formDetails[0].email = customerDetails[0].email;
             state.billingDetails[0].phoneNumber = customerDetails[0].phoneNumber;
@@ -53,7 +52,6 @@ export const mutations = ({
 
         updateCustomerDetails(state.billingDetails);
         updateFormDetails(state.formDetails);
-
     },
 
     // SAVING SHIPPINGDETAILS
@@ -61,12 +59,12 @@ export const mutations = ({
         state.billingDetails[0].shipping = shipping;
         state.formDetails[0].shipping = shipping;
 
-        if (shipping == "Verzending via PostNL") {
-            state.billingDetails[0].shippingCosts = 5;
-            state.formDetails[0].shippingCosts = 5;
-            state.billingDetails[0].shippingLabel = "5,00";
-            state.formDetails[0].shippingLabel = "5,00";
 
+        if (shipping == "Verzending via PostNL") {
+            state.billingDetails[0].shippingCosts = 3.95;
+            state.formDetails[0].shippingCosts = 3.95;
+            state.billingDetails[0].shippingLabel = "3,95";
+            state.formDetails[0].shippingLabel = "3,95";
         }
         else if (shipping == "Gratis bezorging in Genemuiden en Urk") {
             state.billingDetails[0].shippingCosts = 0;
@@ -108,7 +106,7 @@ export const mutations = ({
             state.cart.push({ ...product, quantity })
         }
 
-        updateLocalStorage(state.cart)
+        updateLocalStorage(state.cart);
     },
 
     // REMOVE-FROM-CART FUNCTION
@@ -120,35 +118,49 @@ export const mutations = ({
             if (item.quantity > 1) {
                 item.quantity--
             } else {
-                state.cart = state.cart.filter(item => item.id !== product.id)
+                state.cart = state.cart.filter(item => item.id !== product.id);
             }
         }
 
-        updateLocalStorage(state.cart)
+        updateLocalStorage(state.cart);
     },
 
     // ADD-ONE-TO-CART
     addOneToCart ( state, product ) {
-        let item = state.cart.find(item => item.id === product.id)
+        let item = state.cart.find(item => item.id === product.id);
         item.quantity++
         updateLocalStorage(state.cart)
     },
 
     // REMOVE-PRODUCT-FROM-CART
     removeProductFromCart (state, product ) {
-
-        let item = state.cart.find(item => item.id === product.id)
+        let item = state.cart.find(item => item.id === product.id);
 
         if (item) {
-            state.cart = state.cart.filter(item => item.id !== product.id)
+            state.cart = state.cart.filter(item => item.id !== product.id);
         }
 
         updateLocalStorage(state.cart)
     },
 
+    // Clearing State: removing billing/formDetails + cartitems
+    clearCart ( state ) {
+        state.cart = [];
+        updateLocalStorage(state.cart);
+    },
+    clearLocalstorageCustomerDetails () {
+        const empty = [];
+        updateCustomerDetails(empty);
+        updateFormDetails(empty);
+    },
+    clearStateCustomerDetails ( state ) {
+        state.billingDetails = [];
+        state.formDetails = [];
+    },
+
     // PULLING PRODUCT FROM LOCAL-STORAGE (SEE HEADER WHERE FUNCTION IS FIRED)
     updateCartFromLocalStorage ( state ) {
-        const cart = localStorage.getItem("cart")
+        const cart = localStorage.getItem("cart");
 
         if (cart) {
             state.cart = JSON.parse(cart)
@@ -156,7 +168,7 @@ export const mutations = ({
     },
 
     updateBillingDetailsFromLocalStorage ( state ) {
-        const billingDetails = localStorage.getItem("billingDetails")
+        const billingDetails = localStorage.getItem("billingDetails");
 
         if (billingDetails) {
             state.billingDetails = JSON.parse(billingDetails)
@@ -164,13 +176,14 @@ export const mutations = ({
     },
 
     updateFormDetailsLocalStorage ( state ) {
-        const formDetails = localStorage.getItem("formDetails")
+        const formDetails = localStorage.getItem("formDetails");
 
         if (formDetails) {
             state.formDetails = JSON.parse(formDetails)
         }
     },
 })
+
 
 export const getters = ({
 
@@ -192,36 +205,11 @@ export const getters = ({
     },
     customerDetails: state => {
         return state.billingDetails;
-    }
+    },
 })
 
 export const actions = ({
-
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
