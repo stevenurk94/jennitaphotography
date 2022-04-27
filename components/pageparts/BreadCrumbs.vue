@@ -4,7 +4,8 @@
         <span class="breadcrumbs__desktop" v-for="(item, index) in items" :key="index">
             <NuxtLink v-if="item.url" :to="item.url">{{ item.label }}</NuxtLink>
             <span v-else class="inactive">{{ item.label }}</span>
-            <span v-if="index < (items.length - 1)" class="arrow">&#8250;</span>
+            <!-- <span v-if="index < (items.length - 1)" class="arrow">&#8250;</span> -->
+            <IconsArrow v-if="index < (items.length - 1)" />
         </span>
         <span class="breadcrumbs__mobile">
             <span class="arrow">&#8592;</span>
@@ -37,6 +38,7 @@ export default {
 
 div {
     margin: 15px 0 20px 0;
+    display: flex;
 }
 
 span {
@@ -45,6 +47,8 @@ span {
     font-weight: 400;
     color: var(--clr-1-1);
     margin-right: 5px;
+    display: flex;
+    align-items: center;
 }
 
 a:hover {
@@ -71,7 +75,7 @@ span.arrow {
 
 @media only screen and (max-width: 545px) {
     .breadcrumbs__mobile {
-        display: block;
+        display: flex;
     }
     .breadcrumbs__desktop, .breadcrumbs > span:first-child {
         display: none;

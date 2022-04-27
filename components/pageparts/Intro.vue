@@ -4,9 +4,9 @@
         <div>
             <div>
                 
-                <p>Heee, welkom!</p>
-                <p>Leuk dat je een kijkje neemt op mijn site.</p>
-                <p>Ik ben Jennita Altena en verkoop mijn eigen fotokaarten sinds 2021. Met deze kaartenverkoop gaat 25% naar het goede doel 'Kom over en help'.</p>
+                <p>Heeey, welkom!</p>
+                <p>Leuk dat je een kijkje neemt op mijn website.</p>
+                <p>Ik ben Jennita Altena en ik verkoop sinds 2021 mijn eigen fotokaarten. Van deze opbrengst gaat 25% naar het goede doel 'Kom over en help'.</p>
 
                 <picture>
                     <source
@@ -32,12 +32,12 @@
                     <img src="~/assets/intro_picture/jpg_640.jpg" alt="">
                 </picture>
 
-                <p>'Kom over en help' steunen mensen die in kwetsbare omstandigheden leven en door middel van mijn kaartenverkoop wil ik daar graag een steentje aan bijdragen. Want hoe rijk zijn wij in Nederland gezegend met dat wat wij allemaal mogen ontvangen in tegenstelling tot wat deze mensen moeten missen…?!</p>
-                <p>Door jouw bestelling te plaatsen, help je deze mensen.</p>
+                <p>'Kom over en help' steunen mensen die in kwetsbare omstandigheden leven. Door middel van mijn kaartenverkoop wil ik daar graag een steentje aan bijdragen. Mede doordat wij in Nederland zo rijk gezegend zijn met het vele wat wij mogen ontvangen en wat juist deze mensen moeten missen.</p>
+                <p>Door jouw bestelling te plaatsen, help jij ook deze mensen.</p>
                 <p>Zie ik jou?</p>
                 <p>Liefs, Jennita</p>
             </div>
-            <NuxtLink class="button-1" to="/kaarten/">Fotokaarten bestellen</NuxtLink>
+            <NuxtLink class="button-1" to="/kaarten">Fotokaarten bestellen</NuxtLink>
         </div>
 
 

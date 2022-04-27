@@ -10,11 +10,11 @@
                         (min-widht: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
                     srcset="
-                        ~/assets/img/webp/320/kaart0018.webp 320w,
-                        ~/assets/img/webp/640/kaart0018.webp 640w,
-                        ~/assets/img/webp/768/kaart0018.webp 768w,
-                        ~/assets/img/webp/1024/kaart0018.webp 1024w,
-                        ~/assets/img/webp/1600/kaart0018.webp 1600w">
+                        ~/static/img/webp/320/narcissen.webp 320w,
+                        ~/static/img/webp/640/narcissen.webp 640w,
+                        ~/static/img/webp/768/narcissen.webp 768w,
+                        ~/static/img/webp/1024/narcissen.webp 1024w,
+                        ~/static/img/webp/1600/narcissen.webp 1600w">
                 <source
                     type="image/jpeg"
                     sizes="
@@ -23,15 +23,15 @@
                         (min-widht: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
                     srcset="
-                        ~/assets/img/320/kaart0018.jpeg 320w,
-                        ~/assets/img/640/kaart0018.jpeg 640w,
-                        ~/assets/img/768/kaart0018.jpeg 768w,
-                        ~/assets/img/1024/kaart0018.jpeg 1024w,
-                        ~/assets/img/1600/kaart0018.jpeg 1600w">
+                        ~/static/img/jpeg/320/narcissen.jpg 320w,
+                        ~/static/img/jpeg/640/narcissen.jpg 640w,
+                        ~/static/img/jpeg/768/narcissen.jpg 768w,
+                        ~/static/img/jpeg/1024/narcissen.jpg 1024w,
+                        ~/static/img/jpeg/1600/narcissen.jpg 1600w">
                 <img 
                     class="blur sliderImage" 
                     @load="removeBlur"
-                    src="~/assets/img/1024/kaart0018.jpeg" 
+                    src="~/static/img/jpeg/1024/narcissen.jpg" 
                     alt="">
             </picture>
             <picture>
@@ -43,11 +43,11 @@
                         (min-widht: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
                     srcset="
-                        ~/assets/img/webp/320/kaart0019.webp 320w,
-                        ~/assets/img/webp/640/kaart0019.webp 640w,
-                        ~/assets/img/webp/768/kaart0019.webp 768w,
-                        ~/assets/img/webp/1024/kaart0019.webp 1024w,
-                        ~/assets/img/webp/1600/kaart0019.webp 1600w">
+                        ~/static/img/webp/320/herfst-6.webp 320w,
+                        ~/static/img/webp/640/herfst-6.webp 640w,
+                        ~/static/img/webp/768/herfst-6.webp 768w,
+                        ~/static/img/webp/1024/herfst-6.webp 1024w,
+                        ~/static/img/webp/1600/herfst-6.webp 1600w">
                 <source
                     type="image/jpeg"
                     sizes="
@@ -56,16 +56,16 @@
                         (min-widht: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
                     srcset="
-                        ~/assets/img/320/kaart0019.jpeg 320w,
-                        ~/assets/img/640/kaart0019.jpeg 640w,
-                        ~/assets/img/768/kaart0019.jpeg 768w,
-                        ~/assets/img/1024/kaart0019.jpeg 1024w,
-                        ~/assets/img/1600/kaart0019.jpeg 1600w">
+                        ~/static/img/jpeg/320/herfst-6.jpeg 320w,
+                        ~/static/img/jpeg/640/herfst-6.jpeg 640w,
+                        ~/static/img/jpeg/768/herfst-6.jpeg 768w,
+                        ~/static/img/jpeg/1024/herfst-6.jpeg 1024w,
+                        ~/static/img/jpeg/1600/herfst-6.jpeg 1600w">
                 <img 
                     class="blur sliderImage"
                     loading="lazy"
                     @load="removeBlur"
-                    src="~/assets/img/1024/kaart0019.jpeg" 
+                    src="~/static/img/jpeg/1024/herfst-6.jpeg" 
                     alt="">
             </picture>
             <picture>
@@ -77,11 +77,11 @@
                         (min-widht: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
                     srcset="
-                        ~/assets/img/webp/320/kaart0016.webp 320w,
-                        ~/assets/img/webp/640/kaart0016.webp 640w,
-                        ~/assets/img/webp/768/kaart0016.webp 768w,
-                        ~/assets/img/webp/1024/kaart0016.webp 1024w,
-                        ~/assets/img/webp/1600/kaart0016.webp 1600w">
+                        ~/static/img/webp/320/herfst-7.webp 320w,
+                        ~/static/img/webp/640/herfst-7.webp 640w,
+                        ~/static/img/webp/768/herfst-7.webp 768w,
+                        ~/static/img/webp/1024/herfst-7.webp 1024w,
+                        ~/static/img/webp/1600/herfst-7.webp 1600w">
                 <source
                     type="image/jpeg"
                     sizes="
@@ -90,16 +90,16 @@
                         (min-widht: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
                     srcset="
-                        ~/assets/img/320/kaart0016.jpeg 320w,
-                        ~/assets/img/640/kaart0016.jpeg 640w,
-                        ~/assets/img/768/kaart0016.jpeg 768w,
-                        ~/assets/img/1024/kaart0016.jpeg 1024w,
-                        ~/assets/img/1600/kaart0016.jpeg 1600w">
+                        ~/static/img/jpeg/320/herfst-7.jpeg 320w,
+                        ~/static/img/jpeg/640/herfst-7.jpeg 640w,
+                        ~/static/img/jpeg/768/herfst-7.jpeg 768w,
+                        ~/static/img/jpeg/1024/herfst-7.jpeg 1024w,
+                        ~/static/img/jpeg/1600/herfst-7.jpeg 1600w">
                 <img
                     class="blur sliderImage" 
                     @load="removeBlur"
                     loading="lazy"
-                    src="~/assets/img/1024/kaart0016.jpeg" 
+                    src="~/static/img/jpeg/1024/herfst-7.jpeg" 
                     alt="">
             </picture>
             <picture>
@@ -111,11 +111,11 @@
                         (min-widht: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
                     srcset="
-                        ~/assets/img/webp/320/kaart0014.webp 320w,
-                        ~/assets/img/webp/640/kaart0014.webp 640w,
-                        ~/assets/img/webp/768/kaart0014.webp 768w,
-                        ~/assets/img/webp/1024/kaart0014.webp 1024w,
-                        ~/assets/img/webp/1600/kaart0014.webp 1600w">
+                        ~/static/img/webp/320/bloesem-1.webp 320w,
+                        ~/static/img/webp/640/bloesem-1.webp 640w,
+                        ~/static/img/webp/768/bloesem-1.webp 768w,
+                        ~/static/img/webp/1024/bloesem-1.webp 1024w,
+                        ~/static/img/webp/1600/bloesem-1.webp 1600w">
                 <source
                     type="image/jpeg"
                     sizes="
@@ -124,16 +124,16 @@
                         (min-widht: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
                     srcset="
-                        ~/assets/img/320/kaart0014.jpeg 320w,
-                        ~/assets/img/640/kaart0014.jpeg 640w,
-                        ~/assets/img/768/kaart0014.jpeg 768w,
-                        ~/assets/img/1024/kaart0014.jpeg 1024w,
-                        ~/assets/img/1600/kaart0014.jpeg 1600w">
+                        ~/static/img/jpeg/320/bloesem-1.jpg 320w,
+                        ~/static/img/jpeg/640/bloesem-1.jpg 640w,
+                        ~/static/img/jpeg/768/bloesem-1.jpg 768w,
+                        ~/static/img/jpeg/1024/bloesem-1.jpg 1024w,
+                        ~/static/img/jpeg/1600/bloesem-1.jpg 1600w">
                 <img 
                     class="blur sliderImage" 
                     @load="removeBlur"
                     loading="lazy"
-                    src="~/assets/img/1024/kaart0014.jpeg" 
+                    src="~/static/img/jpeg/1024/bloesem-1.jpg" 
                     alt="">
             </picture>
             <picture>
@@ -145,11 +145,11 @@
                         (min-widht: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
                     srcset="
-                        ~/assets/img/webp/320/kaart0018.webp 320w,
-                        ~/assets/img/webp/640/kaart0018.webp 640w,
-                        ~/assets/img/webp/768/kaart0018.webp 768w,
-                        ~/assets/img/webp/1024/kaart0018.webp 1024w,
-                        ~/assets/img/webp/1600/kaart0018.webp 1600w">
+                        ~/static/img/webp/320/narcissen.webp 320w,
+                        ~/static/img/webp/640/narcissen.webp 640w,
+                        ~/static/img/webp/768/narcissen.webp 768w,
+                        ~/static/img/webp/1024/narcissen.webp 1024w,
+                        ~/static/img/webp/1600/narcissen.webp 1600w">
                 <source
                     type="image/jpeg"
                     sizes="
@@ -158,16 +158,16 @@
                         (min-widht: 640px) and (max-width: 768px) 768px,
                         (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
                     srcset="
-                        ~/assets/img/320/kaart0018.jpeg 320w,
-                        ~/assets/img/640/kaart0018.jpeg 640w,
-                        ~/assets/img/768/kaart0018.jpeg 768w,
-                        ~/assets/img/1024/kaart0018.jpeg 1024w,
-                        ~/assets/img/1600/kaart0018.jpeg 1600w">
+                        ~/static/img/jpeg/320/narcissen.jpg 320w,
+                        ~/static/img/jpeg/640/narcissen.jpg 640w,
+                        ~/static/img/jpeg/768/narcissen.jpg 768w,
+                        ~/static/img/jpeg/1024/narcissen.jpg 1024w,
+                        ~/static/img/jpeg/1600/narcissen.jpg 1600w">
                 <img 
                     class="blur sliderImage" 
                     @load="removeBlur"
                     loading="lazy"
-                    src="~/assets/img/1024/kaart0018.jpeg" 
+                    src="~/static/img/jpeg/1024/narcissen.jpg" 
                     alt="">
             </picture>
         </div>
@@ -254,6 +254,7 @@ div img {
 export default {
     methods: {
         removeBlur () {
+
             if (document.readyState == 'complete') {
                 const test = document.querySelectorAll("picture .sliderImage");
                 test.forEach(item => {

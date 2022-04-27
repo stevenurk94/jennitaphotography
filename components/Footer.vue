@@ -5,7 +5,7 @@
             <div>
                 <ul class="socialmedia">
                     <li>
-                        <a href="" target="_blank">
+                        <a href="https://www.facebook.com/jennitaphotography/" target="_blank">
                             <IconsFacebook />
                         </a>
                     </li>
@@ -22,11 +22,11 @@
 
                 </ul>
 
-                <ul>
+                <!-- <ul>
                     <li>
                         <NuxtLink to="/cookiebeleid">Cookiebeleid &amp; instellingen</NuxtLink>
                     </li>
-                </ul>
+                </ul> -->
 
             </div>
 

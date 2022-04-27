@@ -13,7 +13,7 @@
             <span></span>
         </label>
 
-        <!-- <img class="backgroundimage" src="~/assets/img/1024/kaart0004.jpeg" alt=""> -->
+        <!-- <img class="backgroundimage" src="~/assets/img/1024/herfst-1.jpeg" alt=""> -->
         <picture class="background_picture">
             <source
                 type="image/webp"
@@ -22,10 +22,10 @@
                     (min-width: 320px) and (max-width: 530px) 640px,
                     (min-width: 640px) 768px, 1024px"
                 srcset="
-                    ~/assets/img/webp/320/kaart0004.webp 320w,
-                    ~/assets/img/webp/640/kaart0004.webp 640w,
-                    ~/assets/img/webp/768/kaart0004.webp 768w,
-                    ~/assets/img/webp/1024/kaart0004.webp 1024w">
+                    ~/static/img/webp/320/narcissen.webp 320w,
+                    ~/static/img/webp/640/narcissen.webp 640w,
+                    ~/static/img/webp/768/narcissen.webp 768w,
+                    ~/static/img/webp/1024/narcissen.webp 1024w">
             <source
                 type="image/jpeg"
                 sizes="
@@ -33,11 +33,11 @@
                     (min-width: 320px) and (max-width: 530px) 640px,
                     (min-width: 640px) 768px, 1024px"
                 srcset="
-                    ~/assets/img/320/kaart0004.jpeg 320w,
-                    ~/assets/img/640/kaart0004.jpeg 640w,
-                    ~/assets/img/768/kaart0004.jpeg 768w,
-                    ~/assets/img/1024/kaart0004.jpeg 1024w">
-            <img class="background_image" src="~/assets/img/768/kaart0004.jpeg" alt="" loading="lazy">
+                    ~/static/img/jpeg/320/narcissen.jpg 320w,
+                    ~/static/img/jpeg/640/narcissen.jpg 640w,
+                    ~/static/img/jpeg/768/narcissen.jpg 768w,
+                    ~/static/img/jpeg/1024/narcissen.jpg 1024w">
+            <img class="background_image" src="~/static/img/jpeg/768/narcissen.jpg" alt="">
         </picture>
 
         <nav>

@@ -5,27 +5,27 @@
         </div>
         
         <div>
-            <NuxtLink to="/kaarten/1">
-                <img src="~/assets/img/1024/kaart0001.jpeg" alt="">
+            <!-- <NuxtLink to="/kaarten/1">
+                <img src="~/static/img/jpeg/1024/kaart0001.jpeg" alt="">
             </NuxtLink>
             <NuxtLink to="/kaarten/16">
-                <img src="~/assets/img/1024/kaart0016.jpeg" alt="">
+                <img src="~/static/img/jpeg/1024/kaart0016.jpeg" alt="">
             </NuxtLink>
             <NuxtLink to="/kaarten/2">
-                <img src="~/assets/img/1024/kaart0002.jpeg" alt="">
+                <img src="~/static/img/jpeg/1024/kaart0002.jpeg" alt="">
             </NuxtLink>
             <NuxtLink to="/kaarten/3">
-                <img src="~/assets/img/1024/kaart0003.jpeg" alt="">
+                <img src="~/static/img/jpeg/1024/kaart0003.jpeg" alt="">
             </NuxtLink>
             <NuxtLink to="/kaarten/18">
-                <img src="~/assets/img/1024/kaart0018.jpeg" alt="">
+                <img src="~/static/img/jpeg/1024/kaart0018.jpeg" alt="">
             </NuxtLink>
             <NuxtLink to="/kaarten/5">
-                <img src="~/assets/img/1024/kaart0005.jpeg" alt="">
+                <img src="~/static/img/jpeg/1024/kaart0005.jpeg" alt="">
             </NuxtLink>
             <NuxtLink to="/kaarten/4">
-                <img src="~/assets/img/1024/kaart0014.jpeg" alt="">
-            </NuxtLink>
+                <img src="~/static/img/jpeg/1024/kaart0014.jpeg" alt="">
+            </NuxtLink> -->
         </div>
     </section>
 </template>
