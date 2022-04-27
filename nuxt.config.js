@@ -13,10 +13,11 @@ export default {
       lang: 'nl'
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { charset: 'UTF-8' },
+      // { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      // { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
       { rel: 'icon', href: '/jf_icon_16.png', sizes: '16x16' },
@@ -38,23 +39,23 @@ export default {
 
     // Google Tag Manager - Configuration
     // __dangerouslyDisableSanitizers: ['script'],
-    // script: [
-    //   {
-    //     charset: 'utf-8',
-    //     type: "text/javascript",
-    //     innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    //     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    //     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    //     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    //     })(window,document,'script','dataLayer','GTM-NWX2HBM');`
-    //   }
-    // ],
+    script: [
+      // {
+      //   charset: 'utf-8',
+      //   type: "text/javascript",
+      //   innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      //   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      //   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      //   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      //   })(window,document,'script','dataLayer','GTM-NWX2HBM');`
+      // }
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/css/reset.css',
-    '~/assets/css/input.css', 
+    '~/assets/css/form.css', 
     '~/assets/css/fonts.css', 
     '~/assets/css/general.css', 
     '~/assets/pageTransition.css',
@@ -62,7 +63,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    
+    { src: '~/plugins/gtm.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -75,7 +76,6 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
