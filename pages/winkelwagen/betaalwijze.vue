@@ -84,12 +84,26 @@ export default {
             this.$store.commit("savePaymethod", paymethod);
             this.$router.push("/winkelwagen/overzicht");
         },
+        pageAuthentication () {
+            if (!this.$store.state.cart.length) {
+                this.$router.push("/kaarten");
+            } else {
+                if (this.$store.state.formDetails[0]) {
+                    if (!this.$store.state.formDetails[0].shipping) {
+                        this.$router.push("/winkelwagen/verzending")
+                    }
+                } else {
+                    this.$router.push("/winkelwagen/gegevens")
+                }
+            }
+        },
     },
 
     mounted: function () {
         if (new URLSearchParams(window.location.search).get("cancel") == "true") {
             document.querySelector("section p.message.orange").style.display = "block";
         }
+        this.pageAuthentication();
     }
 }
 

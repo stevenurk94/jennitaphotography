@@ -1,21 +1,21 @@
 <template>
     <main>
         <section>
-            <h1>Gelukt Steven!</h1>
+            <h1>Gelukt {{ getField('firstName') }}!</h1>
             <p>Bedankt voor je bestelling, we gaan direct voor je aan de slag.</p>
 
             <h2>Hoe nu verder?</h2>
             <div class="item">
                 <h2 number="1 -">Bevestiging</h2>
-                <p>We hebben een bevestiging van je bestelling gestuurd naar <b>stevenurk94@hotmail.com</b>.</p> 
+                <p>We hebben een bevestiging van je bestelling gestuurd naar <b>{{ getField('email') }}</b>.</p> 
             </div>
             <div class="item">
                 <h2 number="2 -">Verzending</h2>
-                <p>We gaan je bestelling zo snel mogelijk inpakken en verzenden met <b>Postnl</b>.</p>
+                <p>We gaan je bestelling zo snel mogelijk inpakken en {{ shippingText }}<b>{{ shippingPartner }}</b>.</p>
             </div>
             <div class="item">
                 <h2 number="3 -">Bezorging</h2>
-                <p>Je artikelen worden bezorgd op <b>Kooizand 18, 8321ZG Urk</b>. Houd je deurbel, brievenbus of inbox in de gaten.</p>
+                <p>Je artikelen worden bezorgd op <b>{{ getField('streetName') }} {{ getField('streetNumber') }}{{ getField('addition') }}, {{ getField('zipCode') }} {{ getField('place') }}</b>. Houd je deurbel, brievenbus of inbox in de gaten.</p>
             </div>
             <div class="item">
                 <h2>Heb je nog vragen?</h2>
@@ -30,8 +30,90 @@
 export default {
     head () {
         return {
-            title: "Bedankt"
+            title: "Bedankt",
         }
+    },
+    beforeRouteLeave(to, from, next) {
+        this.clearStateCustomerDetails();
+        next();
+    },
+    methods: {
+        getField ( field ) {
+            if (this.$store.getters.formDetails[0]) {
+                return this.$store.getters.formDetails[0][field];
+            }
+        },
+        cartTotal () {
+            return this.$store.getters.cartTotal;
+        },
+        clearCart () {
+            this.$store.commit("clearCart");
+            console.log("Cart Cleared!");
+        },
+        clearLocalstorageCustomerDetails () {
+            this.$store.commit("clearLocalstorageCustomerDetails");
+            console.log("CustomerDetailsLocalstorage Cleared!");
+        },
+        clearStateCustomerDetails () {
+            this.$store.commit("clearStateCustomerDetails");
+            console.log("CustomerDetailsState Cleared!");
+        },
+        createDatalayerProducts () {
+            let products = [];
+            this.$store.getters.cartItems.forEach(item => {
+                products.push({
+                    name: item.name,
+                    id: item.id,
+                    price: item.price,
+                    category: item.category,
+                    quantity: item.quantity
+                })
+            });
+            return products;
+        },
+        sendingDatalayer () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({ ecommerce: null });
+            dataLayer.push({
+                event: "purchase",
+                ecommerce: {
+                    purchase: {
+                        actionField: {
+                            id: Date.now(),
+                            revenue: this.cartTotal() + this.getField('shippingCosts'),
+                            shipping: this.getField('shippingCosts'),
+                        },
+                        products: this.createDatalayerProducts(),
+                    }
+                }
+            })
+            console.log("Datalayer SENDED!!");
+            return JSON.stringify(dataLayer);
+        },
+    },
+
+    computed: {
+        shippingText () {
+            if (this.getField('shipping') == "Verzending via PostNL") {
+                return "verzenden met ";
+            } else if (this.getField('shipping') == "Gratis bezorging in Genemuiden en Urk") {
+                return "bezorgen";
+            }
+        },
+        shippingPartner () {
+            if (this.getField('shipping') == "Verzending via PostNL") {
+                return "PostNL";
+            } else if (this.getField('shipping') == "Gratis bezorging in Genemuiden en Urk") {
+                return "";
+            }
+        },
+    },
+    mounted () {
+        if (this.$store.getters.cartItems.length) {
+            this.sendingDatalayer();
+        }
+        this.clearLocalstorageCustomerDetails();
+        setTimeout(this.clearCart, 50);
     },
 }
 </script>

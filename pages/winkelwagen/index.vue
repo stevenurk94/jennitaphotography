@@ -6,22 +6,22 @@
         <section>
             <div class="items" v-if="cartItemCount">
 
-                <div class="items__card" v-for="product in orderedproducts" :key="product.id" >
+                <div class="items__card" v-for="product in products" :key="product.id" >
                     <NuxtLink class="items__card__img" :to="`/kaarten/${ product.slug }`">
                         <picture :class="product.position">
                             <source
                                 type="image/webp"
                                 sizes="(min-width: 260px) 160px, 320px"
                                 :srcset="
-                                    require(`~/assets/img${product.image.webp._160}`) + ' 160w, ' +
-                                    require(`~/assets/img${product.image.webp._320}`) + ' 320w'">
+                                    require(`~/static/img${product.image.webp._160}`) + ' 160w, ' +
+                                    require(`~/static/img${product.image.webp._320}`) + ' 320w'">
                             <source
                                 type="image/jpeg"
                                 sizes="(min-width: 260px) 160px, 320px"
                                 :srcset="
-                                    require(`~/assets/img${product.image._160}`) + ' 160w, ' +
-                                    require(`~/assets/img${product.image._320}`) + ' 320w'">
-                            <img :src="require(`~/assets/img${product.image._160}`)" alt="">
+                                    require(`~/static/img${product.image.jpeg._160}`) + ' 160w, ' +
+                                    require(`~/static/img${product.image.jpeg._320}`) + ' 320w'">
+                            <img :src="require(`~/static/img${product.image.jpeg._160}`)" alt="">
                         </picture>
                     </NuxtLink>
                 
@@ -85,9 +85,6 @@
 
 <script>
 
-import _ from "lodash";
-
-
 export default {
     head () {
         return {
@@ -102,10 +99,6 @@ export default {
 
         cartTotal () {
             return this.$store.getters.cartTotal
-        },
-
-        orderedproducts: function () {
-            return _.orderBy(this.products, ["id"])
         },
 
         cartItemCount () {

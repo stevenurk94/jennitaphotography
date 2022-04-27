@@ -11,7 +11,7 @@
                     <input 
                         name="firstName" 
                         type="text" 
-                        :value="firstName" 
+                        :value="getField('firstName')" 
                         maxlength="20" 
                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Voornaam *</span>
@@ -22,7 +22,7 @@
                     <input 
                         name="lastName" 
                         type="text" 
-                        :value="lastName" 
+                        :value="getField('lastName')" 
                         maxlength="20" 
                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Achternaam *</span>
@@ -33,7 +33,7 @@
                     <input 
                         name="streetName" 
                         type="text" 
-                        :value="streetName" 
+                        :value="getField('streetName')" 
                         maxlength="150" 
                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Straatnaam *</span>
@@ -44,7 +44,7 @@
                     <input 
                         name="streetNumber" 
                         type="number" 
-                        :value="streetNumber" 
+                        :value="getField('streetNumber')" 
                         maxlength="5" 
                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Huisnummer *</span>
@@ -55,7 +55,7 @@
                     <input 
                         name="addition" 
                         type="text" 
-                        :value="addition" 
+                        :value="getField('addition')" 
                         maxlength="20" 
                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Toevoeging</span>
@@ -66,7 +66,7 @@
                     <input 
                         name="zipCode" 
                         type="text" 
-                        :value="zipCode" 
+                        :value="getField('zipCode')" 
                         maxlength="7"
                         oninput="this.value=this.value.replace(/[^\dA-Z]/gi, '').replace(/(.{4})/g, '$1 ').trim().toUpperCase();">
                     <span class="input__label">Postcode *</span>
@@ -77,7 +77,7 @@
                     <input 
                         name="place" 
                         type="text" 
-                        :value="place" 
+                        :value="getField('place')" 
                         maxlength="150" 
                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <span class="input__label">Woonplaats *</span>
@@ -85,16 +85,10 @@
                 </div>
 
                 <div class="input">
-                    <input name="country" value="Nederland" type="text" readonly class="filled">
-                    <span class="input__label">Land</span>
-                    <span class="input__error"></span>
-                </div>
-
-                <div class="input">
                     <input 
                         name="email" 
                         type="text" 
-                        :value="email" 
+                        :value="getField('email')" 
                         maxlength="150" 
                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <!-- oninput="this.value=this.value.replace(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}*$/,'');" -->
@@ -106,7 +100,7 @@
                     <input 
                         name="phoneNumber" 
                         type="number" 
-                        :value="phoneNumber" 
+                        :value="getField('phoneNumber')" 
                         maxlength="30" 
                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     <!-- oninput="this.value=this.value.replace(/[^0-9]*$/,'');" -->
@@ -130,52 +124,15 @@ export default {
             title: "Gegevens"
         }
     },
+    // beforeRouteEnter(to, from, next) {
+    //     console.log("testtest")
+    //     next();
+    // },
+    // created () {
+    //     console.log("yess")
+    //     console.log(this.$store.state.cart)
+    // },
     computed: {
-        firstName () {
-            if (this.$store.getters.formDetails[0]) {
-                return this.$store.getters.formDetails[0]["firstName"];
-            }
-        },
-        lastName () {
-            if (this.$store.getters.formDetails[0]) {
-                return this.$store.getters.formDetails[0]["lastName"];
-            }
-        },
-        streetName () {
-            if (this.$store.getters.formDetails[0]) {
-                return this.$store.getters.formDetails[0]["streetName"];
-            }
-        },
-        streetNumber () {
-            if (this.$store.getters.formDetails[0]) {
-                return this.$store.getters.formDetails[0]["streetNumber"];
-            }
-        },
-        addition () {
-            if (this.$store.getters.formDetails[0]) {
-                return this.$store.getters.formDetails[0]["addition"];
-            }
-        },
-        zipCode () {
-            if (this.$store.getters.formDetails[0]) {
-                return this.$store.getters.formDetails[0]["zipCode"];
-            }
-        },
-        place () {
-            if (this.$store.getters.formDetails[0]) {
-                return this.$store.getters.formDetails[0]["place"];
-            }
-        },
-        email () {
-            if (this.$store.getters.formDetails[0]) {
-                return this.$store.getters.formDetails[0]["email"];
-            }
-        },
-        phoneNumber () {
-            if (this.$store.getters.formDetails[0]) {
-                return this.$store.getters.formDetails[0]["phoneNumber"];
-            }
-        },
         stepindicator() {
             return [
                 {
@@ -194,10 +151,9 @@ export default {
             ]
         },
     },
-
-    
     methods: {
         async saveCustomerDetails (event) {
+
             const firstName_input = document.querySelector("form .input input[name='firstName']");
             const lastName_input = document.querySelector("form .input input[name='lastName']");
             const streetName_input = document.querySelector("form .input input[name='streetName']");
@@ -207,8 +163,8 @@ export default {
             const place_input = document.querySelector("form .input input[name='place']");
             const email_input = document.querySelector("form .input input[name='email']");
             const phoneNumber_input = document.querySelector("form .input input[name='phoneNumber']");
-            const { firstName, lastName, streetName, streetNumber, addition, zipCode, place, country, email, phoneNumber } = Object.fromEntries(new FormData(event.target));
-            const customerDetails = [{ firstName, lastName, streetName, streetNumber, addition, zipCode, place, country, email, phoneNumber }];
+            const { firstName, lastName, streetName, streetNumber, addition, zipCode, place, email, phoneNumber } = Object.fromEntries(new FormData(event.target));
+            const customerDetails = [{ firstName, lastName, streetName, streetNumber, addition, zipCode, place, email, phoneNumber }];
 
             function setErrorFor(input, message) {
                 input.classList.remove("filled");
@@ -224,7 +180,7 @@ export default {
                 input__error.innerText = "";
             }
             function isReg_1(input) {
-                return /^([a-zA-Z0-9- ])*$/.test(input);
+                return /^([a-zA-Z0-9-' ])*$/.test(input);
             }
             function isReg_2(input) {
                 return /^([0-9])*$/.test(input);
@@ -236,10 +192,10 @@ export default {
                 return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
             }
             function checkFirstname () {
-                if (customerDetails[0].firstName == "") {
+                if (customerDetails[0].firstName.trim() == "") {
                     setErrorFor(firstName_input, "");
                     return false;
-                } else if (!isReg_1(customerDetails[0].firstName)) {
+                } else if (!isReg_1(customerDetails[0].firstName.trim())) {
                     setErrorFor(firstName_input, "Let op! Voer een geldige voornaam in");
                     return false;
                 } else {
@@ -248,10 +204,10 @@ export default {
                 }
             }
             function checkLastname () {
-                if (customerDetails[0].lastName == "") {
+                if (customerDetails[0].lastName.trim() == "") {
                     setErrorFor(lastName_input, "");
                     return false;
-                } else if (!isReg_1(customerDetails[0].lastName)) {
+                } else if (!isReg_1(customerDetails[0].lastName.trim())) {
                     setErrorFor(lastName_input, "Let op! Voer een geldige achternaam in");
                     return false;
                 } else {
@@ -260,10 +216,10 @@ export default {
                 }
             }
             function checkStreetname () {
-                if (customerDetails[0].streetName == "") {
+                if (customerDetails[0].streetName.trim() == "") {
                     setErrorFor(streetName_input, "");
                     return false;
-                } else if (!isReg_1(customerDetails[0].streetName)) {
+                } else if (!isReg_1(customerDetails[0].streetName.trim())) {
                     setErrorFor(streetName_input, "Let op! Voer een geldige straatnaam in");
                     return false;
                 } else {
@@ -272,10 +228,10 @@ export default {
                 }
             }
             function checkStreetnumber () {
-                if (customerDetails[0].streetNumber == "") {
+                if (customerDetails[0].streetNumber.trim() == "") {
                     setErrorFor(streetNumber_input, "");
                     return false;
-                } else if (!isReg_2(customerDetails[0].streetNumber)) {
+                } else if (!isReg_2(customerDetails[0].streetNumber.trim())) {
                     setErrorFor(streetNumber_input, "Let op! Voer een geldig huisnummer in");
                     return false;
                 } else {
@@ -284,7 +240,7 @@ export default {
                 }
             }
             function checkAddition () {
-                if (!isReg_1(customerDetails[0].addition)) {
+                if (!isReg_1(customerDetails[0].addition.trim())) {
                     setErrorFor(addition_input, "");
                     return false;
                 } else {
@@ -293,10 +249,10 @@ export default {
                 }
             }
             function checkZipcode () {
-                if (customerDetails[0].zipCode == "") {
+                if (customerDetails[0].zipCode.trim() == "") {
                     setErrorFor(zipCode_input, "");
                     return false;
-                } else if (!isReg_3(customerDetails[0].zipCode)) {
+                } else if (!isReg_3(customerDetails[0].zipCode.trim())) {
                     setErrorFor(zipCode_input, "Let op! Gebruik de volgende notatie: 1234 AA");
                     return false;
                 } else {
@@ -305,10 +261,10 @@ export default {
                 }
             }
             function checkPlace () {
-                if (customerDetails[0].place == "") {
+                if (customerDetails[0].place.trim() == "") {
                     setErrorFor(place_input, "");
                     return false;
-                } else if (!isReg_1(customerDetails[0].place)) {
+                } else if (!isReg_1(customerDetails[0].place.trim())) {
                     setErrorFor(place_input, "Let op! Voer een geldige plaatsnaam in");
                     return false;
                 } else {
@@ -317,10 +273,10 @@ export default {
                 }
             }
             function checkEmail () {
-                if (customerDetails[0].email == "") {
+                if (customerDetails[0].email.trim() == "") {
                     setErrorFor(email_input, "");
                     return false;
-                } else if (!isEmail(customerDetails[0].email)) {
+                } else if (!isEmail(customerDetails[0].email.trim())) {
                     setErrorFor(email_input, "Let op! Gebruik een geldig emailadres");
                     return false;
                 } else {
@@ -329,7 +285,7 @@ export default {
                 }
             }
             function checkPhonenumber () {
-                if (!isReg_2(customerDetails[0].phoneNumber)) {
+                if (!isReg_2(customerDetails[0].phoneNumber.trim())) {
                     setErrorFor(phoneNumber_input, "Let op! Gebruik een geldig telefoonnummer");
                     return false;
                 } else {
@@ -361,8 +317,22 @@ export default {
                 this.$router.push("/winkelwagen/verzending");
             }
         },
+
+        getField ( field ) {
+            if (this.$store.getters.formDetails[0]) {
+                return this.$store.getters.formDetails[0][field];
+            }
+        },
+
+        pageAuthentication () {
+            if (!this.$store.state.cart.length) {
+                this.$router.push("/kaarten");
+            }
+        },
     },
-    mounted: function () {
+    mounted () {
+        this.pageAuthentication();
+        
         const form = document.querySelector("form");
         const formChilds = document.querySelectorAll("form input");
 
@@ -384,6 +354,7 @@ export default {
         form.addEventListener("input", () => {
             filled();
         });
+
     }  
 }
 </script>

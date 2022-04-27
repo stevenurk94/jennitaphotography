@@ -86,7 +86,22 @@ export default {
 
             this.$store.commit("saveShipping", shipping);
             this.$router.push("/winkelwagen/betaalwijze");
-        }
+        },
+        pageAuthentication () {
+            if (!this.$store.state.cart.length) {
+                this.$router.push("/kaarten");
+            } else {
+                if (!this.$store.state.formDetails[0]) {
+                    this.$router.push("/winkelwagen/gegevens")
+                }
+            }
+        },
+    },
+
+
+
+    mounted: function () {
+        this.pageAuthentication();
     }
 }
 </script>

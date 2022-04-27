@@ -5,46 +5,46 @@
         
 
         <section class="overview">
-
-            <p class="message orange">Er ging iets fout met betalen, probeer het opnieuw</p>
-
+            <div class="overview__errors" v-if="errors.length">
+                <p v-for="error in errors" :key="error.id" class="message orange">{{ error.message }}<IconsCross @click="closeError"/></p>
+            </div>
             
             <form @submit.prevent="betalen" class="overview__checkout">
                 <h2 class="title">Overzicht</h2>                
-                <button type="submit" class="button-1">Bestellen en betalen</button>
+                <button type="submit" class="button-1" :class="loading ? 'disabled' : ''">Bestellen en betalen<IconsButtonLoading v-if="loading" /></button>
             </form>
 
             <div class="overview__card">
                 <h2>Bezorgadres</h2>
                 <div>
-                    <p>{{ firstName }} {{ lastName }}</p>
-                    <p>{{ streetName }} {{ streetNumber }}</p>
-                    <p>{{ zipCode }} {{ place }}</p>
+                    <p>{{ getField('firstName') }} {{ getField('lastName') }}</p>
+                    <p>{{ getField('streetName') }} {{ getField('streetNumber') }}</p>
+                    <p>{{ getField('zipCode') }} {{ getField('place') }}</p>
                 </div>
             </div>
 
             <div class="overview__card">
                 <h2>Contactgegevens</h2>
                 <div>
-                    <p>{{ email }}</p>
-                    <p>{{ phoneNumber }}</p>
+                    <p>{{ getField('email') }}</p>
+                    <p>{{ getField('phoneNumber') }}</p>
                 </div>
             </div>
 
             
             <div class="overview__card">
                 <h2>Verzending</h2>
-                <p>{{ shipping }}</p>
+                <p>{{ getField('shipping') }}</p>
             </div>
 
             <div class="overview__card">
                 <h2>Betaalwijze</h2>
-                <div v-if="paymethod == 'ideal'" class="overview__card__paymethod">
+                <div v-if="getField('paymethod') == 'ideal'" class="overview__card__paymethod">
                     <img src="~/assets/ideal-logo.svg" alt="">
                     <p>iDEAL</p>
                 </div>
 
-                <div v-if="paymethod == 'card'" class="overview__card__paymethod">
+                <div v-if="getField('paymethod') == 'card'" class="overview__card__paymethod">
                     <img src="~/assets/creditcard-logo.svg" alt="">
                     <p>Creditcard</p>
                 </div>
@@ -61,15 +61,15 @@
                                     type="image/webp"
                                     sizes="(min-width: 260px) 160px, 320px"
                                     :srcset="
-                                        require(`~/assets/img${product.image.webp._160}`) + ' 160w, ' +
-                                        require(`~/assets/img${product.image.webp._320}`) + ' 320w'">
+                                        require(`~/static/img${product.image.webp._160}`) + ' 160w, ' +
+                                        require(`~/static/img${product.image.webp._320}`) + ' 320w'">
                                 <source
                                     type="image/jpeg"
                                     sizes="(min-width: 260px) 160px, 320px"
                                     :srcset="
-                                        require(`~/assets/img${product.image._160}`) + ' 160w, ' +
-                                        require(`~/assets/img${product.image._320}`) + ' 320w'">
-                                <img :src="require(`~/assets/img${product.image._160}`)" alt="">
+                                        require(`~/static/img${product.image.jpeg._160}`) + ' 160w, ' +
+                                        require(`~/static/img${product.image.jpeg._320}`) + ' 320w'">
+                                <img :src="require(`~/static/img${product.image.jpeg._160}`)" alt="">
                             </picture>
 
                         </div>
@@ -92,17 +92,16 @@
 
                 <div class="overview__summary__item">
                     <h3>Verzending</h3>
-                    <h3>€ {{ shippingLabel }}</h3>
+                    <h3>€ {{ getField('shippingLabel') }}</h3>
 
                 </div>
                 <div class="overview__summary__item">
                     <h3>TOTAALPRIJS</h3>
-                    <h3>€ {{ (cartTotal + shippingCosts).toFixed(2).replace(".", ",") }}</h3>
+                    <h3>€ {{ (cartTotal + getField('shippingCosts')).toFixed(2).replace(".", ",") }}</h3>
                 </div>
                 
-                <button type="submit" class="button-1">Bestellen en betalen</button>
+                <button type="submit" class="button-1" :class="loading ? 'disabled' : ''">Bestellen en betalen<IconsButtonLoading v-if="loading" /></button>
             </form>
-
 
 
         </section>
@@ -115,19 +114,53 @@
 
 import _ from "lodash";
 
-
 export default {
     head () {
         return {
             title: "Overzicht"
         }
     },
+    data () {
+        return {
+            errors: [],
+            loading: false,
+        }
+    },
+
+    beforeRouteEnter (to, from, next) {
+        // console.log(this.store)
+        // if (!this.$store.state.cart.length) {
+        //     console.log("/kaarten");
+        // } else {
+        //     if (this.$store.state.formDetails[0]) {
+        //         if (!this.$store.state.formDetails[0].shipping) {
+        //             console.log("/winkelwagen/verzending")
+        //         }
+        //         else if (!this.$store.state.formDetails[0].paymethod) {
+        //             console.log("/winkelwagen/betaalwijze")
+        //         } 
+        //     } else {
+        //         console.log("/winkelwagen/gegevens")
+        //     }
+        // }
+        next();
+    },
+    beforeResolve (to, from, next) {
+        console.log("yess")
+        next();
+
+    },
+    beforeRouteLeave (to, from, next) {
+        console.log("leave")
+        next();
+    },
 
     methods: {
 
         async betalen () {
+            this.loading = true;
 
-            await fetch("http://localhost:4242/create-checkout-session", {
+            await fetch("https://jennitaphotography.nl/server/create-checkout-session", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -139,21 +172,63 @@ export default {
             })
 
             .then(response => {           
-                if (response.ok) return response.json() 
+                if (response.ok) return response.json()
                 return response.json().then(json => Promise.reject(json))
             })
 
-            .then(({ url }) => {
-                window.location = url
-                console.log("Url: ", url)
+            .then(({ url, error }) => {
+
+                if(error) {
+                    const errors = error;
+                    errors.forEach(error => {
+                        if (error.message != true) {
+                            this.errors.push(error);
+                            this.loading = false;
+                        }
+                    });
+                } else {
+                    window.location = url;
+                    this.loading = false;
+                }
             }) 
 
             .catch(e => {
-                console.log("Error: ", e.error)
+                console.log("Error catch 1: ", e);
+                console.log("Error catch 2: ", e.error);
+                console.log("Error catch 3: ", e.message);
             })
 
-        }
+        },
+
+        getField ( field ) {
+            if (this.$store.getters.formDetails[0]) {
+                return this.$store.getters.formDetails[0][field];
+            }
+        },
+        closeError () {
+            event.target.parentNode.remove();
+        },
+        pageAuthentication () {
+            if (!this.$store.state.cart.length) {
+                this.$router.push("/kaarten");
+            } else {
+                if (this.$store.state.formDetails[0]) {
+                    if (!this.$store.state.formDetails[0].shipping) {
+                        this.$router.push("/winkelwagen/verzending")
+                    }
+                    else if (!this.$store.state.formDetails[0].paymethod) {
+                        this.$router.push("/winkelwagen/betaalwijze")
+                    } 
+                } else {
+                    this.$router.push("/winkelwagen/gegevens")
+                }
+            }
+        },
     }, 
+
+    mounted: function () {
+        this.pageAuthentication();
+    },
 
     computed: {
         stepindicator() {
@@ -176,77 +251,20 @@ export default {
                 }
             ]
         },
-
         products () {
-            return this.$store.getters.cartItems
+            return this.$store.getters.cartItems;
         },
         orderedproducts: function () {
-            return _.orderBy(this.products, ["id"])
+            return _.orderBy(this.products, ["id"]);
         },
         cartTotal () {
-            return this.$store.getters.cartTotal
+            return this.$store.getters.cartTotal;
         },
-        firstName () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].firstName;
-            }
-        },
-        lastName () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].lastName;
-            }
-        },
-        streetName () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].streetName;
-            }
-        },
-        streetNumber () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].streetNumber;
-            }
-        },
-        zipCode () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].zipCode;
-            }
-        },
-        place () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].place;
-            }
-        },
-        email () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].email;
-            }
-        },
-        phoneNumber () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].phoneNumber;
-            }
-        },
-        shipping () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].shipping;
-            }
-        },
-        paymethod () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].paymethod;
-            }
-        },
-        shippingCosts () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].shippingCosts;
-            }
-        },
-        shippingLabel () {
-            if (this.$store.getters.customerDetails[0]) {
-                return this.$store.getters.customerDetails[0].shippingLabel
-            }
-        }
     },
+
+
+
+
 }
 </script>
 
@@ -262,7 +280,34 @@ section {
     width: 95%;
 }
 
+.overview__errors {
+    width: 100%;
+}
+.overview__errors p {
+    width: 100%;
+    padding: 7px 15px;
+    margin: 5px 0 35px 0;
+    position: relative;
+}
 
+.overview__errors p.message.orange svg {
+    position: absolute;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    fill: var(--clr-2-1);
+    opacity: 50%;
+    transition: all 300ms ease-in-out;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    margin: auto 0;
+}
+
+.overview__errors p.message.orange svg:hover {
+    opacity: 100%;
+}
 
 .overview__card {
     width: calc(50% - 20px);
@@ -443,17 +488,6 @@ form.overview__summary {
     width: 100%;
     margin-top: 10px;
 }
-
-
-/* ### Error message ### */
-
-section p.message.orange {
-    width: 100%;
-    padding: 7px 15px;
-    margin: 5px 0 35px 0;
-}
-
-
 
 
 
