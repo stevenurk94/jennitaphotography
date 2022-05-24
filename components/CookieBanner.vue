@@ -110,7 +110,7 @@
 
 .CB__popup__arrow svg, .CB__popup__arrow svg path {
     fill: white;
-    opacity: 70%;
+    opacity: 0.7;
     transition: all 200ms ease-in-out;
 }
 
