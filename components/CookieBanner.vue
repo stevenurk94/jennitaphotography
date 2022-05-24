@@ -115,7 +115,7 @@
 }
 
 .CB__popup__arrow:hover svg, .CB__popup__arrow:hover svg path {
-    opacity: 95%;
+    opacity: .95;
 }
 
 @media only screen and (max-width: 768px) {
@@ -315,7 +315,7 @@ input:checked + .CB__items__item__switch:hover:active::after {
 .CB__popup__buttons__selection {
     border-color: white;
     color: white;
-    opacity: 80%;
+    opacity: .8;
     width: 48%;
 }
 
