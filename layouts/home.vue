@@ -1,5 +1,8 @@
 <template>
     <div>
+
+		<CookieBanner />
+
 		<header>
 			<Header />
 		</header>

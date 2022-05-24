@@ -48,15 +48,15 @@ export default {
         },
         clearCart () {
             this.$store.commit("clearCart");
-            console.log("Cart Cleared!");
+            // console.log("Cart Cleared!");
         },
         clearLocalstorageCustomerDetails () {
             this.$store.commit("clearLocalstorageCustomerDetails");
-            console.log("CustomerDetailsLocalstorage Cleared!");
+            // console.log("CustomerDetailsLocalstorage Cleared!");
         },
         clearStateCustomerDetails () {
             this.$store.commit("clearStateCustomerDetails");
-            console.log("CustomerDetailsState Cleared!");
+            // console.log("CustomerDetailsState Cleared!");
         },
         createDatalayerProducts () {
             let products = [];
@@ -87,7 +87,7 @@ export default {
                     }
                 }
             })
-            console.log("Datalayer SENDED!!");
+            // console.log("Datalayer SENDED!!");
             return JSON.stringify(dataLayer);
         },
     },

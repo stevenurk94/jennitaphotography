@@ -40,12 +40,12 @@
             <div class="overview__card">
                 <h2>Betaalwijze</h2>
                 <div v-if="getField('paymethod') == 'ideal'" class="overview__card__paymethod">
-                    <img src="~/assets/ideal-logo.svg" alt="">
+                    <img src="~/assets/ideal-logo.svg" alt="ideal">
                     <p>iDEAL</p>
                 </div>
 
                 <div v-if="getField('paymethod') == 'card'" class="overview__card__paymethod">
-                    <img src="~/assets/creditcard-logo.svg" alt="">
+                    <img src="~/assets/creditcard-logo.svg" alt="creditcard">
                     <p>Creditcard</p>
                 </div>
             </div>
@@ -54,7 +54,7 @@
             <div class="overview__cart">
                 <h2>Winkelwagen</h2>
                 <div class="overview__cart__items">
-                    <div class="overview__cart__items__card" v-for="product in orderedproducts" :key="product.id" >
+                    <div class="overview__cart__items__card" v-for="product in products" :key="product.id" >
                         <div class="overview__cart__items__card__img">
                             <picture :class="product.position">
                                 <source
@@ -69,7 +69,7 @@
                                     :srcset="
                                         require(`~/static/img${product.image.jpeg._160}`) + ' 160w, ' +
                                         require(`~/static/img${product.image.jpeg._320}`) + ' 320w'">
-                                <img :src="require(`~/static/img${product.image.jpeg._160}`)" alt="">
+                                <img :src="require(`~/static/img${product.image.jpeg._160}`)" :alt="product.name.toLowerCase()">
                             </picture>
 
                         </div>
@@ -112,8 +112,6 @@
 
 <script>
 
-import _ from "lodash";
-
 export default {
     head () {
         return {
@@ -127,33 +125,19 @@ export default {
         }
     },
 
-    beforeRouteEnter (to, from, next) {
-        // console.log(this.store)
-        // if (!this.$store.state.cart.length) {
-        //     console.log("/kaarten");
-        // } else {
-        //     if (this.$store.state.formDetails[0]) {
-        //         if (!this.$store.state.formDetails[0].shipping) {
-        //             console.log("/winkelwagen/verzending")
-        //         }
-        //         else if (!this.$store.state.formDetails[0].paymethod) {
-        //             console.log("/winkelwagen/betaalwijze")
-        //         } 
-        //     } else {
-        //         console.log("/winkelwagen/gegevens")
-        //     }
-        // }
-        next();
-    },
-    beforeResolve (to, from, next) {
-        console.log("yess")
-        next();
+    // beforeRouteEnter (to, from, next) {
 
-    },
-    beforeRouteLeave (to, from, next) {
-        console.log("leave")
-        next();
-    },
+    //     next();
+    // },
+    // beforeResolve (to, from, next) {
+    //     console.log("yess")
+    //     next();
+
+    // },
+    // beforeRouteLeave (to, from, next) {
+    //     console.log("leave")
+    //     next();
+    // },
 
     methods: {
 
@@ -210,17 +194,17 @@ export default {
         },
         pageAuthentication () {
             if (!this.$store.state.cart.length) {
-                this.$router.push("/kaarten");
+                this.$router.push("/kaarten/");
             } else {
                 if (this.$store.state.formDetails[0]) {
                     if (!this.$store.state.formDetails[0].shipping) {
-                        this.$router.push("/winkelwagen/verzending")
+                        this.$router.push("/winkelwagen/verzending/")
                     }
                     else if (!this.$store.state.formDetails[0].paymethod) {
-                        this.$router.push("/winkelwagen/betaalwijze")
+                        this.$router.push("/winkelwagen/betaalwijze/")
                     } 
                 } else {
-                    this.$router.push("/winkelwagen/gegevens")
+                    this.$router.push("/winkelwagen/gegevens/")
                 }
             }
         },
@@ -235,15 +219,15 @@ export default {
             return [
                 {
                     label: "Gegevens",
-                    url: "/winkelwagen/gegevens"
+                    url: "/winkelwagen/gegevens/"
                 },
                 {
                     label: "Verzending",
-                    url: "/winkelwagen/verzending"
+                    url: "/winkelwagen/verzending/"
                 },
                 {
                     label: "Betaalwijze",
-                    url: "/winkelwagen/betaalwijze"
+                    url: "/winkelwagen/betaalwijze/"
                 },
                 {
                     label: "Overzicht",
@@ -253,9 +237,6 @@ export default {
         },
         products () {
             return this.$store.getters.cartItems;
-        },
-        orderedproducts: function () {
-            return _.orderBy(this.products, ["id"]);
         },
         cartTotal () {
             return this.$store.getters.cartTotal;

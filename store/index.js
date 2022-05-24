@@ -87,10 +87,6 @@ export const mutations = ({
 
 
 
-
-
-
-
     // ################################################### CART ########################################################### //
 
 
@@ -182,6 +178,7 @@ export const mutations = ({
             state.formDetails = JSON.parse(formDetails)
         }
     },
+
 })
 
 

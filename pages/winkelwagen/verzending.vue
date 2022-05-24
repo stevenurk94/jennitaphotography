@@ -59,7 +59,7 @@ export default {
             return [
                 {
                     label: "Gegevens",
-                    url: "/winkelwagen/gegevens"
+                    url: "/winkelwagen/gegevens/"
                 },
                 {
                     label: "Verzending",
@@ -85,14 +85,14 @@ export default {
             );
 
             this.$store.commit("saveShipping", shipping);
-            this.$router.push("/winkelwagen/betaalwijze");
+            this.$router.push("/winkelwagen/betaalwijze/");
         },
         pageAuthentication () {
             if (!this.$store.state.cart.length) {
-                this.$router.push("/kaarten");
+                this.$router.push("/kaarten/");
             } else {
                 if (!this.$store.state.formDetails[0]) {
-                    this.$router.push("/winkelwagen/gegevens")
+                    this.$router.push("/winkelwagen/gegevens/")
                 }
             }
         },

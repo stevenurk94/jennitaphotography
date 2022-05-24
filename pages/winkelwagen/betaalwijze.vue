@@ -16,7 +16,7 @@
 
                     <span class="radio__button"></span>
                     <p class="radio__text">iDEAL</p>
-                    <img class="radio__img" src="~/assets/ideal-logo.svg" alt="">
+                    <img class="radio__img" src="~/assets/ideal-logo.svg" alt="ideal">
 
                 </label>
 
@@ -25,7 +25,7 @@
                     
                     <span class="radio__button"></span>
                     <p class="radio__text">Creditcard</p>
-                    <img class="radio__img creditcard" src="~/assets/creditcard-logo.svg" alt="">
+                    <img class="radio__img creditcard" src="~/assets/creditcard-logo.svg" alt="creditcard">
 
                 </label>
 
@@ -59,11 +59,11 @@ export default {
             return [
                 {
                     label: "Gegevens",
-                    url: "/winkelwagen/gegevens"
+                    url: "/winkelwagen/gegevens/"
                 },
                 {
                     label: "Verzending",
-                    url: "/winkelwagen/verzending"
+                    url: "/winkelwagen/verzending/"
                 },
                 {
                     label: "Betaalwijze",
@@ -82,18 +82,18 @@ export default {
         async savePaymethod () {
             const { paymethod } = Object.fromEntries(new FormData(event.target));
             this.$store.commit("savePaymethod", paymethod);
-            this.$router.push("/winkelwagen/overzicht");
+            this.$router.push("/winkelwagen/overzicht/");
         },
         pageAuthentication () {
             if (!this.$store.state.cart.length) {
-                this.$router.push("/kaarten");
+                this.$router.push("/kaarten/");
             } else {
                 if (this.$store.state.formDetails[0]) {
                     if (!this.$store.state.formDetails[0].shipping) {
-                        this.$router.push("/winkelwagen/verzending")
+                        this.$router.push("/winkelwagen/verzending/")
                     }
                 } else {
-                    this.$router.push("/winkelwagen/gegevens")
+                    this.$router.push("/winkelwagen/gegevens/")
                 }
             }
         },

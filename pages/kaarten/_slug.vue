@@ -8,7 +8,7 @@
         <div class="product">
             <div class="product__img" >
                 <IconsLoading v-if="showLoading"/>
-                <picture>
+                <picture :class="PhotoCard.position">
                     <source
                         type="image/webp"
                         sizes="                       
@@ -37,26 +37,28 @@
                     <img 
                         @load="showLoading = false"
                         :src="require(`~/static/img${PhotoCard.image.jpeg._768}`)" 
-                        alt="">
+                        :alt="PhotoCard.name.toLowerCase()">
                 </picture>
             </div>
             <div class="product__info">
                 <h1>{{ PhotoCard.name }}</h1>
-                <h3>{{ PhotoCard.category }}</h3>
+                <h3 class="product__info__category">{{ PhotoCard.category }}</h3>
                 <p class="product__info__price">€ {{ PhotoCard.price.toFixed(2).replace(".", ",") }} p/st.</p>
-                <p class="product__info__stock message orange" v-if="!PhotoCard.stock">Helaas, dit artikel is uitverkocht!</p>
+                <p class="product__info__stock message orange" v-if="!PhotoCard.stock">Binnenkort op voorraad</p>
 
-                <div class="product__info__box">
-                    <div v-if="PhotoCard.stock !== 0">
+                <div v-if="PhotoCard.stock !== 0" class="product__info__box">
+                    <div>
                         <input name="amount" type="number" v-model.number="quantity" @keyup.enter="addToCart(PhotoCard)" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
                     </div>
 
-                    <button v-if="PhotoCard.stock !== 0" class="button-1" v-on:click="addToCart(PhotoCard)">In winkelwagen</button>
-                    
-                                        
+                    <button class="button-1" v-on:click="addToCart(PhotoCard)">In winkelwagen</button>
                 </div>
                 <p class="product__info__error message orange">Voer een geldig getal in</p>
-                <p class="product__info__error message orange">Helaas, we hebben van {{ PhotoCard.name }} momenteel {{PhotoCard.stock }} voorradig</p>
+                <p class="product__info__error message orange">Van "{{ PhotoCard.name }}" hebben we momenteel {{ PhotoCard.stock }} kaarten op voorraad</p>
+                <!-- <div class="product__info__description">
+                    <h3>Beschrijving</h3>
+                    <p>{{ PhotoCard.description }}</p>
+                </div> -->
             </div>
 
 
@@ -75,7 +77,7 @@
                         </span>
                         <div class="modal__product">
                             <div class="modal__product__img" :class="PhotoCard.position">
-                                <img loading="lazy" :src="require(`~/static/img${PhotoCard.image.jpeg._320}`)" alt="">
+                                <img loading="lazy" :src="require(`~/static/img${PhotoCard.image.jpeg._320}`)" :alt="PhotoCard.name.toLowerCase()">
                             </div>
                             
                             <div class="modal__product__info">
@@ -87,7 +89,7 @@
                             </div>
                         </div>
                         <div class="modal__buttons">
-                            <NuxtLink class="button-1" to="/winkelwagen">Naar winkelwagen</NuxtLink>
+                            <NuxtLink class="button-1" to="/winkelwagen/">Naar winkelwagen</NuxtLink>
                             <button class="button-2" @click="showModal = false">Verder winkelen</button>
                         </div>
                     </div>
@@ -100,7 +102,7 @@
 
 <script>
 
-import PhotoCards from "~/assets/json/PhotoCards.json";
+import PhotoCards from "~/server/json/PhotoCards.json";
 
 export default {
     data () {
@@ -200,11 +202,16 @@ export default {
     padding: 10px;
     background: var(--clr-3-3);
     position: relative;
+    height: fit-content;
 }
 
 .product__img picture {
     width: 70%;
     min-width: 300px;
+}
+
+.product__img picture.lying {
+    width: auto;
 }
 
 .product__img img {
@@ -217,7 +224,7 @@ export default {
     margin-left: 2%;
 }
 
-.product__info h3 {
+.product__info__category {
     text-transform: uppercase;
     color: var(--clr-1-1);
     font-weight: 700;
@@ -272,7 +279,14 @@ export default {
     display: none;
 }
 
-
+.product__info__description {
+    max-width: fit-content;
+    background: var(--clr-3-3);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-top: 80px;
+    /* border: 1px solid var(--clr-1-3); */
+}
 
 
 @media only screen and (max-width: 767px) {
@@ -457,6 +471,14 @@ export default {
     height: 100%;
 }
 
+.modal__buttons .button-1 {
+    border: 1px solid var(--clr-2-1);
+
+}
+
+.modal__buttons .button-2 {
+    border: 1.5px solid var(--clr-1-1);
+}
 
 
 

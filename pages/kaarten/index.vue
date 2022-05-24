@@ -1,6 +1,7 @@
 <template>
 <main>
     <PagepartsBreadCrumbs :items="breadcrumbs"/>
+    
 
     <section>
         <div class="filter">
@@ -29,14 +30,12 @@
 
 
 
-
-
         
         <div class="products">
             <h2 class="products__title" v-if="v_blanco || !v_blanco && !v_geboorte && !v_verjaardag">Blanco</h2>
             <div class="products__wrapper" v-if="v_blanco || !v_blanco && !v_geboorte && !v_verjaardag">
                 <IconsLoading v-if="showLoading"/>
-                <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCards_Blanco_Sorted" :key="PhotoCards.id">
+                <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }/`" v-for="PhotoCards in PhotoCards_Blanco_Sorted" :key="PhotoCards.id">
                         <picture :class="PhotoCards.position">
                             <source
                                 type="image/webp"
@@ -60,7 +59,7 @@
                                 @load="showLoading = false"
                                 :loading="PhotoCards.loading"
                                 :src="require(`~/static/img${PhotoCards.image.jpeg._320}`)" 
-                                alt="">
+                                :alt="PhotoCards.name.toLowerCase()">
                         </picture>
                     <div>
                         <div class="products__wrapper__cart__info">
@@ -75,7 +74,7 @@
             <h2 class="products__title" v-if="v_geboorte || !v_blanco && !v_geboorte && !v_verjaardag">Geboorte</h2>
             <div class="products__wrapper" v-if="v_geboorte || !v_blanco && !v_geboorte && !v_verjaardag">
                 <IconsLoading v-if="showLoading"/>
-                <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCards_Geboorte_Sorted" :key="PhotoCards.id">
+                <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }/`" v-for="PhotoCards in PhotoCards_Geboorte_Sorted" :key="PhotoCards.id">
                     <picture :class="PhotoCards.position">
                         <source
                             type="image/webp"
@@ -99,7 +98,7 @@
                             @load="showLoading = false"
                             :loading="PhotoCards.loading"
                             :src="require(`~/static/img${PhotoCards.image.jpeg._320}`)" 
-                            alt="">
+                            :alt="PhotoCards.name.toLowerCase()">
                     </picture>
                     <div>
                         <div class="products__wrapper__cart__info">
@@ -114,7 +113,7 @@
             <h2 class="products__title" v-if="v_verjaardag || !v_blanco && !v_geboorte && !v_verjaardag">Verjaardag</h2>
             <div class="products__wrapper" v-if="v_verjaardag || !v_blanco && !v_geboorte && !v_verjaardag">
                 <IconsLoading v-if="showLoading"/>
-                <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }`" v-for="PhotoCards in PhotoCards_Verjaardag_Sorted" :key="PhotoCards.id">
+                <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }/`" v-for="PhotoCards in PhotoCards_Verjaardag_Sorted" :key="PhotoCards.id">
                     <picture :class="PhotoCards.position">
                         <source
                             type="image/webp"
@@ -138,7 +137,7 @@
                             @load="showLoading = false"
                             :loading="PhotoCards.loading"
                             :src="require(`~/static/img${PhotoCards.image.jpeg._320}`)" 
-                            alt="">
+                            :alt="PhotoCards.name.toLowerCase()">
                     </picture>
                     <div>
                         <div class="products__wrapper__cart__info">
@@ -158,14 +157,67 @@
 </template>
  
 <script>
-import PhotoCards from "~/assets/json/PhotoCards.json";
+import PhotoCards from "~/server/json/PhotoCards.json";
 
 export default {
     head () {
         return {
             title: "Fotokaarten",
+            // meta: [
+
+            //     // Original
+
+            //     // <meta data-n-head="ssr" data-hid="description" name="description" content="Om een kerk tegen te komen, hoef je in Rotterdam niet ver te lopen. Soms is die monumentaal, soms modern. Soms een herinnering aan het rijke kerkelijke verleden, soms nog in actief gebruik. De wandeling ”Skyline van religies” toont 15 van de ongeveer 160 religieuze gebouwen die de havenstad rijk is.">
+
+            //     {
+            //         hid: "description",
+            //         name: "description",
+            //         content: "Home page description"
+            //     },
+
+            //     // OG
+
+            //     // <meta data-n-head="ssr" property="og:title" content="Stadswandeling Rotterdam toont kerken uit alle windstreken">
+            //     // <meta data-n-head="ssr" property="og:url" content="https://www.rd.nl/artikel/975262-stadswandeling-rotterdam-toont-kerken-uit-alle-windstreken">
+            //     // <meta data-n-head="ssr" property="og:description" content="Om een kerk tegen te komen, hoef je in Rotterdam niet ver te lopen. Soms is die monumentaal, soms modern. Soms een herinnering aan het rijke kerkelijke verleden, soms nog in actief gebruik. De wandeling ”Skyline van religies” toont 15 van de ongeveer 160 religieuze gebouwen die de havenstad rijk is.">
+            //     // <meta data-n-head="ssr" property="og:type" content="article">
+            //     // <meta data-n-head="ssr" property="og:image" content="https://images.rd.nl/fill/crop:1600:1000:sm/w:1020/plain/https%3A%2F%2Ferdee-prod-bucket-s3-001.ams3.cdn.digitaloceanspaces.com%2F18243179_84a8387198.JPG">
+            //     // <meta data-n-head="ssr" property="og:image:width" content="1600">
+
+            //     {
+            //         hid: "og:title",
+            //         name: "og:title",
+            //         content: "Fotokaarten"
+            //     },
+            //     {
+            //         hid: "og:url",
+            //         name: "og:url",
+            //         content: "https://jennitaphotography.nl/kaarten/"
+            //     },
+            //     {
+            //         hid: "og:description",
+            //         name: "og:description",
+            //         content: ""
+            //     },
+            //     {
+            //         hid: "og:type",
+            //         name: "og:type",
+            //         content: ""
+            //     },
+            //     {
+            //         hid: "og:image",
+            //         name: "og:image",
+            //         content: ""
+            //     },
+            //     {
+            //         hid: "og:image:width",
+            //         name: "og:image:width",
+            //         content: ""
+            //     },
+            // ],
         }
     },
+
     data () {       
         return {
             PhotoCards,
@@ -175,6 +227,7 @@ export default {
             showLoading: true,
         }
     },
+
 
     methods: {
         blanco (event) {

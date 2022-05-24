@@ -124,14 +124,6 @@ export default {
             title: "Gegevens"
         }
     },
-    // beforeRouteEnter(to, from, next) {
-    //     console.log("testtest")
-    //     next();
-    // },
-    // created () {
-    //     console.log("yess")
-    //     console.log(this.$store.state.cart)
-    // },
     computed: {
         stepindicator() {
             return [
@@ -167,17 +159,18 @@ export default {
             const customerDetails = [{ firstName, lastName, streetName, streetNumber, addition, zipCode, place, email, phoneNumber }];
 
             function setErrorFor(input, message) {
-                input.classList.remove("filled");
                 input.classList.add("error");
                 const formControl = input.parentElement;
                 const input__error = formControl.querySelector(".input__error");
                 input__error.innerText = message;
+                input__error.style.display = "block";
             }
             function setSuccessFor(input) {
                 input.className = "filled";
                 const formControl = input.parentElement;
                 const input__error = formControl.querySelector(".input__error");
                 input__error.innerText = "";
+                input__error.style.display = "none";
             }
             function isReg_1(input) {
                 return /^([a-zA-Z0-9-' ])*$/.test(input);
@@ -314,7 +307,7 @@ export default {
                 event.preventDefault();
             } else {
                 this.$store.commit("saveCustomerDetails", customerDetails);
-                this.$router.push("/winkelwagen/verzending");
+                this.$router.push("/winkelwagen/verzending/");
             }
         },
 
@@ -326,7 +319,7 @@ export default {
 
         pageAuthentication () {
             if (!this.$store.state.cart.length) {
-                this.$router.push("/kaarten");
+                this.$router.push("/kaarten/");
             }
         },
     },
@@ -358,6 +351,13 @@ export default {
     }  
 }
 </script>
+
+
+<style scoped>
+.input__error {
+    display: none;
+}
+</style>
 
 
 

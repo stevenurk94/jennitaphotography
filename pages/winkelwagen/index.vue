@@ -7,7 +7,7 @@
             <div class="items" v-if="cartItemCount">
 
                 <div class="items__card" v-for="product in products" :key="product.id" >
-                    <NuxtLink class="items__card__img" :to="`/kaarten/${ product.slug }`">
+                    <NuxtLink class="items__card__img" :to="`/kaarten/${ product.slug }/`">
                         <picture :class="product.position">
                             <source
                                 type="image/webp"
@@ -21,17 +21,17 @@
                                 :srcset="
                                     require(`~/static/img${product.image.jpeg._160}`) + ' 160w, ' +
                                     require(`~/static/img${product.image.jpeg._320}`) + ' 320w'">
-                            <img :src="require(`~/static/img${product.image.jpeg._160}`)" alt="">
+                            <img :src="require(`~/static/img${product.image.jpeg._160}`)" :alt="product.name.toLowerCase()">
                         </picture>
                     </NuxtLink>
                 
                     <div class="items__card__info">
                         <div class="items__card__info__title">
-                            <NuxtLink :to="`/kaarten/${ product.slug }`">{{ product.name }}</NuxtLink>
+                            <NuxtLink :to="`/kaarten/${ product.slug }/`">{{ product.name }}</NuxtLink>
                             <h3>{{ product.category }}</h3>
                         </div>
 
-                        <p :class="'items__card__info__error message orange' + ' product-' + JSON.stringify(product.id)">Helaas, hier hebben we momenteel {{ product.stock }} voorradig</p>
+                        <p :class="'items__card__info__error message orange' + ' product-' + JSON.stringify(product.id)">Van {{ product.name }} hebben we momenteel {{ product.stock }} kaarten op voorraad</p>
                        
 
                         <div class="items__card__info__options">
@@ -67,7 +67,7 @@
                 </div>
                 <p>Inclusief btw</p>
 
-                <NuxtLink class="button-1" to="/winkelwagen/gegevens">Ik ga bestellen</NuxtLink>
+                <NuxtLink class="button-1" to="/winkelwagen/gegevens/">Ik ga bestellen</NuxtLink>
             </div>
 
 
@@ -294,6 +294,7 @@ section {
     transition: all 300ms ease-in-out;
     height: 32px;
     color: var(--clr-1-1);
+    margin: 0;
 }
 
 .items__card__info__options__change__quantity button:hover {
