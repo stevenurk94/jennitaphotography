@@ -2,7 +2,7 @@
     <section class="navbar">
 
         <NuxtLink class="navbar__logo" to="/">
-            <img src="~/static/jf_logo_386.png" alt="">
+            <img src="~/static/jf_logo_386.png" alt="Logo Jennita Photography">
         </NuxtLink>
         
         <input type="checkbox" id="toggle">
@@ -37,7 +37,7 @@
                     ~/static/img/jpeg/640/narcissen.jpg 640w,
                     ~/static/img/jpeg/768/narcissen.jpg 768w,
                     ~/static/img/jpeg/1024/narcissen.jpg 1024w">
-            <img class="background_image" src="~/static/img/jpeg/768/narcissen.jpg" alt="">
+            <img class="background_image" src="~/static/img/jpeg/768/narcissen.jpg" alt="narcissen">
         </picture>
 
         <nav>
@@ -51,7 +51,7 @@
                     </NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/kaarten">Webshop
+                    <NuxtLink to="/kaarten/">Webshop
                         <span>&#8250;</span>
                     </NuxtLink>                   
                 </li>
@@ -64,7 +64,7 @@
         </nav>
 
 
-        <NuxtLink class="cart" to="/winkelwagen">
+        <NuxtLink class="cart" to="/winkelwagen/">
 
             <span v-if="cartItemCount" class="cart__notification">{{ cartItemCount }}</span>
             <svg viewBox="0 0 38 38" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;">
@@ -104,7 +104,7 @@ export default {
         const navItems = document.querySelectorAll("header .navbar nav li");
         let menuOpen = false;
 
-        navButton.addEventListener("change", function() {
+        navButton.addEventListener("change", function () {
 
             if(!menuOpen) {
                 navMenu.classList.add("open");
@@ -133,6 +133,7 @@ export default {
         this.$store.commit("updateCartFromLocalStorage")
         this.$store.commit("updateBillingDetailsFromLocalStorage")
         this.$store.commit("updateFormDetailsLocalStorage")
+        setTimeout(() => this.$store.commit("cookieBanner/getCookieBanner"), 3000);
     },
 
     computed: {

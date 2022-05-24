@@ -16,9 +16,9 @@
                             (min-width: 320px) and (max-width: 520px) 320px,
                             (min-width: 520px) 640px"
                         srcset="
-                            ~/assets/intro_picture/webp_160.webp 160w,
-                            ~/assets/intro_picture/webp_320.webp 320w,
-                            ~/assets/intro_picture/webp_640.webp 640w">
+                            ~/assets/intro_picture/webp_2_160.webp 160w,
+                            ~/assets/intro_picture/webp_2_320.webp 320w,
+                            ~/assets/intro_picture/webp_2_640.webp 640w">
                     <source
                         type="image/jpeg"
                         sizes="
@@ -26,10 +26,10 @@
                             (min-width: 320px) and (max-width: 520px) 320px,
                             (min-width: 520px 640px"
                         srcset="
-                            ~/assets/intro_picture/jpg_160.jpg 160w,
-                            ~/assets/intro_picture/jpg_320.jpg 320w,
-                            ~/assets/intro_picture/jpg_640.jpg 640w">
-                    <img src="~/assets/intro_picture/jpg_640.jpg" alt="">
+                            ~/assets/intro_picture/jpg_2_160.jpeg 160w,
+                            ~/assets/intro_picture/jpg_2_320.jpeg 320w,
+                            ~/assets/intro_picture/jpg_2_640.jpeg 640w">
+                    <img src="~/assets/intro_picture/jpg_2_640.jpeg" alt="Foto Jennita">
                 </picture>
 
                 <p>'Kom over en help' steunen mensen die in kwetsbare omstandigheden leven. Door middel van mijn kaartenverkoop wil ik daar graag een steentje aan bijdragen. Mede doordat wij in Nederland zo rijk gezegend zijn met het vele wat wij mogen ontvangen en wat juist deze mensen moeten missen.</p>
@@ -37,7 +37,7 @@
                 <p>Zie ik jou?</p>
                 <p>Liefs, Jennita</p>
             </div>
-            <NuxtLink class="button-1" to="/kaarten">Fotokaarten bestellen</NuxtLink>
+            <NuxtLink class="button-1" to="/kaarten/">Fotokaarten bestellen</NuxtLink>
         </div>
 
 

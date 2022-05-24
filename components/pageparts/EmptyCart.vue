@@ -1,7 +1,7 @@
 <template>
     <section class="empty">
         <h1>Je hebt geen fotokaarten in je winkelwagen</h1>
-        <NuxtLink class="button-1" to="/kaarten">Verder winkelen</NuxtLink>
+        <NuxtLink class="button-1" to="/kaarten/">Verder winkelen</NuxtLink>
     </section>
 </template>
 

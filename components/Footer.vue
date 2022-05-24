@@ -1,7 +1,7 @@
 <template>
     <footer>
         <section>
-            <img src="~/static/jf_logo_386.png" alt="">
+            <img src="~/static/jf_logo_386.png" alt="Logo Jennita Photography">
             <div>
                 <ul class="socialmedia">
                     <li>
@@ -22,17 +22,17 @@
 
                 </ul>
 
-                <!-- <ul>
+                <ul>
                     <li>
-                        <NuxtLink to="/cookiebeleid">Cookiebeleid &amp; instellingen</NuxtLink>
+                        <a @click="$store.commit('cookieBanner/showCookieBanner'), $store.commit('cookieBanner/showItems', true)">Cookiebeleid &amp; instellingen</a>
                     </li>
-                </ul> -->
+                </ul>
 
             </div>
-
         </section>
     </footer>
 </template>
+
 
 
 <style scoped>
@@ -82,7 +82,7 @@ ul li {
 li a {
     color: rgba(255 255 255 / 80%);
     transition: all 300ms ease-in-out;
-
+    cursor: pointer;
 }
 
 .socialmedia li a {
@@ -128,27 +128,15 @@ li:hover a {
         padding: 15px 0 25px 0;
     }
     footer section {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 90%;
     }
     footer section img {
         width: calc(2% + 111px);
     }
-    ul {
-        margin-top: 15px;
-    }
-}
 
-
-@media only screen and (max-width: 480px) {
-    footer section {
-        display: flex;
-        flex-direction: column;
-    }
-    footer section img {
-        margin-left: auto;
-        margin-right: auto;
-    }
     footer section div {
         display: block;
     }
@@ -159,18 +147,13 @@ li:hover a {
         margin-left: auto;
         margin-right: auto;
     }
+    ul {
+        margin-top: 15px;
+    }
     ul:last-child {
         margin-top: 25px;
     }
 }
-
-
-
-
-
-
-
-
 
 
 

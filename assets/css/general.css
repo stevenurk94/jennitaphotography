@@ -59,6 +59,10 @@ section, .breadcrumbs, .StepIndicator {
 		padding: 80px 0;
 	}
 }
+.noScroll {
+    overflow: hidden;
+    height: 100%;
+}
 
 
 
@@ -157,6 +161,34 @@ section, .breadcrumbs, .StepIndicator {
 	}
 }
 
+/* ########## HOVER ANIMATIONS ########## */
+
+.underline {
+	position: relative;
+}
+.underline::after {
+	content: "";
+	position: absolute;
+	background-color: var(--clr-1-1);
+	height: 1px;
+	width: 100%;
+	top: 100%;
+	left: 0;
+	transition: opacity 250ms ease-in-out;
+	opacity: 0;
+}
+.underline:hover::after {
+	opacity: .8;
+}
+
+.opacity {
+	opacity: .85;
+	transition: opacity 250ms ease-in-out
+}
+
+.opacity:hover {
+	opacity: 1;
+}
 
 
 /* ########## LOADING ANIMATIONS ########## */

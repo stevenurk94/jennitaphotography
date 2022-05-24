@@ -32,7 +32,7 @@
                     class="blur sliderImage" 
                     @load="removeBlur"
                     src="~/static/img/jpeg/1024/narcissen.jpg" 
-                    alt="">
+                    alt="narcissen">
             </picture>
             <picture>
                 <source
@@ -66,7 +66,7 @@
                     loading="lazy"
                     @load="removeBlur"
                     src="~/static/img/jpeg/1024/herfst-6.jpeg" 
-                    alt="">
+                    alt="herfst 6">
             </picture>
             <picture>
                 <source
@@ -100,7 +100,7 @@
                     @load="removeBlur"
                     loading="lazy"
                     src="~/static/img/jpeg/1024/herfst-7.jpeg" 
-                    alt="">
+                    alt="herfst 7">
             </picture>
             <picture>
                 <source
@@ -134,7 +134,7 @@
                     @load="removeBlur"
                     loading="lazy"
                     src="~/static/img/jpeg/1024/bloesem-1.jpg" 
-                    alt="">
+                    alt="bloesem 1">
             </picture>
             <picture>
                 <source
@@ -168,7 +168,7 @@
                     @load="removeBlur"
                     loading="lazy"
                     src="~/static/img/jpeg/1024/narcissen.jpg" 
-                    alt="">
+                    alt="narcissen">
             </picture>
         </div>
     </section>
