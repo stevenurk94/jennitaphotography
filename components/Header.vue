@@ -133,7 +133,7 @@ export default {
         this.$store.commit("updateCartFromLocalStorage")
         this.$store.commit("updateBillingDetailsFromLocalStorage")
         this.$store.commit("updateFormDetailsLocalStorage")
-        setTimeout(() => this.$store.commit("cookieBanner/getCookieBanner"), 3000);
+        setTimeout(() => this.$store.commit("cookieBanner/getCookieBanner"), 1200);
     },
 
     computed: {

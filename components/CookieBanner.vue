@@ -100,7 +100,7 @@
 
 .CB__popup__arrow {
     position: absolute;
-    left: 38px;
+    left: 36px;
     top: 39px;
     cursor: pointer;
     width: 31px;
@@ -120,17 +120,19 @@
 
 @media only screen and (max-width: 768px) {
     .CB__popup__arrow {
-        top: 29px;
-        left: 30px;
+        top: 30px;
+        left: 24px;
+        width: 28px;
+        height: 28px;
     }
 
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 380px) {
     .CB__popup__arrow {
         width: 26px;
         width: 26px;
-        top: 18px;
+        top: 19.5px;
         left: 14px;
     }
 }
