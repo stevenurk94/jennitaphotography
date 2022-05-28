@@ -15,7 +15,16 @@
             </form>
 
             <div class="overview__card">
-                <h2>Bezorgadres</h2>
+
+                <div class="overview__card__title">
+                    <h2>Bezorgadres</h2>
+                    <NuxtLink to="/winkelwagen/gegevens">
+                        <IconsPen />
+                    </NuxtLink>
+                </div>
+                
+
+
                 <div>
                     <p>{{ getField('firstName') }} {{ getField('lastName') }}</p>
                     <p>{{ getField('streetName') }} {{ getField('streetNumber') }}</p>
@@ -24,7 +33,13 @@
             </div>
 
             <div class="overview__card">
-                <h2>Contactgegevens</h2>
+                <div class="overview__card__title">
+                    <h2>Contactgegevens</h2>
+                    <NuxtLink to="/winkelwagen/gegevens">
+                        <IconsPen />
+                    </NuxtLink>
+                </div>
+                
                 <div>
                     <p>{{ getField('email') }}</p>
                     <p>{{ getField('phoneNumber') }}</p>
@@ -33,12 +48,24 @@
 
             
             <div class="overview__card">
-                <h2>Verzending</h2>
+                <div class="overview__card__title">
+                    <h2>Verzending</h2>
+                    <NuxtLink to="/winkelwagen/verzending">
+                        <IconsPen />
+                    </NuxtLink>
+                </div>
+                
                 <p>{{ getField('shipping') }}</p>
             </div>
 
             <div class="overview__card">
-                <h2>Betaalwijze</h2>
+                <div class="overview__card__title">
+                    <h2>Betaalwijze</h2>
+                    <NuxtLink to="/winkelwagen/betaalwijze">
+                        <IconsPen />
+                    </NuxtLink>
+                </div>
+                
                 <div v-if="getField('paymethod') == 'ideal'" class="overview__card__paymethod">
                     <img src="~/assets/ideal-logo.svg" alt="ideal">
                     <p>iDEAL</p>
@@ -300,9 +327,28 @@ section {
     margin-right: 40px;
 }
 
-.overview__card > h2 {
+.overview__card__title {
+    display: flex;
+}
+
+.overview__card__title h2 {
     padding-bottom: 5px;
     font-size: 19px;
+    margin-right: 6px;
+}
+
+.overview__card__title a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    padding: 4px;
+}
+
+
+.overview__card__title a svg {
+    fill: var(--clr-1-2);
+    height: 12px;
+    width: 12px;
 }
 
 .overview__cart > h2 {
@@ -313,6 +359,8 @@ section {
 .overview__card p {
     font-size: 16px;
 }
+
+
 
 .overview__cart {
     width: 100%;
@@ -489,7 +537,7 @@ form.overview__summary {
         width: 100%;
         margin: 10px 0px;
     }
-    .overview__card > h2, .overview__cart > h2 {
+    .overview__card__title h2, .overview__cart > h2 {
         font-size: 18px;
     }
     .overview__card p {

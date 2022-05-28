@@ -55,10 +55,10 @@
                 </div>
                 <p class="product__info__error message orange">Voer een geldig getal in</p>
                 <p class="product__info__error message orange">Van "{{ PhotoCard.name }}" hebben we momenteel {{ PhotoCard.stock }} kaarten op voorraad</p>
-                <!-- <div class="product__info__description">
+                <div class="product__info__description">
                     <h3>Beschrijving</h3>
                     <p>{{ PhotoCard.description }}</p>
-                </div> -->
+                </div>
             </div>
 
 
