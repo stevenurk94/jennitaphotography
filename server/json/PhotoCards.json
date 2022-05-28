@@ -24,7 +24,7 @@
         "category": "blanco",
         "position": "standing",
         "loading": "lazy",
-        "description": "Een stil leven foto. Deze foto is thuis genomen en is een tijdloze kaart."
+        "description": "Een stil leven foto. Deze foto is thuis genomen. Een fotokaart die in elk seizoen geschreven kan worden."
     },
     {
         "id": 2,
@@ -51,7 +51,7 @@
         "category": "blanco",
         "position": "standing",
         "loading": "lazy",
-        "description": "Een historisch Rijksmonument in Mastenbroek, het stoomgemaal. Deze foto is in de winter gemaakt. Je ziet de weerspiegeling van het gemaal in het water terugkomen."
+        "description": "Een historisch Rijksmonument in Mastenbroek, het stoomgemaal. Deze foto is in de winter gemaakt. Je ziet de weerspiegeling van het gemaal in het water terugkomen. Een fotokaart die geschreven kan worden voor bijvoorbeeld een verjaardag."
     },
     {
         "id": 3,
@@ -160,7 +160,7 @@
         "category": "blanco",
         "position": "standing",
         "loading": "lazy",
-        "description": "Onderweg in een bootje heb ik deze foto gemaakt in Duitsland. Niet wetend dat het een compleet plaatje was met de bomen, brug, de lucht en het water samen."
+        "description": "Onderweg in een bootje heb ik deze foto gemaakt in Duitsland. Een prachtig zomers plaatje. Deze fotokaart kan bijvoorbeeld gestuurd worden naar iemand die jarig is."
     },
     {
         "id": 7,
@@ -187,7 +187,7 @@
         "category": "blanco",
         "position": "standing",
         "loading": "eager",
-        "description": "Deze foto is in het Engelse werk genomen. De foto is in de herfst genomen."
+        "description": "Deze foto is in het Engelse werk in Zwolle genomen. De foto is in de herfst genomen."
     },
     {
         "id": 8,
@@ -349,7 +349,7 @@
         "category": "blanco",
         "position": "standing",
         "loading": "eager",
-        "description": "Een fris groen lente plaatje, deze foto is genomen in het Engelse werk."
+        "description": "Een fris, groen, lenteplaatje, deze foto is genomen in het Engelse werk in Zwolle."
     },
     {
         "id": 14,
@@ -376,7 +376,7 @@
         "category": "blanco",
         "position": "standing",
         "loading": "lazy",
-        "description": "Het kan niet missen, deze foto is in de winter gemaakt in het Engelse werk. Toepasselijk om in de winter te sturen naar iemand die het goed zal doen."
+        "description": "Het kan niet missen, deze foto is in de winter gemaakt in het Engelse werk in Zwolle. Deze fotokaart kan bijvoorbeeld verstuurd worden als kerstkaart."
     },
     {
         "id": 15,
@@ -403,7 +403,7 @@
         "category": "blanco",
         "position": "standing",
         "loading": "eager",
-        "description": "De rode boom is de blikvanger van het Engelse werk. In combinatie met het zonlicht, komt deze boom nog meer tot zijn recht in deze foto."
+        "description": "De rode boom is de blikvanger van het Engelse werk in Zwolle. In combinatie met het zonlicht, komt deze boom nog meer tot zijn recht in deze foto."
     },
     {
         "id": 16,
@@ -457,7 +457,7 @@
         "category": "blanco",
         "position": "lying",
         "loading": "lazy",
-        "description": "Dit bootje lag in de winter in de polder van Genemuiden. Voordat de zon onderging, nog even de camera gepakt en een foto gemaakt. Dit zorgde voor een mooi plaatje."
+        "description": "Dit bootje lag in de winter in de polder van Genemuiden. Voordat de zon onderging, nog even de camera gepakt en een foto gemaakt. Dit zorgde voor een mooi winters plaatje."
     },
     {
         "id": 18,
@@ -484,7 +484,7 @@
         "category": "blanco",
         "position": "lying",
         "loading": "lazy",
-        "description": "Kunstbloemen, die altijd mooi blijven. Deze foto is thuis genomen en deze fotokaart kan goed gestuurd worden als beterschap-, sterkte- of verjaardagskaart."
+        "description": "Kunstbloemen, die altijd mooi blijven. Deze foto is thuis genomen. Een fotokaart die als beterschap-, sterkte- of verjaardagskaart verstuurd kan worden."
     },
     {
         "id": 19,
@@ -511,7 +511,7 @@
         "category": "blanco",
         "position": "lying",
         "loading": "lazy",
-        "description": "Een tijdloze foto. Deze foto is thuis genomen en kan in elk seizoen verstuurd worden."
+        "description": "Een tijdloze foto. Deze foto is thuis genomen. Een fotokaart die in elk seizoen verstuurd kan worden."
     },
     {
         "id": 20,
@@ -673,7 +673,7 @@
         "category": "blanco",
         "position": "lying",
         "loading": "lazy",
-        "description": "Deze foto is genomen bij paleis het Loo in Apeldoorn. We kwamen daar een hele roedel herten tegen en deze twee herten leken de wacht wel te houden, prachtig! Helemaal om deze foto als kaart weg te sturen en er iemand blij mee te maken."
+        "description": "Deze foto is genomen bij paleis het Loo in Apeldoorn. We kwamen daar een hele roedel herten tegen en deze twee herten leken de wacht wel te houden, prachtig! Een mooie fotokaart om te versturen."
     },
     {
         "id": 26,
@@ -754,7 +754,7 @@
         "category": "geboorte",
         "position": "standing",
         "loading": "lazy",
-        "description": "Handjes, leuk te versturen voor een geboren dochter."
+        "description": "Handjes. Een fotokaart die verstuurd kan worden naar een meisje die geboren is."
     },
     {
         "id": 29,
@@ -781,7 +781,7 @@
         "category": "geboorte",
         "position": "standing",
         "loading": "lazy",
-        "description": "Sokjes en handjes. Leuk om te versturen voor een geboren meisje."
+        "description": "Sokjes en handjes. Een fotokaart die verstuurd kan worden naar een meisje die geboren is."
     },
     {
         "id": 30,
@@ -835,7 +835,7 @@
         "category": "geboorte",
         "position": "standing",
         "loading": "lazy",
-        "description": "Beschuit met roze muisjes. Deze fotokaart is leuk om te versturen naar een meisje die geboren is."
+        "description": "Beschuit met roze muisjes zie je vaak bij een geboorte. Een fotokaart die verstuurd kan worden naar een meisje die geboren is."
     },
     {
         "id": 32,
@@ -862,7 +862,7 @@
         "category": "geboorte",
         "position": "standing",
         "loading": "lazy",
-        "description": "Voetjes. Leuk om deze fotokaart te versturen naar een geboren meisje."
+        "description": "Voetjes. Een fotokaart die verstuurd kan worden naar een meisje die geboren is."
     },
     {
         "id": 33,
@@ -916,7 +916,7 @@
         "category": "geboorte",
         "position": "standing",
         "loading": "lazy",
-        "description": "Voetjes. Leuk om deze fotokaart te versturen naar een geboren zoon."
+        "description": "Voetjes. Een fotokaart die verstuurd kan worden naar een jongen die geboren is."
     },
     {
         "id": 35,
@@ -943,7 +943,7 @@
         "category": "geboorte",
         "position": "standing",
         "loading": "lazy",
-        "description": "Beschuit met blauwe muisjes. Deze fotokaart is leuk om te versturen naar een jongen die geboren is."
+        "description": "Beschuit met blauwe muisjes zie je vaak bij een geboorte. Een fotokaart die verstuurd kan worden naar een jongen die geboren is."
     },
     {
         "id": 36,
@@ -970,7 +970,7 @@
         "category": "geboorte",
         "position": "standing",
         "loading": "lazy",
-        "description": "Auto. Leuk om deze kaart te versturen voor een geboren jongen."
+        "description": "Auto. Een fotokaart die verstuurd kan worden naar een jongen die geboren is."
     },
     {
         "id": 37,
@@ -997,7 +997,7 @@
         "category": "verjaardag",
         "position": "standing",
         "loading": "lazy",
-        "description": "Een fotokaart voor een jarige jongen."
+        "description": "Jongens spelen graag met auto's. Helemaal toepasselijk om deze fotokaart te versturen naar een jarige jongen."
     },
     {
         "id": 38,
@@ -1078,7 +1078,7 @@
         "category": "geboorte",
         "position": "standing",
         "loading": "lazy",
-        "description": "Handjes. Deze fotokaart is leuk om te versturen naar een meisje die geboren is."
+        "description": "Handjes. Een fotokaart die verstuurd kan worden naar een geboren dochter."
     },
     {
         "id": 41,
@@ -1105,7 +1105,7 @@
         "category": "geboorte",
         "position": "standing",
         "loading": "lazy",
-        "description": "Beschuit met blauwe muisjes zie je vaak bij een geboorte. Een leuke fotokaart om te versturen."
+        "description": "Beschuit met blauwe muisjes zie je vaak bij een geboorte. Een fotokaart die verstuurd kan worden naar een jongen die geboren is."
     },
     {
         "id": 42,
@@ -1132,7 +1132,7 @@
         "category": "blanco",
         "position": "lying",
         "loading": "lazy",
-        "description": "Deze foto is gemaakt in het plantsoen in Genemuiden. De gele kleur van de narcissen komen mooi in contrast met de strakblauwe lucht. Een prachtig lenteplaatje."
+        "description": "Deze foto is gemaakt in het plantsoen in Genemuiden. De gele kleur van de narcissen komen mooi uit in contrast met de strakblauwe lucht. Een prachtig lenteplaatje."
     },
     {
         "id": 43,
@@ -1213,7 +1213,7 @@
         "category": "blanco",
         "position": "lying",
         "loading": "lazy",
-        "description": "Een prachtige lente-foto. De bloemen en bomen weer in bloei en dat zorgt weer voor een fris groen plaatje. Deze foto is in het park in Kampen genomen."
+        "description": "Een prachtige lentefoto. De bloemen en bomen weer in bloei en dat zorgt weer voor een fris groen plaatje. Deze foto is gemaakt in het stadspark in Kampen."
     },
     {
         "id": 46,
@@ -1321,7 +1321,7 @@
         "category": "blanco",
         "position": "lying",
         "loading": "lazy",
-        "description": "Een volgroeide, roze bloesemknop. Deze foto is in een park in Nunspeet genomen."
+        "description": "Een volgroeide, roze bloesemknop. Deze foto is in een park in Nunspeet genomen, waar een prachtige roze bloesemboom stond."
     },
     {
         "id": 50,
@@ -1375,6 +1375,6 @@
         "category": "blanco",
         "position": "lying",
         "loading": "lazy",
-        "description": "Een prachtige foto van een seringenboom die in bloei staat in het park in Kampen. Een blanco fotokaart die bijvoorbeeld geschreven kan worden naar iemand die ziek is."
+        "description": "Een prachtige foto van een seringenboom die in bloei staat in het stadspark in Kampen. Een blanco fotokaart die bijvoorbeeld geschreven kan worden naar iemand die ziek is."
     }
 ]
