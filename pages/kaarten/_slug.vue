@@ -281,11 +281,11 @@ export default {
 
 .product__info__description {
     max-width: fit-content;
-    background: var(--clr-3-3);
+    /* background: var(--clr-3-3); */
     border-radius: var(--border-radius);
     padding: 15px;
     margin-top: 80px;
-    /* border: 1px solid var(--clr-1-3); */
+    border: 1.5px solid var(--clr-1-3);
 }
 
 
