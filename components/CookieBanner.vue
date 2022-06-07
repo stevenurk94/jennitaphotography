@@ -143,7 +143,7 @@
 .CB__popup__h3 {
     color: white;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     line-height: 1.5;
 }
 
@@ -306,12 +306,14 @@ input:checked + .CB__items__item__switch:hover:active::after {
 .CB__popup__buttons__accept {
     margin-left: auto;
     right: 0;
-    width: 35%;
+    width: 32%;
     transition: width 0ms;
+    padding: 13.5px 33px;
 }
 
 .CB__popup__buttons__accept.wider {
     width: 48%;
+    padding: 15px 33px;
 }
 
 .CB__popup__buttons__selection {

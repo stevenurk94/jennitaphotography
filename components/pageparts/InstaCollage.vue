@@ -1,20 +1,27 @@
 <template>
     <section>
-        <button class="buttonPrevious">
-            <IconsInstaArrow />
-        </button>
-        <button class="buttonNext">
-            <IconsInstaArrow />
-        </button>
 
 
-        <div class="social">
-            <div class="social__card" v-for="(post) in posts.data" :key="post.id">
+        <h1>Instagram</h1>
+        <p>#jennitaphotography</p>
+        <div class="social" :data-card="card">
+            
+            <div :class="'social__card nr-' + index" v-for="(post, index) in posts.data" :key="post.id">
                 <IconsLightbox/>
                 <a :href="post.permalink" target="_blank">
+                    <!--  :href="post.permalink" target="_blank" -->
                     <img :src="post.media_url" alt="">
-                </a>
+                    <div class="social__card__overlay"></div>
+                </a>               
             </div>
+
+
+            <button @click="test1" type="submit" :class="card <= 0 ? 'buttonPrevious disabled' : 'buttonPrevious'" :disable="active">
+                <IconsInstaArrow />
+            </button>
+            <button @click="test5" :class="card >= posts.data.length - 1 ? 'buttonNext disabled' : 'buttonNext'" :disabled="active">
+                <IconsInstaArrow />
+            </button>
         </div>
         
     </section>
@@ -25,7 +32,9 @@
 export default {
     data () {
         return {
-            posts: []
+            posts: [],
+            card: 0, 
+            active: false
         }
     },
     async fetch() {
@@ -34,6 +43,53 @@ export default {
         )
     },
 
+    methods: {
+
+        test1 () {
+            if (this.active) {
+                return;
+            }
+            this.active = true;
+
+
+            const social = document.querySelector(".social");
+            console.log(this.posts.data)
+
+            let item = document.querySelector(`.social__card.nr-${ this.card }`)
+            social.scrollLeft -= item.offsetWidth
+            this.card--;
+
+
+
+            setTimeout(function(){
+                this.active = false;
+            }.bind(this), 450);
+
+        },
+
+
+
+        test5 () {
+
+            if (this.active) {
+                return;
+            }
+            this.active = true;
+
+            const social = document.querySelector(".social");
+            let item = document.querySelector(`.social__card.nr-${ this.card }`)
+            social.scrollLeft += item.offsetWidth
+            this.card++;
+
+
+            setTimeout(function(){
+                this.active = false;
+            }.bind(this), 450);
+
+
+
+        }
+    },
 
 
 
@@ -42,22 +98,7 @@ export default {
     //     return { post }
     // }
 
-    mounted () {
-        const socialContainer = document.querySelector(".social");
-        const progressBar = document.querySelector('.progressbar__inner');
-        const buttonNext = document.querySelector(".buttonNext");
-        const buttonPrevious = document.querySelector(".buttonPrevious");
-        let cardWidth = document.querySelector(".social__card:first-of-type").clientWidth + 100
 
-
-        buttonNext.addEventListener("click", () => {
-            socialContainer.scrollLeft += cardWidth;
-        })
-        
-        buttonPrevious.addEventListener("click", () => {
-            socialContainer.scrollLeft -= cardWidth;
-        })
-    }
 }
 
 
@@ -69,56 +110,74 @@ section {
     width: 100%;
     background: var(--clr-1-3);
     max-width: 100%;
-    position: relative;
-    padding: 50px 0;
+    padding: 50px 0 70px 0;
     display: flex;
     align-items: center;
     flex-direction: column;
+    position: relative;
 }
 
 
 .social {
+    
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-behavior: smooth;
     width: 100%;
     height: fit-content;
     align-items: center;
+    margin-top: 30px;
 }
-.social::-webkit-scrollbar {
+/* .social::-webkit-scrollbar {
     display: none;
-}
+} */
 
 
 
 .social__card {
-    min-width: calc(25% - 50px);
     overflow: hidden;
-    margin: 0 50px;
     cursor: pointer;
     transition: all 350ms ease-in-out;
     position: relative;
     overflow: hidden;
-    height: fit-content;
+    height: 285px;
+    min-width: 285px;
+    padding: 15px;
 }
 
 
 
-.social__card:hover {
-    opacity: .8;
+
+.social__card__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 300ms ease-in-out;
 }
 
+
+.social__card:hover .social__card__overlay {
+    background: rgb(0 0 0 / 20%);
+
+}
 
 .social__card svg {
     position: absolute;
-    right: 5px;
-    top: 5px;
-    fill: var(--clr-1-2)
+    right: 25px;
+    top: 25px;
+    z-index: 10;
 }
 
-.social__card svg path {
-    fill: var(--clr-1-2)
+.social__card svg, .social__card svg path {
+    fill: rgb(255 255 255 / 80%);
+    transition: all 300ms ease-in-out;
+}
+
+.social__card:hover svg, .social__card:hover svg path {
+    fill: rgb(255 255 255 / 100%);
 }
 
 .social__card a {
@@ -132,11 +191,18 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    transition: all 300ms ease-in-out;
+    /* border-radius: var(--border-radius); */
+    /* max-height: 250px; */
+        
     border-radius: var(--border-radius);
-    max-height: 250px;
+
 }
 
-
+.social__card:hover a img {
+    transform: scale(1.03);
+}
 
 
 
@@ -149,47 +215,50 @@ section {
 
 .buttonPrevious, .buttonNext {
     border: none;
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     position: absolute;
-    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     z-index: 8;
-    top: 0;
-    bottom: 0;
-    margin: auto 20px;
+    top: 50%;
+    bottom: 50%;
+    /* margin: auto 20px; */
     /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, #fff 100%); */
-
-
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 100%;
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 300ms ease-in-out;
+}
 
+.buttonPrevious:hover, .buttonNext:hover {
+    background: rgba(255, 255, 255, 0.80);
 
 }
 
-
+.buttonPrevious.disabled,
+.buttonNext.disabled {
+    pointer-events: none;
+}
 
 .buttonPrevious {
-    left: 0;
+    left: 2%;
     transform: rotate(180deg);
 }
 
 .buttonNext {
-    right: 0;
+    right: 2%;
 }
 
 .buttonPrevious svg,
 .buttonPrevious svg path,
 .buttonNext svg,
 .buttonNext svg path {
-    fill: var(--clr-1-1);
+    fill: var(--clr-3-1);
 }
 
 
@@ -205,6 +274,15 @@ section {
 }
 
 
+
+
+.scroll {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+}
 </style>
 
 
