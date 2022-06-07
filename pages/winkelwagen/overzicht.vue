@@ -128,6 +128,8 @@
                 </div>
                 
                 <button type="submit" class="button-1" :class="loading ? 'disabled' : ''">Bestellen en betalen<IconsButtonLoading v-if="loading" /></button>
+                <p class="overview__summary__message">Niet gelukt met uw bestelling? Neem dan <a href="mailto:info@jennitaphotography.nl">contact</a> met ons op.</p>
+
             </form>
 
 
@@ -151,20 +153,6 @@ export default {
             loading: false,
         }
     },
-
-    // beforeRouteEnter (to, from, next) {
-
-    //     next();
-    // },
-    // beforeResolve (to, from, next) {
-    //     console.log("yess")
-    //     next();
-
-    // },
-    // beforeRouteLeave (to, from, next) {
-    //     console.log("leave")
-    //     next();
-    // },
 
     methods: {
 
@@ -518,6 +506,21 @@ form.overview__summary {
     margin-top: 10px;
 }
 
+.overview__summary__message {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(125%);
+    padding: 0 20px;
+    font-size: 11px;
+    position: absolute;
+}
+
+.overview__summary__message a {
+    text-decoration: underline;
+    font-size: 11px;
+}
 
 
 @media only screen and (max-width: 750px) {

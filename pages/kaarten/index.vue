@@ -1,10 +1,10 @@
 <template>
 <main>
     <PagepartsBreadCrumbs :items="breadcrumbs"/>
-    
 
     <section>
         <div class="filter">
+            
             <h3>Categorie</h3>
             <input type="checkbox" id="blanco" v-on:change="blanco($event)"  :checked="v_blanco">
             <label class="filter__checkmark" for="blanco">
@@ -27,11 +27,9 @@
             </label>
         </div>
 
-
-
-
         
         <div class="products">
+
             <h2 class="products__title" v-if="v_blanco || !v_blanco && !v_geboorte && !v_verjaardag">Blanco</h2>
             <div class="products__wrapper" v-if="v_blanco || !v_blanco && !v_geboorte && !v_verjaardag">
                 <IconsLoading v-if="showLoading"/>
@@ -163,58 +161,20 @@ export default {
     head () {
         return {
             title: "Fotokaarten",
-            // meta: [
+            meta: [
+                {  hid: "description", name: "description", content: "Fotokaarten Shop | Keuze uit meer dan 50 prachtige fotokaarten | Vind jouw leuke fotokaart bij Jennita Photography | Blanco, Geboorte & Verjaardag | Steun het goede doel" },
+                
+                { property: "og:title", content: "Fotokaarten" },
+                { property: "og:image", content: "https://www.jennitaphotography.nl" + require("~/static/img/jpeg/640/bloesem-2.jpg") },
+                { property: "og:url", content: "https://jennitaphotography.nl/kaarten/" },
+                { property: "og:type", content: "website" },
+                { property: "og:description", content: "Fotokaarten Shop | Keuze uit meer dan 50 prachtige fotokaarten | Vind jouw leuke fotokaart bij Jennita Photography | Blanco, Geboorte & Verjaardag | Steun het goede doel" },
 
-            //     // Original
-
-            //     // <meta data-n-head="ssr" data-hid="description" name="description" content="Om een kerk tegen te komen, hoef je in Rotterdam niet ver te lopen. Soms is die monumentaal, soms modern. Soms een herinnering aan het rijke kerkelijke verleden, soms nog in actief gebruik. De wandeling ”Skyline van religies” toont 15 van de ongeveer 160 religieuze gebouwen die de havenstad rijk is.">
-
-            //     {
-            //         hid: "description",
-            //         name: "description",
-            //         content: "Home page description"
-            //     },
-
-            //     // OG
-
-            //     // <meta data-n-head="ssr" property="og:title" content="Stadswandeling Rotterdam toont kerken uit alle windstreken">
-            //     // <meta data-n-head="ssr" property="og:url" content="https://www.rd.nl/artikel/975262-stadswandeling-rotterdam-toont-kerken-uit-alle-windstreken">
-            //     // <meta data-n-head="ssr" property="og:description" content="Om een kerk tegen te komen, hoef je in Rotterdam niet ver te lopen. Soms is die monumentaal, soms modern. Soms een herinnering aan het rijke kerkelijke verleden, soms nog in actief gebruik. De wandeling ”Skyline van religies” toont 15 van de ongeveer 160 religieuze gebouwen die de havenstad rijk is.">
-            //     // <meta data-n-head="ssr" property="og:type" content="article">
-            //     // <meta data-n-head="ssr" property="og:image" content="https://images.rd.nl/fill/crop:1600:1000:sm/w:1020/plain/https%3A%2F%2Ferdee-prod-bucket-s3-001.ams3.cdn.digitaloceanspaces.com%2F18243179_84a8387198.JPG">
-            //     // <meta data-n-head="ssr" property="og:image:width" content="1600">
-
-            //     {
-            //         hid: "og:title",
-            //         name: "og:title",
-            //         content: "Fotokaarten"
-            //     },
-            //     {
-            //         hid: "og:url",
-            //         name: "og:url",
-            //         content: "https://jennitaphotography.nl/kaarten/"
-            //     },
-            //     {
-            //         hid: "og:description",
-            //         name: "og:description",
-            //         content: ""
-            //     },
-            //     {
-            //         hid: "og:type",
-            //         name: "og:type",
-            //         content: ""
-            //     },
-            //     {
-            //         hid: "og:image",
-            //         name: "og:image",
-            //         content: ""
-            //     },
-            //     {
-            //         hid: "og:image:width",
-            //         name: "og:image:width",
-            //         content: ""
-            //     },
-            // ],
+                { name: "twitter:title", content: "Fotokaarten" },
+                { name: "twitter:image", content: "https://www.jennitaphotography.nl" + require("~/static/img/jpeg/640/bloesem-2.jpg") },
+                { name: "twitter:card", content: "summary_large_image" },
+                { name: "twitter:description", content: "Fotokaarten Shop | Keuze uit meer dan 50 prachtige fotokaarten | Vind jouw leuke fotokaart bij Jennita Photography | Blanco, Geboorte & Verjaardag | Steun het goede doel" },
+            ]
         }
     },
 
@@ -253,6 +213,7 @@ export default {
         },
     },
 
+
     computed: {
 
         breadcrumbs() {
@@ -285,9 +246,8 @@ export default {
                 return a == b ? 0 : a > b ? 1 : -1;
             });
 
-            return PhotoCards_Blanco_Sorted_Standing.concat(PhotoCards_Blanco_Sorted_Lying)
+            return PhotoCards_Blanco_Sorted_Standing.concat(PhotoCards_Blanco_Sorted_Lying);
         },
-
         PhotoCards_Geboorte_Sorted: function() {
             return this.PhotoCards.filter(function(u) {
                 return u.category == "geboorte";
@@ -295,7 +255,7 @@ export default {
                 let a = x.name.toUpperCase(),
                     b = y.name.toUpperCase();
                 return a == b ? 0 : a > b ? 1 : -1;
-            })
+            });
         },
         PhotoCards_Verjaardag_Sorted: function() {
             return this.PhotoCards.filter(function(u) {
@@ -304,7 +264,7 @@ export default {
                 let a = x.name.toUpperCase(),
                     b = y.name.toUpperCase();
                 return a == b ? 0 : a > b ? 1 : -1;
-            })
+            });
         },         
     },
 }
@@ -342,6 +302,7 @@ main section {
     margin-bottom: 14px;
 }
 
+
 .filter__checkmark {
     cursor: pointer;
     width: 100%;
@@ -367,26 +328,18 @@ main section {
     border: 1.5px solid #999;
     text-align: center;
     transition: all 300ms ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .filter__checkmark__button svg {
+    visibility: hidden;
+    margin: 1px;
     fill: white;
 }
 
-.filter__checkmark__button::before {
-    content: "";
-    font-size: 13px;
-    font-weight: 800;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    color: white;
-}
 
-.filter__checkmark__button svg {
-    display: none;
-    margin: 1px;
-}
 
 .filter__checkmark__text {
     margin-left: 10px;
@@ -409,14 +362,8 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button {
     border: 2px solid var(--clr-1-1);
 }
 
-input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button {
-    background: var(--clr-1-1);
-    border-color: var(--clr-1-1);
-    border: 2px solid var(--clr-1-1);
-}
-
 input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button svg {
-    display: block;
+    visibility: visible;
 }
 
 

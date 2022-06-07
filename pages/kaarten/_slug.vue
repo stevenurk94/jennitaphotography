@@ -55,10 +55,8 @@
                 </div>
                 <p class="product__info__error message orange">Voer een geldig getal in</p>
                 <p class="product__info__error message orange">Van "{{ PhotoCard.name }}" hebben we momenteel {{ PhotoCard.stock }} kaarten op voorraad</p>
-                <div class="product__info__description">
-                    <h3>Beschrijving</h3>
-                    <p>{{ PhotoCard.description }}</p>
-                </div>
+
+                <PagepartsProductBenefits />
             </div>
 
 
@@ -97,6 +95,9 @@
             </transition>
         </div>
     </section>
+
+    <SectionsProductData :product_description="PhotoCard.product_description" />
+
 </main>
 </template>
 
@@ -116,7 +117,21 @@ export default {
     },
     head () {
         return {
-            title: this.PhotoCard.name
+            title: this.PhotoCard.name,
+            meta: [
+                {  hid: "description", name: "description", content: this.PhotoCard.meta_description },
+                
+                { property: "og:title", content: this.PhotoCard.name },
+                { property: "og:image", content: "https://jennitaphotography.nl" + require(`~/static/img${this.PhotoCard.image.jpeg._640}`) },
+                { property: "og:url", content: `https://jennitaphotography.nl/kaarten/${this.PhotoCard.slug}/` },
+                { property: "og:type", content: "product" },
+                { property: "og:description", content: this.PhotoCard.meta_description },
+
+                { name: "twitter:title", content: this.PhotoCard.name },
+                { name: "twitter:image", content: "https://jennitaphotography.nl" + require(`~/static/img${this.PhotoCard.image.jpeg._640}`) },
+                { name: "twitter:card", content: "summary_large_image" },
+                { name: "twitter:description", content: this.PhotoCard.meta_description },
+            ]
         }
     },
     computed: {
@@ -279,14 +294,9 @@ export default {
     display: none;
 }
 
-.product__info__description {
-    max-width: fit-content;
-    /* background: var(--clr-3-3); */
-    border-radius: var(--border-radius);
-    padding: 15px;
-    margin-top: 80px;
-    border: 1.5px solid var(--clr-1-3);
-}
+
+
+
 
 
 @media only screen and (max-width: 767px) {

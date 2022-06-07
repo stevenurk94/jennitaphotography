@@ -10,7 +10,7 @@
                 <label class="radio" for="shipping">
 
                     <span class="radio__button"></span>
-                    <p class="radio__text">Verzending via PostNL</p>
+                    <p class="radio__text">Verzending via PostNL (1-3 werkdagen)</p>
 
                 </label>
 
