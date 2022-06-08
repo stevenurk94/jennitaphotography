@@ -37,7 +37,7 @@
 }
 
 .benefits__row span {
-    width: 18px;
+    min-width: 18px;
     height: 18px;
     background-color: var(--clr-1-1);
     border-radius: 100%;

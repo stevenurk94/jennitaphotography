@@ -68,7 +68,6 @@ input[type="radio"] {
 .attributes {
     padding-top: 10px;
     margin-right: 45px;
-
 }
 
 .attributes__item {
@@ -119,6 +118,7 @@ input[type="radio"] {
 @media only screen and (max-width: 767px) {
     section {
         display: block;
+        margin-top: 60px;
     }
 
     .data {
