@@ -21,24 +21,6 @@
             <div class="data__item" v-if="menu == 'information'">
                 <h3>Extra informatie</h3>
                 <div class="data__item__info">
-                    <span><IconsCheckmark /></span>
-                    <p>Met envelop</p>
-                </div>
-                <div class="data__item__info">
-                    <span><IconsCheckmark /></span>
-                    <p>Wenskaart met foto-opdruk</p>
-                </div>
-                <div class="data__item__info">
-                    <span><IconsCheckmark /></span>
-                    <p>Afmetingen: 10 x 15 cm</p>
-                </div>
-                <div class="data__item__info">
-                    <span><IconsCheckmark /></span>
-                    <p>Verpakt in insteekhoesje</p>
-                </div>
-
-
-                <div class="data__item__info2">
                     <div>
                         <p>Envelop</p>
                         <p>Met envelop</p>
@@ -55,7 +37,6 @@
                         <p>Verpakking</p>
                         <p>Verpakt in insteekhoesje</p>
                     </div>                    
-
                 </div>
             </div>
         </div>
@@ -108,8 +89,6 @@ input[type="radio"] {
 
 
 
-
-
 .data {
     width: 100%;
     border-radius: var(--border-radius);
@@ -117,55 +96,46 @@ input[type="radio"] {
     padding: 30px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .data__item__info {
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
-}
-
-.data__item__info span {
-    width: 16px;
-    height: 16px;
-    margin-right: 18px;
-}
-
-.data__item__info span svg,
-.data__item__info span svg path {
-    fill: var(--clr-1-1);
-}
-
-
-
-
-
-.data__item__info2 {
-    margin-top: 100px;
     width: 100%;
+    margin-top: 20px;
 }
 
-.data__item__info2 div {
+.data__item__info div {
     border-bottom: 1px solid var(--clr-1-3);
     display: flex;
     margin-bottom: 8px;
     width: 100%;
 }
 
-.data__item__info2 div p:first-child {
-    min-width: 25%;
+.data__item__info div p:first-child {
+    width: 25%;
+    min-width: 160px;
     font-weight: 600;
     padding-bottom: 8px;
 }
+
+
+@media only screen and (max-width: 767px) {
+    section {
+        display: block;
+    }
+
+    .data {
+        margin-top: 40px;
+        padding: 15px;
+    }
+
+    .data__item__info div p:first-child {
+        min-width: 130px;
+    }
+}
+
+
+
+
+
+
 
 
 </style>
