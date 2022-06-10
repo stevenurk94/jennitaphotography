@@ -14,7 +14,7 @@
             <button @click="previousCard" :class="this.number == 0 ? 'previous disabled' : 'previous'">
                 <IconsInstaArrow />
             </button>
-            <button @click="nextCard" :class="!this.next ? 'next disabled' : 'next'" @touchstart="event.preventDefault" @touchmove="event.preventDefault" @touchend="event.preventDefault" @touchcancel="event.preventDefault">
+            <button @click="nextCard" :class="!this.next ? 'next disabled' : 'next'">
                 <IconsInstaArrow />
             </button>
         </div>
@@ -51,7 +51,7 @@ export default {
             this.startX = event.touches[0].clientX;
         },
         swipeMove ( event ) {
-            event.preventDefault();
+            // event.preventDefault();
             this.moveX = event.touches[0].clientX;
         },
         swipeEnd () {
