@@ -1,25 +1,20 @@
 <template>
-    <section>
-
-
+    <section @touchstart="swipeStart" @touchmove="swipeMove" @touchend="swipeEnd" @touchcancel="swipeCancel">
         <h1>Instagram</h1>
         <p>#jennitaphotography</p>
-        <div class="social" :data-card="card">
-            
-            <div :class="'social__card nr-' + index" v-for="(post, index) in posts.data" :key="post.id">
+        <div class="social">
+            <div class="social__card" v-for="post in posts.data" :key="post.id">
                 <IconsLightbox/>
                 <a :href="post.permalink" target="_blank">
-                    <!--  :href="post.permalink" target="_blank" -->
                     <img :src="post.media_url" alt="">
                     <div class="social__card__overlay"></div>
-                </a>               
+                </a>
             </div>
 
-
-            <button @click="test1" type="submit" :class="card <= 0 ? 'buttonPrevious disabled' : 'buttonPrevious'" :disable="active">
+            <button @click="previousCard" :class="this.number == 0 ? 'previous disabled' : 'previous'">
                 <IconsInstaArrow />
             </button>
-            <button @click="test5" :class="card >= posts.data.length - 1 ? 'buttonNext disabled' : 'buttonNext'" :disabled="active">
+            <button  @click="nextCard" :class="!this.next ? 'next disabled' : 'next'">
                 <IconsInstaArrow />
             </button>
         </div>
@@ -34,7 +29,11 @@ export default {
         return {
             posts: [],
             card: 0, 
-            active: false
+            number: 0,
+            active: false,
+            next: true,
+            startX: 0,
+            moveX: 0,
         }
     },
     async fetch() {
@@ -42,52 +41,98 @@ export default {
             res.json()
         )
     },
-
+    mounted () {
+        // this.nextCard();
+        // setInterval(this.nextCard, 6000);
+    },
     methods: {
-
-        test1 () {
-            if (this.active) {
-                return;
-            }
-            this.active = true;
-
-
-            const social = document.querySelector(".social");
-            console.log(this.posts.data)
-
-            let item = document.querySelector(`.social__card.nr-${ this.card }`)
-            social.scrollLeft -= item.offsetWidth
-            this.card--;
-
-
-
-            setTimeout(function(){
-                this.active = false;
-            }.bind(this), 450);
-
+        swipeStart ( event ) {
+            this.startX = event.touches[0].clientX;
         },
+        swipeMove ( event ) {
+            this.moveX = event.touches[0].clientX;
+        },
+        swipeEnd () {
+            console.log("startX: ", this.startX)
+            console.log("moveX: ", this.moveX)
 
-
-
-        test5 () {
-
-            if (this.active) {
-                return;
+            if ( this.startX + 100 < this.moveX ) {
+                console.log("right");
+                this.previousCard();
+                this.startX = 0;
+                this.moveX = 0;
             }
-            this.active = true;
+            else if ( this.moveX != 0 && this.startX - 100 > this.moveX ) {
+                console.log("left");
+                this.nextCard();
+                this.startX = 0;
+                this.moveX = 0;
+            }
+        },
+        swipeCancel () {
+            console.log("startX: ", this.startX)
+            console.log("moveX: ", this.moveX)
 
-            const social = document.querySelector(".social");
-            let item = document.querySelector(`.social__card.nr-${ this.card }`)
-            social.scrollLeft += item.offsetWidth
-            this.card++;
+            if ( this.startX + 100 < this.moveX ) {
+                console.log("right");
+                this.previousCard();
+                this.startX = 0;
+                this.moveX = 0;
+            }
+            else if ( this.moveX != 0 && this.startX - 100 > this.moveX ) {
+                console.log("left");
+                this.nextCard();
+                this.startX = 0;
+                this.moveX = 0;
+            }
+        },
+        nextCard () {
+            const social = document.querySelector(".social")
+            const cards = document.querySelectorAll(".social__card")
+            const lastCards = social.offsetWidth / (cards[0].offsetWidth + 30);
+
+            if (this.number < (this.posts.data.length - lastCards)) {
+                this.card = this.card + (cards[0].offsetWidth + 30);
+            }
+            if (cards == 1) {
+                this.card = 0; 
+            }
 
 
-            setTimeout(function(){
-                this.active = false;
-            }.bind(this), 450);
+            cards.forEach(card => {
+                if (this.number < (this.posts.data.length - lastCards)) {
+                    card.style.left = `-${ this.card }px`;                    
+                }
+            })
 
+            if (this.number < (this.posts.data.length - lastCards)) {
+                this.number++;
+                this.next = true;
+            } else {
+                this.next = false;
+            }
+        },
+        previousCard () {
+            const cards = document.querySelectorAll(".social__card")
+            this.card = this.card - (cards[0].offsetWidth + 30);
+            let minMove = Math.ceil(cards.length / 4);
 
+            if (this.card <= 0) {
+                this.card = 0;
+            }
 
+            cards.forEach(card => {
+                if (minMove > 1) {
+                    card.style.left = `-${ this.card }px`;
+                } else {
+                    this.previous = false;
+                }    
+            })
+
+            if (minMove > 1) {
+                this.number--;
+                this.next = true;
+            }
         }
     },
 
@@ -97,6 +142,13 @@ export default {
     //     const post = await $http.$get(`https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=IGQVJWZAmpqMllwS1BUMlhBallaWUE3ckpwbGxUY0hvcW5qRU5fRFNkbFpEOV9vTk9KUXVDSEd4d1RmaFNmYU5pNXdBWG5Vcy1HdmNrcTJaQVRsWHI0SEMzMFhoNkdNWWVVeklnTzVVRGdoMkhoR00wOAZDZD`)
     //     return { post }
     // }
+
+
+    // ToDo
+    // Optimaliseren mobiel
+    // Buttons in 't midden
+    // Buttons hover meer effect..
+
 
 
 }
@@ -119,31 +171,30 @@ section {
 
 
 .social {
-    
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* scroll-behavior: smooth; */
     width: 100%;
     height: fit-content;
     align-items: center;
     margin-top: 30px;
 }
-/* .social::-webkit-scrollbar {
+
+.social::-webkit-scrollbar {
     display: none;
-} */
-
-
+}
 
 .social__card {
     overflow: hidden;
     cursor: pointer;
-    transition: all 350ms ease-in-out;
     position: relative;
     overflow: hidden;
-    height: 285px;
-    min-width: 285px;
-    padding: 15px;
+    height: 255px;
+    min-width: 255px;
+    margin: 15px;
+    border-radius: var(--border-radius);
+    transition: all 500ms ease-in-out;
 }
 
 
@@ -156,18 +207,20 @@ section {
     bottom: 0;
     left: 0;
     transition: all 300ms ease-in-out;
+    background: rgb(0 0 0 / 20%);
+    opacity: 0;
+    /* border-radius: var(--border-radius); */
 }
 
 
 .social__card:hover .social__card__overlay {
-    background: rgb(0 0 0 / 20%);
-
+    opacity: 1;
 }
 
 .social__card svg {
     position: absolute;
-    right: 25px;
-    top: 25px;
+    right: 10px;
+    top: 10px;
     z-index: 10;
 }
 
@@ -177,7 +230,7 @@ section {
 }
 
 .social__card:hover svg, .social__card:hover svg path {
-    fill: rgb(255 255 255 / 100%);
+    fill: rgb(255 255 255 / 95%);
 }
 
 .social__card a {
@@ -196,12 +249,21 @@ section {
     /* border-radius: var(--border-radius); */
     /* max-height: 250px; */
         
-    border-radius: var(--border-radius);
+    /* border-radius: var(--border-radius); */
 
 }
 
 .social__card:hover a img {
-    transform: scale(1.03);
+    transform: scale(1.02);
+}
+
+
+
+.social__card__scroll {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    bottom: 50%;
 }
 
 
@@ -209,11 +271,7 @@ section {
 
 
 
-
-
-
-
-.buttonPrevious, .buttonNext {
+.previous, .next {
     border: none;
     width: 60px;
     height: 60px;
@@ -235,29 +293,33 @@ section {
     transition: all 300ms ease-in-out;
 }
 
-.buttonPrevious:hover, .buttonNext:hover {
+.previous.disabled, .next.next.disabled {
+    opacity: 50%;
+}
+
+.previous:hover, .next:hover {
     background: rgba(255, 255, 255, 0.80);
 
 }
 
-.buttonPrevious.disabled,
-.buttonNext.disabled {
+.previous.disabled,
+.next.disabled {
     pointer-events: none;
 }
 
-.buttonPrevious {
+.previous {
     left: 2%;
     transform: rotate(180deg);
 }
 
-.buttonNext {
+.next {
     right: 2%;
 }
 
-.buttonPrevious svg,
-.buttonPrevious svg path,
-.buttonNext svg,
-.buttonNext svg path {
+.previous svg,
+.previous svg path,
+.next svg,
+.next svg path {
     fill: var(--clr-3-1);
 }
 

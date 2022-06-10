@@ -13,9 +13,9 @@
 
 		<PagepartsIntro />
 
-		<!-- <PagepartsInstaCollage /> -->
-		<!-- <PagepartsInstaCollage2 /> -->
-		<!-- <PagepartsInstaCollage3 /> -->
+		<SectionsInstaCollage />
+
+		<!-- <SectionsInstaCollage2 /> -->
 
 		
 		

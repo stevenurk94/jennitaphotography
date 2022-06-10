@@ -5,7 +5,7 @@
     <section>
         
         <div class="product">
-            <div class="product__img" >
+            <div class="product__img">
                 <IconsLoading v-if="showLoading"/>
                 <picture :class="PhotoCard.position">
                     <source
@@ -57,10 +57,13 @@
                 <PagepartsProductBenefits />
             </div>
 
-            <PagepartsCartModal :PhotoCard="PhotoCard" :showModal="showModal" @closeModal="showModal = false"/>
+            
 
         </div>
     </section>
+
+    <PagepartsCartModal :PhotoCard="PhotoCard" :showModal="showModal" @closeModal="showModal = false"/>
+    <!-- <PagepartsImageModal :PhotoCard="PhotoCard" :showImageModal="showImageModal" @closeImageModal="showImageModal = false"/> -->
 
     <SectionsProductData :product_description="PhotoCard.product_description" />
 
@@ -79,6 +82,7 @@ export default {
             quantity: 1,
             showModal: false,
             showLoading: true,
+            // showImageModal: false,
         }
     },
     head () {

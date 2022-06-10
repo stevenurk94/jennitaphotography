@@ -1,175 +1,179 @@
 <template>
     <section>
         <div>
-            <picture>
-                <source
-                    type="image/webp"
-                    sizes="
-                        (max-width: 320px) 320px,
-                        (min-width: 320px) and (max-width: 640px) 640px,
-                        (min-widht: 640px) and (max-width: 768px) 768px,
-                        (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
-                    srcset="
-                        ~/static/img/webp/320/narcissen.webp 320w,
-                        ~/static/img/webp/640/narcissen.webp 640w,
-                        ~/static/img/webp/768/narcissen.webp 768w,
-                        ~/static/img/webp/1024/narcissen.webp 1024w,
-                        ~/static/img/webp/1600/narcissen.webp 1600w">
-                <source
-                    type="image/jpeg"
-                    sizes="
-                        (max-width: 320px) 320px,
-                        (min-width: 320px) and (max-width: 640px) 640px,
-                        (min-widht: 640px) and (max-width: 768px) 768px,
-                        (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
-                    srcset="
-                        ~/static/img/jpeg/320/narcissen.jpg 320w,
-                        ~/static/img/jpeg/640/narcissen.jpg 640w,
-                        ~/static/img/jpeg/768/narcissen.jpg 768w,
-                        ~/static/img/jpeg/1024/narcissen.jpg 1024w,
-                        ~/static/img/jpeg/1600/narcissen.jpg 1600w">
-                <img 
-                    class="blur sliderImage" 
-                    @load="removeBlur"
-                    src="~/static/img/jpeg/1024/narcissen.jpg" 
-                    alt="narcissen">
-            </picture>
-            <picture>
-                <source
-                    type="image/webp"
-                    sizes="
-                        (max-width: 320px) 320px,
-                        (min-width: 320px) and (max-width: 640px) 640px,
-                        (min-widht: 640px) and (max-width: 768px) 768px,
-                        (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
-                    srcset="
-                        ~/static/img/webp/320/herfst-6.webp 320w,
-                        ~/static/img/webp/640/herfst-6.webp 640w,
-                        ~/static/img/webp/768/herfst-6.webp 768w,
-                        ~/static/img/webp/1024/herfst-6.webp 1024w,
-                        ~/static/img/webp/1600/herfst-6.webp 1600w">
-                <source
-                    type="image/jpeg"
-                    sizes="
-                        (max-width: 320px) 320px,
-                        (min-width: 320px) and (max-width: 640px) 640px,
-                        (min-widht: 640px) and (max-width: 768px) 768px,
-                        (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
-                    srcset="
-                        ~/static/img/jpeg/320/herfst-6.jpeg 320w,
-                        ~/static/img/jpeg/640/herfst-6.jpeg 640w,
-                        ~/static/img/jpeg/768/herfst-6.jpeg 768w,
-                        ~/static/img/jpeg/1024/herfst-6.jpeg 1024w,
-                        ~/static/img/jpeg/1600/herfst-6.jpeg 1600w">
-                <img 
-                    class="blur sliderImage"
-                    loading="lazy"
-                    @load="removeBlur"
-                    src="~/static/img/jpeg/1024/herfst-6.jpeg" 
-                    alt="herfst 6">
-            </picture>
-            <picture>
-                <source
-                    type="image/webp"
-                    sizes="
-                        (max-width: 320px) 320px,
-                        (min-width: 320px) and (max-width: 640px) 640px,
-                        (min-widht: 640px) and (max-width: 768px) 768px,
-                        (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
-                    srcset="
-                        ~/static/img/webp/320/herfst-7.webp 320w,
-                        ~/static/img/webp/640/herfst-7.webp 640w,
-                        ~/static/img/webp/768/herfst-7.webp 768w,
-                        ~/static/img/webp/1024/herfst-7.webp 1024w,
-                        ~/static/img/webp/1600/herfst-7.webp 1600w">
-                <source
-                    type="image/jpeg"
-                    sizes="
-                        (max-width: 320px) 320px,
-                        (min-width: 320px) and (max-width: 640px) 640px,
-                        (min-widht: 640px) and (max-width: 768px) 768px,
-                        (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
-                    srcset="
-                        ~/static/img/jpeg/320/herfst-7.jpeg 320w,
-                        ~/static/img/jpeg/640/herfst-7.jpeg 640w,
-                        ~/static/img/jpeg/768/herfst-7.jpeg 768w,
-                        ~/static/img/jpeg/1024/herfst-7.jpeg 1024w,
-                        ~/static/img/jpeg/1600/herfst-7.jpeg 1600w">
-                <img
-                    class="blur sliderImage" 
-                    @load="removeBlur"
-                    loading="lazy"
-                    src="~/static/img/jpeg/1024/herfst-7.jpeg" 
-                    alt="herfst 7">
-            </picture>
-            <picture>
-                <source
-                    type="image/webp"
-                    sizes="
-                        (max-width: 320px) 320px,
-                        (min-width: 320px) and (max-width: 640px) 640px,
-                        (min-widht: 640px) and (max-width: 768px) 768px,
-                        (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
-                    srcset="
-                        ~/static/img/webp/320/bloesem-1.webp 320w,
-                        ~/static/img/webp/640/bloesem-1.webp 640w,
-                        ~/static/img/webp/768/bloesem-1.webp 768w,
-                        ~/static/img/webp/1024/bloesem-1.webp 1024w,
-                        ~/static/img/webp/1600/bloesem-1.webp 1600w">
-                <source
-                    type="image/jpeg"
-                    sizes="
-                        (max-width: 320px) 320px,
-                        (min-width: 320px) and (max-width: 640px) 640px,
-                        (min-widht: 640px) and (max-width: 768px) 768px,
-                        (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
-                    srcset="
-                        ~/static/img/jpeg/320/bloesem-1.jpg 320w,
-                        ~/static/img/jpeg/640/bloesem-1.jpg 640w,
-                        ~/static/img/jpeg/768/bloesem-1.jpg 768w,
-                        ~/static/img/jpeg/1024/bloesem-1.jpg 1024w,
-                        ~/static/img/jpeg/1600/bloesem-1.jpg 1600w">
-                <img 
-                    class="blur sliderImage" 
-                    @load="removeBlur"
-                    loading="lazy"
-                    src="~/static/img/jpeg/1024/bloesem-1.jpg" 
-                    alt="bloesem 1">
-            </picture>
-            <picture>
-                <source
-                    type="image/webp"
-                    sizes="
-                        (max-width: 320px) 320px,
-                        (min-width: 320px) and (max-width: 640px) 640px,
-                        (min-widht: 640px) and (max-width: 768px) 768px,
-                        (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
-                    srcset="
-                        ~/static/img/webp/320/narcissen.webp 320w,
-                        ~/static/img/webp/640/narcissen.webp 640w,
-                        ~/static/img/webp/768/narcissen.webp 768w,
-                        ~/static/img/webp/1024/narcissen.webp 1024w,
-                        ~/static/img/webp/1600/narcissen.webp 1600w">
-                <source
-                    type="image/jpeg"
-                    sizes="
-                        (max-width: 320px) 320px,
-                        (min-width: 320px) and (max-width: 640px) 640px,
-                        (min-widht: 640px) and (max-width: 768px) 768px,
-                        (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
-                    srcset="
-                        ~/static/img/jpeg/320/narcissen.jpg 320w,
-                        ~/static/img/jpeg/640/narcissen.jpg 640w,
-                        ~/static/img/jpeg/768/narcissen.jpg 768w,
-                        ~/static/img/jpeg/1024/narcissen.jpg 1024w,
-                        ~/static/img/jpeg/1600/narcissen.jpg 1600w">
-                <img 
-                    class="blur sliderImage" 
-                    @load="removeBlur"
-                    loading="lazy"
-                    src="~/static/img/jpeg/1024/narcissen.jpg" 
-                    alt="narcissen">
-            </picture>
+            <div>
+                <div>
+                    <picture>
+                        <source
+                            type="image/webp"
+                            sizes="
+                                (max-width: 320px) 320px,
+                                (min-width: 320px) and (max-width: 640px) 640px,
+                                (min-widht: 640px) and (max-width: 768px) 768px,
+                                (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
+                            srcset="
+                                ~/static/img/webp/320/narcissen.webp 320w,
+                                ~/static/img/webp/640/narcissen.webp 640w,
+                                ~/static/img/webp/768/narcissen.webp 768w,
+                                ~/static/img/webp/1024/narcissen.webp 1024w,
+                                ~/static/img/webp/1600/narcissen.webp 1600w">
+                        <source
+                            type="image/jpeg"
+                            sizes="
+                                (max-width: 320px) 320px,
+                                (min-width: 320px) and (max-width: 640px) 640px,
+                                (min-widht: 640px) and (max-width: 768px) 768px,
+                                (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
+                            srcset="
+                                ~/static/img/jpeg/320/narcissen.jpg 320w,
+                                ~/static/img/jpeg/640/narcissen.jpg 640w,
+                                ~/static/img/jpeg/768/narcissen.jpg 768w,
+                                ~/static/img/jpeg/1024/narcissen.jpg 1024w,
+                                ~/static/img/jpeg/1600/narcissen.jpg 1600w">
+                        <img 
+                            class="blur sliderImage" 
+                            @load="removeBlur"
+                            src="~/static/img/jpeg/1024/narcissen.jpg" 
+                            alt="narcissen">
+                    </picture>
+                    <picture>
+                        <source
+                            type="image/webp"
+                            sizes="
+                                (max-width: 320px) 320px,
+                                (min-width: 320px) and (max-width: 640px) 640px,
+                                (min-widht: 640px) and (max-width: 768px) 768px,
+                                (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
+                            srcset="
+                                ~/static/img/webp/320/herfst-6.webp 320w,
+                                ~/static/img/webp/640/herfst-6.webp 640w,
+                                ~/static/img/webp/768/herfst-6.webp 768w,
+                                ~/static/img/webp/1024/herfst-6.webp 1024w,
+                                ~/static/img/webp/1600/herfst-6.webp 1600w">
+                        <source
+                            type="image/jpeg"
+                            sizes="
+                                (max-width: 320px) 320px,
+                                (min-width: 320px) and (max-width: 640px) 640px,
+                                (min-widht: 640px) and (max-width: 768px) 768px,
+                                (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
+                            srcset="
+                                ~/static/img/jpeg/320/herfst-6.jpeg 320w,
+                                ~/static/img/jpeg/640/herfst-6.jpeg 640w,
+                                ~/static/img/jpeg/768/herfst-6.jpeg 768w,
+                                ~/static/img/jpeg/1024/herfst-6.jpeg 1024w,
+                                ~/static/img/jpeg/1600/herfst-6.jpeg 1600w">
+                        <img 
+                            class="blur sliderImage"
+                            loading="lazy"
+                            @load="removeBlur"
+                            src="~/static/img/jpeg/1024/herfst-6.jpeg" 
+                            alt="herfst 6">
+                    </picture>
+                    <picture>
+                        <source
+                            type="image/webp"
+                            sizes="
+                                (max-width: 320px) 320px,
+                                (min-width: 320px) and (max-width: 640px) 640px,
+                                (min-widht: 640px) and (max-width: 768px) 768px,
+                                (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
+                            srcset="
+                                ~/static/img/webp/320/herfst-7.webp 320w,
+                                ~/static/img/webp/640/herfst-7.webp 640w,
+                                ~/static/img/webp/768/herfst-7.webp 768w,
+                                ~/static/img/webp/1024/herfst-7.webp 1024w,
+                                ~/static/img/webp/1600/herfst-7.webp 1600w">
+                        <source
+                            type="image/jpeg"
+                            sizes="
+                                (max-width: 320px) 320px,
+                                (min-width: 320px) and (max-width: 640px) 640px,
+                                (min-widht: 640px) and (max-width: 768px) 768px,
+                                (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
+                            srcset="
+                                ~/static/img/jpeg/320/herfst-7.jpeg 320w,
+                                ~/static/img/jpeg/640/herfst-7.jpeg 640w,
+                                ~/static/img/jpeg/768/herfst-7.jpeg 768w,
+                                ~/static/img/jpeg/1024/herfst-7.jpeg 1024w,
+                                ~/static/img/jpeg/1600/herfst-7.jpeg 1600w">
+                        <img
+                            class="blur sliderImage" 
+                            @load="removeBlur"
+                            loading="lazy"
+                            src="~/static/img/jpeg/1024/herfst-7.jpeg" 
+                            alt="herfst 7">
+                    </picture>
+                    <picture>
+                        <source
+                            type="image/webp"
+                            sizes="
+                                (max-width: 320px) 320px,
+                                (min-width: 320px) and (max-width: 640px) 640px,
+                                (min-widht: 640px) and (max-width: 768px) 768px,
+                                (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
+                            srcset="
+                                ~/static/img/webp/320/bloesem-1.webp 320w,
+                                ~/static/img/webp/640/bloesem-1.webp 640w,
+                                ~/static/img/webp/768/bloesem-1.webp 768w,
+                                ~/static/img/webp/1024/bloesem-1.webp 1024w,
+                                ~/static/img/webp/1600/bloesem-1.webp 1600w">
+                        <source
+                            type="image/jpeg"
+                            sizes="
+                                (max-width: 320px) 320px,
+                                (min-width: 320px) and (max-width: 640px) 640px,
+                                (min-widht: 640px) and (max-width: 768px) 768px,
+                                (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
+                            srcset="
+                                ~/static/img/jpeg/320/bloesem-1.jpg 320w,
+                                ~/static/img/jpeg/640/bloesem-1.jpg 640w,
+                                ~/static/img/jpeg/768/bloesem-1.jpg 768w,
+                                ~/static/img/jpeg/1024/bloesem-1.jpg 1024w,
+                                ~/static/img/jpeg/1600/bloesem-1.jpg 1600w">
+                        <img 
+                            class="blur sliderImage" 
+                            @load="removeBlur"
+                            loading="lazy"
+                            src="~/static/img/jpeg/1024/bloesem-1.jpg" 
+                            alt="bloesem 1">
+                    </picture>
+                    <picture>
+                        <source
+                            type="image/webp"
+                            sizes="
+                                (max-width: 320px) 320px,
+                                (min-width: 320px) and (max-width: 640px) 640px,
+                                (min-widht: 640px) and (max-width: 768px) 768px,
+                                (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
+                            srcset="
+                                ~/static/img/webp/320/narcissen.webp 320w,
+                                ~/static/img/webp/640/narcissen.webp 640w,
+                                ~/static/img/webp/768/narcissen.webp 768w,
+                                ~/static/img/webp/1024/narcissen.webp 1024w,
+                                ~/static/img/webp/1600/narcissen.webp 1600w">
+                        <source
+                            type="image/jpeg"
+                            sizes="
+                                (max-width: 320px) 320px,
+                                (min-width: 320px) and (max-width: 640px) 640px,
+                                (min-widht: 640px) and (max-width: 768px) 768px,
+                                (min-width: 768px) and (max-width: 1024px) 1024px, 1600px"
+                            srcset="
+                                ~/static/img/jpeg/320/narcissen.jpg 320w,
+                                ~/static/img/jpeg/640/narcissen.jpg 640w,
+                                ~/static/img/jpeg/768/narcissen.jpg 768w,
+                                ~/static/img/jpeg/1024/narcissen.jpg 1024w,
+                                ~/static/img/jpeg/1600/narcissen.jpg 1600w">
+                        <img 
+                            class="blur sliderImage" 
+                            @load="removeBlur"
+                            loading="lazy"
+                            src="~/static/img/jpeg/1024/narcissen.jpg" 
+                            alt="narcissen">
+                    </picture>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -177,6 +181,9 @@
 
 
 <style scoped>
+
+
+
 
 section {
     max-width: 100%;
@@ -187,7 +194,24 @@ section {
     background-color: var(--clr-1-1);
 }
 
-div {
+section > div {
+    
+    clip-path: inset(0);
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+section > div > div {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+section > div > div > div {
     width: 500%;
     height: 100%;
     position: relative;
@@ -196,7 +220,7 @@ div {
     animation: slider 40s infinite;
 }
 
-div img {
+section > div > div > div img {
     width: 20%;
     height: 100%;
     float: left;
