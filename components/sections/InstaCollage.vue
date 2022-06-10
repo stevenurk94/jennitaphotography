@@ -14,7 +14,7 @@
             <button @click="previousCard" :class="this.number == 0 ? 'previous disabled' : 'previous'">
                 <IconsInstaArrow />
             </button>
-            <button @click="nextCard" :class="!this.next ? 'next disabled' : 'next'" @touchstart.stop @touchmove.stop @touchend.stop @touchcancel.stop>
+            <button @click="nextCard" :class="!this.next ? 'next disabled' : 'next'" @touchstart="event.preventDefault" @touchmove="event.preventDefault" @touchend="event.preventDefault" @touchcancel="event.preventDefault">
                 <IconsInstaArrow />
             </button>
         </div>
