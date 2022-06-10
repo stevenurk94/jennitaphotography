@@ -14,7 +14,7 @@
             <button @click="previousCard" :class="this.number == 0 ? 'previous disabled' : 'previous'">
                 <IconsInstaArrow />
             </button>
-            <button @click="nextCard" :class="!this.next ? 'next disabled' : 'next'">
+            <button @click="nextCard" :class="!this.next ? 'next disabled' : 'next'" @touchstart="event.preventDefault()" @touchmove="event.preventDefault()" @touchend="event.preventDefault()" @touchcancel="event.preventDefault()">
                 <IconsInstaArrow />
             </button>
         </div>
@@ -88,7 +88,7 @@ export default {
                 this.moveX = 0;
             }
         },
-        nextCard () {
+        nextCard (event) {
             const social = document.querySelector(".social")
             const cards = document.querySelectorAll(".social__card")
             const lastCards = social.offsetWidth / (cards[0].offsetWidth + 30);
@@ -134,7 +134,7 @@ export default {
                 this.number--;
                 this.next = true;
             }
-        }
+        },
     },
 
 
