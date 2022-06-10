@@ -47,37 +47,33 @@ export default {
     },
     methods: {
         swipeStart ( event ) {
+            // event.preventDefault();
             this.startX = event.touches[0].clientX;
         },
         swipeMove ( event ) {
+            event.preventDefault();
             this.moveX = event.touches[0].clientX;
         },
         swipeEnd () {
-            console.log("startX: ", this.startX)
-            console.log("moveX: ", this.moveX)
+            // console.log("startX: ", this.startX)
+            // console.log("moveX: ", this.moveX)
 
             if ( this.startX + 50 < this.moveX ) {
                 console.log("right");
                 this.previousCard();
                 this.startX = 0;
                 this.moveX = 0;
-
-                document.body.style.overflow = "hidden";
             }
             else if ( this.moveX != 0 && this.startX - 50 > this.moveX ) {
                 console.log("left");
                 this.nextCard();
                 this.startX = 0;
                 this.moveX = 0;
-
-                document.body.style.overflow = "hidden";
             }
-
-            document.body.style.overflow = "auto";
         },
         swipeCancel () {
-            console.log("startX: ", this.startX)
-            console.log("moveX: ", this.moveX)
+            // console.log("startX: ", this.startX)
+            // console.log("moveX: ", this.moveX)
 
             if ( this.startX + 50 < this.moveX ) {
                 console.log("right");
