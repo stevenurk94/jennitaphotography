@@ -42,8 +42,8 @@ export default {
         )
     },
     mounted () {
-        // this.nextCard();
-        // setInterval(this.nextCard, 6000);
+        this.nextCard();
+        setInterval(this.nextCard, 6000);
     },
     methods: {
         swipeStart ( event ) {
@@ -56,30 +56,36 @@ export default {
             console.log("startX: ", this.startX)
             console.log("moveX: ", this.moveX)
 
-            if ( this.startX + 100 < this.moveX ) {
+            if ( this.startX + 50 < this.moveX ) {
                 console.log("right");
                 this.previousCard();
                 this.startX = 0;
                 this.moveX = 0;
+
+                document.body.style.overflow = "hidden";
             }
-            else if ( this.moveX != 0 && this.startX - 100 > this.moveX ) {
+            else if ( this.moveX != 0 && this.startX - 50 > this.moveX ) {
                 console.log("left");
                 this.nextCard();
                 this.startX = 0;
                 this.moveX = 0;
+
+                document.body.style.overflow = "hidden";
             }
+
+            document.body.style.overflow = "auto";
         },
         swipeCancel () {
             console.log("startX: ", this.startX)
             console.log("moveX: ", this.moveX)
 
-            if ( this.startX + 100 < this.moveX ) {
+            if ( this.startX + 50 < this.moveX ) {
                 console.log("right");
                 this.previousCard();
                 this.startX = 0;
                 this.moveX = 0;
             }
-            else if ( this.moveX != 0 && this.startX - 100 > this.moveX ) {
+            else if ( this.moveX != 0 && this.startX - 50 > this.moveX ) {
                 console.log("left");
                 this.nextCard();
                 this.startX = 0;
