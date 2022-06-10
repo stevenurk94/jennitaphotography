@@ -14,7 +14,7 @@
             <button @click="previousCard" :class="this.number == 0 ? 'previous disabled' : 'previous'">
                 <IconsInstaArrow />
             </button>
-            <button  @click="nextCard" :class="!this.next ? 'next disabled' : 'next'">
+            <button @click="nextCard" :class="!this.next ? 'next disabled' : 'next'" @touchstart.stop @touchmove.stop @touchend.stop @touchcancel.stop>
                 <IconsInstaArrow />
             </button>
         </div>
@@ -99,7 +99,6 @@ export default {
             if (cards == 1) {
                 this.card = 0; 
             }
-
 
             cards.forEach(card => {
                 if (this.number < (this.posts.data.length - lastCards)) {
