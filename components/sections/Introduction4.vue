@@ -70,12 +70,15 @@ section {
     grid-row: span 2;
     width: 100%;
     margin-right: 100px;
+    /* border-radius: var(--border-radius);
+    overflow: hidden; */
 }
 
 .introduction__img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: center;
     border-radius: var(--border-radius);
     min-width: 200px;
 }
@@ -135,12 +138,12 @@ section {
 @media only screen and (max-width: 767px) {
 
     .introduction {
-        grid-template-columns: min-content(4, 1fr);
+        grid-template-columns: repeat(6, 1fr);
 
     }
 
     .introduction__img {
-        grid-column: span 1;
+        grid-column: span 2;
         margin-top: -140%;
 
     }
@@ -151,7 +154,7 @@ section {
 
 
     .introduction__title {
-        grid-column: span 3;
+        grid-column: span 4;
         margin-top: calc(-17% - 45px);
         height: min-content;
 
@@ -159,7 +162,7 @@ section {
 
 
     .introduction__text {
-        grid-column: span 4;
+        grid-column: span 5;
         padding-left: 0;
 
     }
@@ -167,8 +170,21 @@ section {
 }
 
 
+@media only screen and (max-width: 422px) {
+
+    .introduction__title h1 {
+        font-size: calc(22px + .6vmax);
+    }
+
+}
 
 
+@media only screen and (max-width: 406px) {
+    .introduction__title {
+        margin-top: calc(-12% - 95px);
+    }
+
+}
 
 
 
