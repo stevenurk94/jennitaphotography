@@ -12,8 +12,14 @@
 		</section>
 
 		<PagepartsIntro />
+		
+		<!-- <SectionsIntroduction2 />
+		<SectionsIntroduction /> -->
+		<SectionsIntroduction4 />
 
-		<SectionsInstaCollage />
+		<!-- <SectionsInstaCollage /> -->
+
+		<!-- <SectionsInstaCollage3 /> -->
 
 		<!-- <SectionsInstaCollage2 /> -->
 

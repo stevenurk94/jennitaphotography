@@ -195,11 +195,9 @@ section {
 }
 
 section > div {
-    
     clip-path: inset(0);
     position: relative;
-    /* height: 100%; */
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 

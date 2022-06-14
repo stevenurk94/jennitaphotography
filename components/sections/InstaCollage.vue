@@ -14,7 +14,7 @@
             <button @click="previousCard" :class="this.number == 0 ? 'previous disabled' : 'previous'">
                 <IconsInstaArrow />
             </button>
-            <button @click="nextCard" :class="!this.next ? 'next disabled' : 'next'" @touchstart="event.preventDefault()" @touchmove="event.preventDefault()" @touchend="event.preventDefault()" @touchcancel="event.preventDefault()">
+            <button @click="nextCard" :class="!this.next ? 'next disabled' : 'next'">
                 <IconsInstaArrow />
             </button>
         </div>
@@ -34,6 +34,7 @@ export default {
             next: true,
             startX: 0,
             moveX: 0,
+            clone: 0,
         }
     },
     async fetch() {
@@ -96,6 +97,10 @@ export default {
             if (this.number < (this.posts.data.length - lastCards)) {
                 this.card = this.card + (cards[0].offsetWidth + 30);
             }
+
+            else {
+                this.card = this.card + (cards[0].offsetWidth + 30);
+            }
             if (cards == 1) {
                 this.card = 0; 
             }
@@ -104,13 +109,41 @@ export default {
                 if (this.number < (this.posts.data.length - lastCards)) {
                     card.style.left = `-${ this.card }px`;                    
                 }
+
+
+                else {
+                    card.style.left = `-${ this.card }px`;  
+                }
             })
 
-            if (this.number < (this.posts.data.length - lastCards)) {
+            if (this.number < ((this.posts.data.length - 1) - lastCards)) {
                 this.number++;
                 this.next = true;
             } else {
-                this.next = false;
+                // this.next = false;
+
+
+                // Per clone
+                // this.number++;
+                // this.next = true;
+                // const clone = ((this.number + 1) + 6 + this.clone) - cards.length;
+                // const lastClone = cards[clone].cloneNode(true)
+                // social.append(lastClone)
+                // this.clone++;
+
+                // Per gallery
+                this.number++;
+                this.next = true;
+                // const clone = social.cloneNode(true);
+                cards.forEach(card => {
+                    let test = card.cloneNode(true)
+                    social.append(test)
+                })
+
+                // console.log(clone)
+                // social.append(clone);
+
+
             }
         },
         previousCard () {
@@ -158,6 +191,9 @@ export default {
 </script>
 
 <style scoped>
+
+
+
 section {
     margin-top: 100px;
     width: 100%;
@@ -180,6 +216,7 @@ section {
     height: fit-content;
     align-items: center;
     margin-top: 30px;
+    touch-action: pan-y;
 }
 
 .social::-webkit-scrollbar {
