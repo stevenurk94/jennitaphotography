@@ -29,7 +29,6 @@
 
             <div class="introduction__title">
                 <h1>Even voorstellen</h1>
-
             </div>
             
             <div class="introduction__text"> 
@@ -48,7 +47,7 @@
 <style scoped>
 
 section {
-    margin: 50px 0 0 0;
+    margin: 350px 0 0 0;
     padding: 5% 0;
     background-color: var(--clr-1-3);
     max-width: 100%;
@@ -64,6 +63,9 @@ section {
     width: 90%;
 }
 
+
+/* ########## INTRODUCTION IMAGE ########## */
+
 .introduction__img {
     grid-row: span 2;
     width: 100%;
@@ -77,6 +79,9 @@ section {
     border-radius: var(--border-radius);
     min-width: 200px;
 }
+
+
+/* ########## INTRODUCTION TITLE ########## */
 
 .introduction__title {
     width: 100%;
@@ -107,6 +112,10 @@ section {
     left: 0;    
 }
 
+
+
+/* ########## INTRODUCTION TEXT ########## */
+
 .introduction__text {
     width: 100%;
     grid-column: span 3;
@@ -122,7 +131,53 @@ section {
 }
 
 
+
 @media only screen and (max-width: 767px) {
+
+    .introduction {
+        grid-template-columns: min-content(4, 1fr);
+
+    }
+
+    .introduction__img {
+        grid-column: span 1;
+        margin-top: -140%;
+
+    }
+
+    .introduction__img img {
+        min-width: 100%;
+    }
+
+
+    .introduction__title {
+        grid-column: span 3;
+        margin-top: calc(-17% - 45px);
+        height: min-content;
+
+    }
+
+
+    .introduction__text {
+        grid-column: span 4;
+        padding-left: 0;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 0) {
+
+    /* 767PX */
 
     section {
         margin-top: 400px;
@@ -133,9 +188,11 @@ section {
         display: flex;
         flex-wrap: wrap;
         align-items: flex-end;
-
     }
 
+
+
+    /* ########## INTRODUCTION IMAGE ########## */
     .introduction__img {
         width: 35%;
         margin-right: 7%;
@@ -149,6 +206,9 @@ section {
         width: 100%;
     }
 
+
+
+    /* ########## INTRODUCTION TITLE ########## */
     .introduction__title {
         width: fit-content;
         padding-left: 0;
@@ -157,6 +217,9 @@ section {
         width: 55%;
     }
 
+
+
+    /* ########## INTRODUCTION TEXT ########## */
     .introduction__text {
         padding-left: 0;
         margin-top: 5%;
@@ -164,17 +227,23 @@ section {
 
 }
 
-@media only screen and (max-width: 448px)  {
+@media only screen and (max-width: 0)  {
+
+    /* 448PX */
 
     section {
         padding-top: 5%;
     }
 
+
+    /* ########## INTRODUCTION IMAGE ########## */
     .introduction__img {
         padding-bottom: 10%;
     }
     
 
+
+    /* ########## INTRODUCTION TITLE ########## */
     .introduction__title {
         margin-top: calc(-35% - 10px);
         padding-bottom: 12%;
@@ -182,11 +251,20 @@ section {
 
     .introduction__title h1 {
         font-size: calc(21px + .4vmax);
-
     }
 
+
+
+    /* ########## INTRODUCTION TEXT ########## */
     .introduction__text {
         margin-top: 0;
+    }
+
+    .introduction__text a {
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
