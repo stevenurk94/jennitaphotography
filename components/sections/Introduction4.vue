@@ -144,8 +144,9 @@ section {
 
     .introduction__img img {
         height: fit-content;
-        object-fit: cover;
+        object-fit: contain;
         min-width: 100%;
+        width: 100%;
     }
 
     .introduction__title {
