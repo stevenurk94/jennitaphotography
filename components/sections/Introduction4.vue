@@ -135,7 +135,7 @@ section {
 
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 960px) {
 
     .introduction {
         grid-template-columns: repeat(6, 1fr);
@@ -162,11 +162,22 @@ section {
 
 
     .introduction__text {
-        grid-column: span 5;
+        grid-column: span 6;
         padding-left: 0;
+        margin-top: 25px;
 
     }
 
+}
+
+
+@media only screen and (max-width: 640px) {
+    .introduction__text a {
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 
@@ -179,7 +190,7 @@ section {
 }
 
 
-@media only screen and (max-width: 406px) {
+@media only screen and (max-width: 395.5px) {
     .introduction__title {
         margin-top: calc(-12% - 95px);
     }
