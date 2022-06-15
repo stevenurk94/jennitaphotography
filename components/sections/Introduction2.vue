@@ -1,88 +1,109 @@
 <template>
     <section>
-        <h1>Even voorstellen...</h1>
-        <div>
-            <div>
-                <div>
-                    <picture>
-                        <source
-                            type="image/webp"
-                            sizes="
-                                (max-width: 320px) 160px,
-                                (min-width: 320px) and (max-width: 520px) 320px,
-                                (min-width: 520px) 640px"
-                            srcset="
-                                ~/assets/intro_picture/webp_2_160.webp 160w,
-                                ~/assets/intro_picture/webp_2_320.webp 320w,
-                                ~/assets/intro_picture/webp_2_640.webp 640w">
-                        <source
-                            type="image/jpeg"
-                            sizes="
-                                (max-width: 320px) 160px,
-                                (min-width: 320px) and (max-width: 520px) 320px,
-                                (min-width: 520px 640px"
-                            srcset="
-                                ~/assets/intro_picture/jpg_2_160.jpeg 160w,
-                                ~/assets/intro_picture/jpg_2_320.jpeg 320w,
-                                ~/assets/intro_picture/jpg_2_640.jpeg 640w">
-                        <img src="~/assets/intro_picture/jpg_2_640.jpeg" alt="Foto Jennita">
-                    </picture>
-                    <div>
-                        <p>Heeey, welkom!</p>
-                        <p>Leuk dat je een kijkje neemt op mijn website. Ik ben Jennita Altena en ik verkoop sinds 2021 mijn eigen fotokaarten. Van deze opbrengst gaat 25% naar het goede doel 'Kom over en help'.</p>
-                        <p>'Kom over en help' steunen mensen die in kwetsbare omstandigheden leven. Door middel van mijn kaartenverkoop wil ik daar graag een steentje aan bijdragen. Mede doordat wij in Nederland zo rijk gezegend zijn met het vele wat wij mogen ontvangen en wat juist deze mensen moeten missen.</p>
-                        <p>Door jouw bestelling te plaatsen, help jij ook deze mensen.</p>
-                        <p>Zie ik jou?</p>
-                        <p>Groetjes, Jennita</p>
-                        
-                        <NuxtLink class="button-1" to="/kaarten/">Fotokaarten bestellen</NuxtLink>
-
-                    </div>               
-                    
-
-
-
-                </div>
-                
+        <div class="introduction">
+            <div class="introduction__img">
+                <picture>
+                    <source
+                        type="image/webp"
+                        sizes="
+                            (max-width: 320px) 160px,
+                            (min-width: 320px) and (max-width: 520px) 320px,
+                            (min-width: 520px) 640px"
+                        srcset="
+                            ~/assets/intro_picture/webp_2_160.webp 160w,
+                            ~/assets/intro_picture/webp_2_320.webp 320w,
+                            ~/assets/intro_picture/webp_2_640.webp 640w">
+                    <source
+                        type="image/jpeg"
+                        sizes="
+                            (max-width: 320px) 160px,
+                            (min-width: 320px) and (max-width: 520px) 320px,
+                            (min-width: 520px 640px"
+                        srcset="
+                            ~/assets/intro_picture/jpg_2_160.jpeg 160w,
+                            ~/assets/intro_picture/jpg_2_320.jpeg 320w,
+                            ~/assets/intro_picture/jpg_2_640.jpeg 640w">
+                    <img src="~/assets/intro_picture/jpg_2_640.jpeg" alt="Foto Jennita">
+                </picture>
             </div>
-        </div>
 
-
-        <!-- <div>
-            <div>
-                <p>Heee, welkom!</p>
-                <p>Leuk dat je een kijkje neemt op mijn site.</p>
-                <p>Ik ben Jennita Altena en verkoop mijn eigen fotokaarten sinds 2021. Met deze kaartenverkoop gaat 25% naar het goede doel 'Kom over en help'.</p>
-                <p>'Kom over en help' steunen mensen die in kwetsbare omstandigheden leven en door middel van mijn kaartenverkoop wil ik daar graag een steentje aan bijdragen. Want hoe rijk zijn wij in Nederland gezegend met dat wat wij allemaal mogen ontvangen in tegenstelling tot wat deze mensen moeten missen…?!</p>
-                <p>Door jouw bestelling te plaatsen, help je deze mensen.</p>
+            <div class="introduction__title">
+                <h1>Even voorstellen</h1>
+            </div>
+            
+            <div class="introduction__text"> 
+                <p>Heeey, welkom!</p>
+                <p>Leuk dat je een kijkje neemt op mijn website. Ik ben Jennita Altena en ik verkoop sinds 2021 mijn eigen fotokaarten. Van deze opbrengst gaat 25% naar het goede doel 'Kom over en help'.</p>
+                <p>'Kom over en help' steunen mensen die in kwetsbare omstandigheden leven. Door middel van mijn kaartenverkoop wil ik daar graag een steentje aan bijdragen. Mede doordat wij in Nederland zo rijk gezegend zijn met het vele wat wij mogen ontvangen en wat juist deze mensen moeten missen.</p>
+                <p>Door jouw bestelling te plaatsen, help jij ook deze mensen.</p>
                 <p>Zie ik jou?</p>
-                <p>Liefs, Jennita</p>
+                <p>Groetjes, Jennita</p>
                 <NuxtLink class="button-1" to="/kaarten/">Fotokaarten bestellen</NuxtLink>
-            </div>
-            <img src="~/assets/home-picture.jpg" alt="">
-        </div> -->
+            </div>         
+        </div>
     </section>
 </template>
 
 <style scoped>
 
 section {
-    margin: 50px 0;
+    margin: 350px 0 0 0;
+    padding: calc(3% + 20px) 0;
+    background-color: var(--clr-1-3);
     max-width: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-section h1 {
-    color: var(--clr-1-1);
-    margin-bottom: 50px;
-    position: relative;
+.introduction {
+    max-width: var(--website-width);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+}
+
+
+/* ########## INTRODUCTION IMAGE ########## */
+
+.introduction__img {
+    grid-row: span 2;
+    width: 100%;
+    margin-right: 100px;
+    /* border-radius: var(--border-radius);
+    overflow: hidden; */
+}
+
+.introduction__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: var(--border-radius);
+    min-width: 200px;
+}
+
+
+/* ########## INTRODUCTION TITLE ########## */
+
+.introduction__title {
+    width: 100%;
+    grid-column: span 3;
+    display: flex;
+    align-items: flex-end;
+    /* padding-bottom: 20px; */
     width: fit-content;
-    left: 0;
-    right: 0;
-    margin: 0 auto 60px auto;
+    margin-bottom: 45px;
+    padding-left: 10%;
 }
 
-section h1::after {
+.introduction__title h1 {
+    position: relative;
+    color: var(--clr-1-1);
+
+}
+
+.introduction__title h1::after {
     content: "";
     position: absolute;
     border-radius: var(--border-radius);
@@ -91,120 +112,107 @@ section h1::after {
     background-color: var(--clr-1-2);
     bottom: -10px;
     right: 0;
-    left: 0;
-    margin: auto;
+    left: 0;    
 }
 
-section > div {
+
+
+/* ########## INTRODUCTION TEXT ########## */
+
+.introduction__text {
     width: 100%;
-    background-color: var(--clr-1-3);
-    padding: 50px 0;
+    grid-column: span 3;
+    padding-left: 10%;
 }
 
-section > div > div {
-    max-width: var(--website-width);
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
-section > div > div > div {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin: 40px 0;
-}
-
-section > div > div > div > div {
-    width: 100%;
-}
-
-
-
-section > div > div > div > div p {
-    width: 100%;
+.introduction__text p {
     margin-bottom: 10px;
 }
 
-section > div > div > div > div a {
-    margin-top: 50px;
+.introduction__text a {
+    margin-top: 35px;
 }
 
 
-/* ########## INTRODUCTION IMAGE ########## */
-section > div > div picture {
-    width: 35%;
-    height: 100%;
-    margin-right: 100px;
-}
 
+@media only screen and (max-width: 960px) {
 
-section > div > div > div img {
-    width: 100%;
-    object-fit: cover;
+    .introduction {
+        grid-template-columns: repeat(6, 1fr);
 
-} 
-
-
-
-/* @media only screen and (max-width: 1200px) {
-
-    section > div {
-        padding: 30px;
-        margin: calc(10px + 2%) 0;
     }
 
-    section div div img {
-        width: calc(150px + 15%);
-        height: auto;
-        object-fit: cover;
-        margin: -140px 0 0 10px;
-        border-radius: var(--border-radius);
+    .introduction__img {
+        grid-column: span 2;
     }
 
-    section div div p {
-        width: 62%;
+    .introduction__img img {
+        min-width: 100%;
     }
- 
-}
 
-@media only screen and (max-width: 767px) {
 
-    section {
+    .introduction__title {
+        grid-column: span 4;
+        grid-row: span 2;
         width: 100%;
-        margin-bottom: 0;
-    }
-    section > div {
-        width: 100%;
-        padding: 0;
-        border-radius: 0;
-        padding: 5% 0 10% 0;
-        margin-bottom: 0;
+        height: 100%;
+        padding-bottom: 8%;
+
+
     }
 
-    section div div {
-        width: 90%;
+
+    .introduction__text {
+        grid-column: span 6;
+        padding-left: 0;
+        margin-top: 25px;
+        
+    }
+
+}
+
+
+@media only screen and (max-width: 640px) {
+
+    .introduction {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .introduction__img {
+        grid-column: span 1;
+    }
+
+    .introduction__title {
+        grid-column: span 1;
+        padding-bottom: 12%;
+
+    }
+
+    .introduction__text {
+        grid-column: span 2;
+    }
+
+
+
+    .introduction__text a {
         left: 0;
         right: 0;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+
+@media only screen and (max-width: 549px) {
+
+    .introduction__title h1 {
+        font-size: calc(22px + .6vmax);
     }
 
-    section div div img {
-        width: 45%;
-        margin: 0 0 0 2%;
-    }
+}
 
-    section div div p {
-        width: auto;
-    }
 
-    section div a {
-        max-width: 90%;
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
-} */
 
 
 </style>

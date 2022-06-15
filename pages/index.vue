@@ -13,17 +13,15 @@
 
 		<PagepartsIntro />
 		
-		<!-- <SectionsIntroduction2 />
-		<SectionsIntroduction /> -->
+
+		<SectionsIntroduction2 />
 		<SectionsIntroduction4 />
 
+
+
 		<!-- <SectionsInstaCollage /> -->
-
-		<!-- <SectionsInstaCollage3 /> -->
-
 		<!-- <SectionsInstaCollage2 /> -->
-
-		
+		<!-- <SectionsInstaCollage3 /> -->
 		
 		<!-- <section class="home2">
 			<div class="home2__block">

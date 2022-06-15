@@ -48,7 +48,7 @@
 
 section {
     margin: 350px 0 0 0;
-    padding: 5% 0;
+    padding: calc(3% + 20px) 0;
     background-color: var(--clr-1-3);
     max-width: 100%;
     width: 100%;
@@ -144,7 +144,8 @@ section {
 
     .introduction__img {
         grid-column: span 2;
-        margin-top: -140%;
+        margin-top: -120%; 
+        /* 140% */
 
     }
 
@@ -172,6 +173,26 @@ section {
 
 
 @media only screen and (max-width: 640px) {
+
+    .introduction {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .introduction__img {
+        grid-column: span 1;
+    }
+
+    .introduction__title {
+        grid-column: span 1;
+        margin-top: calc(-12% - 80px);
+    }
+
+    .introduction__text {
+        grid-column: span 2;
+    }
+
+
+
     .introduction__text a {
         left: 0;
         right: 0;
@@ -181,7 +202,8 @@ section {
 }
 
 
-@media only screen and (max-width: 422px) {
+
+@media only screen and (max-width: 563px) {
 
     .introduction__title h1 {
         font-size: calc(22px + .6vmax);
@@ -190,110 +212,14 @@ section {
 }
 
 
-@media only screen and (max-width: 395.5px) {
+@media only screen and (max-width: 542px) {
     .introduction__title {
-        margin-top: calc(-12% - 95px);
+        margin-top: calc(-14% - 110px);
     }
 
 }
 
 
-
-
-
-
-@media only screen and (max-width: 0) {
-
-    /* 767PX */
-
-    section {
-        margin-top: 400px;
-        padding: calc(5% + 20px) 0;
-    }
-
-    .introduction {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-end;
-    }
-
-
-
-    /* ########## INTRODUCTION IMAGE ########## */
-    .introduction__img {
-        width: 35%;
-        margin-right: 7%;
-        margin-top: calc(-40% - 50px);
-    }
-
-    .introduction__img img {
-        height: fit-content;
-        object-fit: contain;
-        min-width: 100%;
-        width: 100%;
-    }
-
-
-
-    /* ########## INTRODUCTION TITLE ########## */
-    .introduction__title {
-        width: fit-content;
-        padding-left: 0;
-        margin-top: -35%;
-        padding-bottom: calc(10% + 23px);
-        width: 55%;
-    }
-
-
-
-    /* ########## INTRODUCTION TEXT ########## */
-    .introduction__text {
-        padding-left: 0;
-        margin-top: 5%;
-    }
-
-}
-
-@media only screen and (max-width: 0)  {
-
-    /* 448PX */
-
-    section {
-        padding-top: 5%;
-    }
-
-
-    /* ########## INTRODUCTION IMAGE ########## */
-    .introduction__img {
-        padding-bottom: 10%;
-    }
-    
-
-
-    /* ########## INTRODUCTION TITLE ########## */
-    .introduction__title {
-        margin-top: calc(-35% - 10px);
-        padding-bottom: 12%;
-    }
-
-    .introduction__title h1 {
-        font-size: calc(21px + .4vmax);
-    }
-
-
-
-    /* ########## INTRODUCTION TEXT ########## */
-    .introduction__text {
-        margin-top: 0;
-    }
-
-    .introduction__text a {
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
 
 
 
