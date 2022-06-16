@@ -3,18 +3,20 @@
 	<main>
 		<SectionsHeroSlider />
 		
-		<section class="home">
+		<!-- <section class="home">
 			<div class="home__block">
 				<h1>Steun het goede doel</h1>
 				<h2>Kom over en help</h2>
 				<NuxtLink class="button-1" to="/kaarten/">Fotokaarten bekijken</NuxtLink>
 			</div>
-		</section>
+		</section> -->
 
-		<!-- <SectionsHero /> -->
+		<SectionsHero />
 
 
 		<SectionsIntroduction />
+
+		<SectionsQuote />
 
 		
 

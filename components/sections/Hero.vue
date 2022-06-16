@@ -38,7 +38,10 @@ section > div {
 
 h1 {
 	color: white;
-	font-size: 88px;
+	/* font-size: 88px; */
+
+	font-size: clamp(55px, 8vw, 88px);
+
 	line-height: 1.3;
 	margin-bottom: 1%;
     font-weight: 600;
@@ -50,15 +53,8 @@ h2 {
 	letter-spacing: 1px;
 	margin: 10px 0 65px 0;
     font-weight: 500;
-    font-size: 30px;
-}
-
-@media only screen and (max-width: 767px) {
-	h1 {
-		font-size: calc(32px + 2vmax);
-		line-height: 1.1;
-		margin-bottom: 5%;
-	}
+    /* font-size: 30px; */
+	font-size: clamp(20px, 4vw, 30px);
 }
 
 
