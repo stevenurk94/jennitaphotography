@@ -6,7 +6,7 @@
         <section>
             
             
-            <form @submit.prevent="savePaymethod">
+            <form name="checkout" @submit.prevent="savePaymethod">
                 <p class="message orange">Er ging iets fout met betalen, probeer het opnieuw</p>
                 
 

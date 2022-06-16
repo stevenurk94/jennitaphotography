@@ -9,7 +9,7 @@
                 <p v-for="error in errors" :key="error.id" class="message orange">{{ error.message }}<IconsCross @click="closeError"/></p>
             </div>
             
-            <form @submit.prevent="betalen" class="overview__checkout">
+            <form name="checkout" @submit.prevent="betalen" class="overview__checkout">
                 <h2 class="title">Overzicht</h2>                
                 <button type="submit" class="button-1" :class="loading ? 'disabled' : ''">Bestellen en betalen<IconsButtonLoading v-if="loading" /></button>
             </form>
@@ -115,7 +115,7 @@
 
             </div>
 
-            <form @submit.prevent="betalen" class="overview__summary">
+            <form name="checkout" @submit.prevent="betalen" class="overview__summary">
 
                 <div class="overview__summary__item">
                     <h3>Verzending</h3>

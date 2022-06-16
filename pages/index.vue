@@ -1,7 +1,7 @@
 <template>
 
 	<main>
-		<PagepartsHomeSlider />
+		<SectionsHeroSlider />
 		
 		<section class="home">
 			<div class="home__block">
@@ -11,11 +11,12 @@
 			</div>
 		</section>
 
-		<PagepartsIntro />
-		
+		<!-- <SectionsHero /> -->
 
-		<SectionsIntroduction2 />
-		<SectionsIntroduction4 />
+
+		<SectionsIntroduction />
+
+		
 
 
 

@@ -28,7 +28,7 @@
             </div>
 
             <div class="introduction__title">
-                <h1>Even voorstellen</h1>
+                <h1 class="accent-left">Even voorstellen</h1>
             </div>
             
             <div class="introduction__text"> 
@@ -98,21 +98,7 @@ section {
 }
 
 .introduction__title h1 {
-    position: relative;
     color: var(--clr-1-1);
-
-}
-
-.introduction__title h1::after {
-    content: "";
-    position: absolute;
-    border-radius: var(--border-radius);
-    width: 40%;
-    height: 2.5px;
-    background-color: var(--clr-1-2);
-    bottom: -10px;
-    right: 0;
-    left: 0;    
 }
 
 

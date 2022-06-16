@@ -4,7 +4,7 @@
         <PagepartsStepIndicator :items="stepindicator" />
 
         <section>
-            <form @submit.prevent="saveCustomerDetails($event)">
+            <form name="checkout" @submit.prevent="saveCustomerDetails($event)">
                 <h2 class="title">Gegevens</h2>
                 
                 <div class="input half">

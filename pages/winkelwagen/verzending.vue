@@ -3,7 +3,7 @@
 
         <PagepartsStepIndicator :items="stepindicator" />
         <section>
-            <form @submit.prevent="saveShipping">
+            <form name="checkout" @submit.prevent="saveShipping">
                 <h2 class="title">Verzending</h2>
 
                 <input type="radio" id="shipping" name="shipping" :checked="shipping == null || shipping == 'Verzending via PostNL'" value="Verzending via PostNL">
