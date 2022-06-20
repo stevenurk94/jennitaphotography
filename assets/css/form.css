@@ -85,7 +85,8 @@ form .input input:hover, form .input input:focus, form .input input.filled {
     border: 1px solid var(--clr-1-1);
 }
 
-form .input input:focus ~ .input__label, form .input input.filled ~ .input__label {
+form .input input:focus ~ .input__label, 
+form .input input.filled ~ .input__label {
     transform: scale(.75) translate(-3px, -36px);
     padding: 2px 5px;
     color: var(--clr-1-1);
