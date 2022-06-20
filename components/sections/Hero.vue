@@ -1,18 +1,15 @@
 <template>
     <section>
-        <div>
+        <div class="home__block">
             <h1>Steun het goede doel</h1>
-            <h2 class="accent-left-white">Kom over en help</h2>
+            <h2>Kom over en help</h2>
             <NuxtLink class="button-1" to="/kaarten/">Fotokaarten bekijken</NuxtLink>
         </div>
     </section>
 </template>
 
 
-
 <style scoped>
-
-
 
 section {
 	background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 50%));
@@ -24,39 +21,43 @@ section {
 	z-index: 1;
 }
 
-section > div {
+.home__block {
 	top: 0;
 	right: 0;
 	left: 0;
 	bottom: 0;
 	margin: auto;
-	max-width: var(--website-width);
-    width: 95%;
+	max-width: 90%;
 	border-radius: var(--border-radius);
-
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-h1 {
+.home__block h1 {
 	color: white;
-	/* font-size: 88px; */
-
-	font-size: clamp(55px, 8vw, 88px);
-
+	font-size: 50px;
 	line-height: 1.3;
+	text-align: center;
 	margin-bottom: 1%;
-    font-weight: 600;
 }
 
-h2 {
+.home__block h2 {
 	color: white;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	margin: 10px 0 65px 0;
-    font-weight: 500;
-    /* font-size: 30px; */
-	font-size: clamp(20px, 4vw, 30px);
+	margin: 10px 0 45px 0;
+	text-align: center;
 }
 
+@media only screen and (max-width: 767px) {
+	.home__block h1 {
+		font-size: calc(32px + 2vmax);
+		line-height: 1.1;
+		margin-bottom: 5%;
+	}
+}
 
 </style>
 

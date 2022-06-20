@@ -47,30 +47,38 @@
 
             <div class="contact">
                 <div class="contact__info">
-                    <h2 class="contact__info__title accent-left-white">Contact</h2>
+                    <h2 class="contact__info__title accent-left">Contact</h2>
                     <p class="contact__info__intro">Heb je vragen of opmerkingen? Dan kun je contact met ons opnemen via onderstaand emailadres of het contactformulier op deze pagina.</p>
 
                     <p class="contact__info__label"><strong>EMAIL</strong></p>
                     <a class="underline-white" href="mailto:info@jennitaphotography.nl"><p>info@jennitaphotography.nl</p></a>
+
                 </div>
+
+
                 <form class="contact__form" @submit.prevent="test($event)">
                     <h2 class="contact__form__title">Contactformulier</h2>
                     <p class="contact__form__intro">Vul het formulier hieronder in en we nemen zo snel mogelijk contact met je op.</p>
-                    <div class="contact__form__input">
-                        <input name="name" type="text">
-                        <span class="contact__form__input__label">Naam</span>
+                    <div class="contact__form__wrap">
+                        <input class="contact__form__wrap__input" name="name" type="text">
+                        <span class="contact__form__wrap__label">Naam *</span>
                     </div>
-                    <div class="contact__form__input">
-                        <input name="emailadress" type="text">
-                        <span class="contact__form__input__label">E-mailadres</span>
+                    <div class="contact__form__wrap">
+                        <input 
+                            class="contact__form__wrap__input"
+                            name="emailadress" 
+                            type="text" 
+                            maxlength="150" 
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                        <span class="contact__form__wrap__label">E-mailadres *</span>
                     </div>
-                    <div class="contact__form__input">
-                        <input name="phonenumber" type="text">
-                        <span class="contact__form__input__label">Telefoonnummer</span>
+                    <div class="contact__form__wrap">
+                        <input class="contact__form__wrap__input" name="phonenumber" type="text">
+                        <span class="contact__form__wrap__label">Telefoonnummer</span>
                     </div>
-                    <div class="contact__form__input">
-                        <textarea name="message"></textarea>
-                        <span class="contact__form__input__label">Bericht</span>
+                    <div class="contact__form__wrap">
+                        <textarea class="contact__form__wrap__textarea" name="message"></textarea>
+                        <span class="contact__form__wrap__label">Bericht</span>
                     </div>
                     <button class="button-1" type="submit">Bericht versturen</button>
                 </form>
@@ -83,6 +91,10 @@
     </main>
     
 </template>
+
+
+
+
 
 <script>
 export default {
@@ -138,12 +150,34 @@ export default {
             //     console.log("Error catch 3: ", e.message);
             // })
         }
+    },
+    mounted () {
+        // const form = document.querySelector("form");
+        // const formChilds = document.querySelectorAll("form input");
+
+        // function filled () {
+        //     formChilds.forEach((item) => {
+        //         item.classList.remove("filled");
+
+        //         if ( item.value ) {
+        //             item.classList.add("filled");
+        //         } else {
+        //             item.classList.remove("filled");
+        //         }  
+        //     })
+        // }
+        // setTimeout(function() {
+        //     filled();
+	    // }, 300);
+
+        // form.addEventListener("input", () => {
+        //     filled();
+        // });
     }
 }
 </script>
 <style scoped>
 
-/*  Using GAP i.c.m. FLEXBOX  */
 
 /* ########## HEADER ########## */
 .hero {
@@ -210,21 +244,21 @@ export default {
     max-width: var(--website-width);
     height: fit-content;
 
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.80);
     border-radius: var(--border-radius);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); */
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
 }
 
-.contact h2, .contact strong {
+/* .contact h2, .contact strong {
     color: rgba(255 255 255 / 100%);
-}
+} */
 
-.contact p {
+/* .contact p {
     color: rgba(255 255 255 / 90%);
-}
+} */
 
 
 /* ########## CONTACT INFO ########## */
@@ -264,215 +298,89 @@ export default {
 .contact__form {
     margin-left: 5%;
     width: 50%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
+
+/* ### TITLE ### */
 .contact__form__title {
     margin-bottom: 1%;
 }
 
+
+/* ### INTRO ### */
 .contact__form__intro {
     margin-bottom: 7.5%;
 }
 
 
-.contact__form__input {
-    margin: 20px 0px;
+/* ### FORM INPUT LABEL ### */
+.contact__form__wrap__label {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    /* color: rgba(255 255 255 / 70%); */
+    transition: all 300ms ease-in-out;
+    transform-origin: bottom left;
+    pointer-events: none;
+    background: transparent;
+}
+
+
+
+
+
+/* ### FORM WRAP ### */
+.contact__form__wrap {
+    margin: 15px 0px;
     position: relative;
     width: 100%;
 }
 
+
+/* ### FORM WRAP INPUT ### */
+.contact__form__wrap input, 
+.contact__form__wrap textarea {
+    /* border-radius: var(--border-radius); */
+    /* border: 1px solid #999; */
+    padding: 13px 15px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    /* color: white; */
+    border: none;
+    border-bottom: 1px solid var(--clr-1-3);
+}
+
+.contact__form__wrap__textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+
+/* ### FORM INPUT ### */
+.contact__form__wrap__input:focus ~ .contact__form__wrap__label,
+.contact__form__wrap__textarea:focus ~ .contact__form__wrap__label {
+    transform: scale(.75) translate(1px, -36px);
+}
+
+
+/* ### BUTTON ### */
 .contact__form button {
     margin-top: 10%;
 }
 
-.contact__form__input input, 
-.contact__form__input textarea {
-    border-radius: var(--border-radius);
-    border: 1px solid #999;
-    padding: 13px 15px;
-    font-family: 'Work Sans', sans-serif;
-    font-size: 16px;
-    width: 100%;
-    height: 100%;
-    transition: all 300ms ease-in-out;
-    background: transparent;
-
-
-
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.contact__form__input textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-.contact__form__input__label {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    font-family: 'Work Sans', sans-serif;
-    font-size: 16px;
-    background: white;
-    color: #555;
-    transition: all 300ms ease-in-out;
-    transform-origin: bottom left;
-    pointer-events: none;
-    height: fit-content;
-    width: fit-content;
-    background-color: transparent;
-}
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-section:last-child {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-section h1 {
-    color: white;
-    font-size: 80px;
-    width: fit-content;
-    margin-bottom: 10px;
-}
-
-section span {
-    width: 130px;
-    height: 2px;
-    background-color: rgba(255 255 255 / 70%);
-    margin-bottom: 100px;
-    border-radius: var(--border-radius);
-}
-
-.contact {
-    display: flex;
-    padding: 100px 0;
-
-}
-
-.contact__left {
-    width: 50%;
-    padding-right: 5%;
-}
-
-.contact__left h2, .contact__left p {
-    color: white;
-    opacity: 80%;
-}
-
-
-.contact__form {
-    width: 50%;
-    padding: 5%;
-    color: white;
-
-
-
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.contact__form h2, .contact__form p, .contact__form__input__label {
-    color: white;
-    opacity: 80%;
-}
-
-.contact__form__input {
-    margin: 10px 0px;
-    position: relative;
-    width: 100%;
-    
-}
-
-.contact__form__input input, .contact__form__input textarea {
-    border-radius: var(--border-radius);
-    border: 1px solid #999;
-    padding: 13px 15px;
-    font-family: 'Work Sans', sans-serif;
-    font-size: 16px;
-    width: 100%;
-    height: 100%;
-    transition: all 300ms ease-in-out;
-    background: transparent;
-
-
-
-        background: rgba(255, 255, 255, 0.2);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.contact__form__input textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-.contact__form__input__label {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    font-family: 'Work Sans', sans-serif;
-    font-size: 16px;
-    background: white;
-    color: #555;
-    transition: all 300ms ease-in-out;
-    transform-origin: bottom left;
-    pointer-events: none;
-    height: fit-content;
-    width: fit-content;
-    background-color: transparent;
-    color: white;
-}
- */
 
 
 

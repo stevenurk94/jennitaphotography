@@ -27,11 +27,11 @@
                 </picture>
             </div>
 
-            <div class="introduction__title">
+            <div class="introduction__title animation fadeInUp">
                 <h1 class="accent-left">Even voorstellen</h1>
             </div>
             
-            <div class="introduction__text"> 
+            <div class="introduction__text animation fadeInUp"> 
                 <p>Heeey, welkom!</p>
                 <p>Leuk dat je een kijkje neemt op mijn website. Ik ben Jennita Altena en ik verkoop sinds 2021 mijn eigen fotokaarten. Van deze opbrengst gaat 25% naar het goede doel 'Kom over en help'.</p>
                 <p>'Kom over en help' steunen mensen die in kwetsbare omstandigheden leven. Door middel van mijn kaartenverkoop wil ik daar graag een steentje aan bijdragen. Mede doordat wij in Nederland zo rijk gezegend zijn met het vele wat wij mogen ontvangen en wat juist deze mensen moeten missen.</p>
