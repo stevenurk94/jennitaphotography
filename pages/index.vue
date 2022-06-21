@@ -4,18 +4,12 @@
 		<SectionsHero2 />
 		<SectionsHeroSlider />
 		<SectionsIntroduction />
-
-
-
-
-
-
-
 		<SectionsReviews />
 		<!-- <SectionsInstaCollage /> -->
 		<!-- <SectionsInstaCollage2 /> -->
 		<!-- <SectionsInstaCollage3 /> -->
-		
+		<!-- <SectionsInstaCollage4 /> -->
+
 
 		
 			
@@ -23,8 +17,6 @@
 
 
 </template>
-
-
 
 
 <script>

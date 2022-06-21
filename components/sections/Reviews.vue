@@ -93,7 +93,7 @@ img {
 
 .title {
     color: white;
-    opacity: 95%;
+    opacity: .95;
     width: fit-content;
     z-index: 5;
     margin-bottom: calc(55px + 3%);
@@ -137,7 +137,7 @@ img {
     width: fit-content;
     height: fit-content;
     line-height: 1;
-    opacity: 70%;
+    opacity: .7;
     content: "\201C";
     left: 0;
     top: calc(-25px - 8%);

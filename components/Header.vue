@@ -65,7 +65,6 @@
 
 
         <NuxtLink class="cart" to="/winkelwagen/">
-
             <span v-if="cartItemCount" class="cart__notification">{{ cartItemCount }}</span>
             <svg viewBox="0 0 38 38" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;">
                 <!-- <g> -->

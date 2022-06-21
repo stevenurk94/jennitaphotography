@@ -1,6 +1,6 @@
 <template>
     <transition name="cookieBanner">
-        <div class="CB" v-if="this.$store.state.cookieBanner.showCookieBanner">
+        <div class="CB" v-if="this.$store.state.cookieBanner.showCookieBanner" data-nosnippet>
             <div class="CB__popup">
                 <span v-if="this.$store.state.cookieBanner.showItems" @click="$store.commit('cookieBanner/showItems', false)" class="CB__popup__arrow">
                     <IconsLeftArrow />
