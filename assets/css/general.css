@@ -242,7 +242,7 @@ section, .breadcrumbs, .StepIndicator {
     width: 40%;
     height: 2.5px;
     background-color: white;
-	opacity: 50%;
+	opacity: .5;
     bottom: -30%;
     right: 0;
     left: 0;  
@@ -260,7 +260,7 @@ section, .breadcrumbs, .StepIndicator {
     width: 40%;
     height: 2.5px;
     background-color: white;
-	opacity: 50%;
+	opacity: .5;
     bottom: -30%;
     right: 0;
     left: 0;  
