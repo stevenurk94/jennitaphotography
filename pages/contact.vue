@@ -91,7 +91,7 @@ export default {
     height: 100%;
     background-size: cover;
     max-width: 100%;
-    height: 50vh;
+    height: 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,9 +134,14 @@ export default {
     width: 100%;
     object-fit: cover;
     height: 100%;
+    object-position: bottom;
 }
 
 
+
+main {
+    background: var(--clr-3-3);
+}
 
 
 
@@ -189,11 +194,10 @@ section span {
 
 
 
-
-
 /* ########## CONTACT FORM ########## */
 
 .contact__form {
+    background: white;
     margin-left: 5%;
     width: 50%;
     padding: 4% 5%;
