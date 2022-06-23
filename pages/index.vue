@@ -44,3 +44,11 @@ export default {
 </script>
 
 
+
+<style scoped>
+
+main {
+    overflow-y: hidden;
+}
+
+</style>

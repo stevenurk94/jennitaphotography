@@ -62,7 +62,7 @@
         </div>
     </section>
 
-    <PagepartsCartModal :PhotoCard="PhotoCard" :showModal="showModal" @closeModal="showModal = false"/>
+    <ModalsCartModal :PhotoCard="PhotoCard" :showModal="showModal" @closeModal="showModal = false"/>
     <!-- <PagepartsImageModal :PhotoCard="PhotoCard" :showImageModal="showImageModal" @closeImageModal="showImageModal = false"/> -->
 
     <SectionsProductData :product_description="PhotoCard.product_description" />

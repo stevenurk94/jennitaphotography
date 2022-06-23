@@ -16,7 +16,7 @@
         <div class="data">
             <div class="data__item" v-if="menu == 'description'">
                 <h3>Beschrijving</h3>
-                <p>{{ product_description }}</p>
+                <p v-html="product_description"></p>
             </div>
             <div class="data__item" v-if="menu == 'information'">
                 <h3>Extra informatie</h3>

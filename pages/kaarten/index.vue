@@ -3,9 +3,20 @@
     <PagepartsBreadCrumbs :items="breadcrumbs"/>
 
     <section>
+        
         <div class="filter">
-            
+
             <h3>Categorie</h3>
+            <template v-for="(category, index) in categories" >
+                <input :key="index" type="checkbox" :id="category" :value="category" v-model="categoriesChecked" :checked="category">
+                <label :key="category" class="filter__checkmark" :for="category">
+                    <span class="filter__checkmark__button"><IconsCheckmark /></span>
+                    <span class="filter__checkmark__text">{{ category }}</span>
+                </label>
+                
+            </template>
+            <p>{{ categoriesChecked }}</p>
+            <!-- <h3>Categorie</h3>
             <input type="checkbox" id="blanco" v-on:change="blanco($event)"  :checked="v_blanco">
             <label class="filter__checkmark" for="blanco">
                 <span class="filter__checkmark__button"><IconsCheckmark /></span>
@@ -24,128 +35,42 @@
             <label class="filter__checkmark" for="verjaardag">
                 <span class="filter__checkmark__button"><IconsCheckmark /></span>
                 <span class="filter__checkmark__text">Verjaardag</span>
-            </label>
+            </label> -->
         </div>
 
         
         <div class="products">
 
-            <h2 class="products__title" v-if="v_blanco || !v_blanco && !v_geboorte && !v_verjaardag">Blanco</h2>
+
+            <template v-for="category in categories">
+                <h2 v-if="categoriesChecked.includes(category) || !categoriesChecked.length" :key="category" class="products__title">{{ category }}</h2>
+                <div class="products__wrapper" v-if="categoriesChecked.includes(category) || !categoriesChecked.length" :key="category">
+                    <PagepartsPhotoCard 
+                        :PhotoCard="PhotoCards" 
+                        v-for="PhotoCards in PhotoCards.filter(PhotoCard => PhotoCard.category == category).sort((a, b) => a.class - b.class || a.name.localeCompare(b.name))" 
+                        :key="PhotoCards.id"/>
+                </div>
+            </template>
+            
+
+
+
+            <!-- <h2 class="products__title" v-if="v_blanco || !v_blanco && !v_geboorte && !v_verjaardag">Blanco</h2>
             <div class="products__wrapper" v-if="v_blanco || !v_blanco && !v_geboorte && !v_verjaardag">
-                <IconsLoading v-if="showLoading"/>
-                <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }/`" v-for="PhotoCards in PhotoCards_Blanco_Sorted" :key="PhotoCards.id">
-                        <picture :class="PhotoCards.position">
-                            <source
-                                type="image/webp"
-                                sizes="
-                                    (max-width: 340px) 160px,
-                                    (min-width: 340px) 320px, 640px"
-                                :srcset="
-                                    require(`~/static/img${PhotoCards.image.webp._160}`) + ' 160w, ' +
-                                    require(`~/static/img${PhotoCards.image.webp._320}`) + ' 320w, ' +
-                                    require(`~/static/img${PhotoCards.image.webp._640}`) + ' 640w'">
-                            <source
-                                type="image/jpeg"
-                                sizes="
-                                    (max-width: 340px) 160px,
-                                    (min-width: 340px) 320px, 640px"
-                                :srcset="
-                                    require(`~/static/img${PhotoCards.image.jpeg._160}`) + ' 160w, ' +
-                                    require(`~/static/img${PhotoCards.image.jpeg._320}`) + ' 320w, ' + 
-                                    require(`~/static/img${PhotoCards.image.jpeg._640}`) + ' 640w '">
-                            <img 
-                                @load="showLoading = false"
-                                :loading="PhotoCards.loading"
-                                :src="require(`~/static/img${PhotoCards.image.jpeg._320}`)" 
-                                :alt="PhotoCards.name.toLowerCase()">
-                        </picture>
-                    <div>
-                        <div class="products__wrapper__cart__info">
-                            <h3>{{ PhotoCards.name }}</h3>
-                            <h3>{{ PhotoCards.category }}</h3>
-                        </div>
-                        <p>€ {{ PhotoCards.price.toFixed(2).replace(".", ",") }}</p>
-                    </div>
-                </NuxtLink>
+                <PagepartsPhotoCard :PhotoCard="PhotoCards" v-for="PhotoCards in PhotoCards_Blanco_Sorted" :key="PhotoCards.id"/>
             </div>
+
 
             <h2 class="products__title" v-if="v_geboorte || !v_blanco && !v_geboorte && !v_verjaardag">Geboorte</h2>
             <div class="products__wrapper" v-if="v_geboorte || !v_blanco && !v_geboorte && !v_verjaardag">
-                <IconsLoading v-if="showLoading"/>
-                <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }/`" v-for="PhotoCards in PhotoCards_Geboorte_Sorted" :key="PhotoCards.id">
-                    <picture :class="PhotoCards.position">
-                        <source
-                            type="image/webp"
-                            sizes="
-                                (max-width: 340px) 160px,
-                                (min-width: 340px) 320px, 640px"
-                            :srcset="
-                                require(`~/static/img${PhotoCards.image.webp._160}`) + ' 160w, ' +
-                                require(`~/static/img${PhotoCards.image.webp._320}`) + ' 320w, ' +
-                                require(`~/static/img${PhotoCards.image.webp._640}`) + ' 640w'">
-                        <source
-                            type="image/jpeg"
-                            sizes="
-                                (max-width: 340px) 160px,
-                                (min-width: 340px) 320px, 640px"
-                            :srcset="
-                                require(`~/static/img${PhotoCards.image.jpeg._160}`) + ' 160w, ' +
-                                require(`~/static/img${PhotoCards.image.jpeg._320}`) + ' 320w, ' + 
-                                require(`~/static/img${PhotoCards.image.jpeg._640}`) + ' 640w '">
-                        <img 
-                            @load="showLoading = false"
-                            :loading="PhotoCards.loading"
-                            :src="require(`~/static/img${PhotoCards.image.jpeg._320}`)" 
-                            :alt="PhotoCards.name.toLowerCase()">
-                    </picture>
-                    <div>
-                        <div class="products__wrapper__cart__info">
-                            <h3>{{ PhotoCards.name }}</h3>
-                            <h3>{{ PhotoCards.category }}</h3>
-                        </div>                        
-                        <p>€ {{ PhotoCards.price.toFixed(2).replace(".", ",") }}</p>
-                    </div>
-                </NuxtLink>
+                <PagepartsPhotoCard :PhotoCard="PhotoCards" v-for="PhotoCards in PhotoCards_Geboorte_Sorted" :key="PhotoCards.id"/>
             </div>
 
             <h2 class="products__title" v-if="v_verjaardag || !v_blanco && !v_geboorte && !v_verjaardag">Verjaardag</h2>
             <div class="products__wrapper" v-if="v_verjaardag || !v_blanco && !v_geboorte && !v_verjaardag">
-                <IconsLoading v-if="showLoading"/>
-                <NuxtLink class="products__wrapper__cart" :to="`/kaarten/${ PhotoCards.slug }/`" v-for="PhotoCards in PhotoCards_Verjaardag_Sorted" :key="PhotoCards.id">
-                    <picture :class="PhotoCards.position">
-                        <source
-                            type="image/webp"
-                            sizes="
-                                (max-width: 340px) 160px,
-                                (min-width: 340px) 320px, 640px"
-                            :srcset="
-                                require(`~/static/img${PhotoCards.image.webp._160}`) + ' 160w, ' +
-                                require(`~/static/img${PhotoCards.image.webp._320}`) + ' 320w, ' +
-                                require(`~/static/img${PhotoCards.image.webp._640}`) + ' 640w'">
-                        <source
-                            type="image/jpeg"
-                            sizes="
-                                (max-width: 340px) 160px,
-                                (min-width: 340px) 320px, 640px"
-                            :srcset="
-                                require(`~/static/img${PhotoCards.image.jpeg._160}`) + ' 160w, ' +
-                                require(`~/static/img${PhotoCards.image.jpeg._320}`) + ' 320w, ' + 
-                                require(`~/static/img${PhotoCards.image.jpeg._640}`) + ' 640w '">
-                        <img 
-                            @load="showLoading = false"
-                            :loading="PhotoCards.loading"
-                            :src="require(`~/static/img${PhotoCards.image.jpeg._320}`)" 
-                            :alt="PhotoCards.name.toLowerCase()">
-                    </picture>
-                    <div>
-                        <div class="products__wrapper__cart__info">
-                            <h3>{{ PhotoCards.name }}</h3>
-                            <h3>{{ PhotoCards.category }}</h3>
-                        </div>
-                        <p>€ {{ PhotoCards.price.toFixed(2).replace(".", ",") }}</p>
-                    </div>
-                </NuxtLink>
-            </div>
+                <PagepartsPhotoCard :PhotoCard="PhotoCards" v-for="PhotoCards in PhotoCards_Verjaardag_Sorted" :key="PhotoCards.id"/>
+            </div> -->
+
         </div>
     </section>
 
@@ -181,42 +106,43 @@ export default {
     data () {       
         return {
             PhotoCards,
-            v_blanco: false,
-            v_geboorte: false,
-            v_verjaardag: false,
+            // v_blanco: false,
+            // v_geboorte: false,
+            // v_verjaardag: false,
             showLoading: true,
+            categoriesChecked: []
+
         }
     },
 
 
-    methods: {
-        blanco (event) {
-            if (event.target.checked) {
-                this.v_blanco = true;
-            } else {
-                this.v_blanco = false;
-            }
-        },
-        geboorte (event) {
-            if (event.target.checked) {
-                this.v_geboorte = true;
-            } else {
-                this.v_geboorte = false;
-            }
-        },
-        verjaardag (event) {
-            if (event.target.checked) {
-                this.v_verjaardag = true;
-            } else {
-                this.v_verjaardag = false;
-            }
-        },
-    },
-
+    // methods: {
+    //     blanco (event) {
+    //         if (event.target.checked) {
+    //             this.v_blanco = true;
+    //         } else {
+    //             this.v_blanco = false;
+    //         }
+    //     },
+    //     geboorte (event) {
+    //         if (event.target.checked) {
+    //             this.v_geboorte = true;
+    //         } else {
+    //             this.v_geboorte = false;
+    //         }
+    //     },
+    //     verjaardag (event) {
+    //         if (event.target.checked) {
+    //             this.v_verjaardag = true;
+    //         } else {
+    //             this.v_verjaardag = false;
+    //         }
+    //     },
+    // },
 
     computed: {
 
-        breadcrumbs() {
+        breadcrumbs () {
             return [
                 {
                     label: "Home",
@@ -228,44 +154,48 @@ export default {
             ]
         },
 
-        PhotoCards_Blanco_Sorted: function () {
-
-            const PhotoCards_Blanco_Sorted_Standing = this.PhotoCards.filter(function(u) {
-                return u.category == "blanco" && u.position.includes("standing");
-            }).sort(function (x, y) {
-                let a = x.name.toUpperCase(),
-                    b = y.name.toUpperCase();
-                return a == b ? 0 : a > b ? 1 : -1;
-            });
-
-            const PhotoCards_Blanco_Sorted_Lying = this.PhotoCards.filter(function(u) {
-                return u.category == "blanco" && u.position.includes("lying");
-            }).sort(function (x, y) {
-                let a = x.name.toUpperCase(),
-                    b = y.name.toUpperCase();
-                return a == b ? 0 : a > b ? 1 : -1;
-            });
-
-            return PhotoCards_Blanco_Sorted_Standing.concat(PhotoCards_Blanco_Sorted_Lying);
+        categories () {
+            return [...new Set(this.PhotoCards.map(item => item.category))];
         },
-        PhotoCards_Geboorte_Sorted: function() {
-            return this.PhotoCards.filter(function(u) {
-                return u.category == "geboorte";
-            }).sort(function (x,y) {
-                let a = x.name.toUpperCase(),
-                    b = y.name.toUpperCase();
-                return a == b ? 0 : a > b ? 1 : -1;
-            });
-        },
-        PhotoCards_Verjaardag_Sorted: function() {
-            return this.PhotoCards.filter(function(u) {
-                return u.category == "verjaardag";
-            }).sort(function (x,y) {
-                let a = x.name.toUpperCase(),
-                    b = y.name.toUpperCase();
-                return a == b ? 0 : a > b ? 1 : -1;
-            });
-        },         
+
+        // PhotoCards_Blanco_Sorted: function () {
+
+        //     const PhotoCards_Blanco_Sorted_Standing = this.PhotoCards.filter(function(u) {
+        //         return u.category == "blanco" && u.position.includes("standing");
+        //     }).sort(function (x, y) {
+        //         let a = x.name.toUpperCase(),
+        //             b = y.name.toUpperCase();
+        //         return a == b ? 0 : a > b ? 1 : -1;
+        //     });
+
+        //     const PhotoCards_Blanco_Sorted_Lying = this.PhotoCards.filter(function(u) {
+        //         return u.category == "blanco" && u.position.includes("lying");
+        //     }).sort(function (x, y) {
+        //         let a = x.name.toUpperCase(),
+        //             b = y.name.toUpperCase();
+        //         return a == b ? 0 : a > b ? 1 : -1;
+        //     });
+
+        //     return PhotoCards_Blanco_Sorted_Standing.concat(PhotoCards_Blanco_Sorted_Lying);
+        // },
+        // PhotoCards_Geboorte_Sorted: function() {
+        //     return this.PhotoCards.filter(function(u) {
+        //         return u.category == "geboorte";
+        //     }).sort(function (x,y) {
+        //         let a = x.name.toUpperCase(),
+        //             b = y.name.toUpperCase();
+        //         return a == b ? 0 : a > b ? 1 : -1;
+        //     });
+        // },
+        // PhotoCards_Verjaardag_Sorted: function() {
+        //     return this.PhotoCards.filter(function(u) {
+        //         return u.category == "verjaardag";
+        //     }).sort(function (x,y) {
+        //         let a = x.name.toUpperCase(),
+        //             b = y.name.toUpperCase();
+        //         return a == b ? 0 : a > b ? 1 : -1;
+        //     });
+        // },         
     },
 }
 
@@ -348,6 +278,10 @@ main section {
     transition: all 300ms ease-in-out;
 }
 
+.filter__checkmark__text::first-letter {
+    text-transform: uppercase;
+}
+
 .filter__checkmark:hover .filter__checkmark__text {
     color: var(--clr-1-1);
 }
@@ -383,6 +317,10 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
     margin-bottom: 12px;
 }
 
+.products__title::first-letter {
+    text-transform: uppercase;
+}
+
 .products__title:not(:first-child) {
     margin-top: 50px;
 }
@@ -394,102 +332,6 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
     padding-top: 15px;
     position: relative;
 }
-
-
-
-
-
-
-/* ########## PRODUCTS CART ########## */
-
-.products__wrapper__cart {
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    cursor: pointer;
-    background: var(--clr-3-3);
-    transition: all .2s ease-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: black;
-}
-
-.products__wrapper__cart picture {
-    height: 100%;
-    width: 90%;
-    right: 0;
-    left: 0;
-    margin: 15px 10px;
-    
-}
-
-.products__wrapper__cart picture.lying {
-    margin: calc(3vw + 40px) 10px;
-    display: flex;
-    align-items: center;
-}
-
-.products__wrapper__cart picture.tall {
-    padding: 0 calc(1.1vw + 16px);
-}
-
-.products__wrapper__cart picture.lying.object-position-right img {
-    object-position: right;
-}
-
-.products__wrapper__cart picture.lying.height-auto img {
-    height: auto;
-}
-
-.products__wrapper__cart img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-.products__wrapper__cart > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 87%;
-}
-
-.products__wrapper__cart__info h3:first-child  {
-    font-size: 17px;
-    padding-bottom: 0;
-    font-weight: 600;
-    line-height: 1;
-}
-
-.products__wrapper__cart__info h3:last-child {
-    text-transform: uppercase;
-    color: var(--clr-3-2);
-    margin: 2px 0 15px 0;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    padding-bottom: 0;
-}
-
-
-.products__wrapper__cart p {
-    font-size: 15px;
-    line-height: 1.2;
-    height: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -544,59 +386,23 @@ input[type="checkbox"]:checked + .filter__checkmark .filter__checkmark__button s
     .products__title {
         margin-top: 50px;
     }
-
-    .products__wrapper__cart picture.lying {
-        margin: calc(7vw + 40px) 10px;
-    }
-
-    .products__wrapper__cart picture.tall {
-        padding: 0 calc(3.5vw + 3px);
-    }
-
-
-
-
 }
 
 
 
 
 @media only screen and (max-width: 680px) {
-
     .products__wrapper {
         gap: 25px 3%;
         grid-template-columns: repeat(3, 1fr); 
         padding-top: 2%;
     }
-
-    .products__wrapper__cart picture {
-        margin: 10px;
-    }
-    
-
-    .products__wrapper__cart > div {
-        display: block;
-        margin: 4px 5px 5px 5px;
-    }
-   
-    .products__wrapper__cart__info h3:last-child {
-        margin-bottom: 10px;
-    }
-
-    .products__wrapper__cart p {
-        height: fit-content;
-        margin-bottom: 7px;
-    }
-
 }
 
 @media only screen and (max-width: 630px) {
     .products__wrapper {
         gap: 25px 3%;
         grid-template-columns: repeat(2, 1fr); 
-    }
-    .products__wrapper__cart picture.tall {
-        padding: 0 6.2vw;
     }
 }
 

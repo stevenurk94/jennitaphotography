@@ -65,7 +65,6 @@ section {
     flex-direction: column;
     max-width: 100%;
     width: 100%;
-    border: none;
 }
 
 .overlay {
