@@ -123,7 +123,7 @@ input[type="radio"] {
 
     .data {
         margin-top: 40px;
-        padding: 15px;
+        padding: 15px 17px;
     }
 
     .data__item__info div p:first-child {

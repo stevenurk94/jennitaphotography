@@ -36,12 +36,10 @@
         <h2 class="title accent-center-white">Wat klanten vertellen</h2>
         <div class="reviews">
             <div class="reviews__card">
-                <div class="test"></div>
                 <p class="reviews__card__text">Kaarten voor ieder seizoen of gebeurtenis. Mooie afwisselende foto's. Top.</p>
                 <p class="reviews__card__name accent-left">Jannette</p>
             </div>
             <div class="reviews__card">
-                <div class="test"></div>
                 <p class="reviews__card__text">Kaarten voor ieder seizoen of gebeurtenis. Mooie afwisselende foto's. Top.</p>
                 <p class="reviews__card__name accent-left">Jannette</p>
             </div>
@@ -141,6 +139,7 @@ img {
     content: "\201C";
     left: 0;
     top: calc(-25px - 8%);
+    overflow: visible;
 }
 
 .reviews__card__name {
