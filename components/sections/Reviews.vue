@@ -139,7 +139,7 @@ img {
     content: "\201C";
     left: 0;
     top: calc(-25px - 8%);
-    overflow: visible;
+    border-right: 20px solid transparent;
 }
 
 .reviews__card__name {
