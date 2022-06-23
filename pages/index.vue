@@ -49,6 +49,7 @@ export default {
 
 main {
     overflow-y: hidden;
+    margin-bottom: -1px;
 }
 
 </style>
