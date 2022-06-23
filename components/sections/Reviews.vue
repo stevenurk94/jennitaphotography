@@ -145,6 +145,7 @@ img {
 .reviews__card__name {
     margin: 20px 0 0 0;
     font-size: 14px;
+    line-height: 1;
 }
 
 h4 {
