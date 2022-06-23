@@ -48,7 +48,6 @@ export default {
 <style scoped>
 
 main {
-    overflow-y: hidden;
     margin-bottom: -1px;
 }
 
