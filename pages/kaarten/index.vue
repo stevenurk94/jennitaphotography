@@ -15,7 +15,6 @@
                 </label>
                 
             </template>
-            <p>{{ categoriesChecked }}</p>
             <!-- <h3>Categorie</h3>
             <input type="checkbox" id="blanco" v-on:change="blanco($event)"  :checked="v_blanco">
             <label class="filter__checkmark" for="blanco">
