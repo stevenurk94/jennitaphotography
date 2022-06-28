@@ -21,6 +21,13 @@
                     <p class="radio__text">Gratis bezorging in Genemuiden en Urk</p>
 
                 </label>
+
+                <!-- <input type="radio" id="shippingFree2" name="shipping" :checked="shipping == shippingLabel" :value="shippingLabel" v-if="shippingLabel">
+                <label class="radio" for="shippingFree2" v-if="shippingLabel">
+                    <span class="radio__button"></span>
+                    <p class="radio__text"> {{ shippingLabel }}</p>
+                </label> -->
+
                 
                 <button class="button-1" type="submit">Doorgaan</button>
             </form>
@@ -54,7 +61,15 @@ export default {
                 return this.$store.getters.formDetails[0].zipCode
             }
         },
-
+        // shippingLabel () {
+        //     if (this.$store.getters.formDetails[0]) {
+        //         if ( this.$store.getters.formDetails[0].place.toLowerCase() == "urk" ) return "Gratis bezorging op Urk";
+        //         else if ( this.$store.getters.formDetails[0].place.toLowerCase() == "genemuiden" ) return "Gratis bezorging in Genemuiden";
+        //         else if ( this.$store.getters.formDetails[0].place.toLowerCase() == "ijsselmuiden" ) return "Gratis bezorging in IJsselmuiden";
+        //         else if ( this.$store.getters.formDetails[0].place.toLowerCase() == "nunspeet" ) return "Gratis bezorging in Nunspeet";
+        //         return false;
+        //     }
+        // },
         stepindicator() {
             return [
                 {
@@ -102,6 +117,7 @@ export default {
 
     mounted: function () {
         this.pageAuthentication();
+        console.log(this.shippingLabel)
     }
 }
 </script>

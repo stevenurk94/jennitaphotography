@@ -27,7 +27,7 @@
                     </div>
                     <div>
                         <p>Uitvoering</p>
-                        <p>Wenskaart met foto-opdruk</p>
+                        <p>Wenskaart met foto-afdruk</p>
                     </div>
                     <div>
                         <p>Afmetingen</p>

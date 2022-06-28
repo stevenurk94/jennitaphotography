@@ -41,8 +41,8 @@
         <div class="products">
 
 
-            <template v-for="category in categories">
-                <h2 v-if="categoriesChecked.includes(category) || !categoriesChecked.length" :key="category" class="products__title">{{ category }}</h2>
+            <template v-for="(category, index) in categories">
+                <h2 v-if="categoriesChecked.includes(category) || !categoriesChecked.length" :key="index" class="products__title">{{ category }}</h2>
                 <div class="products__wrapper" v-if="categoriesChecked.includes(category) || !categoriesChecked.length" :key="category">
                     <PagepartsPhotoCard 
                         :PhotoCard="PhotoCards" 

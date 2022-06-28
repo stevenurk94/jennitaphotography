@@ -32,11 +32,11 @@
                             require(`~/static/img${PhotoCard.image.jpeg._640}`) + ' 640w, ' +
                             require(`~/static/img${PhotoCard.image.jpeg._768}`) + ' 768w, ' +
                             require(`~/static/img${PhotoCard.image.jpeg._1024}`) + ' 1024w'">
-
                     <img 
                         @load="showLoading = false"
-                        :src="require(`~/static/img${PhotoCard.image.jpeg._768}`)" 
+                        :src="require(`~/static/img${PhotoCard.image.jpeg._768}`)"
                         :alt="PhotoCard.name.toLowerCase()">
+                        <!-- src="~/static/test3.jpg" -->
                 </picture>
             </div>
             <div class="product__info">
@@ -185,7 +185,8 @@ export default {
     width: calc(50% - 0.7%);
     border-radius: var(--border-radius);
     padding: 10px;
-    background: var(--clr-3-3);
+    background-color: var(--clr-3-3);
+    /* background-color: #e4e9ea; */
     position: relative;
     height: fit-content;
 }

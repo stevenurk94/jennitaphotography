@@ -40,12 +40,12 @@
                 <p class="reviews__card__name accent-left">Jannette</p>
             </div>
             <div class="reviews__card">
-                <p class="reviews__card__text">Kaarten voor ieder seizoen of gebeurtenis. Mooie afwisselende foto's. Top.</p>
-                <p class="reviews__card__name accent-left">Jannette</p>
+                <p class="reviews__card__text">Mooie kaarten waar je een mens blij mee maakt.</p>
+                <p class="reviews__card__name accent-left">Ina</p>
             </div>
             <div class="reviews__card">
-                <p class="reviews__card__text">Kaarten voor ieder seizoen of gebeurtenis. Mooie afwisselende foto's. Top.</p>
-                <p class="reviews__card__name accent-left">Jannette</p>
+                <p class="reviews__card__text">Prachtige zelgemaakte fotokaarten te verkrijgen. De service is top!</p>
+                <p class="reviews__card__name accent-left">Elisabeth</p>
             </div>         
         </div>
     </section>
@@ -110,6 +110,7 @@ img {
 .reviews__card {
     width: 100%;
     padding: 3% 3% 2.3% 3%;
+    /* padding: calc(20px + 3vmax); */
     background: rgb(255 255 255 / 80%);
     border-radius: var(--border-radius);
     position: relative;
@@ -148,6 +149,10 @@ img {
     line-height: 1;
 }
 
+.reviews__card__name::after {
+    min-width: 15px;
+}
+
 h4 {
     color: white;
     font-weight: 300;
@@ -160,6 +165,7 @@ h4 {
 @media only screen and (max-width: 1040px) {
     .reviews {
         display: block;
+        width: 85%;
     }
 
     .reviews__card {
@@ -171,7 +177,7 @@ h4 {
     }
 
     .reviews__card:nth-child(2) {
-        margin: 7% auto;
+        margin: 8% auto;
         
     }
 

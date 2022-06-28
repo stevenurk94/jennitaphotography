@@ -19,11 +19,18 @@
                     require(`~/static/img${PhotoCard.image.jpeg._160}`) + ' 160w, ' +
                     require(`~/static/img${PhotoCard.image.jpeg._320}`) + ' 320w, ' + 
                     require(`~/static/img${PhotoCard.image.jpeg._640}`) + ' 640w '">
+                
+
+                <!-- srcset="
+                    require(`~/static/test.jpg`) + ' 160w, ' +
+                    require(`~/static/test.jpg`) + ' 320w, ' + 
+                    require(`~/static/test.jpg`) + ' 640w '"> -->
             <img 
                 @load="showLoading = false"
                 :loading="PhotoCard.loading"
                 :src="require(`~/static/img${PhotoCard.image.jpeg._320}`)" 
                 :alt="PhotoCard.name.toLowerCase()">
+                <!-- src="~/static/test3.jpg"  -->
         </picture>
         <div>
             <div>
@@ -47,7 +54,8 @@ a {
     border-radius: var(--border-radius);
     overflow: hidden;
     cursor: pointer;
-    background: var(--clr-3-3);
+    background-color: var(--clr-3-3);
+    /* background-color: #e4e9ea; */
     transition: all .2s ease-out;
     display: flex;
     flex-direction: column;

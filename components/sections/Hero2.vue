@@ -38,11 +38,11 @@ section > div {
 
 h1 {
 	color: white;
-	font-size: calc(53px + 1.8vmax);
+	font-size: calc(50px + 1.8vmax);
 	/* font-size: 80px; */
 	line-height: 1.3;
 	/* margin-bottom: calc(1% + 10px); */
-	margin-bottom: 30px;
+	margin-bottom: 15px;
     font-weight: 600;
 	width: 100%;
 	text-align: center;
@@ -78,6 +78,7 @@ a {
 		/* font-size: calc(32px + 2vmax); */
 		font-size: calc(5px + 7.5vmax);
 		line-height: 1.1;
+		margin-bottom: 25px;
 		/* margin-bottom: calc(5% + 15px); */
 	}
 	h2 {
