@@ -114,6 +114,9 @@ img {
     background: rgb(255 255 255 / 80%);
     border-radius: var(--border-radius);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .reviews__card:nth-child(2) {
