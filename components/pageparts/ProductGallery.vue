@@ -2,7 +2,7 @@
 
     <div class="gallery" @click.stop>
         <div class="gallery__list">
-            <div class="gallery__list__img" v-for="image in images" :key="image.id" :class="{ active: image.id == activeImage ? true : false}"  @mouseover="activeImage = image.id">
+            <div class="gallery__list__img" v-for="image in images" :key="image.id" :class="{ active: image.id == $store.state.imageGallery.activeImage ? true : false}"  @mouseover="$store.commit('imageGallery/setActiveImage', image.id)">
                 <div :class="image.type">
                     <picture>
                         <source
@@ -40,7 +40,7 @@
 
 
         <transition-group class="gallery__hero" tag="div" name="hero">
-            <div v-show="activeImage === image.id" v-for="image in images" :key="image.id" @click="$emit('showImageModal')" :class="image.type">
+            <div v-show="$store.state.imageGallery.activeImage === image.id" v-for="image in images" :key="image.id" @click="$emit('showImageModal')" :class="image.type">
                 <div>
                     <div>
                         <picture>
@@ -71,8 +71,7 @@
                             <img 
                                 @load="showLoading = false"
                                 :src="require(`~/static/img${ image.src.jpeg._768 }`)"
-                                :alt="Name"
-                                >
+                                :alt="Name">
                         </picture>
                     </div>
                 </div>
@@ -123,7 +122,6 @@ export default {
                     type: "card",
                 },
             ],
-            activeImage: 0,
         }
     },
 }
@@ -138,13 +136,16 @@ export default {
 
 
 .gallery {
-    padding: 3%;
+    padding: 4%;
     /* padding-top: 2%; */
     height: fit-content;
     border-radius: var(--border-radius);
     background-color: white;
     display: flex;
     z-index: 999;
+    border: 1px solid #d8d8d8;
+    width: calc(50% - 2%);
+    justify-content: center;
 }
 
 
@@ -152,7 +153,7 @@ export default {
 
 .gallery__list {
     width: 110px;
-    margin-right: 6%;
+    margin-right: 10%;
 }
 .gallery__list:first-child {
     margin-top: -4px;
@@ -259,7 +260,7 @@ export default {
     left: 0;
     bottom: 0;
     max-width: 350px;
-    cursor: pointer;
+    cursor: zoom-in;
     height: fit-content;
     z-index: 2;
 }
@@ -299,7 +300,7 @@ export default {
     transform: skewY(4deg);
     position: absolute;
     top: -2.2476475268%;
-    right: 0;
+    right: .5px;
     z-index: -1;
 }
 .gallery__hero .back img {
@@ -311,6 +312,7 @@ export default {
 .gallery__hero picture {
     display: flex;
     overflow: hidden;
+    height: 100%;
 }
 
 .gallery__hero img {

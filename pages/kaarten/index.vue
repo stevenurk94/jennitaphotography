@@ -78,6 +78,10 @@ export default {
             return [...new Set(this.PhotoCards.map(item => item.category))];
         },     
     },
+    beforeRouteLeave (to, from, next) {
+        this.$store.commit('imageGallery/setActiveImage', 0);
+        next();
+    }
 }
 
 </script>

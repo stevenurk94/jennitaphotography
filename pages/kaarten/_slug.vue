@@ -6,7 +6,7 @@
         
         <div class="product">
 
-            <PagepartsProductGallery :PhotoCard="PhotoCard.image" :Name="PhotoCard.name.toLowerCase()" @showImageModal="showImageModal = true"/>
+            <PagepartsProductGallery :PhotoCard="PhotoCard.image" :Name="PhotoCard.name.toLowerCase()" @showImageModal="showImageModal = true" />
 
 
             
@@ -69,7 +69,7 @@
     </section>
 
     <ModalsCartModal :PhotoCard="PhotoCard" :showModal="showModal" @closeModal="showModal = false"/>
-    <ModalsGalleryModal :PhotoCard="PhotoCard" :Name="PhotoCard.name.toLowerCase()" :showImageModal="showImageModal" @closeImageModal="showImageModal = false"/>
+    <ModalsGalleryModal :PhotoCard="PhotoCard.image" :Name="PhotoCard.name.toLowerCase()" :showImageModal="showImageModal" @closeImageModal="showImageModal = false" />
     <SectionsProductData :product_description="PhotoCard.product_description" />
 </main>
 </template>
@@ -112,7 +112,7 @@ export default {
         cartItemCount () {
             return this.$store.getters.cartItemCount
         },
-        breadcrumbs() {
+        breadcrumbs () {
             return [
                 {
                     label: "Home",
@@ -183,14 +183,13 @@ export default {
 
 }
 
-.product__img {
+/* .product__img {
     display: flex;
     justify-content: center;
     width: calc(50% - 0.7%);
     border-radius: var(--border-radius);
     padding: 10px;
     background-color: var(--clr-3-3);
-    /* background-color: #e4e9ea; */
     position: relative;
     height: fit-content;
 }
@@ -207,7 +206,7 @@ export default {
 .product__img img {
     width: 100%;
     height: 100%;
-}
+} */
 
 .product__info {
     min-width: calc(50% - 1.5%);
