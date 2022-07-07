@@ -1,7 +1,7 @@
 <template>
 	<div class="layout">
 
-		<CookieBanner />
+		<ModalsCookieBanner />
 
 		<header>
 			<Header />

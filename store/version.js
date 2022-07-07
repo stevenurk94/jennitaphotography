@@ -1,8 +1,9 @@
 export const state = () => ({
     currentVersion: "",
-    newVersion: 1,
+    newVersion: 2,
 })
 
+// liveVersion == 1
 
 export const mutations = ({
     checkVersion ( state, value ) {
