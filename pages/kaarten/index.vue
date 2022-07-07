@@ -3,9 +3,7 @@
     <PagepartsBreadCrumbs :items="breadcrumbs"/>
 
     <section>
-        
         <div class="filter">
-
             <h3>Categorie</h3>
             <template v-for="(category, index) in categories" >
                 <input :key="index" type="checkbox" :id="category" :value="category" v-model="categoriesChecked" :checked="category">
@@ -15,32 +13,9 @@
                 </label>
                 
             </template>
-            <!-- <h3>Categorie</h3>
-            <input type="checkbox" id="blanco" v-on:change="blanco($event)"  :checked="v_blanco">
-            <label class="filter__checkmark" for="blanco">
-                <span class="filter__checkmark__button"><IconsCheckmark /></span>
-                <span class="filter__checkmark__text">Blanco</span>
-            </label>
-
-
-            <input type="checkbox" id="geboorte" v-on:change="geboorte($event)" :checked="v_geboorte">
-            <label class="filter__checkmark" for="geboorte">
-                <span class="filter__checkmark__button"><IconsCheckmark /></span>
-                <span class="filter__checkmark__text">Geboorte</span>
-            </label>
-
-
-            <input type="checkbox" id="verjaardag" v-on:change="verjaardag($event)" :checked="v_verjaardag">
-            <label class="filter__checkmark" for="verjaardag">
-                <span class="filter__checkmark__button"><IconsCheckmark /></span>
-                <span class="filter__checkmark__text">Verjaardag</span>
-            </label> -->
         </div>
 
-        
         <div class="products">
-
-
             <template v-for="(category, index) in categories">
                 <h2 v-if="categoriesChecked.includes(category) || !categoriesChecked.length" :key="index" class="products__title">{{ category }}</h2>
                 <div class="products__wrapper" v-if="categoriesChecked.includes(category) || !categoriesChecked.length" :key="category">
@@ -50,30 +25,8 @@
                         :key="PhotoCards.id"/>
                 </div>
             </template>
-            
-
-
-
-            <!-- <h2 class="products__title" v-if="v_blanco || !v_blanco && !v_geboorte && !v_verjaardag">Blanco</h2>
-            <div class="products__wrapper" v-if="v_blanco || !v_blanco && !v_geboorte && !v_verjaardag">
-                <PagepartsPhotoCard :PhotoCard="PhotoCards" v-for="PhotoCards in PhotoCards_Blanco_Sorted" :key="PhotoCards.id"/>
-            </div>
-
-
-            <h2 class="products__title" v-if="v_geboorte || !v_blanco && !v_geboorte && !v_verjaardag">Geboorte</h2>
-            <div class="products__wrapper" v-if="v_geboorte || !v_blanco && !v_geboorte && !v_verjaardag">
-                <PagepartsPhotoCard :PhotoCard="PhotoCards" v-for="PhotoCards in PhotoCards_Geboorte_Sorted" :key="PhotoCards.id"/>
-            </div>
-
-            <h2 class="products__title" v-if="v_verjaardag || !v_blanco && !v_geboorte && !v_verjaardag">Verjaardag</h2>
-            <div class="products__wrapper" v-if="v_verjaardag || !v_blanco && !v_geboorte && !v_verjaardag">
-                <PagepartsPhotoCard :PhotoCard="PhotoCards" v-for="PhotoCards in PhotoCards_Verjaardag_Sorted" :key="PhotoCards.id"/>
-            </div> -->
-
         </div>
     </section>
-
-
 </main>
     
 </template>
@@ -105,42 +58,11 @@ export default {
     data () {       
         return {
             PhotoCards,
-            // v_blanco: false,
-            // v_geboorte: false,
-            // v_verjaardag: false,
             showLoading: true,
             categoriesChecked: []
-
         }
     },
-
-
-    // methods: {
-    //     blanco (event) {
-    //         if (event.target.checked) {
-    //             this.v_blanco = true;
-    //         } else {
-    //             this.v_blanco = false;
-    //         }
-    //     },
-    //     geboorte (event) {
-    //         if (event.target.checked) {
-    //             this.v_geboorte = true;
-    //         } else {
-    //             this.v_geboorte = false;
-    //         }
-    //     },
-    //     verjaardag (event) {
-    //         if (event.target.checked) {
-    //             this.v_verjaardag = true;
-    //         } else {
-    //             this.v_verjaardag = false;
-    //         }
-    //     },
-    // },
-
     computed: {
-
         breadcrumbs () {
             return [
                 {
@@ -152,49 +74,9 @@ export default {
                 }
             ]
         },
-
         categories () {
             return [...new Set(this.PhotoCards.map(item => item.category))];
-        },
-
-        // PhotoCards_Blanco_Sorted: function () {
-
-        //     const PhotoCards_Blanco_Sorted_Standing = this.PhotoCards.filter(function(u) {
-        //         return u.category == "blanco" && u.position.includes("standing");
-        //     }).sort(function (x, y) {
-        //         let a = x.name.toUpperCase(),
-        //             b = y.name.toUpperCase();
-        //         return a == b ? 0 : a > b ? 1 : -1;
-        //     });
-
-        //     const PhotoCards_Blanco_Sorted_Lying = this.PhotoCards.filter(function(u) {
-        //         return u.category == "blanco" && u.position.includes("lying");
-        //     }).sort(function (x, y) {
-        //         let a = x.name.toUpperCase(),
-        //             b = y.name.toUpperCase();
-        //         return a == b ? 0 : a > b ? 1 : -1;
-        //     });
-
-        //     return PhotoCards_Blanco_Sorted_Standing.concat(PhotoCards_Blanco_Sorted_Lying);
-        // },
-        // PhotoCards_Geboorte_Sorted: function() {
-        //     return this.PhotoCards.filter(function(u) {
-        //         return u.category == "geboorte";
-        //     }).sort(function (x,y) {
-        //         let a = x.name.toUpperCase(),
-        //             b = y.name.toUpperCase();
-        //         return a == b ? 0 : a > b ? 1 : -1;
-        //     });
-        // },
-        // PhotoCards_Verjaardag_Sorted: function() {
-        //     return this.PhotoCards.filter(function(u) {
-        //         return u.category == "verjaardag";
-        //     }).sort(function (x,y) {
-        //         let a = x.name.toUpperCase(),
-        //             b = y.name.toUpperCase();
-        //         return a == b ? 0 : a > b ? 1 : -1;
-        //     });
-        // },         
+        },     
     },
 }
 
@@ -267,8 +149,6 @@ main section {
     margin: 1px;
     fill: white;
 }
-
-
 
 .filter__checkmark__text {
     margin-left: 10px;

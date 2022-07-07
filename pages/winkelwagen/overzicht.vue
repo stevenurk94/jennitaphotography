@@ -159,6 +159,7 @@ export default {
         async betalen () {
             this.loading = true;
 
+            
             await fetch("https://jennitaphotography.nl/server/create-checkout-session", {
                 method: "POST",
                 headers: {

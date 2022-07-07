@@ -36,7 +36,7 @@
         <h2 class="title accent-center-white">Wat klanten vertellen</h2>
         <div class="reviews">
             <div class="reviews__card">
-                <p class="reviews__card__text">Kaarten voor ieder seizoen of gebeurtenis. Mooie afwisselende foto's. Top.</p>
+                <p class="reviews__card__text">Kaarten voor ieder seizoen of gebeurtenis. Supermooi foto's.</p>
                 <p class="reviews__card__name accent-left">Jannette</p>
             </div>
             <div class="reviews__card">
@@ -44,7 +44,7 @@
                 <p class="reviews__card__name accent-left">Ina</p>
             </div>
             <div class="reviews__card">
-                <p class="reviews__card__text">Prachtige zelgemaakte fotokaarten te verkrijgen. De service is top!</p>
+                <p class="reviews__card__text">Prachtige zelfgemaakte fotokaarten te verkrijgen. De service is top!</p>
                 <p class="reviews__card__name accent-left">Elisabeth</p>
             </div>         
         </div>
@@ -109,7 +109,7 @@ img {
 
 .reviews__card {
     width: 100%;
-    padding: 3% 3% 2.3% 3%;
+    padding: 3% 2.9% 2.3% 2.9%;
     /* padding: calc(20px + 3vmax); */
     background: rgb(255 255 255 / 80%);
     border-radius: var(--border-radius);
@@ -120,7 +120,7 @@ img {
 }
 
 .reviews__card:nth-child(2) {
-    margin: 0 calc(2% + 2.5vmax);
+    margin: 0 calc(2% + 2.3vmax);
 }
 
 
@@ -147,9 +147,10 @@ img {
 }
 
 .reviews__card__name {
-    margin: 20px 0 0 0;
-    font-size: 14px;
+    margin: 30px 0 0 0;
+    font-size: 13px;
     line-height: 1;
+    font-style: italic;
 }
 
 .reviews__card__name::after {

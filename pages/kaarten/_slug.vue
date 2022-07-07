@@ -5,7 +5,12 @@
     <section>
         
         <div class="product">
-            <div class="product__img">
+
+            <PagepartsProductGallery :PhotoCard="PhotoCard.image" :Name="PhotoCard.name.toLowerCase()" @showImageModal="showImageModal = true"/>
+
+
+            
+            <!-- <div class="product__img">
                 <IconsLoading v-if="showLoading"/>
                 <picture :class="PhotoCard.position">
                     <source
@@ -36,11 +41,12 @@
                         @load="showLoading = false"
                         :src="require(`~/static/img${PhotoCard.image.jpeg._768}`)"
                         :alt="PhotoCard.name.toLowerCase()">
-                        <!-- src="~/static/test3.jpg" -->
                 </picture>
-            </div>
+            </div> -->
+
+            
             <div class="product__info">
-                <h1>{{ PhotoCard.name }}</h1>
+                <h1  @click="showImageModal = true">{{ PhotoCard.name }}</h1>
                 <h3 class="product__info__category">{{ PhotoCard.category }}</h3>
                 <p class="product__info__price">€ {{ PhotoCard.price.toFixed(2).replace(".", ",") }} p/st.</p>
                 <p class="product__info__stock message orange" v-if="!PhotoCard.stock">Binnenkort op voorraad</p>
@@ -63,10 +69,8 @@
     </section>
 
     <ModalsCartModal :PhotoCard="PhotoCard" :showModal="showModal" @closeModal="showModal = false"/>
-    <!-- <PagepartsImageModal :PhotoCard="PhotoCard" :showImageModal="showImageModal" @closeImageModal="showImageModal = false"/> -->
-
+    <ModalsGalleryModal :PhotoCard="PhotoCard" :Name="PhotoCard.name.toLowerCase()" :showImageModal="showImageModal" @closeImageModal="showImageModal = false"/>
     <SectionsProductData :product_description="PhotoCard.product_description" />
-
 </main>
 </template>
 
@@ -82,7 +86,7 @@ export default {
             quantity: 1,
             showModal: false,
             showLoading: true,
-            // showImageModal: false,
+            showImageModal: false,
         }
     },
     head () {
